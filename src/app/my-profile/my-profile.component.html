@@ -1,0 +1,231 @@
+<section [ngClass]="{'leftSideMenu':app.Open==false}">
+  <div class="txt">
+    <ion-label class="head">My Profile</ion-label>
+    <div class="txt-btn">
+      <div class="deleteBtn">
+        <ion-label>Delete</ion-label>
+      </div>
+      <div class="saveBtn">
+        <ion-label>Save</ion-label>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+    <div class="addTo-In">
+
+      <div class="camera">
+        <input type="file" style="display: none;" (change)="handleImageSelect($event)" #imageInput>
+        <img src="{{imageUrl==undefined ? cameraimageUrl : imageUrl}}" alt="" (click)="handleImageClick()">
+      </div>
+
+      <div class="details">
+        <div class="details_1">
+          <ion-label class="detailName">Personal Info</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Name</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Date of Birth</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Employee ID</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Gender</ion-label>
+            </div>
+            <div class="value gender">
+              <div class="gender1" (click)="PickGender('Male')">
+                <img [src]="Gender === 'Male' ? '../../assets/img/checked.svg' : '../../assets/img/unchecked.svg'"
+                  alt="">
+                <ion-label>Male</ion-label>
+              </div>
+              <div class="gender1" (click)="PickGender('Female')">
+                <img [src]="Gender === 'Female' ? '../../assets/img/checked.svg' : '../../assets/img/unchecked.svg'"
+                  alt="">
+                <ion-label>Female</ion-label>
+              </div>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Role</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="details_1">
+          <ion-label class="detailName">Account Info</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Bank Account No</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>IFSC Code</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Branch Name</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>PAN no</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>IFSC Code</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="details two">
+        <div class="details_1">
+          <ion-label class="detailName">Address</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Street Address</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>City</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>State</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Country</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Zip Code</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="details_1">
+          <ion-label class="detailName">Contact Info</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Email</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Contact no</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Website</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- <div class="details_1">
+          <ion-label class="detailName">Pay Roll</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Current Pay</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+
+  </div>
+
+</section>

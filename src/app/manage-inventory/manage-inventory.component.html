@@ -1,0 +1,126 @@
+<section class="Fullpage">
+  <ion-label class="head">Manage Inventory</ion-label><br><br>
+  <div class="container">
+    <!-- <h1 id="page-title" class="text-center">Making cards...</h1> -->
+    <div class="row" id="portfolio">
+
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card" id="storageCard">
+          <div class="card-title">Inventory</div>
+          <div class="card-icon">
+            <!-- <i class="material-icons">storage</i> -->
+          </div>
+          <div class="card-data">85 +</div>
+          <hr>
+          <div class="card-hint">
+            <!-- <i class="material-icons">warning</i> -->
+            <a>See Inventories</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card" id="loveCard">
+          <div class="card-title">Categories</div>
+          <div class="card-icon">
+            <!-- <i class="material-icons">favorite</i> -->
+          </div>
+          <div class="card-data">10 +</div>
+          <hr>
+          <div class="card-hint">
+            <!-- <i class="material-icons">share</i> -->
+            <a (click)="CategoryList==false ? CategoryList=true : CategoryList=false">See categories</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card" id="storageCard">
+          <div class="card-title">Manufacturer</div>
+          <div class="card-icon">
+            <!-- <i class="material-icons">storage</i> -->
+          </div>
+          <div class="card-data">5 +</div>
+          <hr>
+          <div class="card-hint">
+            <!-- <i class="material-icons">warning</i> -->
+            <a>See Manufacturer</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="Cat-Pop" *ngIf="CategoryList">
+    <!-- <div style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;" (click)="CategoryList=false"></div> -->
+    <div class="side-nav-categories CategoryPop">
+      <div class="title"><strong>Category</strong></div>
+      <span class="addCategory">+</span>
+      <ul id="category-tabs">
+        <li><a href="javascript:void" class="main-category"> Tablets
+            <!-- <i class="fa fa-minus"></i> -->
+          </a>
+          <!-- <ul class="sub-category-tabs">
+            <li><a href="javascript:void">HTML</a></li>
+            <li><a href="javascript:void">CSS</a></li>
+            <li><a href="javascript:void">SCSS</a></li>
+          </ul> -->
+        </li>
+      </ul>
+      <ul id="category-tabs">
+        <li><a href="javascript:void" class="main-category">Injection
+            <!-- <i class="fa fa-minus"></i> -->
+          </a>
+          <!-- <ul class="sub-category-tabs">
+            <li><a href="javascript:void">Javascript</a></li>
+            <li><a href="javascript:void">jQuery</a></li>
+            <li><a href="javascript:void">Angular JS</a></li>
+          </ul> -->
+        </li>
+      </ul>
+      <ul id="category-tabs">
+        <li><a href="javascript:void" class="main-category">Capsules
+            <!-- <i class="fa fa-minus"></i> -->
+          </a>
+          <!-- <ul class="sub-category-tabs">
+            <li><a href="javascript:void">C#</a></li>
+            <li><a href="javascript:void">PHP</a></li>
+            <li><a href="javascript:void">ASP.Net</a></li>
+          </ul> -->
+        </li>
+      </ul>
+
+      <!-- <ul id="category-tabs">
+        <li><a href="javascript:void" class="main-category">Ointments -->
+      <!-- <i class="fa fa-minus"></i> -->
+      <!-- </a> -->
+      <!-- <ul class="sub-category-tabs">
+            <li><a href="javascript:void">C#</a></li>
+            <li><a href="javascript:void">PHP</a></li>
+            <li><a href="javascript:void">ASP.Net</a></li>
+          </ul> -->
+      <!-- </li>
+      </ul> -->
+
+      <ul id="category-tabs">
+        <li><a href="javascript:void" class="main-category">Syrups
+            <!-- <i class="fa fa-minus"></i> -->
+          </a>
+          <!-- <ul class="sub-category-tabs">
+            <li><a href="javascript:void">C#</a></li>
+            <li><a href="javascript:void">PHP</a></li>
+            <li><a href="javascript:void">ASP.Net</a></li>
+          </ul> -->
+        </li>
+      </ul>
+
+
+
+    </div>
+
+  </div>
+
+</section>

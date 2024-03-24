@@ -1,0 +1,156 @@
+<section [ngClass]="{'leftSideMenu':app.Open==false}">
+  <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+    <div class="addTo-In">
+      <ion-label class="title">Organization</ion-label>
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Company Name</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Email</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Contact No</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Address</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>City</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Country</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Zip Code</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Website</ion-label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <ion-label>Company Logo</ion-label>
+        </div>
+        <div class="value">
+          <ion-input type="file"></ion-input>
+        </div>
+      </div>
+
+      <div class="addToBtn">
+        <div class="submit">
+          <ion-label>Update</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="addTo-In Alert">
+      <ion-label class="title">Alert Setting</ion-label>
+      <div class="inputs AlertInput" *ngFor="let item of AlertSetting;let i = index">
+        <label class="square-radio">
+          <img src="{{selectedCheckbox == item.id ? item.checkedImg : item.uncheckedImg}}" alt=""
+            (click)="selectBox(item.id)">
+        </label>
+        <div class="variable AlertVariable" [ngClass]="{'selectVariable':selectedCheckbox == item.id}">
+          <ion-label>{{item.name}}</ion-label>
+        </div>
+        <div class="value" [ngClass]="{'selectValue':selectedCheckbox == item.id}">
+          <ion-input [readonly]="selectedCheckbox !== item.id" [(ngModel)]="inputValue" style="color: white;"></ion-input>
+        </div>
+      </div>
+
+      <!-- <div class="inputs">
+        <div class="variable">
+          <label class="square-radio">
+            <input type="radio" name="radioGroup">
+            Week
+          </label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+
+      <div class="inputs">
+        <div class="variable">
+          <label class="square-radio">
+            <input type="radio" name="radioGroup">
+            Month
+          </label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="variable">
+          <label class="square-radio">
+            <input type="radio" name="radioGroup">
+            Customize
+          </label>
+        </div>
+        <div class="value">
+          <ion-input></ion-input>
+        </div>
+      </div> -->
+
+      <div class="addToBtn Save">
+        <div class="submit">
+          <ion-label>Save</ion-label>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>

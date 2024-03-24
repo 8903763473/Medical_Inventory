@@ -1,0 +1,17 @@
+.active,
+.active1,
+.active2,
+.active3 {
+    border-right: 3px dotted #007AFF !important;
+    color: var(--primary);
+    background: #FFFFFF;
+    border-color: var(--primary);
+}
+
+.SearchForm {
+    display: flex;
+    margin-left: 14px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+}
