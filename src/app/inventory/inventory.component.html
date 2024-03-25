@@ -11,10 +11,14 @@
             <ion-label>Category</ion-label>
           </div>
           <div class="value">
-            <select (change)="SelectCategory($event)">
-              <option value="" selected>Select</option>
-              <option *ngFor="let item of categories" [value]="item.category">
-                {{item.category}}
+            <label style="position: absolute;
+            z-index: 10;
+            color: silver;
+            font-size: 13px;
+            margin: 4px;" *ngIf="Category==undefined">Select</label>
+            <select (change)="SelectCategory($event)" [(ngModel)]="Category" style="position: relative;">
+              <option *ngFor="let item of categories" [value]="item?.category">
+                {{item?.category}}
               </option>
             </select>
           </div>
@@ -25,11 +29,11 @@
             <ion-label>Product Name</ion-label>
           </div>
           <div class="value">
-            <select (change)="SelectProduct($event)" *ngIf="ProductByCategory.length!=0">
-              <option *ngFor="let item of ProductByCategory" value="{{item.productName}}">
-                {{item.productName}}</option>
+            <select (change)="SelectProduct($event)" *ngIf="ProductByCategory?.length!=0" [(ngModel)]="ProductName">
+              <option *ngFor="let item of ProductByCategory" [value]="item?.productName">
+                {{item?.productName}}</option>
             </select>
-            <ion-input readonly *ngIf="ProductByCategory.length==0"></ion-input>
+            <ion-input readonly *ngIf="ProductByCategory?.length==0" placeholder="Select"></ion-input>
           </div>
         </div>
 
@@ -38,9 +42,12 @@
             <ion-label>Manufacturer</ion-label>
           </div>
           <div class="value">
-            <div class="value-in">
-              <ion-label>{{ManufacturerLists[0]?.manufacturer}}</ion-label>
-            </div>
+            <select *ngIf="allManufacturers?.length != 0" [(ngModel)]="selectedManufacturer">
+              <option *ngFor="let item of allManufacturers;let i = index" [value]="item.manufacturers">
+                {{ item.manufacturers }}
+              </option>
+            </select>
+            <ion-input readonly *ngIf="allManufacturers?.length==0" placeholder="Select"></ion-input>
           </div>
         </div>
 
@@ -49,9 +56,12 @@
             <ion-label>Unit</ion-label>
           </div>
           <div class="value">
-            <div class="value-in">
-              <ion-label>{{ManufacturerLists[0]?.size}}</ion-label>
-            </div>
+            <select *ngIf="allSizes?.length != 0" [(ngModel)]="selectedSize">
+              <option *ngFor="let item of allSizes;let i = index" [value]="item.size">
+                {{ item.size }}
+              </option>
+            </select>
+            <ion-input readonly *ngIf="allSizes?.length==0" placeholder="Select"></ion-input>
           </div>
         </div>
 
@@ -60,7 +70,7 @@
             <ion-label>Batch Number</ion-label>
           </div>
           <div class="value">
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="BatchNumber" placeholder="Batch Number"></ion-input>
           </div>
         </div>
 
@@ -69,7 +79,19 @@
             <ion-label>Expiry Date</ion-label>
           </div>
           <div class="value">
-            <ion-input></ion-input>
+            <ion-input value="{{ExpiryDate}}" readonly placeholder="Expiry Date">
+              <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
+                margin-top: 4px;" (click)="ExpiryDatePopup=true"></ion-icon>
+            </ion-input>
+            <div *ngIf="ExpiryDatePopup" class="ExpiryPicker">
+              <ion-datetime (ionChange)="ExpiryPicker($event)" [(ngModel)]="ExpiryDate" [format]="'YYYY-MM-D'"
+                presentation="date" [min]="minDate">
+              </ion-datetime>
+              <div class="ExpiryPickerButton">
+                <ion-button color="danger" (click)="PickerCancelButton('Expiry')">Cancel</ion-button>
+                <ion-button color="primary" (click)="ExpiryDatePopup = false">OK</ion-button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -78,7 +100,40 @@
             <ion-label>Manufacture Date</ion-label>
           </div>
           <div class="value">
-            <ion-input></ion-input>
+            <ion-input value="{{ManufactureDate}}" readonly placeholder="Manufacture Date">
+              <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
+                margin-top: 4px;" (click)="ManufactureDatePopup=true"></ion-icon>
+            </ion-input>
+            <div *ngIf="ManufactureDatePopup" class="ExpiryPicker">
+              <ion-datetime (ionChange)="ManufacturePicker($event)" [(ngModel)]="ManufactureDate" [format]="'YYYY-MM-D'"
+                presentation="date" [max]="maxDate">
+              </ion-datetime>
+              <div class="ExpiryPickerButton">
+                <ion-button color="danger" (click)="PickerCancelButton('Manufacture')">Cancel</ion-button>
+                <ion-button color="primary" (click)="ManufactureDatePopup = false">OK</ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="inputs">
+          <div class="variable">
+            <ion-label>Purchase Date</ion-label>
+          </div>
+          <div class="value">
+            <ion-input value="{{purchaseDate}}" readonly placeholder="Purchase Date">
+              <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
+                margin-top: 4px;" (click)="purchaseDatePopup=true"></ion-icon>
+            </ion-input>
+            <div *ngIf="purchaseDatePopup" class="ExpiryPicker">
+              <ion-datetime (ionChange)="purchasePicker($event)" [(ngModel)]="purchaseDate" [format]="'YYYY-MM-D'"
+                presentation="date" [max]="maxDate">
+              </ion-datetime>
+              <div class="ExpiryPickerButton">
+                <ion-button color="danger" (click)="PickerCancelButton('Purchase')">Cancel</ion-button>
+                <ion-button color="primary" (click)="purchaseDatePopup = false">OK</ion-button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -87,7 +142,7 @@
             <ion-label>Quantity</ion-label>
           </div>
           <div class="value">
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="Quantity" placeholder="Quantity"></ion-input>
           </div>
         </div>
 
@@ -96,7 +151,13 @@
             <ion-label>Unit Price</ion-label>
           </div>
           <div class="value">
-            <ion-input></ion-input>
+            <!-- <ion-input [(ngModel)]="UnitPrice" placeholder="UnitPrice"></ion-input> -->
+            <select style="position: relative;">
+              <option selected disabled>Select</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+            </select>
           </div>
         </div>
 
@@ -110,16 +171,16 @@
         </div> -->
 
         <div class="addToBtn">
-          <div class="reset">
+          <div class="reset" (click)="Reset()">
             <ion-label>Reset</ion-label>
           </div>
-          <div class="submit">
+          <div class="submit" (click)="AddInventorySubmit()">
             <ion-label>Submit</ion-label>
           </div>
         </div>
       </div>
 
-      <div class="med_img">
+      <!-- <div class="med_img">
         <img src="../../assets/img/medicine.png" alt="">
       </div>
 
@@ -130,14 +191,14 @@
             <span class="span2">ID : MD-0123</span>
           </div>
           <div class="top-right">
-            <ion-label>Quantity <span> | </span> 102</ion-label>
+            <ion-label>Qty <span> | </span> 102</ion-label>
           </div>
         </div><br><br>
 
 
         <div class="last-In detail">
           <ion-label class="lab">Reddy's Laboratories LTD</ion-label>
-          <ion-label class="man">Manufacturer : <span>22:01:2023</span></ion-label>
+          <ion-label class="man">Manufacturer : <span>Reddy's Laboratories</span></ion-label>
           <ion-label class="exp">Expiry : <span>22:01:2024</span></ion-label>
           <ion-label class="type">CAPSULE</ion-label>
           <br>
@@ -147,7 +208,7 @@
           </div>
         </div>
         <div class="last-In"></div>
-      </div>
+      </div> -->
 
     </div><br>
 
@@ -228,6 +289,22 @@
 
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <div class="center AlertPopup" *ngIf="AlertPop">
+    <div class="notification -danger">
+      <div class="notification__content">
+        <i class="notification__icon {{AlertPopData[0]?.icon}}" [style.color]="AlertPopData[0]?.color"></i>
+        <h3 class="notification__title">Alert !</h3>
+        <p class="notification__text">
+          {{AlertPopData[0]?.message}}
+        </p>
+      </div>
+      <button class="notification__button" [style.background]="AlertPopData[0]?.background" style="color:white"
+        (click)="AlertPop=false">
+        Dismiss
+      </button>
     </div>
   </div>
 

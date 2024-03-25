@@ -1,0 +1,279 @@
+section {
+    width: calc(100% - 230px);
+    margin-left: 230px;
+    height: 100%;
+    padding: 20px;
+
+    .head {
+        color: #007AFF !important;
+        font-family: Poppins;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-align: left;
+        margin-left: 10px;
+        text-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        position: relative;
+    }
+
+    .Add {
+        position: absolute;
+        right: 20px;
+        float: right;
+        font-size: 13px;
+        font-family: inherit;
+        min-height: 22px;
+        top: 8px;
+    }
+
+
+    @media only screen and (min-width: 320px) and (max-width: 991.98px) {
+        .main-holder {
+            margin-top: 10%;
+            width: 70%;
+            border-radius: 15px;
+            // box-shadow: 0 24px 45px -15px rgba(161, 159, 219, 0.41);
+            background-color: #ffffff;
+            padding-top: 60px;
+            padding-bottom: 30px;
+        }
+
+        .card-img {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card-text {
+            font-family: Poppins;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #2b417b;
+        }
+
+        .category {
+            width: 30%;
+            margin-left: 1%;
+            margin-right: 1%;
+            margin-bottom: 24px;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: 0 8px 15px -10px #8fbcff;
+            padding-bottom: 15px;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        .main-holder {
+            margin-top: 0%;
+            padding-top: 10px;
+            width: 100%;
+            border-radius: 15px;
+            // box-shadow: 0 24px 45px -15px rgba(161, 159, 219, 0.41);
+            background-color: #ffffff;
+            padding-bottom: 30px;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .card-img {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card-text {
+            font-family: Poppins;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #2b417b;
+        }
+
+        .category {
+            width: 28%;
+            margin-left: 2.6%;
+            margin-right: 2.6%;
+            margin-bottom: 24px;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: 0 8px 15px -10px #8fbcff;
+            padding-bottom: 15px;
+        }
+    }
+
+    body {
+        background-color: #f2f0ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .serach-input {
+        border: none;
+        border-bottom: 1px solid #d0cde2;
+        margin-bottom: 50px;
+    }
+
+
+    .category-header {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 5px;
+        max-height: 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .category-header-1 {
+        background-color: #a68fff;
+    }
+
+    .category-header-2 {
+        background-color: #8fbcff;
+    }
+
+
+    .category-header-3 {
+        background-color: #ff8faa;
+    }
+
+    .category-header-4 {
+        background-color: #a6cd74;
+    }
+
+    .category-header-5 {
+        background-color: #fcc18a;
+    }
+
+    .category-header-6 {
+        background-color: #6edddd;
+    }
+
+
+    .category-1 {
+        border-color: #a68fff;
+    }
+
+    .category-2 {
+        border-color: #8fbcff;
+    }
+
+
+    .category-3 {
+        border-color: #ff8faa;
+    }
+
+    .category-4 {
+        border-color: #a6cd74;
+    }
+
+    .category-5 {
+        border-color: #fcc18a;
+    }
+
+    .category-6 {
+        border-color: #6edddd;
+    }
+
+    .form-popup-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: calc(100% - 230px);
+        left: 230px;
+
+        .form-group {
+            margin-top: 16px;
+
+            label {
+                color: #000000;
+                font-weight: 600;
+                font-size: 12px;
+            }
+        }
+
+        & {
+            position: fixed;
+            background-color: rgb(0 0 0 / 22%);
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            overflow-y: auto;
+            z-index: 10000;
+
+            &.is-visible {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.3s 0s, visibility 0s 0s;
+            }
+
+            &:before {
+                content: '';
+                background-color: #fff;
+                opacity: .25;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    .form-container {
+        background-color: #ffffff;
+        border-radius: 2px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding: 40px;
+        color: #fff;
+        height: auto;
+
+        .close-button {
+            background: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: solid 1px #fff;
+            border-radius: 8px;
+        }
+    }
+}

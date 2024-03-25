@@ -105,6 +105,7 @@ section {
                         outline: none;
                         text-align: left;
                         padding: 0 3px !important;
+                        font-size: 13px;
                     }
 
                     .value-in {
@@ -121,6 +122,7 @@ section {
                             justify-content: flex-start;
                             margin-left: 4px;
                             height: 100%;
+                            font-size: 13px;
                         }
                     }
 
@@ -135,11 +137,12 @@ section {
                         border: 1px solid #ccc;
                         border-radius: 5px;
                         outline: none;
+                        font-size: 13px;
                     }
 
                     select option {
                         padding: 8px;
-                        font-size: 16px;
+                        font-size: 13px;
                     }
 
                     select option:checked {
@@ -147,7 +150,37 @@ section {
                         color: #fff;
                     }
 
+                    .ExpiryPicker {
+                        width: calc(100% - 230px);
+                        height: 100%;
+                        position: fixed;
+                        top: 0;
+                        left: 230px;
+                        z-index: 100;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        background: #00000057;
 
+                        ion-datetime {
+                            width: 345px;
+                        }
+
+                        .ExpiryPickerButton {
+                            width: 345px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            margin-top: 1px;
+                            background: white;
+
+                            ion-button {
+                                width: 62px;
+                                font-size: 10px;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -214,7 +247,7 @@ section {
 
 
         .last {
-            width: 33%;
+            width: 26%;
             height: 100%;
 
             .last-In {
@@ -228,7 +261,7 @@ section {
                     text-align: left;
                     color: #007AFF;
                     font-family: Poppins;
-                    font-size: 34px;
+                    font-size: 20px;
                     font-style: normal;
                     font-weight: 700;
                     line-height: 35px;
@@ -245,7 +278,7 @@ section {
                     .span2 {
                         color: #4F4F4F;
                         font-family: Poppins;
-                        font-size: 17px;
+                        font-size: 14px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: normal;
@@ -261,7 +294,7 @@ section {
                         color: #FFF;
                         text-align: center;
                         font-family: Poppins;
-                        font-size: 17px;
+                        font-size: 9px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: normal;
@@ -271,7 +304,7 @@ section {
                 .lab {
                     color: #000;
                     font-family: Poppins;
-                    font-size: 27px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 600;
                     line-height: normal;
@@ -316,7 +349,7 @@ section {
                 .type {
                     color: #C1C1C1;
                     font-family: Poppins;
-                    font-size: 27px;
+                    font-size: 18px;
                     font-style: normal;
                     font-weight: 600;
                     line-height: normal;
@@ -331,13 +364,13 @@ section {
                     border-radius: 5px;
                     text-align: left;
                     padding: 0px 15px;
-                    height: 90px;
+                    height: auto;
 
                     .dollar {
                         color: #FFF;
                         text-align: right;
                         font-family: Poppins;
-                        font-size: 77px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 600;
                         line-height: normal;
@@ -346,7 +379,7 @@ section {
                     .txt {
                         color: #FFF;
                         font-family: Poppins;
-                        font-size: 26px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 600;
                         line-height: normal;

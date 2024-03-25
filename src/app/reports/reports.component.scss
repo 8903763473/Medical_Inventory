@@ -15,60 +15,6 @@ section {
         margin-left: 10px;
     }
 
-    // .top {
-    //     width: 98%;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-    //     margin: 4px 10px 4px 10px;
-
-    //     .title {
-    //         color: #007AFF;
-    //         text-align: center;
-    //         font-family: Poppins;
-    //         font-size: 44px;
-    //         font-style: normal;
-    //         font-weight: 700;
-    //         line-height: 40px;
-    //         margin-left: 15px;
-    //     }
-
-    //     .rightSide {
-    //         width: auto;
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //         gap: 7px;
-
-    //         .buttons {
-    //             width: 100px;
-    //             border: 1px solid #C2C2C2;
-    //             color: #C2C2C2;
-    //             text-align: center;
-    //             font-family: Poppins;
-    //             font-size: 18px;
-    //             font-style: normal;
-    //             font-weight: 400;
-    //             line-height: normal;
-    //             border-radius: 6px
-    //         }
-
-    //         .selectedButton,
-    //         .selectedButton1,
-    //         .selectedButton2 {
-    //             color: #FFF;
-    //             text-align: center;
-    //             font-family: Poppins;
-    //             font-size: 18px;
-    //             font-style: normal;
-    //             font-weight: 400;
-    //             line-height: normal;
-    //             background: #007aff;
-    //             border-radius: 6px
-    //         }
-    //     }
-    // }
-
     .Alltables {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
@@ -167,3 +113,4 @@ section {
         }
     }
 }
+

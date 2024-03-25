@@ -1,4 +1,10 @@
-<section [ngClass]="{'leftSideMenu':app.Open==false}">
+<section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="OrgAlert" class="fullpage">
+
+  <div style="width: 100px;display: flex;align-items: center;justify-content: flex-start;gap: 5px;color: #007aff;">
+    <ion-icon name="arrow-back-outline" (click)="OrgAlert=false" style="font-size: 22px;
+  color: #007aff;cursor: pointer;"></ion-icon>Back
+  </div>
+
   <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
   background-color: #ffffff !important;">
     <div class="addTo-In">
@@ -11,7 +17,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
       <div class="inputs">
         <div class="variable">
           <ion-label>Email</ion-label>
@@ -20,8 +25,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
-
       <div class="inputs">
         <div class="variable">
           <ion-label>Contact No</ion-label>
@@ -30,7 +33,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
       <div class="inputs">
         <div class="variable">
           <ion-label>Address</ion-label>
@@ -39,7 +41,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
       <div class="inputs">
         <div class="variable">
           <ion-label>City</ion-label>
@@ -48,7 +49,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
       <div class="inputs">
         <div class="variable">
           <ion-label>Country</ion-label>
@@ -57,7 +57,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
       <div class="inputs">
         <div class="variable">
           <ion-label>Zip Code</ion-label>
@@ -66,7 +65,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
       <div class="inputs">
         <div class="variable">
           <ion-label>Website</ion-label>
@@ -75,7 +73,6 @@
           <ion-input></ion-input>
         </div>
       </div>
-
       <div class="inputs">
         <div class="variable">
           <ion-label>Company Logo</ion-label>
@@ -84,14 +81,12 @@
           <ion-input type="file"></ion-input>
         </div>
       </div>
-
       <div class="addToBtn">
         <div class="submit">
           <ion-label>Update</ion-label>
         </div>
       </div>
     </div>
-
     <div class="addTo-In Alert">
       <ion-label class="title">Alert Setting</ion-label>
       <div class="inputs AlertInput" *ngFor="let item of AlertSetting;let i = index">
@@ -103,54 +98,183 @@
           <ion-label>{{item.name}}</ion-label>
         </div>
         <div class="value" [ngClass]="{'selectValue':selectedCheckbox == item.id}">
-          <ion-input [readonly]="selectedCheckbox !== item.id" [(ngModel)]="inputValue" style="color: white;"></ion-input>
+          <ion-input [readonly]="selectedCheckbox !== item.id" [(ngModel)]="inputValue"
+            style="color: white;"></ion-input>
         </div>
       </div>
-
-      <!-- <div class="inputs">
-        <div class="variable">
-          <label class="square-radio">
-            <input type="radio" name="radioGroup">
-            Week
-          </label>
-        </div>
-        <div class="value">
-          <ion-input></ion-input>
-        </div>
-      </div>
-
-
-      <div class="inputs">
-        <div class="variable">
-          <label class="square-radio">
-            <input type="radio" name="radioGroup">
-            Month
-          </label>
-        </div>
-        <div class="value">
-          <ion-input></ion-input>
-        </div>
-      </div>
-
-      <div class="inputs">
-        <div class="variable">
-          <label class="square-radio">
-            <input type="radio" name="radioGroup">
-            Customize
-          </label>
-        </div>
-        <div class="value">
-          <ion-input></ion-input>
-        </div>
-      </div> -->
-
       <div class="addToBtn Save">
         <div class="submit">
           <ion-label>Save</ion-label>
         </div>
       </div>
     </div>
-
-
   </div>
+</section>
+
+<section class="fullpage1" *ngIf="!OrgAlert">
+  <div class="grey-bg container-fluid" style="width: 100%;height: 100%;">
+    <section id="minimal-statistics">
+      <div class="row">
+        <div class="col-12 mt-3 mb-1">
+          <h4 class="head">Settings</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12" (click)="OrgAlert=true">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
+                    <!-- <img src="../../assets/img/notification_type.png" alt="" style="width: 70px;"> -->
+                    <ion-icon name="business-outline" style="font-size: 50px;
+                    color: black;"></ion-icon>
+                  </div>
+                  <div class="media-body text-right" style="text-align: right;
+                width: 100%;">
+                    <!-- <h3>278</h3> -->
+                    <span>Organization & Alert</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-xl-3 col-sm-6 col-12" (click)="notifyType=true">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <img src="../../assets/img/notification_type.png" alt="" style="width: 70px;">
+                  </div>
+                  <div class="media-body text-right" style="text-align: right;
+                width: 100%;">
+                    <span>Get Notifications on</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-xl-3 col-sm-6 col-12" (click)="notifyType=true">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
+                    <img src="../../assets/img/notification.png" alt="" style="width: 80px;">
+                  </div>
+                  <div class="media-body text-right" style="text-align: right;
+                width: 100%;">
+                    <!-- <h3>156</h3> -->
+                    <span>Notification Type</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12" (click)="Schedule=true">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
+                    <img src="../../assets/img/notification_schedule.png" alt="" style="width: 70px;">
+                  </div>
+                  <div class="media-body text-right" style="text-align: right;
+                width: 100%;">
+                    <!-- <h3>64.89 %</h3> -->
+                    <span>Notification Schedule</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div *ngIf="notifyType" class="Social">
+    <div style="width: 100%;height: 100%;position: fixed;top: 0;" (click)="notifyType=false"></div>
+    <div class="top-msg">
+      <ion-label>Choose one to get message</ion-label>
+    </div>
+    <div class="social-icon-list">
+      <div class="icon-group">
+        <ion-icon name="chatbubble" style="color: #3b5998;"></ion-icon>
+        <span class="icon-text">
+          SMS
+        </span>
+        <span class="icon-bg"></span>
+      </div>
+      <div class="icon-group">
+        <ion-icon name="mail" style="color: #1da1f2;"></ion-icon>
+        <span class="icon-text">
+          Mail
+        </span>
+        <span class="icon-bg"></span>
+      </div>
+      <div class="icon-group">
+        <ion-icon name="logo-whatsapp" style="color: #25d366;"></ion-icon>
+        <span class="icon-text">
+          whatsapp
+        </span>
+        <span class="icon-bg"></span>
+      </div>
+      <!-- <div class="icon-group">
+        <i class="fab fa-youtube"></i>
+        <span class="icon-text">
+          Youtube
+        </span>
+        <span class="icon-bg"></span>
+      </div> -->
+    </div>
+  </div>
+
+
+  <div class="form-popup-bg" *ngIf="Schedule">
+    <div (click)="Schedule=false" style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;">
+    </div>
+    <div class="form-container">
+      <button id="btnCloseForm" class="close-button" (click)="Schedule=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">Schedule Notification</h1>
+      <form action="">
+        <div class="form-group">
+          <label for="">Select Schedule</label>
+          <!-- <input type="text" class="form-control" placeholder="new stage" style="font-size: 10px;" /> -->
+          <select name="" id="" style="width: 100%;
+          border: 1px solid #cfcfcf;
+          border-radius: 4px; color: black;">
+            <option value="1 week" style="color: black;">1 week</option>
+            <option value="1 Month" style="color: black;">1 Month</option>
+            <option value="3 Month" style="color: black;">3 Month</option>
+            <option value="6 Month" style="color: black;">6 Month</option>
+            <option value="1 Year" style="color: black;">1 Year</option>
+          </select>
+        </div>
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;" (click)="Schedule=false">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
 </section>

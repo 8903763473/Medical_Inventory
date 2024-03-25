@@ -1,0 +1,133 @@
+<div class="container">
+	<header class="header">
+		<ion-label class="head">Prescription</ion-label>
+		<!-- <h1 id="title" class="text-center">Survey Form</h1>
+		<p id="description" class="text-center">
+			Thank you for taking the time to help us improve the platform
+		</p> -->
+		<ion-label class="PID">Patient ID : MI-001</ion-label>
+	</header>
+	<div class="form-wrap">
+		<div class="Prescription-Top">
+			<img src="../../assets/img/User.png" alt="">
+			<div class="Deatils">
+				<div class="Doctor-Detail">
+					<div>
+						<ion-label style="font-weight: bold;color: #009cff;">Doctor Name : &nbsp;</ion-label>
+						<ion-label>Dr .Ebenesar</ion-label>
+					</div>
+					<div>
+						<ion-label style="font-weight: bold;color: #009cff;">Mobile Number : &nbsp;</ion-label>
+						<ion-label>89037 63473</ion-label>
+					</div>
+				</div>
+				<div class="Doctor-Address">
+					<div>
+						<ion-label style="font-weight: bold;color: #009cff;">Address : &nbsp;</ion-label>
+						<ion-label>42/2 , North Street , Vannimanagaram , Trichendur, Thoothukudi - 628205</ion-label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<form id="survey-form" style="margin-top: 45px;">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label id="name-label" for="name">Patient Name</label>
+						<input type="text" name="name" id="name" placeholder="Enter name" class="form-control" required style="margin-top: 5px;">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label id="email-label" for="contact">Contact</label>
+						<input type="email" name="email" id="email" placeholder="Enter contact" class="form-control"
+							required style="margin-top: 5px;">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label id="number-label" for="number">Age <small>(optional)</small></label>
+						<input type="number" name="age" id="number" class="form-control" placeholder="Enter Age" style="margin-top: 5px;">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>current role</label>
+						<select id="dropdown" name="role" class="form-control" required style="margin-top: 5px;">
+							<option disabled selected value>Select</option>
+							<option value="student">Student</option>
+							<option value="job">Full Time Job</option>
+							<option value="learner">Full Time Learner</option>
+							<option value="preferNo">Prefer not to say</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Patient type ?</label><br>
+						<div style="width: 100%;display: flex;gap: 10px;">
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="customRadioInline1" value="Definitely" name="customRadioInline1"
+									class="custom-control-input" checked="">
+								<label class="custom-control-label" for="customRadioInline1">Critical</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="customRadioInline2" value="Maybe" name="customRadioInline1"
+									class="custom-control-input">
+								<label class="custom-control-label" for="customRadioInline2">Normal</label>
+							</div>
+							<!-- <div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="customRadioInline3" value="Not sure" name="customRadioInline1"
+									class="custom-control-input">
+								<label class="custom-control-label" for="customRadioInline3">Nothing to worry</label>
+							</div> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="col-md-6">
+					<div class="form-group">
+						<label>This survey useful yes or no?</label>
+						<div class="custom-control custom-checkbox custom-control-inline">
+							<input type="checkbox" class="custom-control-input" name="yes" value="yes" id="yes"
+								checked="">
+							<label class="custom-control-label" for="yes">Yes</label>
+						</div>
+						<div class="custom-control custom-checkbox custom-control-inline">
+							<input type="checkbox" class="custom-control-input" name="no" value="no" id="no">
+							<label class="custom-control-label" for="no">No</label>
+						</div>
+					</div>
+				</div> -->
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label>Leave Message</label>
+						<textarea id="comments" class="form-control" name="comment"
+							placeholder="Enter your comment here..." style="margin-top: 5px;"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<button type="submit" id="submit" class="btn btn-primary btn-block">Submit</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>

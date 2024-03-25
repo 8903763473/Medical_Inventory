@@ -37,9 +37,13 @@ export class SettingsComponent {
     },
   ]
 
+  notifyType: boolean = false
   selectedCheckbox: any
   inputValue: any
+  OrgAlert: boolean = false
+  Schedule: boolean = false
 
+  
   ionViewWillEnter() {
     this.selectedCheckbox = 1
     this.app.ind = 3

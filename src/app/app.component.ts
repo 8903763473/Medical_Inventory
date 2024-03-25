@@ -60,6 +60,7 @@ export class AppComponent {
     }
   ]
 
+  Search: any
   ind: any
   loader: boolean = false
   Open: boolean = false
@@ -77,6 +78,11 @@ export class AppComponent {
     } else {
       this.Open = false
     }
+  }
+
+  change(data: any) {
+    console.log(data);
+
   }
 
   routes(path: any) {

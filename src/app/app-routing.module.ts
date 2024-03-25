@@ -6,7 +6,12 @@ import { ReportsComponent } from './reports/reports.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { ManageInventoryComponent } from './manage-inventory/manage-inventory.component';
-import { InventoryDetailsComponent } from './inventory-details/inventory-details.component';
+import { EditInventoryComponent } from './Edit-inventory/Edit-inventory.component';
+import { EditManufacturerComponent } from './Edit-manufacturer/Edit-manufacturer.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
+import { EditProductNameComponent } from './Edit-product-name/Edit-product-name.component';
+import { EditProductImageComponent } from './Edit-product-image/Edit-product-image.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 const routes: Routes = [
   {
@@ -43,8 +48,28 @@ const routes: Routes = [
     component: ManageInventoryComponent
   },
   {
-    path: 'Inventory-details',
-    component: InventoryDetailsComponent
+    path: 'Edit_Inventory',
+    component: EditInventoryComponent
+  },
+  {
+    path: 'Edit_Manufacturer',
+    component: EditManufacturerComponent
+  },
+  {
+    path: 'prescription',
+    component: PrescriptionComponent
+  },
+  {
+    path: 'Edit_productName',
+    component: EditProductNameComponent
+  },
+  {
+    path: 'Edit_productImage',
+    component: EditProductImageComponent
+  },
+  {
+    path: 'Edit_Categories',
+    component: EditCategoryComponent
   },
 ];
 

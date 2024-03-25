@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-inventory',
@@ -8,278 +9,938 @@ import { AppComponent } from '../app.component';
 })
 export class ManageInventoryComponent {
 
-  constructor(public app: AppComponent) { }
-
   CategoryList: boolean = false
-
+  Addpage: any
+  ActionPopup: boolean = false
 
   localData: any = [
     {
       id: 1,
       category: 'Tablets',
       productName: 'Vitamin C',
-      manufacturer: 'Pharmavit',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'Pharmavit',
+        },
+        {
+          manufacturers: 'HealthCare Innovations Ltd.',
+        },
+        {
+          manufacturers: 'MedTech Solutions Inc.',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ],
     },
     {
       id: 2,
       category: 'Tablets',
       productName: 'MediTech Pro',
-      manufacturer: 'HealthCare Innovations Ltd.',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'Pharmavit',
+        },
+        {
+          manufacturers: 'HealthCare Innovations Ltd.',
+        },
+        {
+          manufacturers: 'MedTech Solutions Inc.',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 3,
       category: 'Tablets',
       productName: 'HealthGuard Plus',
-      manufacturer: 'MedTech Solutions Inc.',
-      size: '3 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'Pharmavit',
+        },
+        {
+          manufacturers: 'HealthCare Innovations Ltd.',
+        },
+        {
+          manufacturers: 'MedTech Solutions Inc.',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 4,
       category: 'Tablets',
       productName: 'VitaTab Ultra',
-      manufacturer: 'LifeScience Pharmaceuticals',
-      size: '2 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'LifeScience Pharmaceuticals',
+        },
+        {
+          manufacturers: 'Wellness Labs',
+        },
+        {
+          manufacturers: 'NatureCure Biotech',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 5,
       category: 'Tablets',
       productName: 'CureCapsule Max',
-      manufacturer: 'Wellness Labs',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'LifeScience Pharmaceuticals',
+        },
+        {
+          manufacturers: 'Wellness Labs',
+        },
+        {
+          manufacturers: 'NatureCure Biotech',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 6,
       category: 'Tablets',
       productName: 'LifePill Essential',
-      manufacturer: 'NatureCure Biotech',
-      size: '2 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'LifeScience Pharmaceuticals',
+        },
+        {
+          manufacturers: 'Wellness Labs',
+        },
+        {
+          manufacturers: 'NatureCure Biotech',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 7,
       category: 'Tablets',
       productName: 'BioVita Gold',
-      manufacturer: 'BioHealth Industries',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'Pharmavit',
+        },
+        {
+          manufacturers: 'NutraLife Technologies',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 8,
       category: 'Tablets',
       productName: 'NutriCaps Advanced',
-      manufacturer: 'NutraLife Technologies',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'Pharmavit',
+        },
+        {
+          manufacturers: 'NutraLife Technologies',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 9,
       category: 'Tablets',
       productName: 'VitalEase',
-      manufacturer: 'MedEase Corp.',
-      size: '3 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'MedEase Corp.',
+        },
+        {
+          manufacturers: 'NutraLife Technologies',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        }
+      ]
     },
     {
       id: 10,
       category: 'Tablets',
       productName: 'PureHealth Tablets',
-      manufacturer: 'HealthPure Labs',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'HealthPure Labs',
+        },
+        {
+          manufacturers: 'NutraLife Technologies',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 11,
       category: 'Tablets',
       productName: 'WellnessWave',
-      manufacturer: 'WaveLife Pharma',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'HealthPure Labs',
+        },
+        {
+          manufacturers: 'WaveLife Pharma',
+        },
+      ],
+      size: [
+        {
+          sizes: '1 Stripe',
+        },
+        {
+          sizes: '2 Stripe',
+        },
+        {
+          sizes: '3 Stripe',
+        },
+      ]
     },
     {
       id: 12,
       category: 'Syrups',
       productName: 'CoughEx',
-      manufacturer: 'PharmaRelief',
-      size: '100ml',
+      manufacturer: [
+        {
+          manufacturers: 'PharmaRelief',
+        },
+        {
+          manufacturers: 'WaveLife Pharma',
+        },
+      ],
+      size: [
+        {
+          sizes: '50 ML',
+        },
+        {
+          sizes: '80 ML',
+        },
+        {
+          sizes: '150 ML',
+        },
+      ]
     },
     {
       id: 13,
       category: 'Syrups',
       productName: 'SootheCough',
-      manufacturer: 'HealthCare Solutions Inc.',
-      size: '200ml',
+      manufacturer: [
+        {
+          manufacturers: 'PharmaRelief',
+        },
+        {
+          manufacturers: 'WaveLife Pharma',
+        },
+      ],
+      size: [
+        {
+          sizes: '50 ML',
+        },
+        {
+          sizes: '80 ML',
+        },
+        {
+          sizes: '150 ML',
+        },
+      ]
     },
     {
       id: 14,
       category: 'Syrups',
       productName: 'FluGone',
-      manufacturer: 'QuickRelief Pharma',
-      size: '180ml',
+      manufacturer: [
+        {
+          manufacturers: 'PharmaRelief',
+        },
+        {
+          manufacturers: 'QuickRelief Pharma',
+        },
+      ],
+      size: [
+        {
+          sizes: '50 ML',
+        },
+        {
+          sizes: '80 ML',
+        },
+        {
+          sizes: '150 ML',
+        },
+      ]
     },
     {
       id: 15,
       category: 'Syrups',
       productName: 'ColdRelief',
-      manufacturer: 'ColdCare Labs',
-      size: '100ml',
+      manufacturer: [
+        {
+          manufacturers: 'PharmaRelief',
+        },
+        {
+          manufacturers: 'QuickRelief Pharma',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '50 ML',
+        },
+        {
+          sizes: '80 ML',
+        },
+        {
+          sizes: '150 ML',
+        },
+      ]
     },
     {
       id: 16,
       category: 'Syrups',
       productName: 'CoughEase',
-      manufacturer: 'BioCure Pharmaceuticals',
-      size: '130ml',
+      manufacturer: [
+        {
+          manufacturers: 'BioCure Pharmaceuticals',
+        },
+        {
+          manufacturers: 'QuickRelief Pharma',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '50 ML',
+        },
+        {
+          sizes: '80 ML',
+        },
+        {
+          sizes: '150 ML',
+        },
+      ]
     },
     {
       id: 17,
       category: 'Syrups',
       productName: 'ThroatSoothe',
-      manufacturer: 'MediCalm Corp.',
-      size: '115ml',
+      manufacturer: [
+        {
+          manufacturers: 'BioCure Pharmaceuticals',
+        },
+        {
+          manufacturers: 'MediCalm Corp.',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '50 ML',
+        },
+        {
+          sizes: '80 ML',
+        },
+        {
+          sizes: '150 ML',
+        },
+      ]
     },
     {
       id: 18,
       category: 'Injections',
       productName: 'HealthBoost Injectable',
-      manufacturer: 'MediLife Pharmaceuticals',
-      size: '1',
+      manufacturer: [
+        {
+          manufacturers: 'BioCure Pharmaceuticals',
+        },
+        {
+          manufacturers: 'MediLife Pharmaceuticals',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 19,
       category: 'Injections',
       productName: 'VitaShot Pro',
-      manufacturer: 'NutraVaccines Inc.',
-      size: '2',
+      manufacturer: [
+        {
+          manufacturers: 'NutraVaccines Inc.',
+        },
+        {
+          manufacturers: 'MediLife Pharmaceuticals',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 20,
       category: 'Injections',
       productName: 'BioInj Advanced',
-      manufacturer: 'BioTech Therapeutics Ltd.',
-      size: '3',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'MediLife Pharmaceuticals',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 21,
       category: 'Injections',
       productName: 'WellnessInject Max',
-      manufacturer: 'HealthGuard Biotech',
-      size: '1',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 22,
       category: 'Injections',
       productName: 'NutriDrip Elite',
-      manufacturer: 'NutriVita Injectables Corp.',
-      size: '1',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 23,
       category: 'Injections',
       productName: 'PureFlow Inject',
-      manufacturer: 'PureHealth Pharma',
-      size: '1',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 24,
       category: 'Injections',
       productName: 'ReviveShot Gold',
-      manufacturer: 'Revive Meds',
-      size: '2',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 25,
       category: 'Injections',
       productName: 'VitalInfuse Plus',
-      manufacturer: 'VitalHealth Injections',
-      size: '1',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 26,
       category: 'Injections',
       productName: 'EcoPure Injections',
-      manufacturer: 'EcoLife Pharma',
-      size: '2',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 27,
       category: 'Injections',
       productName: 'OptiFlow Injector',
-      manufacturer: 'OptiHealth Solutions',
-      size: '1',
+      manufacturer: [
+        {
+          manufacturers: 'OptiHealth Solutions',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '1',
+        },
+        {
+          sizes: '2',
+        }
+      ]
     },
     {
       id: 28,
       category: 'Capsules',
       productName: 'CapsiHealth Omega',
-      manufacturer: 'HealthWell Labs Inc.',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'OptiHealth Solutions',
+        },
+        {
+          manufacturers: 'HealthWell Labs Inc.',
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 29,
       category: 'Capsules',
       productName: 'VitaCaps Pro',
-      manufacturer: 'NutriLife Pharmaceuticals',
-      size: '2 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'NutriLife Pharmaceuticals',
+        },
+        {
+          manufacturers: 'HealthWell Labs Inc.',
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 30,
       category: 'Capsules',
       productName: 'BioCaps Advanced',
-      manufacturer: 'BioTech Solutions Ltd.',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'NutriLife Pharmaceuticals',
+        },
+        {
+          manufacturers: 'HealthWell Labs Inc.',
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 31,
       category: 'Capsules',
       productName: 'WellnessCaps Max',
-      manufacturer: 'HealthGuard Innovations',
-      size: '3 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'NutriLife Pharmaceuticals',
+        },
+        {
+          manufacturers: 'HealthWell Labs Inc.',
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 32,
       category: 'Capsules',
       productName: 'NutraPill Elite',
-      manufacturer: 'NutriVita Corp.',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'NutriLife Pharmaceuticals',
+        },
+        {
+          manufacturers: 'NutriVita Corp.',
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 33,
       category: 'Capsules',
       productName: 'PureLife Capsules',
-      manufacturer: 'PureHealth Labs',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 34,
       category: 'Capsules',
       productName: 'ReviveCaps Gold',
-      manufacturer: 'Revive Pharmaceuticals',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'HealthGuard Biotech',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 35,
       category: 'Capsules',
       productName: 'VitalBlend Caps',
-      manufacturer: 'VitalHealth Inc.',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'BioTech Therapeutics Ltd.',
+        },
+        {
+          manufacturers: 'VitalHealth Inc.',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 36,
       category: 'Capsules',
       productName: 'EcoGreen Capsules',
-      manufacturer: 'EcoLife Wellness',
-      size: '1 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'EcoLife Wellness',
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     },
     {
       id: 37,
       category: 'Capsules',
       productName: 'OptiCaps Plus',
-      manufacturer: 'OptiHealth Solutions',
-      size: '2 Stripe',
+      manufacturer: [
+        {
+          manufacturers: 'OptiHealth Solutions',
+        },
+        {
+          manufacturers: 'VitalHealth Inc.',
+        },
+        {
+          manufacturers: 'ColdCare Labs'
+        }
+      ],
+      size: [
+        {
+          sizes: '5 pieces',
+        },
+        {
+          sizes: '10 pieces',
+        },
+        {
+          sizes: '15 pieces',
+        }
+      ]
     }
   ];
-
-
-
+  constructor(public app: AppComponent, public router: Router) { }
 
   ionViewWillEnter() {
     this.app.ind = 7;
+    this.Addpage = 1
     const localInventory: any = localStorage.getItem('InventoryData');
     console.log(localInventory);
     if (JSON.parse(localInventory) == null) {
@@ -287,6 +948,8 @@ export class ManageInventoryComponent {
     }
   }
 
-
+  See(data: any) {
+    this.router.navigate(['/' + data]);
+  }
 
 }

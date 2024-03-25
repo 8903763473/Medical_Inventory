@@ -1,0 +1,67 @@
+<section>
+  <ion-label class="head">Patient Stages</ion-label>
+  <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
+  <br><br>
+  <div class="main-holder d-flex flex-wrap justify-content-center align-items-center">
+    <div class="d-flex flex-wrap col-12">
+      <div class="category category-1 d-flex flex-column justify-content-center align-item-center">
+        <div class="category-header category-header-2"></div>
+        <img src="../../assets/img/normal.png" class="img-responsive card-img" />
+        <p class="card-text">Normal Category</p>
+      </div>
+
+      <div class="category category-2 d-flex flex-column justify-content-center align-item-center">
+        <div class="category-header category-header-1" style="background-color: #ff8f8f;"></div>
+        <img src="../../assets/img/critical.png" class="img-responsive card-img" />
+        <p class="card-text">Critical Category</p>
+      </div>
+
+      <!-- <div class="category category-3 d-flex flex-column justify-content-center align-item-center">
+        <div class="category-header category-header-3"></div>
+        <img src="https://i.ibb.co/bRMq2Gs/boat.png" class="img-responsive card-img" />
+        <p class="card-text">Boat</p>
+      </div>
+      <div class="category category-4 d-flex flex-column justify-content-center align-item-center">
+        <div class="category-header category-header-4"></div>
+        <img src="https://i.ibb.co/jDpfGwL/cycle.png" class="img-responsive card-img" />
+        <p class="card-text">Bike</p>
+      </div>
+      <div class="category category-5 d-flex flex-column justify-content-center align-item-center">
+        <div class="category-header category-header-5"></div>
+        <img src="https://i.ibb.co/Dzv2vFB/camera.png" class="img-responsive card-img" />
+        <p class="card-text">Ticket</p>
+      </div>
+      <div class="category category-6 d-flex flex-column justify-content-center align-item-center">
+        <div class="category-header category-header-6"></div>
+        <img src="https://i.ibb.co/Dzv2vFB/camera.png" class="img-responsive card-img" />
+        <p class="card-text">Economy</p>
+      </div> -->
+
+    </div>
+  </div>
+
+  <div class="form-popup-bg" *ngIf=ActionPopup>
+    <div (click)="ActionPopup=false"
+      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
+    <div class="form-container">
+      <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">New Stage</h1>
+      <form action="">
+        <div class="form-group">
+          <label for="">New Stage</label>
+          <input type="text" class="form-control" placeholder="new stage" style="font-size: 10px;" />
+        </div>
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</section>

@@ -4,48 +4,102 @@
     <!-- <h1 id="page-title" class="text-center">Making cards...</h1> -->
     <div class="row" id="portfolio">
 
-      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div class="card" id="storageCard">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="height: 110px !important;" (click)="See('Edit_Inventory')">
+        <div class="card" id="storageCard" style="height: 100%;">
           <div class="card-title">Inventory</div>
           <div class="card-icon">
-            <!-- <i class="material-icons">storage</i> -->
+            <img src="../../assets/img/Inventory_white.svg" alt="">
           </div>
-          <div class="card-data">85 +</div>
-          <hr>
+          <div class="card-data">85</div>
+          <!-- <hr>
           <div class="card-hint">
-            <!-- <i class="material-icons">warning</i> -->
-            <a>See Inventories</a>
-          </div>
+            <a (click)="See('Inventory')">See Inventories</a>
+          </div> -->
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div class="card" id="loveCard">
-          <div class="card-title">Categories</div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="height: 110px !important;"
+        (click)="CategoryList==false ? CategoryList=true : CategoryList=false">
+        <div class="card" id="storageCard" style="height: 100%;">
+          <div class="card-title">Type</div>
           <div class="card-icon">
-            <!-- <i class="material-icons">favorite</i> -->
+            <img src="../../assets/img/category.svg" alt="">
           </div>
-          <div class="card-data">10 +</div>
-          <hr>
+          <div class="card-data">4</div>
+          <!-- <hr>
           <div class="card-hint">
-            <!-- <i class="material-icons">share</i> -->
             <a (click)="CategoryList==false ? CategoryList=true : CategoryList=false">See categories</a>
-          </div>
+          </div> -->
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div class="card" id="storageCard">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="height: 110px !important;" (click)="See('Edit_Manufacturer')">
+        <div class="card" id="storageCard" style="height: 100%;">
           <div class="card-title">Manufacturer</div>
           <div class="card-icon">
-            <!-- <i class="material-icons">storage</i> -->
+            <img src="../../assets/img/manufacturer_white.svg" alt="">
           </div>
-          <div class="card-data">5 +</div>
-          <hr>
+          <div class="card-data">25</div>
+          <!-- <hr>
           <div class="card-hint">
-            <!-- <i class="material-icons">warning</i> -->
-            <a>See Manufacturer</a>
+            <a (click)="See('Manufacturer')">See Manufacturer</a>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="height: 110px !important;" (click)="See('Edit_productName')">
+        <div class="card" id="storageCard" style="height: 100%;">
+          <div class="card-title">Product Name</div>
+          <div class="card-icon">
+            <img src="../../assets/img/manufacturer_white.svg" alt="">
           </div>
+          <div class="card-data">100</div>
+          <!-- <hr>
+          <div class="card-hint">
+            <a (click)="See('Manufacturer')">See Manufacturer</a>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="height: 110px !important;" (click)="See('Edit_productImage')">
+        <div class="card" id="storageCard" style="height: 100%;">
+          <div class="card-title">Product Image</div>
+          <div class="card-icon">
+            <img src="../../assets/img/manufacturer_white.svg" alt="">
+          </div>
+          <div class="card-data">100</div>
+          <!-- <hr>
+          <div class="card-hint">
+            <a (click)="See('Manufacturer')">See Manufacturer</a>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="height: 110px !important;" (click)="See('Edit_Categories')">
+        <div class="card" id="storageCard" style="height: 100%;">
+          <div class="card-title">Category</div>
+          <div class="card-icon">
+            <img src="../../assets/img/manufacturer_white.svg" alt="">
+          </div>
+          <div class="card-data">2</div>
+          <!-- <hr>
+          <div class="card-hint">
+            <a (click)="See('Manufacturer')">See Manufacturer</a>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="height: 110px !important;">
+        <div class="card" id="storageCard" style="height: 100%;">
+          <div class="card-title">Unit Price</div>
+          <div class="card-icon">
+            <img src="../../assets/img/Inventory_white.svg" alt="">
+          </div>
+          <div class="card-data">85</div>
+          <!-- <hr>
+          <div class="card-hint">
+            <a (click)="See('Inventory')">See Inventories</a>
+          </div> -->
         </div>
       </div>
 
@@ -55,65 +109,29 @@
 
 
   <div class="Cat-Pop" *ngIf="CategoryList">
-    <!-- <div style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;" (click)="CategoryList=false"></div> -->
+    <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
+      (click)="CategoryList=false"></div>
     <div class="side-nav-categories CategoryPop">
-      <div class="title"><strong>Category</strong></div>
-      <span class="addCategory">+</span>
+      <div class="title"><strong>Type</strong></div>
+      <span class="addCategory" (click)="ActionPopup=true">+</span>
       <ul id="category-tabs">
         <li><a href="javascript:void" class="main-category"> Tablets
-            <!-- <i class="fa fa-minus"></i> -->
           </a>
-          <!-- <ul class="sub-category-tabs">
-            <li><a href="javascript:void">HTML</a></li>
-            <li><a href="javascript:void">CSS</a></li>
-            <li><a href="javascript:void">SCSS</a></li>
-          </ul> -->
         </li>
       </ul>
       <ul id="category-tabs">
         <li><a href="javascript:void" class="main-category">Injection
-            <!-- <i class="fa fa-minus"></i> -->
           </a>
-          <!-- <ul class="sub-category-tabs">
-            <li><a href="javascript:void">Javascript</a></li>
-            <li><a href="javascript:void">jQuery</a></li>
-            <li><a href="javascript:void">Angular JS</a></li>
-          </ul> -->
         </li>
       </ul>
       <ul id="category-tabs">
         <li><a href="javascript:void" class="main-category">Capsules
-            <!-- <i class="fa fa-minus"></i> -->
           </a>
-          <!-- <ul class="sub-category-tabs">
-            <li><a href="javascript:void">C#</a></li>
-            <li><a href="javascript:void">PHP</a></li>
-            <li><a href="javascript:void">ASP.Net</a></li>
-          </ul> -->
         </li>
       </ul>
-
-      <!-- <ul id="category-tabs">
-        <li><a href="javascript:void" class="main-category">Ointments -->
-      <!-- <i class="fa fa-minus"></i> -->
-      <!-- </a> -->
-      <!-- <ul class="sub-category-tabs">
-            <li><a href="javascript:void">C#</a></li>
-            <li><a href="javascript:void">PHP</a></li>
-            <li><a href="javascript:void">ASP.Net</a></li>
-          </ul> -->
-      <!-- </li>
-      </ul> -->
-
       <ul id="category-tabs">
         <li><a href="javascript:void" class="main-category">Syrups
-            <!-- <i class="fa fa-minus"></i> -->
           </a>
-          <!-- <ul class="sub-category-tabs">
-            <li><a href="javascript:void">C#</a></li>
-            <li><a href="javascript:void">PHP</a></li>
-            <li><a href="javascript:void">ASP.Net</a></li>
-          </ul> -->
         </li>
       </ul>
 
@@ -122,5 +140,91 @@
     </div>
 
   </div>
+
+
+
+
+  <div class="form-popup-bg" *ngIf=ActionPopup>
+    <div (click)="ActionPopup=false"
+      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
+    <div class="form-container">
+      <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">New Type</h1>
+      <!-- <p>For more information. Please complete this form.</p> -->
+      <form action="">
+        <!-- **************01************** -->
+        <div class="form-group" *ngIf="Addpage==1">
+          <label for="">Name</label>
+          <input type="text" class="form-control" placeholder="Name" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==1">
+          <label for="">Company Name</label>
+          <input class="form-control" type="text" placeholder="Company Name" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==1">
+          <label for="">E-Mail Address</label>
+          <input class="form-control" type="text" placeholder="E-Mail Address" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==1">
+          <label for="">Phone Number</label>
+          <input class="form-control" type="text" placeholder="Phone Number" style="font-size: 10px;" />
+        </div>
+
+        <!-- ***********02************ -->
+
+        <!-- <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Category</label>
+          <select *ngIf="categories?.length != 0" [(ngModel)]="selectedCategory" style="width: 100%;
+          border-radius: 4px;
+          border: 1px solid #c8c8c8;">
+            <option *ngFor="let item of categories;let i = index" [value]="item.category" style="color: black;">
+              {{ item.category }}
+            </option>
+          </select>
+          <ion-input readonly *ngIf="categories?.length==0" placeholder="Select"></ion-input>
+        </div> -->
+
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Company Name</label>
+          <input class="form-control" type="text" placeholder="Company Name" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">E-Mail Address</label>
+          <input class="form-control" type="text" placeholder="E-Mail Address" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Phone Number</label>
+          <input class="form-control" type="text" placeholder="Phone Number" style="font-size: 10px;" />
+        </div>
+
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;" *ngIf="Addpage==1" (click)="Addpage=2">Next</button>
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;" *ngIf="Addpage==2">Submit</button>
+
+        <button style="padding: 10px;
+font-size: 13px;
+border-radius: 4px;
+text-align: center;
+display: flex;
+justify-content: center;
+float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (click)="Addpage=1">Back</button>
+      </form>
+    </div>
+  </div>
+
 
 </section>

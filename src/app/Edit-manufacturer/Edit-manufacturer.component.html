@@ -1,0 +1,209 @@
+<section>
+  <div class="content-area">
+    <!-- <div class="page-title">Inventory</div> -->
+    <ion-label class="head">Manufacturers</ion-label>
+    <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
+    <br><br>
+    <!-- <div class="page-desc">View and manage your stock</div> -->
+
+    <div class="content-bar" style="background: #009cff;">
+      <!-- <div class="itemnum" style="color: white;padding: 15px !important;">ID</div> -->
+      <div class="itemtitle" style="color: white;">Manufacturer</div>
+      <div class="itemprice" style="color: white;">Contact Person</div>
+      <div class="itemstock" style="color: white;">Contact Number</div>
+      <div class="itemstock" style="color: white;">Address</div>
+    </div>
+
+    <div class="content-bar" *ngFor="let item of ModifiedManufacturer">
+      <!-- <div class="itemnum">{{item.id}}</div> -->
+      <div class="itemtitle">{{item.ManufactursList}}</div>
+      <div class="itemprice">Vicky</div>
+      <div class="itemstock">8903763473</div>
+      <div class="itemprice">{{item.address}}</div>
+      <div class="btncontainer">
+
+        <button class="cbbtn" (click)="EditManufacture(item,'Vicky', '8903763473')"><ion-icon
+            name="create-outline"></ion-icon></button>
+        <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-popup-bg" *ngIf=EditActionPopup>
+    <div (click)="EditActionPopup=false"
+      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
+    <div class="form-container">
+      <button id="btnCloseForm" class="close-button" (click)="EditActionPopup=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">Update Manufacturer</h1>
+      <!-- <p>For more information. Please complete this form.</p> -->
+      <form action="">
+        <!-- **************01************** -->
+        <div class="form-group" *ngIf="Addpage == 1">
+          <label for="">Manufacturer-Name</label>
+          <input type="text" class="form-control" placeholder="Inventory-Name" style="font-size: 10px;"
+            [value]="getManufacturerNames()" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==1">
+          <label for="">Contact Person</label>
+          <input class="form-control" type="text" placeholder="Contact Person" style="font-size: 10px;"
+            value="{{editData[0].contact_person}}" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==1">
+          <label for="">Contact Number</label>
+          <input class="form-control" type="text" placeholder="Contact Number" style="font-size: 10px;"
+            value="{{editData[0].mobile}}" />
+        </div>
+        <!-- <div class="form-group" *ngIf="Addpage==1">
+          <label for="">Batch</label>
+          <input class="form-control" type="text" placeholder="Batch" style="font-size: 10px;" />
+        </div> -->
+
+        <!-- *************02************ -->
+
+        <!-- <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Expiry Date</label>
+          <input type="text" class="form-control" placeholder="Expiry Date" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Unit</label>
+          <input class="form-control" type="text" placeholder="Unit" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Unit Price</label>
+          <input class="form-control" type="text" placeholder="Unit Price" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Manufacture Date</label>
+          <input class="form-control" type="text" placeholder="Manufacture Date" style="font-size: 10px;" />
+        </div> -->
+
+        <!-- <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;" (click)="Addpage=2" *ngIf="Addpage==1">Next</button> -->
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;" *ngIf="Addpage==1">Submit</button>
+
+        <!-- <button style="padding: 10px;
+font-size: 13px;
+border-radius: 4px;
+text-align: center;
+display: flex;
+justify-content: center;
+float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (click)="Addpage=1">Back</button> -->
+      </form>
+    </div>
+  </div>
+
+
+  <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
+    <div class="modal-dialog modal-confirm"
+      style="width: calc(100% - 230px) !important;
+    left: 230px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+      <div class="modal-content" style="width: 300px !important;">
+        <div class="modal-header" style="position: relative;">
+          <div class="icon-box" style="position: absolute;right: 10px;">
+            <ion-icon name="trash-outline" style="font-size: 30px;"></ion-icon>
+          </div>
+          <h4 class="modal-title" style="margin-top: 0px;">Are you sure?</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to delete this Manufacturer ? This process cannot be undone.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal" (click)="Buttons()"
+            style="line-height: 17px;background: #b1b1b1;">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="Buttons()" style="line-height: 17px;">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-popup-bg" *ngIf=ActionPopup>
+    <div (click)="ActionPopup=false"
+      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
+    <div class="form-container">
+      <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">New Manufacturer</h1>
+      <!-- <p>For more information. Please complete this form.</p> -->
+      <form action="">
+        <!-- **************01************** -->
+        <div class="form-group">
+          <label for="">Manufacturer-Name</label>
+          <input type="text" class="form-control" placeholder="Manufacturer-Name" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Contact Person</label>
+          <input class="form-control" type="text" placeholder="Contact Person" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Contact Number</label>
+          <input class="form-control" type="text" placeholder="Contact Number" style="font-size: 10px;" />
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="">Batch</label>
+          <input class="form-control" type="text" placeholder="Batch" style="font-size: 10px;" />
+        </div> -->
+
+        <!-- *************02************ -->
+
+        <!-- <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Expiry Date</label>
+          <input type="text" class="form-control" placeholder="Expiry Date" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Unit</label>
+          <input class="form-control" type="text" placeholder="Unit" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Unit Price</label>
+          <input class="form-control" type="text" placeholder="Unit Price" style="font-size: 10px;" />
+        </div>
+        <div class="form-group" *ngIf="Addpage==2">
+          <label for="">Manufacture Date</label>
+          <input class="form-control" type="text" placeholder="Manufacture Date" style="font-size: 10px;" />
+        </div> -->
+
+        <!-- <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;" (click)="Addpage=2" *ngIf="Addpage==1">Next</button> -->
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;">Submit</button>
+
+        <!-- <button style="padding: 10px;
+font-size: 13px;
+border-radius: 4px;
+text-align: center;
+display: flex;
+justify-content: center;
+float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (click)="Addpage=1">Back</button> -->
+      </form>
+    </div>
+  </div>
+
+</section>

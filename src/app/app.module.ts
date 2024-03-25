@@ -12,12 +12,18 @@ import { SettingsComponent } from './settings/settings.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { ManageInventoryComponent } from './manage-inventory/manage-inventory.component';
-import { InventoryDetailsComponent } from './inventory-details/inventory-details.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { EditInventoryComponent } from './Edit-inventory/Edit-inventory.component';
+import { EditManufacturerComponent } from './Edit-manufacturer/Edit-manufacturer.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
+import { EditProductNameComponent } from './Edit-product-name/Edit-product-name.component';
+import { EditProductImageComponent } from './Edit-product-image/Edit-product-image.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { SearchPipe } from './Service/search.pipe';
 
 @NgModule({
-  declarations: [AppComponent, InventoryComponent, ManageInventoryComponent, InventoryDetailsComponent, ReportsComponent, SettingsComponent, MyProfileComponent, ManageUserComponent],
+  declarations: [AppComponent, SearchPipe, InventoryComponent, EditCategoryComponent, EditProductImageComponent, EditProductNameComponent, PrescriptionComponent, ManageInventoryComponent, EditInventoryComponent, EditManufacturerComponent, ReportsComponent, SettingsComponent, MyProfileComponent, ManageUserComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
