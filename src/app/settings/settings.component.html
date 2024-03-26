@@ -111,7 +111,7 @@
   </div>
 </section>
 
-<section class="fullpage1" *ngIf="!OrgAlert">
+<section class="fullpage1" *ngIf="!OrgAlert && !manageUser">
   <div class="grey-bg container-fluid" style="width: 100%;height: 100%;">
     <section id="minimal-statistics">
       <div class="row">
@@ -198,6 +198,28 @@
             </div>
           </div>
         </div>
+
+        <div class="col-xl-3 col-sm-6 col-12" (click)="manageUser=true">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
+                    <img src="../../assets/img/manageUser.png" alt="" style="width: 70px;">
+                  </div>
+                  <div class="media-body text-right" style="text-align: right;
+                width: 100%;">
+                    <!-- <h3>64.89 %</h3> -->
+                    <span>Manage User</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </section>
   </div>
@@ -206,7 +228,7 @@
   <div *ngIf="notifyType" class="Social">
     <div style="width: 100%;height: 100%;position: fixed;top: 0;" (click)="notifyType=false"></div>
     <div class="top-msg">
-      <ion-label>Choose one to get message</ion-label>
+      <ion-label>Choose one to get notification</ion-label>
     </div>
     <div class="social-icon-list">
       <div class="icon-group">
@@ -274,7 +296,331 @@
     </div>
   </div>
 
+</section>
 
 
+
+<section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="manageUser" class="ManageFull">
+  <div class="txt">
+    <ion-label class="head">Add Staff</ion-label>
+    <div class="txt-btn">
+      <div class="resetBtn">
+        <ion-label>Reset</ion-label>
+      </div>
+      <div class="addBtn">
+        <ion-label>Add</ion-label>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+    <div class="addTo-In">
+
+
+      <div class="camera">
+        <input type="file" style="display: none;" (change)="handleImageSelect($event)" #imageInput>
+        <img src="{{imageUrl==undefined ? cameraimageUrl : imageUrl}}" alt="" (click)="handleImageClick()">
+      </div>
+
+      <div class="details">
+        <div class="details_1">
+          <ion-label class="detailName">Personal Info</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Name</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Date of Birth</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Employee ID</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Gender</ion-label>
+            </div>
+            <div class="value gender">
+              <div class="gender1" (click)="PickGender('Male')">
+                <img [src]="Gender === 'Male' ? '../../assets/img/checked.svg' : '../../assets/img/unchecked.svg'"
+                  alt="">
+                <ion-label>Male</ion-label>
+              </div>
+              <div class="gender1" (click)="PickGender('Female')">
+                <img [src]="Gender === 'Female' ? '../../assets/img/checked.svg' : '../../assets/img/unchecked.svg'"
+                  alt="">
+                <ion-label>Female</ion-label>
+              </div>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Role</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <!-- <div class="addToBtn">
+            <div class="submit">
+              <ion-label>Update</ion-label>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="details_1">
+          <ion-label class="detailName">Account Info</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Bank Account No</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>IFSC Code</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Branch Name</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>PAN no</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>IFSC Code</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <!-- <div class="addToBtn">
+            <div class="submit">
+              <ion-label>Update</ion-label>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+
+      <div class="details two">
+        <div class="details_1">
+          <ion-label class="detailName">Address</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Street Address</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>City</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>State</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Country</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Zip Code</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="details_1">
+          <ion-label class="detailName">Contact Info</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Email</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Contact no</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="details_1">
+          <ion-label class="detailName">Pay Roll</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Current Pay</ion-label>
+            </div>
+            <div class="value">
+              <ion-input></ion-input>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+
+
+      <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">Img</th>
+              <th scope="col">Name</th>
+              <th scope="col">Employee ID</th>
+              <th scope="col">Date of Birth</th>
+              <th scope="col">Role</th>
+              <th scope="col">Contact No</th>
+              <th scope="col">Email</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Gender</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="../../assets/img/user1.jpg" alt="" class="user">
+              </td>
+              <td>Vijay</td>
+              <td>MD-8123</td>
+              <td>05 Mar 2001</td>
+              <td>Employee</td>
+              <td>6474746764</td>
+              <td>Emp&commat;gmail.com</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/user3.jpg" alt="" class="user">
+              </td>
+              <td>Bala</td>
+              <td>MD-823</td>
+              <td>26 Aug 1992</td>
+              <td>Admin</td>
+              <td>6476470923</td>
+              <td>Admin&commat;gmail.com</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/user2.jpg" alt="" class="user">
+              </td>
+              <td>Muthu</td>
+              <td>MD-083</td>
+              <td>13 Apr 2002</td>
+              <td>Admin</td>
+              <td>0923453245</td>
+              <td>Admin&commat;gmail.com</td>
+              <td>Female</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/user4.jpg" alt="" class="user">
+              </td>
+              <td>Krishna</td>
+              <td>MD-018</td>
+              <td>05 Feb 1999</td>
+              <td>Employee</td>
+              <td>5689122097</td>
+              <td>Emp&commat;gmail.com</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/user5.jpg" alt="" class="user">
+              </td>
+              <td>Suresh</td>
+              <td>MD-800</td>
+              <td>02 Jan 2000</td>
+              <td>User</td>
+              <td>0328475902</td>
+              <td>user&commat;gmail.com</td>
+              <td>Female</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+  </div>
 
 </section>

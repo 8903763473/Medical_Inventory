@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -37,13 +37,19 @@ export class SettingsComponent {
     },
   ]
 
+  cameraimageUrl: any = '../../assets/img/Camera.svg'
+  @ViewChild('imageInput') imageInput: ElementRef<HTMLInputElement> | any;
   notifyType: boolean = false
   selectedCheckbox: any
   inputValue: any
   OrgAlert: boolean = false
   Schedule: boolean = false
+  manageUser: boolean = false
+  imageUrl: any
+  Gender: any
 
-  
+
+
   ionViewWillEnter() {
     this.selectedCheckbox = 1
     this.app.ind = 3
@@ -53,4 +59,26 @@ export class SettingsComponent {
     this.selectedCheckbox = id
   }
 
+  handleImageSelect(event: any) {
+    const selectedFile = event.target.files[0];
+
+    if (selectedFile) {
+      console.log(selectedFile);
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.imageUrl = e.target.result;
+        console.log(this.imageUrl);
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  }
+
+
+  handleImageClick() {
+    this.imageInput.nativeElement.click();
+  }
+
+  PickGender(data: any) {
+    this.Gender = data
+  }
 }

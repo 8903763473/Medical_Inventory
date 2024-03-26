@@ -13,8 +13,9 @@ export class HomePage {
   @Input() BarcanvasId: any;
   @Input() LinecanvasId: any;
   @Input() data: number[] = [95, 120, 155, 230, 100, 200, 137];
-  @Input() data1: number[] = [175, 210, 185, 280, 150, 255, 175];
-  @Input() labels: string[] = ['2009', '2010', '2011', '2012', '2013', '2014', '2015'];
+  @Input() data1: number[] = [210, 110, 185, 280, 190, 120, 90, 89, 145, 200, 210, 100];
+  @Input() labels: string[] = ['Vita', 'Heal', 'Cure', 'BioX'];
+  @Input() labels1: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   @ViewChild('BarchartCanvas') BarchartCanvas: ElementRef | undefined;
   @ViewChild('LinechartCanvas') LinechartCanvas: ElementRef | undefined;
@@ -61,13 +62,9 @@ export class HomePage {
         borderColor: 'transparent',
         borderWidth: 0,
         fill: false,
-        barThickness: 35,
+        barThickness: 25,
         borderRadius: 6,
       };
-
-      const salesGradient = ctx.createLinearGradient(0, 0, 0, 400);
-      salesGradient.addColorStop(0, '#FFF0DF');
-      salesGradient.addColorStop(1, '#007AFF');
 
       const chartOptions = {
         scales: {
@@ -131,16 +128,9 @@ export class HomePage {
           labels: this.labels,
           datasets: [{
             ...Object.assign({}, datasetProperties),
-            label: 'Revenue',
+            label: 'Quantity',
             data: this.data,
             backgroundColor: '#0F82FF', // Set Revenue color
-            barPercentage: 1.0,
-            categoryPercentage: 1.0,
-          }, {
-            ...Object.assign({}, datasetProperties),
-            label: 'Sales',
-            data: this.data1,
-            backgroundColor: '#0f82ff3d', // Use the created gradient for Sales
             barPercentage: 1.0,
             categoryPercentage: 1.0,
           }],
@@ -149,6 +139,7 @@ export class HomePage {
       });
     }
   }
+
 
 
   private LineChart(): void {
@@ -235,21 +226,21 @@ export class HomePage {
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: this.labels,
+          labels: this.labels1,
           datasets: [
             {
               ...Object.assign({}, datasetProperties),
-              label: 'Sales Wave',
+              label: 'Yearly Loss',
               data: salesWaveData,
-              borderColor: '#007AFF', // Set the color for the first line
-              backgroundColor: salesGradient, // Set the gradient background for sales
+              borderColor: '#007AFF',
+              backgroundColor: salesGradient,
             },
             {
               ...Object.assign({}, datasetProperties),
-              label: 'Revenue Wave',
+              label: 'Monthly Loss',
               data: revenueWaveData,
-              borderColor: '#FF5733', // Set the color for the second line
-              backgroundColor: revenueGradient, // Set the transparent background for revenue
+              borderColor: '#FF5733',
+              backgroundColor: revenueGradient,
             },
           ],
         },

@@ -18,45 +18,38 @@ export class AppComponent {
     },
     {
       id: 2,
+      img: '../assets/img/Manage_Inventory.svg',
+      fill_img: '../assets/img/Manage_Inventory_color.svg',
+      name: 'Inventory Master',
+      path: 'Manage-Inventory'
+    },
+    {
+      id: 3,
       img: '../assets/img/Inventory.svg',
       fill_img: '../assets/img/Inventory_color.svg',
       name: 'Add to Inventory',
       path: 'Inventory'
     },
     {
-      id: 3,
-      img: '../assets/img/Settings.svg',
-      fill_img: '../assets/img/Settings_color.svg',
-      name: 'Settings',
-      path: 'Settings'
-    },
-    {
       id: 4,
       img: '../assets/img/Reports.svg',
       fill_img: '../assets/img/Reports_color.svg',
-      name: 'Reports',
-      path: 'Reports'
+      name: 'Inventory Report',
+      path: 'Reports/1'
     },
     {
       id: 5,
       img: '../assets/img/profile.svg',
       fill_img: '../assets/img/profile_color.svg',
-      name: 'My Profile',
-      path: 'MyProfile'
+      name: 'Expiry Report',
+      path: 'Reports/2'
     },
     {
       id: 6,
-      img: '../assets/img/manageUser.svg',
-      fill_img: '../assets/img/manageUser_color.svg',
-      name: 'Manage User',
-      path: 'ManageUser'
-    },
-    {
-      id: 7,
-      img: '../assets/img/Manage_Inventory.svg',
-      fill_img: '../assets/img/Manage_Inventory_color.svg',
-      name: 'Manage Inventory',
-      path: 'Manage-Inventory'
+      img: '../assets/img/Settings.svg',
+      fill_img: '../assets/img/Settings_color.svg',
+      name: 'Settings',
+      path: 'Settings'
     }
   ]
 

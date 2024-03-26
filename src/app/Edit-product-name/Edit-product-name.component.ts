@@ -15,10 +15,13 @@ export class EditProductNameComponent {
   categories: any = []
   productNames: any = []
   selectedcategory: any
+  DummyInventoryNames: any = []
+  FilterCategory: any
 
   constructor() { }
 
   ngOnInit() {
+    this.FilterCategory = 'All'
     this.LocalCalculation()
   }
 
@@ -27,9 +30,34 @@ export class EditProductNameComponent {
     this.LocalInventory = JSON.parse(LocalData)
     this.categories = new Set(this.LocalInventory.map((res: any) => res.category));
     this.categories = Array.from(this.categories).map(category => ({ category }));
-    this.productNames = this.LocalInventory.map((item:any) => item.productName); 
+    this.productNames = this.LocalInventory.reduce((acc: any, currentItem: any) => {
+      const existingProduct = acc.find((product: any) => product.productName === currentItem.productName);
+      if (!existingProduct) {
+        acc.push({ productName: currentItem.productName, category: currentItem.category });
+      }
+      return acc;
+    }, []);
+
+    this.DummyInventoryNames = this.productNames
     console.log(this.productNames);
+    this.CalculateCategory()
+  }
+
+  CalculateCategory() {
+    this.categories = new Set(this.LocalInventory.map((res: any) => res.category));
+    this.categories = Array.from(this.categories).map(category => ({ category }));
+    this.categories = this.categories.concat({ category: 'All' });
     console.log(this.categories);
+  }
+
+  FilterbyCategory(data: any) {
+    if (data.target.value != 'All') {
+      this.productNames = this.DummyInventoryNames.filter((res: any) => {
+        return res.category == data.target.value
+      })
+    } else {
+      this.productNames = this.DummyInventoryNames
+    }
   }
 
 

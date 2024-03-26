@@ -41,7 +41,7 @@ export class InventoryComponent {
 
 
   ionViewWillEnter() {
-    this.app.ind = 2
+    this.app.ind = 3
     this.LocalCalculation();
   }
 

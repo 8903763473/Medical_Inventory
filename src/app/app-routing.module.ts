@@ -12,6 +12,7 @@ import { PrescriptionComponent } from './prescription/prescription.component';
 import { EditProductNameComponent } from './Edit-product-name/Edit-product-name.component';
 import { EditProductImageComponent } from './Edit-product-image/Edit-product-image.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { ReportDetailsComponent } from './report-details/report-details.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
     component: SettingsComponent
   },
   {
-    path: 'Reports',
+    path: 'Reports/:id',
     component: ReportsComponent
   },
   {
@@ -70,6 +71,10 @@ const routes: Routes = [
   {
     path: 'Edit_Categories',
     component: EditCategoryComponent
+  },
+  {
+    path: 'Report_Details/:id/:id1',
+    component: ReportDetailsComponent
   },
 ];
 

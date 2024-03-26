@@ -21,9 +21,10 @@ import { EditProductNameComponent } from './Edit-product-name/Edit-product-name.
 import { EditProductImageComponent } from './Edit-product-image/Edit-product-image.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { SearchPipe } from './Service/search.pipe';
+import { ReportDetailsComponent } from './report-details/report-details.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchPipe, InventoryComponent, EditCategoryComponent, EditProductImageComponent, EditProductNameComponent, PrescriptionComponent, ManageInventoryComponent, EditInventoryComponent, EditManufacturerComponent, ReportsComponent, SettingsComponent, MyProfileComponent, ManageUserComponent],
+  declarations: [AppComponent, SearchPipe, ReportDetailsComponent, InventoryComponent, EditCategoryComponent, EditProductImageComponent, EditProductNameComponent, PrescriptionComponent, ManageInventoryComponent, EditInventoryComponent, EditManufacturerComponent, ReportsComponent, SettingsComponent, MyProfileComponent, ManageUserComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

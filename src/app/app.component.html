@@ -7,16 +7,16 @@
         <h3 class="text-primary" style="font-size: 18px;"> COMPANY</h3>
       </a>
       <div class="d-flex align-items-center ms-4 mb-4">
-        <div class="position-relative">
+        <!-- <div class="position-relative">
           <img class="rounded-circle" src="../../assets/../../assets/img/admin.jpg" alt=""
             style="width: 40px; height: 40px;object-fit: cover;">
           <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
           </div>
-        </div>
-        <div class="ms-3">
+        </div> -->
+        <!-- <div class="ms-3">
           <h6 class="mb-0" style="font-size: 13px !important;">Admin User</h6>
           <span style="font-size: 13px !important;">Admin</span>
-        </div>
+        </div> -->
       </div>
       <div class="navbar-nav w-100" style="gap: 20px;">
         <a class="nav-item nav-link" [ngClass]="{'active':ind==item.id}" *ngFor="let item of menu"
@@ -75,7 +75,7 @@
       <i class="bi bi-arrow-left-square" *ngIf="Open==false" style="font-size: 25px;"></i>
     </a>
     <form class="d-none d-md-flex ms-4" class="SearchForm">
-      <input class="form-control border-0"  placeholder="Search" [(ngModel)]="Search" (change)="change($event)">
+      <input class="form-control border-0" placeholder="Search" [(ngModel)]="Search" (change)="change($event)">
       <img src="../assets/img/search.svg" alt="">
     </form>
     <div class="navbar-nav align-items-center ms-auto">

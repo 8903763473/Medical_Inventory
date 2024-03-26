@@ -9,42 +9,42 @@ export class EditProductImageComponent implements OnInit {
 
   InventoryImages = [
     {
-      "category": "Tablet",
+      "category": "Tablets",
       "name": "paracitamol",
       "image": "../../assets/img/tablet 1.jpeg"
     },
     {
-      "category": "Tablet",
+      "category": "Tablets",
       "name": "head pain",
       "image": "../../assets/img/tablet2.jpeg",
     },
     {
-      "category": "Injection",
+      "category": "Injections",
       "name": "Fever",
       "image": "../../assets/img/injection1.jpeg"
     },
     {
-      "category": "Injection",
+      "category": "Injections",
       "name": "Cold",
       "image": "../../assets/img/injection 2.jpeg"
     },
     {
-      "category": "Capsule",
+      "category": "Capsules",
       "name": "back pain",
       "image": "../../assets/img/capsule1.jpeg"
     },
     {
-      "category": "Capsule",
+      "category": "Capsules",
       "name": "pain kiler",
       "image": "../../assets/img/capsule2.jpeg"
     },
     {
-      "category": "Syrup",
+      "category": "Syrups",
       "name": "Alpha coff",
       "image": "../../assets/img/syrup.jpeg"
     },
     {
-      "category": "Syrup",
+      "category": "Syrups",
       "name": "Tripala syrup",
       "image": "../../assets/img/syrup2.jpeg"
     }
@@ -60,10 +60,17 @@ export class EditProductImageComponent implements OnInit {
   selectImage: any
   NewCategory: any
   NewProduct: any
+  DummyLocalInventory: any = []
+  FilterCategory: any
+
+
+
 
   constructor() { }
 
   ngOnInit() {
+    this.FilterCategory = 'All'
+    this.DummyLocalInventory = this.InventoryImages
     this.LocalCalculation();
   }
 
@@ -73,6 +80,7 @@ export class EditProductImageComponent implements OnInit {
     this.categories = new Set(this.LocalInventory.map((res: any) => res.category));
     this.categories = Array.from(this.categories).map(category => ({ category }));
     this.ProductByCategory = []
+    this.CalculateCategory()
   }
 
 
@@ -113,6 +121,24 @@ export class EditProductImageComponent implements OnInit {
         this.selectImage = e.target.result;
       };
       reader.readAsDataURL(selectedFile);
+    }
+  }
+
+  CalculateCategory() {
+    this.categories = new Set(this.LocalInventory.map((res: any) => res.category));
+    this.categories = Array.from(this.categories).map(category => ({ category }));
+    this.categories = this.categories.concat({ category: 'All' });
+    console.log(this.categories);
+  }
+
+  FilterbyCategory(data: any) {
+    console.log(data.target.value);
+    if (data.target.value != 'All') {
+      this.InventoryImages = this.DummyLocalInventory.filter((res: any) => {
+        return res.category == data.target.value
+      })
+    } else {
+      this.InventoryImages = this.DummyLocalInventory
     }
   }
 

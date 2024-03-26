@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-edit-inventory',
-  templateUrl: './Edit-inventory.component.html',
-  styleUrls: ['./Edit-inventory.component.scss'],
+  selector: 'app-report-details',
+  templateUrl: './report-details.component.html',
+  styleUrls: ['./report-details.component.scss'],
 })
-export class EditInventoryComponent {
+export class ReportDetailsComponent {
 
   ActionPopup: boolean = false
   EditActionPopup: boolean = false
@@ -20,13 +21,27 @@ export class EditInventoryComponent {
   categories: any = []
   DummyLocalInventory: any = []
   FilterCategory: any
+  Exp_Count: any
+  Exp_Type: any
+  Exp_Title: any
 
-  constructor(public app: AppComponent) { }
+  constructor(public app: AppComponent, public router: Router) { }
 
   ionViewWillEnter() {
     this.deleteAlert = false
     this.Addpage = 1
     this.FilterCategory = 'All'
+    this.Exp_Count = this.router.url.split('/')[2]
+    this.Exp_Type = this.router.url.split('/')[3]
+
+    if (this.Exp_Type == 1) {
+      this.Exp_Title = 'Expiry List from 1  to 30 days'
+    } else if (this.Exp_Type == 2) {
+      this.Exp_Title = 'Expiry List from 30  to 60 days'
+    } else if (this.Exp_Type == 3) {
+      this.Exp_Title = 'Expiry List in 60 + days'
+    }
+
     this.LocalCalculation()
   }
 
@@ -50,7 +65,7 @@ export class EditInventoryComponent {
     this.categories = this.categories.concat({ category: 'All' });
     console.log(this.categories);
   }
-  
+
   FilterbyCategory(data: any) {
     if (data.target.value != 'All') {
       this.LocalInventory = this.DummyLocalInventory.filter((res: any) => {
@@ -69,5 +84,6 @@ export class EditInventoryComponent {
     this.EditInventoryData = data
     this.EditActionPopup = true
   }
+
 
 }
