@@ -103,6 +103,7 @@ export class OrdersComponent {
   constructor(public app: AppComponent) { }
 
   ionViewWillEnter() {
+    this.app.ind = 5
     this.deleteAlert = false
     this.Addpage = 1
     this.FilterStage = 'All'

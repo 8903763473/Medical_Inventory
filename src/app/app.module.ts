@@ -25,9 +25,10 @@ import { ReportDetailsComponent } from './report-details/report-details.componen
 import { OrdersComponent } from './orders/orders.component';
 import { EditUnitSizeComponent } from './edit-unit-size/edit-unit-size.component';
 import { EditTypesComponent } from './edit-types/edit-types.component';
+import { ManagePatientsComponent } from './manage-patients/manage-patients.component';
 
 @NgModule({
-  declarations: [AppComponent, EditTypesComponent, EditUnitSizeComponent, SearchPipe, OrdersComponent, ReportDetailsComponent, InventoryComponent, EditCategoryComponent, EditProductImageComponent, EditProductNameComponent, PrescriptionComponent, ManageInventoryComponent, EditInventoryComponent, EditManufacturerComponent, ReportsComponent, SettingsComponent, MyProfileComponent, ManageUserComponent],
+  declarations: [AppComponent, ManagePatientsComponent, EditTypesComponent, EditUnitSizeComponent, SearchPipe, OrdersComponent, ReportDetailsComponent, InventoryComponent, EditCategoryComponent, EditProductImageComponent, EditProductNameComponent, PrescriptionComponent, ManageInventoryComponent, EditInventoryComponent, EditManufacturerComponent, ReportsComponent, SettingsComponent, MyProfileComponent, ManageUserComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

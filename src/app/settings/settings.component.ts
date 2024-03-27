@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -8,7 +9,7 @@ import { AppComponent } from '../app.component';
 })
 export class SettingsComponent {
 
-  constructor(public app: AppComponent) { }
+  constructor(public app: AppComponent, public router: Router) { }
 
   AlertSetting: any = [
     {
@@ -133,7 +134,7 @@ export class SettingsComponent {
 
   ionViewWillEnter() {
     this.selectedCheckbox = 1
-    this.app.ind = 6
+    this.app.ind = 8
     this.SelectOne = 'test'
   }
 
@@ -189,6 +190,10 @@ export class SettingsComponent {
 
   Check1(data: any) {
     this.singleCheck = data
+  }
+
+  See(data: any) {
+    this.router.navigate(['/' + data])
   }
 
 }

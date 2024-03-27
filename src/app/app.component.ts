@@ -32,15 +32,15 @@ export class AppComponent {
     },
     {
       id: 4,
-      img: '../assets/img/Inventory.svg',
-      fill_img: '../assets/img/Inventory_color.svg',
+      img: '../assets/img/prescription.svg',
+      fill_img: '../assets/img/prescription_color.svg',
       name: 'Prescription',
       path: 'prescription'
     },
     {
       id: 5,
-      img: '../assets/img/Inventory.svg',
-      fill_img: '../assets/img/Inventory_color.svg',
+      img: '../assets/img/manageOrder.svg',
+      fill_img: '../assets/img/manageOrder_color.svg',
       name: 'Manage Orders',
       path: 'Orders'
     },
@@ -53,8 +53,8 @@ export class AppComponent {
     },
     {
       id: 7,
-      img: '../assets/img/profile.svg',
-      fill_img: '../assets/img/profile_color.svg',
+      img: '../assets/img/expiry.svg',
+      fill_img: '../assets/img/expirycolor.svg',
       name: 'Expiry Report',
       path: 'Reports/2'
     },

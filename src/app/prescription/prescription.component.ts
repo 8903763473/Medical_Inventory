@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-prescription',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PrescriptionComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public app: AppComponent) { }
 
   LocalInventory: any = []
   categories: any = []
@@ -38,6 +39,7 @@ export class PrescriptionComponent implements OnInit {
   EditPrescription: boolean = false
 
   ngOnInit() {
+    this.app.ind = 4
     this.Categories()
     this.MorningQty = 1
     this.AfternoonQty = 1

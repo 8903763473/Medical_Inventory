@@ -16,6 +16,7 @@ import { ReportDetailsComponent } from './report-details/report-details.componen
 import { OrdersComponent } from './orders/orders.component';
 import { EditUnitSizeComponent } from './edit-unit-size/edit-unit-size.component';
 import { EditTypesComponent } from './edit-types/edit-types.component';
+import { ManagePatientsComponent } from './manage-patients/manage-patients.component';
 
 const routes: Routes = [
   {
@@ -80,6 +81,10 @@ const routes: Routes = [
     component: ReportDetailsComponent
   },
   {
+    path: 'Report_Details/:id/:id1/:id2',
+    component: ReportDetailsComponent
+  },
+  {
     path: 'Orders',
     component: OrdersComponent
   },
@@ -90,6 +95,10 @@ const routes: Routes = [
   {
     path: 'Edit_Types',
     component: EditTypesComponent
+  },
+  {
+    path: 'Manage_Patients',
+    component: ManagePatientsComponent
   },
 ];
 

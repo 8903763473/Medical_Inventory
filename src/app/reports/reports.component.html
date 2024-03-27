@@ -22,116 +22,160 @@
         <table class="table text-start align-middle table-bordered table-hover mb-0">
           <thead style="background-color: #C2C2C2;">
             <tr class="text-dark">
-              <th scope="col" style="border-radius: 10px 0px 0px 10px;">Img</th>
-              <th scope="col">Medicine Name</th>
+              <!-- <th scope="col">Img</th> -->
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">Medicine Name</th>
               <th scope="col">Manufacturer</th>
-              <th scope="col">Quantity</th>
+              <th scope="col">In Stock</th>
               <th scope="col">Expire Date</th>
-              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Batch</th>
+              <th>Total Quantity</th>
+              <th>Exp: 1 to 30</th>
+              <th>Exp: 31 to 60</th>
+              <th>Exp: 60 +</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Batch No</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med1.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Apixaban</td>
               <td>HealMakers</td>
               <td>12</td>
               <td>01 Jan 2045</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">30</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">70</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">40</td>
               <td class="dwnld">2</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med2.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Anovera</td>
               <td>MediCrafts</td>
               <td>85</td>
               <td>01 Jan 2021</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">60</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">60</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">50</td>
               <td class="dwnld">1</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med3.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Apokyn</td>
               <td>CareForge</td>
               <td>58</td>
               <td>01 Jan 2035</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">90</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">40</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">40</td>
               <td class="dwnld">2</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med4.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Apriso</td>
               <td>PharmaWorks</td>
               <td>10</td>
               <td>01 Jan 2043</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">50</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">70</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">50</td>
               <td class="dwnld">3</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med5.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Aptiom</td>
               <td>CureCraft</td>
               <td>21</td>
               <td>01 Jan 2025</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">90</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">10</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">70</td>
               <td class="dwnld">2</td>
             </tr>
 
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med6.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Actorise</td>
               <td>VitaForge</td>
               <td>120</td>
               <td>01 Jan 2005</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">80</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">80</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">10</td>
               <td class="dwnld">1</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med7.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Azel</td>
               <td>RemedyTech</td>
               <td>185</td>
               <td>01 Jan 2055</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">65</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">55</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">50</td>
               <td class="dwnld">1</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med8.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Avastin</td>
               <td>MedBlend</td>
               <td>585</td>
               <td>01 Jan 2015</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">66</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">10</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">84</td>
               <td class="dwnld">2</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med9.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Ascroil</td>
               <td>LifeWorks</td>
               <td>110</td>
               <td>01 Jan 2035</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">110</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">20</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">40</td>
               <td class="dwnld">3</td>
             </tr>
             <tr>
-              <td>
+              <!-- <td>
                 <img src="../../assets/img/med10.jpg" alt="" class="user">
-              </td>
+              </td> -->
               <td>Allegra</td>
               <td>HealthCraft</td>
               <td>211</td>
               <td>01 Jan 2025</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">45</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">100</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">15</td>
               <td class="dwnld">2</td>
-            </tr>
+            </tr>         
           </tbody>
         </table>
       </div>

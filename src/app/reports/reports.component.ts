@@ -16,10 +16,10 @@ export class ReportsComponent {
   ionViewWillEnter() {
     this.PageUrl = this.router.url.split('/')[2];
     if (this.PageUrl == 1) {
-      this.app.ind = 4
+      this.app.ind = 6
     }
     else if (this.PageUrl == 2) {
-      this.app.ind = 5
+      this.app.ind = 7
     }
 
     this.selected = 'date'
@@ -31,5 +31,9 @@ export class ReportsComponent {
 
   ReportDetails(id: any, id2: any) {
     this.router.navigate(['Report_Details/' + id + '/' + id2])
+  }
+
+  ReportDetails1(id: any, id2: any) {
+    this.router.navigate(['Report_Details/' + id + '/' + id2 + '/' + 2])
   }
 }

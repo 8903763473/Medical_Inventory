@@ -24,6 +24,8 @@ export class ReportDetailsComponent {
   Exp_Count: any
   Exp_Type: any
   Exp_Title: any
+  ReportDetailPage: any
+  Title: any
 
   constructor(public app: AppComponent, public router: Router) { }
 
@@ -33,13 +35,20 @@ export class ReportDetailsComponent {
     this.FilterCategory = 'All'
     this.Exp_Count = this.router.url.split('/')[2]
     this.Exp_Type = this.router.url.split('/')[3]
+    this.ReportDetailPage = this.router.url?.split('/')[4]
+
+    if (this.ReportDetailPage == 2) {
+      this.Title = 'Inventory List'
+    } else {
+      this.Title = 'Expiry List'
+    }
 
     if (this.Exp_Type == 1) {
-      this.Exp_Title = 'Expiry List from 1  to 30 days'
+      this.Exp_Title = this.Title + ' ' + 'from 1  to 30 days'
     } else if (this.Exp_Type == 2) {
-      this.Exp_Title = 'Expiry List from 30  to 60 days'
+      this.Exp_Title = this.Title + ' ' + 'from 30  to 60 days'
     } else if (this.Exp_Type == 3) {
-      this.Exp_Title = 'Expiry List in 60 + days'
+      this.Exp_Title = this.Title + ' '   + 'in 60 + days'
     }
 
     this.LocalCalculation()

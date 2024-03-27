@@ -11,41 +11,49 @@ export class EditProductImageComponent implements OnInit {
     {
       "category": "Tablets",
       "name": "paracitamol",
+      "manufacturer": "Pharmavit",
       "image": "../../assets/img/tablet 1.jpeg"
     },
     {
       "category": "Tablets",
       "name": "head pain",
+      "manufacturer": "MediLife",
       "image": "../../assets/img/tablet2.jpeg",
     },
     {
       "category": "Injections",
       "name": "Fever",
+      "manufacturer": "NutraLif",
       "image": "../../assets/img/injection1.jpeg"
     },
     {
       "category": "Injections",
       "name": "Cold",
+      "manufacturer": "NatureCu",
       "image": "../../assets/img/injection 2.jpeg"
     },
     {
       "category": "Capsules",
       "name": "back pain",
+      "manufacturer": "Wellness",
       "image": "../../assets/img/capsule1.jpeg"
     },
     {
       "category": "Capsules",
       "name": "pain kiler",
+      "manufacturer": "LifeScie",
       "image": "../../assets/img/capsule2.jpeg"
     },
     {
       "category": "Syrups",
       "name": "Alpha coff",
+      "manufacturer": "MedTech",
       "image": "../../assets/img/syrup.jpeg"
     },
     {
       "category": "Syrups",
       "name": "Tripala syrup",
+      "manufacturer": "HealthCare",
       "image": "../../assets/img/syrup2.jpeg"
     }
   ]
@@ -94,12 +102,6 @@ export class EditProductImageComponent implements OnInit {
     location.reload()
   }
 
-  EditImageData(data: any) {
-    this.EditActionPopup = true
-    this.EditInventoryData = data
-  }
-
-
   handleImageSelect(event: any) {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
@@ -142,5 +144,8 @@ export class EditProductImageComponent implements OnInit {
     }
   }
 
-
+  EditInvent(data: any) {
+    this.EditInventoryData = data
+    this.EditActionPopup = true
+  }
 }

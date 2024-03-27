@@ -30,24 +30,45 @@ export class EditUnitSizeComponent {
     },
     {
       id: 2,
+      category: 'Tablets',
+      measure: 'tablet',
+      unit: '1',
+      size: '15',
+    },
+    {
+      id: 3,
       category: 'Syrups',
       measure: 'ml',
       unit: '1',
       size: '180',
     },
     {
-      id: 3,
+      id: 4,
+      category: 'Syrups',
+      measure: 'ml',
+      unit: '1',
+      size: '250',
+    },
+    {
+      id: 5,
       category: 'Injections',
       measure: 'ml',
       unit: '1',
       size: '1',
     },
     {
-      id: 4,
+      id: 6,
       category: 'Capsules',
       measure: 'tablet',
       unit: '1',
       size: '10',
+    },
+    {
+      id: 7,
+      category: 'Capsules',
+      measure: 'tablet',
+      unit: '1',
+      size: '5',
     }
   ]
   constructor() { }

@@ -1,49 +1,43 @@
 <section>
-  <ion-label class="head">Product Images</ion-label>
+  <ion-label class="head">Product Names</ion-label><br>
   <ion-label style="position: absolute;
     top: 14px;
-    right: 320px;
+    right: 330px;
     z-index: 10;
-    font-weight: bold;">Filter</ion-label> <select style="width: 200px;
+    font-weight: bold;">Filter</ion-label>
+  <select style="width: 200px;
     background-color: rgb(239, 239, 239);
     border-radius: 5px;
     position: absolute;
     top: 14px;
-    right: 108px;color: black;" [(ngModel)]="FilterCategory" (change)="FilterbyCategory($event)">
+    right: 115px;color: black;" [(ngModel)]="FilterCategory" (change)="FilterbyCategory($event)">
     <option value="{{item.category}}" *ngFor="let item of categories" style="color: black;">{{item.category}}</option>
   </select>
   <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
-  <br><br>
-  <ul class="wrapper cf" style="margin: 20px !important;">
-    <li class="product fl-l" *ngFor="let item of InventoryImages">
-      <div class="container-prod">
-        <div class="image" style="background-image:url('{{item.image}}');"></div>
-        <div class="sharing cf">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://codepen.io/mattiabericchia/pen/myQNEV"
-            class="fl-l" target="_blank"><i class="fa fa-facebook"></i></a>
-          <a href="https://twitter.com/home?status=Example%20of%20UI%20for%20a%20product%20list%20made%20with%20jQuery%20and%20css%20tricks%20%40mattiabericchia%20https://codepen.io/mattiabericchia/pen/myQNEV"
-            class="fl-l" target="_blank"><i class="fa fa-twitter"></i></a>
-          <a href="https://plus.google.com/share?url=https://codepen.io/mattiabericchia/pen/myQNEV" class="fl-l"
-            target="_blank"><i class="fa fa-google-plus"></i></a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://codepen.io/mattiabericchia/pen/myQNEV&title=UI%20Product%20list&summary=Example%20of%20UI%20for%20a%20product%20list%20made%20with%20jQuery%20and%20css%20tricks&source=https://www.linkedin.com/in/mattiabericchia"
-            class="fl-l" target="_blank"><i class="fa fa-linkedin"></i></a>
-        </div>
-        <div class="buttons cf">
-          <a class="cart fl-l">
-            <span>
-              <span class="add">{{item.name}} </span>
-            </span>
-          </a>
-          <a class="more fl-l" (click)="EditImageData(item)"><span><span><i class="fa fa-edit"
-                  style="font-size: 15px;"></i></span></span></a>
-          <a class="share fl-l" (click)="deleteAlert=true"><span><span><i class="fa fa-trash"
-                  style="font-size: 15px;"></i></span></span></a>
-        </div>
+
+
+  <div class="content-area">
+    <div class="content-bar" style="background: #009cff;">
+      <div class="itemtitle" style="color: white;">Product Image</div>
+      <div class="itemtitle" style="color: white;">Product Name</div>
+      <div class="itemprice" style="color: white;">Product Manufacturers</div>
+    </div>
+
+    <div class="content-bar" *ngFor="let item of InventoryImages; let i = index">
+      <div class="itemtitle">
+        <img src="{{ item.image }}" alt="" style="width: 60px;
+        height: 60px;
+        object-fit: cover;">
       </div>
-    </li>
-  </ul>
+      <div class="itemtitle">{{item.name}}</div>
+      <div class="itemtitle">{{item.manufacturer}}</div>
+      <div class="btncontainer">
+        <button class="cbbtn" (click)="EditInvent(item)"><ion-icon name="create-outline"></ion-icon></button>
+        <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+      </div>
+    </div>
 
-
+  </div>
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
     <div class="modal-dialog modal-confirm"
@@ -55,7 +49,6 @@
             <ion-icon name="trash-outline" style="font-size: 30px;"></ion-icon>
           </div>
           <h4 class="modal-title" style="margin-top: 0px;">Are you sure?</h4>
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
         </div>
         <div class="modal-body">
           <p>Do you really want to delete this Product Image ? This process cannot be undone.</p>
@@ -69,7 +62,7 @@
     </div>
   </div>
 
-  <div class="form-popup-bg" *ngIf=ActionPopup>
+  <div class="form-popup-bg" *ngIf="ActionPopup">
     <div (click)="ActionPopup=false"
       style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
     <div class="form-container">
@@ -125,7 +118,7 @@
   </div>
 
 
-  <div class="form-popup-bg" *ngIf=EditActionPopup>
+  <div class="form-popup-bg" *ngIf="EditActionPopup">
     <div (click)="EditActionPopup=false"
       style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
     <div class="form-container">
@@ -154,8 +147,6 @@
               {{item.category}}
             </option>
           </select>
-          <!-- <input class="form-control" type="text" placeholder="Category" style="font-size: 10px;"
-            value="{{EditInventoryData.category}}" /> -->
         </div>
         <div class="form-group">
           <label for="">Product Name</label>
@@ -166,8 +157,6 @@
               {{item.productName}}
             </option>
           </select>
-          <!-- <input type="text" class="form-control" placeholder="product name" style="font-size: 10px;"
-            value="{{EditInventoryData.name}}" /> -->
         </div>
 
         <button style="padding: 10px;
