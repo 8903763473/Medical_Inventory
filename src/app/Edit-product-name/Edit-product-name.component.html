@@ -1,5 +1,5 @@
 <section>
-  <ion-label class="head">Products</ion-label><br>
+  <ion-label class="head">Product Names</ion-label><br>
   <ion-label style="position: absolute;
     top: 14px;
     right: 425px;
@@ -16,15 +16,38 @@
   <ion-button class="Add" (click)="deleteAlert=true" style="right: 100px;">Delete 🗑</ion-button>
   <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
 
-  <div class="all">
-    <div class="names">
-      <div class="names-In" *ngFor="let item of productNames">
-        <ion-label>{{item.productName}}</ion-label>
+
+  <div class="content-area">
+    <div class="content-bar" style="background: #009cff;">
+      <div class="itemtitle" style="color: white;">Product Name</div>
+      <div class="itemprice" style="color: white;">Product Manufacturers</div>
+      <div class="itemprice" style="color: white;">Unit Size</div>
+      <div class="itemprice" style="color: white;">Unit Price</div>
+      <div class="itemprice" style="color: white;">Category</div>
+    </div>
+
+    <div class="content-bar" *ngFor="let item of productNames; let i = index">
+      <div class="itemtitle">{{ item.productName }}</div>
+      <div class="itemtitle">
+        <select name="" id="" style="width: 100%;
+        border: none;">
+          <option value="" *ngFor="let item1 of item.manufacture">{{ item1.manufacturers }}</option>
+        </select>
+      </div>
+      <div class="itemtitle">
+        <select name="" id="" style="width: 100%;
+        border: none;">
+          <option value="" *ngFor="let item1 of item.unitSize">{{ item1.sizes }}</option>
+        </select>
+      </div>
+      <div class="itemtitle">{{ item.unitPrice }}</div>
+      <div class="itemtitle" *ngIf="(i+1) % 2 == 0">Critical</div>
+      <div class="itemtitle" *ngIf="(i+1) % 2 != 0">Non-Critical</div>
+      <div class="btncontainer">
       </div>
     </div>
+
   </div>
-
-
 
   <div class="form-popup-bg" *ngIf=ActionPopup>
     <div (click)="ActionPopup=false"

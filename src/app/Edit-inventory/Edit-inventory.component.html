@@ -22,20 +22,22 @@
       <!-- <div class="itemnum" style="color: white;padding: 15px !important;">ID</div> -->
       <div class="itemtitle" style="color: white;">Category</div>
       <div class="itemprice" style="color: white;">Name</div>
-      <div class="itemstock" style="color: white;">Stock</div>
       <div class="itemstock" style="color: white;">Manufacturer</div>
+      <div class="itemstock" style="color: white;">In Stock</div>
       <div class="itemstock" style="color: white;">Unit</div>
-      <div class="itemstock" style="color: white;">Batch</div>
+      <div class="itemstock" style="color: white;">Batch No</div>
+      <div class="itemstock" style="color: white;">Exp Date</div>
     </div>
 
     <div class="content-bar" *ngFor="let item of LocalInventory">
       <!-- <div class="itemnum">{{item.id}}</div> -->
       <div class="itemtitle">{{item.category}}</div>
       <div class="itemprice">{{item.productName}}</div>
-      <div class="itemstock">18</div>
       <div class="itemprice">{{item.ManufactursList}}</div>
+      <div class="itemstock">18</div>
       <div class="itemprice">100</div>
       <div class="itemprice">2</div>
+      <div class="itemprice">Apr 20 2024</div>
       <div class="btncontainer">
 
         <button class="cbbtn"><ion-icon name="create-outline" (click)="EditInvent(item)"></ion-icon></button>

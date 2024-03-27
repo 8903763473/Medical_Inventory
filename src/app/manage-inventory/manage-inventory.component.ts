@@ -939,7 +939,7 @@ export class ManageInventoryComponent {
   constructor(public app: AppComponent, public router: Router) { }
 
   ionViewWillEnter() {
-    this.app.ind = 7;
+    this.app.ind = 2;
     this.Addpage = 1
     const localInventory: any = localStorage.getItem('InventoryData');
     console.log(localInventory);

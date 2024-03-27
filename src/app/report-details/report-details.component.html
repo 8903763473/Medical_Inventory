@@ -1,6 +1,5 @@
 <section>
   <div class="content-area">
-    <!-- <div class="page-title">Inventory</div> -->
     <ion-label class="head">{{Exp_Title}}</ion-label>
     <ion-label style="position: absolute;
     top: 14px;
@@ -14,16 +13,13 @@
     right: 40px;color: black;" [(ngModel)]="FilterCategory" (change)="FilterbyCategory($event)">
       <option value="{{item.category}}" *ngFor="let item of categories" style="color: black;">{{item.category}}</option>
     </select>
-    <!-- <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button> -->
     <br><br>
-    <!-- <div class="page-desc">View and manage your stock</div> -->
 
     <div class="content-bar" style="background: #009cff;">
-      <!-- <div class="itemnum" style="color: white;padding: 15px !important;">ID</div> -->
       <div class="itemprice" style="color: white;">Name</div>
       <div class="itemstock" style="color: white;">Manufacturer</div>
       <div class="itemtitle" style="color: white;">Category</div>
-      <div class="itemstock" style="color: white;">Stock</div>
+      <div class="itemstock" style="color: white;">Quantity</div>
       <div class="itemstock" style="color: white;">Exp Date</div>
       <div class="itemstock" style="color: white;">Batch</div>
     </div>
@@ -32,13 +28,10 @@
       <div class="itemprice">{{item.productName}}</div>
       <div class="itemprice" style="width: 100% !important;">{{item.ManufactursList}}</div>
       <div class="itemtitle">{{item.category}}</div>
-      <div class="itemstock">18</div>
+      <div class="itemstock">{{item.id+1}}</div>
       <div class="itemprice">Apr 15 2024</div>
       <div class="itemprice">2</div>
       <div class="btncontainer">
-
-        <!-- <button class="cbbtn"><ion-icon name="create-outline" (click)="EditInvent(item)"></ion-icon></button>
-        <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button> -->
       </div>
     </div>
   </div>
@@ -51,7 +44,6 @@
       <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
       color: #0fa2ff;">New Inventory</h1>
-      <!-- <p>For more information. Please complete this form.</p> -->
       <form action="">
         <!-- **************01************** -->
         <div class="form-group" *ngIf="Addpage==1">

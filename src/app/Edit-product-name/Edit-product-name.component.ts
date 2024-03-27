@@ -33,7 +33,7 @@ export class EditProductNameComponent {
     this.productNames = this.LocalInventory.reduce((acc: any, currentItem: any) => {
       const existingProduct = acc.find((product: any) => product.productName === currentItem.productName);
       if (!existingProduct) {
-        acc.push({ productName: currentItem.productName, category: currentItem.category });
+        acc.push({ productName: currentItem.productName, manufacture: currentItem.manufacturer, unitSize: currentItem.size, unitPrice: currentItem.id * 100 });
       }
       return acc;
     }, []);

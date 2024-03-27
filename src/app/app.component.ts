@@ -32,20 +32,34 @@ export class AppComponent {
     },
     {
       id: 4,
+      img: '../assets/img/Inventory.svg',
+      fill_img: '../assets/img/Inventory_color.svg',
+      name: 'Prescription',
+      path: 'prescription'
+    },
+    {
+      id: 5,
+      img: '../assets/img/Inventory.svg',
+      fill_img: '../assets/img/Inventory_color.svg',
+      name: 'Manage Orders',
+      path: 'Orders'
+    },
+    {
+      id: 6,
       img: '../assets/img/Reports.svg',
       fill_img: '../assets/img/Reports_color.svg',
       name: 'Inventory Report',
       path: 'Reports/1'
     },
     {
-      id: 5,
+      id: 7,
       img: '../assets/img/profile.svg',
       fill_img: '../assets/img/profile_color.svg',
       name: 'Expiry Report',
       path: 'Reports/2'
     },
     {
-      id: 6,
+      id: 8,
       img: '../assets/img/Settings.svg',
       fill_img: '../assets/img/Settings_color.svg',
       name: 'Settings',

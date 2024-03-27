@@ -358,7 +358,7 @@
         }
 
         .top-msg {
-            height: 50px;
+            height: auto;
             width: 50%;
             border-radius: 20px;
             display: grid;
@@ -368,7 +368,7 @@
             column-gap: 20px;
             padding: 0 20px;
             background-color: #f0f0f0;
-            gap: 10px;
+            gap: 5px;
 
             ion-label {
                 width: 100%;
@@ -379,6 +379,16 @@
                 font-size: 18px;
                 font-family: 'circular';
                 text-align: center;
+                border-bottom: 1px solid grey;
+                padding-bottom: 12px;
+            }
+
+            .choose {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 10px;
             }
         }
     }
@@ -577,8 +587,8 @@
             justify-content: center;
 
             img {
-                width: 240px;
-                height: 240px;
+                width: 200px;
+                height: 200px;
                 background: #FFF;
                 object-fit: cover;
             }
@@ -765,4 +775,85 @@
             object-fit: fill;
         }
     }
+
+
+    .form-popup-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: calc(100% - 230px);
+        left: 230px;
+
+        .form-group {
+            margin-top: 16px;
+
+            label {
+                color: #000000;
+                font-weight: 600;
+                font-size: 12px;
+            }
+        }
+
+        & {
+            position: fixed;
+            background-color: rgb(0 0 0 / 22%);
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            overflow-y: auto;
+            z-index: 10000;
+
+            &.is-visible {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.3s 0s, visibility 0s 0s;
+            }
+
+            &:before {
+                content: '';
+                background-color: #fff;
+                opacity: .25;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    .form-container {
+        background-color: #ffffff;
+        border-radius: 2px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding: 40px;
+        color: #fff;
+        height: auto;
+
+        .close-button {
+            background: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: solid 1px #fff;
+            border-radius: 8px;
+        }
+    }
+
+
 }

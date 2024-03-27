@@ -47,12 +47,94 @@ export class SettingsComponent {
   manageUser: boolean = false
   imageUrl: any
   Gender: any
+  DailySchedule: any
+  WeeklySchedule: any
+  MonthlySchedule: any
+  newPatient: boolean = false
+  SelectOne: any
+  SelectMultiple: any
+  singleCheck: any
 
+  ScheduleList: any = [
+    {
+      name: 'Daily'
+    },
+    {
+      name: 'Weekly'
+    },
+    {
+      name: 'Monthly'
+    }
+  ]
+
+  Weeksubname: any = [
+    {
+      name: 'Monday'
+    },
+    {
+      name: 'Tuesday'
+    },
+    {
+      name: 'Wednesday'
+    },
+    {
+      name: 'Thursday'
+    },
+    {
+      name: 'Friday'
+    },
+    {
+      name: 'Saturday'
+    },
+    {
+      name: 'Sunday'
+    }
+  ]
+
+  Monthlysubname: any = [
+    {
+      name: 'January'
+    },
+    {
+      name: 'February'
+    },
+    {
+      name: 'March'
+    },
+    {
+      name: 'April'
+    },
+    {
+      name: 'May'
+    },
+    {
+      name: 'June'
+    },
+    {
+      name: 'July'
+    },
+    {
+      name: 'Aug'
+    },
+    {
+      name: 'Sept'
+    },
+    {
+      name: 'Oct'
+    },
+    {
+      name: 'Nov'
+    },
+    {
+      name: 'Dec'
+    }
+  ]
 
 
   ionViewWillEnter() {
     this.selectedCheckbox = 1
-    this.app.ind = 3
+    this.app.ind = 6
+    this.SelectOne = 'test'
   }
 
   selectBox(id: any) {
@@ -81,4 +163,32 @@ export class SettingsComponent {
   PickGender(data: any) {
     this.Gender = data
   }
+
+  NotifyMe(type: any) {
+
+  }
+
+  ChooseSchedule(data: any) {
+    this.DailySchedule = data.target.value
+  }
+
+  handleRadioChange(data: any) {
+    console.log(data);
+    console.log(data.target.value);
+    if (data.target.value == 'One') {
+      this.SelectOne = data.target.checked
+    } else if (data.target.value == 'Multiple') {
+      this.SelectOne = false
+    }
+    this.singleCheck = 0
+  }
+
+  Check(data: any) {
+    this.singleCheck = data
+  }
+
+  Check1(data: any) {
+    this.singleCheck = data
+  }
+
 }

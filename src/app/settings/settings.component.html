@@ -119,8 +119,8 @@
           <h4 class="head">Settings</h4>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 col-12" (click)="OrgAlert=true">
+      <div class="row" style="row-gap: 20px;">
+        <div class="col-xl-3 col-sm-6 col-12">
           <div class="card">
             <div class="card-content">
               <div class="card-body">
@@ -166,12 +166,10 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
                     <img src="../../assets/img/notification.png" alt="" style="width: 80px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
-                    <!-- <h3>156</h3> -->
                     <span>Notification Type</span>
                   </div>
                 </div>
@@ -185,12 +183,10 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
                     <img src="../../assets/img/notification_schedule.png" alt="" style="width: 70px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
-                    <!-- <h3>64.89 %</h3> -->
                     <span>Notification Schedule</span>
                   </div>
                 </div>
@@ -205,12 +201,10 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
                     <img src="../../assets/img/manageUser.png" alt="" style="width: 70px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
-                    <!-- <h3>64.89 %</h3> -->
                     <span>Manage User</span>
                   </div>
                 </div>
@@ -219,6 +213,23 @@
           </div>
         </div>
 
+        <div class="col-xl-3 col-sm-6 col-12" (click)="newPatient=true">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <img src="../../assets/img/NewPatient.png" alt="" style="width: 80px;">
+                  </div>
+                  <div class="media-body text-right" style="text-align: right;
+                width: 100%;">
+                    <span>New Patient</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
@@ -226,40 +237,58 @@
 
 
   <div *ngIf="notifyType" class="Social">
-    <div style="width: 100%;height: 100%;position: fixed;top: 0;" (click)="notifyType=false"></div>
+    <div style="width: 100%;height: 100%;position: fixed;top: 0;z-index: -1;" (click)="notifyType=false"></div>
     <div class="top-msg">
       <ion-label>Choose one to get notification</ion-label>
+      <div class="choose">
+        <div class="choose-In">
+          <input type="radio" name="option" id="option1" value="One" (change)="handleRadioChange($event)">&nbsp;Choose
+          One
+          <!-- <input type="checkbox" (change)="one($event)">&nbsp;Choose One -->
+        </div>
+        <div class="choose-In">
+          <input type="radio" name="option" id="option2" value="Multiple"
+            (change)="handleRadioChange($event)">&nbsp;Choose
+          Multiple
+          <!-- <input type="checkbox">&nbsp;Choose Multiple -->
+        </div>
+      </div>
     </div>
     <div class="social-icon-list">
-      <div class="icon-group">
-        <ion-icon name="chatbubble" style="color: #3b5998;"></ion-icon>
-        <span class="icon-text">
-          SMS
-        </span>
-        <span class="icon-bg"></span>
+      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;">
+        <div class="icon-group" (click)="NotifyMe('sms')">
+          <ion-icon name="chatbubble" style="color: #3b5998;"></ion-icon>
+          <span class="icon-text">
+            SMS
+          </span>
+        </div>
+        <input type="checkbox" *ngIf="SelectOne==true" [checked]="singleCheck==1" (click)="Check(1)">
+        <input type="checkbox" *ngIf="SelectOne!=true">
       </div>
-      <div class="icon-group">
-        <ion-icon name="mail" style="color: #1da1f2;"></ion-icon>
-        <span class="icon-text">
-          Mail
-        </span>
-        <span class="icon-bg"></span>
+      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;">
+        <div class="icon-group" (click)="NotifyMe('mail')">
+          <ion-icon name="mail" style="color: #1da1f2;"></ion-icon>
+          <span class="icon-text">
+            Mail
+          </span>
+          <span class="icon-bg"></span>
+        </div>
+        <input type="checkbox" *ngIf="SelectOne==true" [checked]="singleCheck==2" (click)="Check(2)">
+        <input type="checkbox" *ngIf="SelectOne!=true">
       </div>
-      <div class="icon-group">
-        <ion-icon name="logo-whatsapp" style="color: #25d366;"></ion-icon>
-        <span class="icon-text">
-          whatsapp
-        </span>
-        <span class="icon-bg"></span>
+      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;">
+        <div class="icon-group" (click)="NotifyMe('whatsapp')">
+          <ion-icon name="logo-whatsapp" style="color: #25d366;"></ion-icon>
+          <span class="icon-text">
+            whatsapp
+          </span>
+          <span class="icon-bg"></span>
+        </div>
+        <input type="checkbox" *ngIf="SelectOne==true" [checked]="singleCheck==3" (click)="Check(3)">
+        <input type="checkbox" *ngIf="SelectOne!=true">
       </div>
-      <!-- <div class="icon-group">
-        <i class="fab fa-youtube"></i>
-        <span class="icon-text">
-          Youtube
-        </span>
-        <span class="icon-bg"></span>
-      </div> -->
     </div>
+    <!-- <ion-button>Done</ion-button> -->
   </div>
 
 
@@ -273,16 +302,29 @@
       <form action="">
         <div class="form-group">
           <label for="">Select Schedule</label>
-          <!-- <input type="text" class="form-control" placeholder="new stage" style="font-size: 10px;" /> -->
           <select name="" id="" style="width: 100%;
           border: 1px solid #cfcfcf;
-          border-radius: 4px; color: black;">
-            <option value="1 week" style="color: black;">1 week</option>
-            <option value="1 Month" style="color: black;">1 Month</option>
-            <option value="3 Month" style="color: black;">3 Month</option>
-            <option value="6 Month" style="color: black;">6 Month</option>
-            <option value="1 Year" style="color: black;">1 Year</option>
+          border-radius: 4px; color: black;" [(ngModel)]="DailySchedule" (change)="ChooseSchedule($event)">
+            <option value="{{item.name}}" *ngFor="let item of ScheduleList" style="color: black;">{{item.name}}
+            </option>
           </select>
+
+          <select name="" id="" style="width: 100%;
+          border: 1px solid #cfcfcf;
+          border-radius: 4px; color: black;margin-top: 15px;" *ngIf="DailySchedule=='Weekly'"
+            [(ngModel)]="WeeklySchedule">
+            <option value="{{item.name}}" *ngFor="let item of Weeksubname" style="color: black;">{{item.name}}
+            </option>
+          </select>
+
+          <select name="" id="" style="width: 100%;
+          border: 1px solid #cfcfcf;
+          border-radius: 4px; color: black;margin-top: 15px;" *ngIf="DailySchedule=='Monthly'"
+            [(ngModel)]="MonthlySchedule">
+            <option value="{{item.name}}" *ngFor="let item of Monthlysubname" style="color: black;">{{item.name}}
+            </option>
+          </select>
+
         </div>
 
         <button style="padding: 10px;
@@ -296,12 +338,54 @@
     </div>
   </div>
 
+
+
+  <div class="form-popup-bg" *ngIf=newPatient>
+    <div (click)="newPatient=false" style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;">
+    </div>
+    <div class="form-container">
+      <button id="btnCloseForm" class="close-button" (click)="newPatient=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">New Patient</h1>
+      <form action="">
+        <div class="form-group">
+          <label for="">Name</label>
+          <input type="text" class="form-control" placeholder="Name" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Age</label>
+          <input class="form-control" type="text" placeholder="Age" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Contact No</label>
+          <input class="form-control" type="text" placeholder="Contact No" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Pre-Existing Disease</label>
+          <input class="form-control" type="text" placeholder="Disease" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Alargies</label>
+          <input class="form-control" type="text" placeholder="Alargies" style="font-size: 10px;" />
+        </div>
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;">Submit</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 
 
 <section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="manageUser" class="ManageFull">
   <div class="txt">
+    <ion-icon name="arrow-back-outline" (click)="manageUser=false" style="font-size: 24px;color: #007aff;"></ion-icon>
     <ion-label class="head">Add Staff</ion-label>
     <div class="txt-btn">
       <div class="resetBtn">
@@ -345,14 +429,14 @@
           </div>
 
 
-          <div class="inputs">
+          <!-- <div class="inputs">
             <div class="variable">
               <ion-label>Employee ID</ion-label>
             </div>
             <div class="value">
               <ion-input></ion-input>
             </div>
-          </div>
+          </div> -->
 
           <div class="inputs">
             <div class="variable">
@@ -380,15 +464,9 @@
               <ion-input></ion-input>
             </div>
           </div>
-
-          <!-- <div class="addToBtn">
-            <div class="submit">
-              <ion-label>Update</ion-label>
-            </div>
-          </div> -->
         </div>
 
-        <div class="details_1">
+        <!-- <div class="details_1">
           <ion-label class="detailName">Account Info</ion-label>
           <div class="inputs">
             <div class="variable">
@@ -435,18 +513,12 @@
               <ion-input></ion-input>
             </div>
           </div>
-
-          <!-- <div class="addToBtn">
-            <div class="submit">
-              <ion-label>Update</ion-label>
-            </div>
-          </div> -->
-        </div>
+        </div> -->
 
       </div>
 
       <div class="details two">
-        <div class="details_1">
+        <!-- <div class="details_1">
           <ion-label class="detailName">Address</ion-label>
           <div class="inputs">
             <div class="variable">
@@ -493,7 +565,7 @@
               <ion-input></ion-input>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="details_1">
           <ion-label class="detailName">Contact Info</ion-label>
@@ -516,7 +588,7 @@
           </div>
         </div>
 
-        <div class="details_1">
+        <!-- <div class="details_1">
           <ion-label class="detailName">Pay Roll</ion-label>
           <div class="inputs">
             <div class="variable">
@@ -526,7 +598,7 @@
               <ion-input></ion-input>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
       </div>
@@ -544,7 +616,6 @@
             <tr class="text-dark">
               <th scope="col" style="border-radius: 10px 0px 0px 10px;">Img</th>
               <th scope="col">Name</th>
-              <th scope="col">Employee ID</th>
               <th scope="col">Date of Birth</th>
               <th scope="col">Role</th>
               <th scope="col">Contact No</th>
@@ -558,7 +629,6 @@
                 <img src="../../assets/img/user1.jpg" alt="" class="user">
               </td>
               <td>Vijay</td>
-              <td>MD-8123</td>
               <td>05 Mar 2001</td>
               <td>Employee</td>
               <td>6474746764</td>
@@ -570,7 +640,6 @@
                 <img src="../../assets/img/user3.jpg" alt="" class="user">
               </td>
               <td>Bala</td>
-              <td>MD-823</td>
               <td>26 Aug 1992</td>
               <td>Admin</td>
               <td>6476470923</td>
@@ -582,7 +651,6 @@
                 <img src="../../assets/img/user2.jpg" alt="" class="user">
               </td>
               <td>Muthu</td>
-              <td>MD-083</td>
               <td>13 Apr 2002</td>
               <td>Admin</td>
               <td>0923453245</td>
@@ -594,7 +662,6 @@
                 <img src="../../assets/img/user4.jpg" alt="" class="user">
               </td>
               <td>Krishna</td>
-              <td>MD-018</td>
               <td>05 Feb 1999</td>
               <td>Employee</td>
               <td>5689122097</td>
@@ -606,7 +673,6 @@
                 <img src="../../assets/img/user5.jpg" alt="" class="user">
               </td>
               <td>Suresh</td>
-              <td>MD-800</td>
               <td>02 Jan 2000</td>
               <td>User</td>
               <td>0328475902</td>

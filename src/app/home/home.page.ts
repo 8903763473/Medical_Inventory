@@ -12,9 +12,9 @@ export class HomePage {
 
   @Input() BarcanvasId: any;
   @Input() LinecanvasId: any;
-  @Input() data: number[] = [95, 120, 155, 230, 100, 200, 137];
+  @Input() data: number[] = [95, 120, 155, 230, 100];
   @Input() data1: number[] = [210, 110, 185, 280, 190, 120, 90, 89, 145, 200, 210, 100];
-  @Input() labels: string[] = ['Vita', 'Heal', 'Cure', 'BioX'];
+  @Input() labels: string[] = ['Vita', 'Heal', 'Cure', 'BioX', 'Pure'];
   @Input() labels1: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   @ViewChild('BarchartCanvas') BarchartCanvas: ElementRef | undefined;

@@ -1,29 +1,33 @@
 <!-- ******************************INVENTORY   LIST************************* -->
 
 <section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="PageUrl==1">
-  <div class="top">
+  <div class="top" style="width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;">
     <h3 class="title">Inventory Reports</h3>
+    <img src="../../assets/img/dwnldAll.svg" alt="">
   </div><br>
   <div class="Alltables">
 
     <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
   background-color: #ffffff !important;">
 
-      <div class="table-top">
+      <!-- <div class="table-top">
         <ion-label>Expiring List</ion-label>
         <img src="../../assets/img/dwnldAll.svg" alt="">
-      </div><br>
+      </div><br> -->
 
       <div class="table-responsive">
         <table class="table text-start align-middle table-bordered table-hover mb-0">
           <thead style="background-color: #C2C2C2;">
             <tr class="text-dark">
               <th scope="col" style="border-radius: 10px 0px 0px 10px;">Img</th>
-              <th scope="col">Pro.ID</th>
               <th scope="col">Medicine Name</th>
+              <th scope="col">Manufacturer</th>
               <th scope="col">Quantity</th>
               <th scope="col">Expire Date</th>
-              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Downloads</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Batch</th>
             </tr>
           </thead>
           <tbody>
@@ -31,65 +35,110 @@
               <td>
                 <img src="../../assets/img/med1.jpg" alt="" class="user">
               </td>
-              <td>MD-0123</td>
               <td>Apixaban</td>
+              <td>HealMakers</td>
               <td>12</td>
               <td>01 Jan 2045</td>
-              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
-                    src="../../assets/img/download.svg" alt=""></a></td>
+              <td class="dwnld">2</td>
             </tr>
             <tr>
               <td>
                 <img src="../../assets/img/med2.jpg" alt="" class="user">
               </td>
-              <td>MD-0124</td>
               <td>Anovera</td>
+              <td>MediCrafts</td>
               <td>85</td>
               <td>01 Jan 2021</td>
-              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
-                    src="../../assets/img/download.svg" alt=""></a></td>
+              <td class="dwnld">1</td>
             </tr>
             <tr>
               <td>
                 <img src="../../assets/img/med3.jpg" alt="" class="user">
               </td>
-              <td>MD-0125</td>
               <td>Apokyn</td>
+              <td>CareForge</td>
               <td>58</td>
               <td>01 Jan 2035</td>
-              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
-                    src="../../assets/img/download.svg" alt=""></a></td>
+              <td class="dwnld">2</td>
             </tr>
             <tr>
               <td>
                 <img src="../../assets/img/med4.jpg" alt="" class="user">
               </td>
-              <td>MD-0126</td>
               <td>Apriso</td>
+              <td>PharmaWorks</td>
               <td>10</td>
               <td>01 Jan 2043</td>
-              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
-                    src="../../assets/img/download.svg" alt=""></a></td>
+              <td class="dwnld">3</td>
             </tr>
             <tr>
               <td>
                 <img src="../../assets/img/med5.jpg" alt="" class="user">
               </td>
-              <td>MD-0127</td>
               <td>Aptiom</td>
+              <td>CureCraft</td>
               <td>21</td>
               <td>01 Jan 2025</td>
-              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
-                    src="../../assets/img/download.svg" alt=""></a></td>
+              <td class="dwnld">2</td>
             </tr>
 
+            <tr>
+              <td>
+                <img src="../../assets/img/med6.jpg" alt="" class="user">
+              </td>
+              <td>Actorise</td>
+              <td>VitaForge</td>
+              <td>120</td>
+              <td>01 Jan 2005</td>
+              <td class="dwnld">1</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med7.jpg" alt="" class="user">
+              </td>
+              <td>Azel</td>
+              <td>RemedyTech</td>
+              <td>185</td>
+              <td>01 Jan 2055</td>
+              <td class="dwnld">1</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med8.jpg" alt="" class="user">
+              </td>
+              <td>Avastin</td>
+              <td>MedBlend</td>
+              <td>585</td>
+              <td>01 Jan 2015</td>
+              <td class="dwnld">2</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med9.jpg" alt="" class="user">
+              </td>
+              <td>Ascroil</td>
+              <td>LifeWorks</td>
+              <td>110</td>
+              <td>01 Jan 2035</td>
+              <td class="dwnld">3</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med10.jpg" alt="" class="user">
+              </td>
+              <td>Allegra</td>
+              <td>HealthCraft</td>
+              <td>211</td>
+              <td>01 Jan 2025</td>
+              <td class="dwnld">2</td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
 
 
-    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+    <!-- <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
   background-color: #ffffff !important;">
       <div class="table-top">
         <ion-label>Few Products</ion-label>
@@ -169,10 +218,10 @@
         </table>
 
       </div>
-    </div>
+    </div> -->
 
 
-    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+    <!-- <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
   background-color: #ffffff !important;">
 
 
@@ -290,7 +339,8 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </div> -->
+
   </div>
 
 </section>

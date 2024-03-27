@@ -13,6 +13,9 @@ import { EditProductNameComponent } from './Edit-product-name/Edit-product-name.
 import { EditProductImageComponent } from './Edit-product-image/Edit-product-image.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { ReportDetailsComponent } from './report-details/report-details.component';
+import { OrdersComponent } from './orders/orders.component';
+import { EditUnitSizeComponent } from './edit-unit-size/edit-unit-size.component';
+import { EditTypesComponent } from './edit-types/edit-types.component';
 
 const routes: Routes = [
   {
@@ -75,6 +78,18 @@ const routes: Routes = [
   {
     path: 'Report_Details/:id/:id1',
     component: ReportDetailsComponent
+  },
+  {
+    path: 'Orders',
+    component: OrdersComponent
+  },
+  {
+    path: 'Edit_UnitSize',
+    component: EditUnitSizeComponent
+  },
+  {
+    path: 'Edit_Types',
+    component: EditTypesComponent
   },
 ];
 
