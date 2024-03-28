@@ -26,7 +26,15 @@ export class EditInventoryComponent {
   ionViewWillEnter() {
     this.deleteAlert = false
     this.Addpage = 1
+    this.app.ind = 0
     this.FilterCategory = 'All'
+
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
+
+
     this.LocalCalculation()
   }
 
@@ -50,7 +58,7 @@ export class EditInventoryComponent {
     this.categories = this.categories.concat({ category: 'All' });
     console.log(this.categories);
   }
-  
+
   FilterbyCategory(data: any) {
     if (data.target.value != 'All') {
       this.LocalInventory = this.DummyLocalInventory.filter((res: any) => {
@@ -62,7 +70,7 @@ export class EditInventoryComponent {
   }
 
   Buttons() {
-    location.reload()
+    this.deleteAlert = false
   }
 
   EditInvent(data: any) {

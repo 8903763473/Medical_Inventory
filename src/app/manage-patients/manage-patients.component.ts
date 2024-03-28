@@ -71,6 +71,10 @@ export class ManagePatientsComponent {
     this.deleteAlert = false
     this.Addpage = 1
     this.FilterCategory = 'All'
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
     this.LocalCalculation()
   }
 
@@ -109,7 +113,7 @@ export class ManagePatientsComponent {
   }
 
   Buttons() {
-    location.reload()
+    this.deleteAlert=false
   }
 
   EditInvent(data: any) {

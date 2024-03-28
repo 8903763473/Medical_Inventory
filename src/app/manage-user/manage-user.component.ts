@@ -17,8 +17,12 @@ export class ManageUserComponent {
 
   
   ionViewWillEnter() {
-    this.app.ind = 6
+    this.app.ind = 0
     this.Gender = 'Male'
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
   }
 
   PickGender(data: any) {

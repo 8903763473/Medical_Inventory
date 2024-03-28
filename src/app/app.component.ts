@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -72,7 +73,7 @@ export class AppComponent {
   loader: boolean = false
   Open: boolean = false
   alertButtons = ['Action'];
-  constructor(public router: Router, private alertController: AlertController) { }
+  constructor(public router: Router, private alertController: AlertController, private location: Location) { }
 
   ionViewWillEnter() {
     this.ind = 1
@@ -80,11 +81,12 @@ export class AppComponent {
   }
 
   OpenMenu() {
-    if (this.Open == false) {
-      this.Open = true
-    } else {
-      this.Open = false
-    }
+    // if (this.Open == false) {
+    //   this.Open = true
+    // } else {
+    //   this.Open = false
+    // }
+    this.location.back()
   }
 
   change(data: any) {

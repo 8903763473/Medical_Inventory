@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-edit-product-name',
@@ -18,10 +19,15 @@ export class EditProductNameComponent {
   DummyInventoryNames: any = []
   FilterCategory: any
 
-  constructor() { }
+  constructor(public app: AppComponent) { }
 
   ngOnInit() {
     this.FilterCategory = 'All'
+    this.app.ind = 0
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
     this.LocalCalculation()
   }
 
@@ -62,7 +68,7 @@ export class EditProductNameComponent {
 
 
   Buttons() {
-    location.reload()
+    this.deleteAlert = false
   }
 
 

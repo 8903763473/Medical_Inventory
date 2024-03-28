@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-edit-category',
@@ -36,11 +37,18 @@ export class EditCategoryComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(public app: AppComponent) { }
 
   ngOnInit() {
     this.FilterCategory = 'All'
     this.DummyLocalInventory = this.CategoryImages
+    this.app.ind = 0
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
+
+
     this.LocalCalculation();
   }
 
@@ -61,7 +69,7 @@ export class EditCategoryComponent implements OnInit {
   }
 
   Buttons() {
-    location.reload()
+    this.deleteAlert = false
   }
 
   handleImageSelect(event: any) {

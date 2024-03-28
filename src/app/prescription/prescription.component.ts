@@ -40,10 +40,14 @@ export class PrescriptionComponent implements OnInit {
 
   ngOnInit() {
     this.app.ind = 4
-    this.Categories()
     this.MorningQty = 1
     this.AfternoonQty = 1
     this.EveningQty = 1
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
+    this.Categories()
   }
 
   Categories() {
@@ -156,7 +160,7 @@ export class PrescriptionComponent implements OnInit {
   }
 
   submit() {
-    location.reload()
+    this.EditPrescription=false
   }
 
   Pharmacist() {

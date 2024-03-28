@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-import { EditProductImageComponent } from './edit-product-image.component';
+import { IonicModule } from '@ionic/angular'; 
+import { EditProductImageComponent } from './Edit-product-image.component';
 
 describe('EditProductImageComponent', () => {
   let component: EditProductImageComponent;

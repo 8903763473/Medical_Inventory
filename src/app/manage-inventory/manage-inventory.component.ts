@@ -941,6 +941,11 @@ export class ManageInventoryComponent {
   ionViewWillEnter() {
     this.app.ind = 2;
     this.Addpage = 1
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
+    
     const localInventory: any = localStorage.getItem('InventoryData');
     console.log(localInventory);
     if (JSON.parse(localInventory) == null) {

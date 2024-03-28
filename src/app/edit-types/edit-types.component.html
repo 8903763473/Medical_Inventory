@@ -10,8 +10,8 @@
       <div class="itemprice" style="color: white;">Medicine Type</div>
     </div>
 
-    <div class="content-bar" *ngFor="let item of LocalInventory">
-      <div class="itemtitle">{{item.id}}</div>
+    <div class="content-bar" *ngFor="let item of categories;let i = index">
+      <div class="itemtitle">{{i + 1}}</div>
       <div class="itemtitle">{{item.category}}</div>
       <div class="btncontainer">
 

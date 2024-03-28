@@ -109,6 +109,10 @@ export class OrdersComponent {
     this.FilterStage = 'All'
     this.PrescriptionDetails = false
     this.DummyAllOrders = this.AllOrders
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
     this.LocalCalculation()
   }
 
@@ -144,7 +148,7 @@ export class OrdersComponent {
   }
 
   Buttons() {
-    location.reload()
+    this.deleteAlert=false
   }
 
   EditInvent(data: any) {

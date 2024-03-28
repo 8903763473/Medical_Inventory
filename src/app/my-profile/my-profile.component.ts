@@ -16,8 +16,12 @@ export class MyProfileComponent {
   @ViewChild('imageInput') imageInput: ElementRef<HTMLInputElement> | any;
 
   ionViewWillEnter() {
-    this.app.ind = 5
+    this.app.ind = 0
     this.Gender = 'Male'
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
   }
   
 

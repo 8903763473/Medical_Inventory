@@ -55,6 +55,14 @@ export class SettingsComponent {
   SelectOne: any
   SelectMultiple: any
   singleCheck: any
+  SchedulePop: boolean = false
+  SchedulePopData: any = []
+  SchedulePopTitle: any
+  setSchedule: any = []
+  Data: any = []
+  notifyTab: any
+  ChooseoneId: any
+
 
   ScheduleList: any = [
     {
@@ -134,8 +142,14 @@ export class SettingsComponent {
 
   ionViewWillEnter() {
     this.selectedCheckbox = 1
+    this.notifyTab = 1
+    this.ChooseoneId = 0
     this.app.ind = 8
     this.SelectOne = 'test'
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
   }
 
   selectBox(id: any) {
@@ -194,6 +208,42 @@ export class SettingsComponent {
 
   See(data: any) {
     this.router.navigate(['/' + data])
+  }
+
+  week(data: any) {
+    this.SchedulePop = true
+    if (data == 'Weekly') {
+      this.SchedulePopData = this.Weeksubname
+      this.SchedulePopTitle = 'Weekly Schedule'
+    } else if (data == 'Monthly') {
+      this.SchedulePopData = this.Monthlysubname
+      this.SchedulePopTitle = 'Monthly Schedule'
+    }
+  }
+
+  ScheduleCheck(data: any, data1: any) {
+    if (data.target.checked == true) {
+      this.setSchedule.push(data1)
+    } else {
+      this.Data = []
+      this.Data = this.setSchedule.filter((res: any) => {
+        return res.name != data1
+      })
+      console.log(this.Data);
+
+    }
+  }
+
+  tab(id: any) {
+    this.notifyTab = id
+
+    if (id == 2) {
+      this.ChooseoneId = 0
+    }
+  }
+
+  chooseOnecheck(id: any) {
+    this.ChooseoneId = id
   }
 
 }

@@ -26,7 +26,12 @@ export class EditTypesComponent {
   ionViewWillEnter() {
     this.deleteAlert = false
     this.Addpage = 1
+    this.app.ind = 0
     this.FilterCategory = 'All'
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
     this.LocalCalculation()
   }
 
@@ -40,6 +45,7 @@ export class EditTypesComponent {
         Object.assign(Inv, { ManufactursList: this.ManufactureList })
       });
     });
+    console.log(this.LocalInventory);
     this.DummyLocalInventory = this.LocalInventory
     this.CalculateCategory()
   }
@@ -47,7 +53,7 @@ export class EditTypesComponent {
   CalculateCategory() {
     this.categories = new Set(this.LocalInventory.map((res: any) => res.category));
     this.categories = Array.from(this.categories).map(category => ({ category }));
-    this.categories = this.categories.concat({ category: 'All' });
+    // this.categories = this.categories.concat({ category: 'All' });
     console.log(this.categories);
   }
 
@@ -62,7 +68,7 @@ export class EditTypesComponent {
   }
 
   Buttons() {
-    location.reload()
+    this.deleteAlert=false
   }
 
   EditInvent(data: any) {

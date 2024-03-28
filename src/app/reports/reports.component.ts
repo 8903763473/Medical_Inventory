@@ -23,6 +23,10 @@ export class ReportsComponent {
     }
 
     this.selected = 'date'
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
   }
 
   filterbyDate(data: any) {

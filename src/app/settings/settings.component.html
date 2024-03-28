@@ -126,14 +126,10 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <!-- <ion-icon name="notifications-outline" style="font-size: 35px;"></ion-icon> -->
-                    <!-- <img src="../../assets/img/notification_type.png" alt="" style="width: 70px;"> -->
-                    <ion-icon name="business-outline" style="font-size: 50px;
-                    color: black;"></ion-icon>
+                    <img src="../../assets/img/organization.svg" alt="" style="width: 60px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
-                    <!-- <h3>278</h3> -->
                     <span>Organization & Alert</span>
                   </div>
                 </div>
@@ -142,31 +138,13 @@
           </div>
         </div>
 
-        <!-- <div class="col-xl-3 col-sm-6 col-12" (click)="notifyType=true">
-          <div class="card">
-            <div class="card-content">
-              <div class="card-body">
-                <div class="media d-flex">
-                  <div class="align-self-center">
-                    <img src="../../assets/img/notification_type.png" alt="" style="width: 70px;">
-                  </div>
-                  <div class="media-body text-right" style="text-align: right;
-                width: 100%;">
-                    <span>Get Notifications on</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
         <div class="col-xl-3 col-sm-6 col-12" (click)="notifyType=true">
           <div class="card">
             <div class="card-content">
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <img src="../../assets/img/notification.png" alt="" style="width: 80px;">
+                    <img src="../../assets/img/notification_type.svg" alt="" style="width: 60px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
@@ -183,7 +161,7 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <img src="../../assets/img/notification_schedule.png" alt="" style="width: 70px;">
+                    <img src="../../assets/img/notification_schedule.svg" alt="" style="width: 60px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
@@ -195,13 +173,13 @@
           </div>
         </div>
 
-        <div class="col-xl-3 col-sm-6 col-12" (click)="manageUser=true">
+        <div class="col-xl-3 col-sm-6 col-12" (click)="See('ManageUser')">
           <div class="card">
             <div class="card-content">
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <img src="../../assets/img/manageUser.png" alt="" style="width: 70px;">
+                    <img src="../../assets/img/manage_user.svg" alt="" style="width: 60px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
@@ -219,7 +197,7 @@
               <div class="card-body">
                 <div class="media d-flex">
                   <div class="align-self-center">
-                    <img src="../../assets/img/NewPatient.png" alt="" style="width: 80px;">
+                    <img src="../../assets/img/manage_patient.svg" alt="" style="width: 60px;">
                   </div>
                   <div class="media-body text-right" style="text-align: right;
                 width: 100%;">
@@ -238,57 +216,57 @@
 
   <div *ngIf="notifyType" class="Social">
     <div style="width: 100%;height: 100%;position: fixed;top: 0;z-index: -1;" (click)="notifyType=false"></div>
-    <div class="top-msg">
-      <ion-label>Choose one to get notification</ion-label>
-      <div class="choose">
-        <div class="choose-In">
-          <input type="radio" name="option" id="option1" value="One" (change)="handleRadioChange($event)">&nbsp;Choose
-          One
-          <!-- <input type="checkbox" (change)="one($event)">&nbsp;Choose One -->
+    <div class="notifyBox">
+      <ion-label style="font-size: 13px;
+      color: black;
+      font-weight: bold;
+      padding: 10px;">Notification Type</ion-label>
+      <div class="notifyTab">
+        <div class="notifyTab-In" [ngClass]="{'notifitabActive':notifyTab==1}" (click)="tab(1)">
+          <ion-label>Choose one</ion-label>
         </div>
-        <div class="choose-In">
-          <input type="radio" name="option" id="option2" value="Multiple"
-            (change)="handleRadioChange($event)">&nbsp;Choose
-          Multiple
-          <!-- <input type="checkbox">&nbsp;Choose Multiple -->
+        <div class="notifyTab-In" [ngClass]="{'notifitabActive':notifyTab==2}" (click)="tab(2)">
+          <ion-label>Choose Multiple</ion-label>
         </div>
       </div>
+
+      <!-- ******ONE****** -->
+
+      <div class="types" *ngIf="notifyTab==1">
+        <div class="typesIn">
+          <ion-label>Whatsapp</ion-label>
+          <input type="checkbox" [checked]="ChooseoneId==1" (click)="chooseOnecheck(1)">
+        </div>
+        <div class="typesIn">
+          <ion-label>SMS</ion-label>
+          <input type="checkbox" [checked]="ChooseoneId==2" (click)="chooseOnecheck(2)">
+        </div>
+        <div class="typesIn">
+          <ion-label>Mail</ion-label>
+          <input type="checkbox" [checked]="ChooseoneId==3" (click)="chooseOnecheck(3)">
+        </div>
+      </div>
+
+      <!-- ******MULTIPLE****** -->
+
+      <div class="types" *ngIf="notifyTab==2">
+        <div class="typesIn">
+          <ion-label>Whatsapp</ion-label>
+          <input type="checkbox">
+        </div>
+        <div class="typesIn">
+          <ion-label>SMS</ion-label>
+          <input type="checkbox">
+        </div>
+        <div class="typesIn">
+          <ion-label>Mail</ion-label>
+          <input type="checkbox">
+        </div>
+      </div>
+
+
+      <ion-button style="font-size: 10px;" (click)="notifyType=false">Done</ion-button>
     </div>
-    <div class="social-icon-list">
-      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;">
-        <div class="icon-group" (click)="NotifyMe('sms')">
-          <ion-icon name="chatbubble" style="color: #3b5998;"></ion-icon>
-          <span class="icon-text">
-            SMS
-          </span>
-        </div>
-        <input type="checkbox" *ngIf="SelectOne==true" [checked]="singleCheck==1" (click)="Check(1)">
-        <input type="checkbox" *ngIf="SelectOne!=true">
-      </div>
-      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;">
-        <div class="icon-group" (click)="NotifyMe('mail')">
-          <ion-icon name="mail" style="color: #1da1f2;"></ion-icon>
-          <span class="icon-text">
-            Mail
-          </span>
-          <span class="icon-bg"></span>
-        </div>
-        <input type="checkbox" *ngIf="SelectOne==true" [checked]="singleCheck==2" (click)="Check(2)">
-        <input type="checkbox" *ngIf="SelectOne!=true">
-      </div>
-      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;">
-        <div class="icon-group" (click)="NotifyMe('whatsapp')">
-          <ion-icon name="logo-whatsapp" style="color: #25d366;"></ion-icon>
-          <span class="icon-text">
-            whatsapp
-          </span>
-          <span class="icon-bg"></span>
-        </div>
-        <input type="checkbox" *ngIf="SelectOne==true" [checked]="singleCheck==3" (click)="Check(3)">
-        <input type="checkbox" *ngIf="SelectOne!=true">
-      </div>
-    </div>
-    <!-- <ion-button>Done</ion-button> -->
   </div>
 
 
@@ -309,21 +287,14 @@
             </option>
           </select>
 
-          <select name="" id="" style="width: 100%;
-          border: 1px solid #cfcfcf;
-          border-radius: 4px; color: black;margin-top: 15px;" *ngIf="DailySchedule=='Weekly'"
-            [(ngModel)]="WeeklySchedule">
-            <option value="{{item.name}}" *ngFor="let item of Weeksubname" style="color: black;">{{item.name}}
-            </option>
-          </select>
-
-          <select name="" id="" style="width: 100%;
-          border: 1px solid #cfcfcf;
-          border-radius: 4px; color: black;margin-top: 15px;" *ngIf="DailySchedule=='Monthly'"
-            [(ngModel)]="MonthlySchedule">
-            <option value="{{item.name}}" *ngFor="let item of Monthlysubname" style="color: black;">{{item.name}}
-            </option>
-          </select>
+          <input type="text" (click)="week(DailySchedule)" *ngIf="DailySchedule=='Weekly'" style="width: 100%;
+          margin-top: 10px;
+          border: 1px solid #cecdcd;
+          border-radius: 4px;">
+          <input type="text" (click)="week(DailySchedule)" *ngIf="DailySchedule=='Monthly'" style="width: 100%;
+          margin-top: 10px;
+          border: 1px solid #cecdcd;
+          border-radius: 4px;">
 
         </div>
 
@@ -340,34 +311,23 @@
 
 
 
-  <!-- <div class="form-popup-bg" *ngIf=newPatient>
-    <div (click)="newPatient=false" style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;">
+  <div class="form-popup-bg" *ngIf="SchedulePop">
+    <div (click)="SchedulePop=false"
+      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;">
     </div>
     <div class="form-container">
-      <button id="btnCloseForm" class="close-button" (click)="newPatient=false" style="color: #0fa2ff;">X</button>
+      <button id="btnCloseForm" class="close-button" (click)="SchedulePop=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
-      color: #0fa2ff;">New Patient</h1>
-      <form action="">
-        <div class="form-group">
-          <label for="">Name</label>
-          <input type="text" class="form-control" placeholder="Name" style="font-size: 10px;" />
-        </div>
-        <div class="form-group">
-          <label for="">Age</label>
-          <input class="form-control" type="text" placeholder="Age" style="font-size: 10px;" />
-        </div>
-        <div class="form-group">
-          <label for="">Contact No</label>
-          <input class="form-control" type="text" placeholder="Contact No" style="font-size: 10px;" />
-        </div>
-        <div class="form-group">
-          <label for="">Pre-Existing Disease</label>
-          <input class="form-control" type="text" placeholder="Disease" style="font-size: 10px;" />
-        </div>
-        <div class="form-group">
-          <label for="">Alargies</label>
-          <input class="form-control" type="text" placeholder="Alargies" style="font-size: 10px;" />
-        </div>
+      color: #0fa2ff;">{{SchedulePopTitle}}</h1>
+      <form action="" style="display: grid;
+      grid-template-columns: 50% 50%; ">
+        <div *ngFor="let item of SchedulePopData" style="display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;margin-top: 11px;">
+          <input type="checkbox" style="font-size: 10px;width: auto;" (change)="ScheduleCheck($event,item.name)" />
+          <p style="color: #0fa2ff;margin: 0;">{{item.name}}</p>
+        </div><br>
 
         <button style="padding: 10px;
         font-size: 13px;
@@ -375,17 +335,16 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="SchedulePop=false">Submit</button>
       </form>
     </div>
-  </div> -->
+  </div>
 </section>
 
 
 
-<section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="manageUser" class="ManageFull">
+<!-- <section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="manageUser" class="ManageFull">
   <div class="txt">
-    <ion-icon name="arrow-back-outline" (click)="manageUser=false" style="font-size: 24px;color: #007aff;"></ion-icon>
     <ion-label class="head">Add User</ion-label>
     <div class="txt-btn">
       <div class="resetBtn">
@@ -428,16 +387,6 @@
             </div>
           </div>
 
-
-          <!-- <div class="inputs">
-            <div class="variable">
-              <ion-label>Employee ID</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div> -->
-
           <div class="inputs">
             <div class="variable">
               <ion-label>Gender</ion-label>
@@ -466,106 +415,12 @@
           </div>
         </div>
 
-        <!-- <div class="details_1">
-          <ion-label class="detailName">Account Info</ion-label>
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>Bank Account No</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>IFSC Code</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>Branch Name</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>PAN no</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>IFSC Code</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-        </div> -->
+        
 
       </div>
 
       <div class="details two">
-        <!-- <div class="details_1">
-          <ion-label class="detailName">Address</ion-label>
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>Street Address</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>City</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>State</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>Country</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>Zip Code</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-        </div> -->
+       
 
         <div class="details_1">
           <ion-label class="detailName">Contact Info</ion-label>
@@ -588,18 +443,7 @@
           </div>
         </div>
 
-        <!-- <div class="details_1">
-          <ion-label class="detailName">Pay Roll</ion-label>
-          <div class="inputs">
-            <div class="variable">
-              <ion-label>Current Pay</ion-label>
-            </div>
-            <div class="value">
-              <ion-input></ion-input>
-            </div>
-          </div>
-        </div> -->
-
+      
 
       </div>
 
@@ -689,4 +533,4 @@
 
   </div>
 
-</section>
+</section> -->

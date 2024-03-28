@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-edit-manufacturer',
@@ -21,11 +22,16 @@ export class EditManufacturerComponent {
   editData: any = []
 
 
-  constructor() { }
+  constructor(public app:AppComponent) { }
 
   ionViewWillEnter() {
     this.deleteAlert = false
     this.Addpage = 1
+    this.app.ind = 0
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
     this.LocalCalculation()
   }
   LocalCalculation() {
@@ -70,7 +76,7 @@ export class EditManufacturerComponent {
   }
 
   Buttons() {
-    location.reload()
+    this.deleteAlert = false
   }
 
   EditManufacture(data: any, contactPerson: any, Mobile: any) {

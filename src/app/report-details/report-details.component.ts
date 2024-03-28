@@ -48,9 +48,14 @@ export class ReportDetailsComponent {
     } else if (this.Exp_Type == 2) {
       this.Exp_Title = this.Title + ' ' + 'from 30  to 60 days'
     } else if (this.Exp_Type == 3) {
-      this.Exp_Title = this.Title + ' '   + 'in 60 + days'
+      this.Exp_Title = this.Title + ' ' + 'in 60 + days'
     }
 
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 1000)
+    this.app.ind = 0
     this.LocalCalculation()
   }
 
@@ -86,7 +91,7 @@ export class ReportDetailsComponent {
   }
 
   Buttons() {
-    location.reload()
+    this.deleteAlert = false
   }
 
   EditInvent(data: any) {

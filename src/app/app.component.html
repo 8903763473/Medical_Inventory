@@ -1,4 +1,4 @@
-<ion-app>
+<ion-app style="background-color: white;">
 
   <!-- Sidebar Start -->
   <div class="sidebar pe-4 pb-3" *ngIf="!loader" [ngClass]="{'open': Open==true}"
@@ -8,59 +8,12 @@
         <h3 class="text-primary" style="font-size: 18px;"> COMPANY</h3>
       </a>
       <div class="d-flex align-items-center ms-4 mb-4">
-        <!-- <div class="position-relative">
-          <img class="rounded-circle" src="../../assets/../../assets/img/admin.jpg" alt=""
-            style="width: 40px; height: 40px;object-fit: cover;">
-          <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
-          </div>
-        </div> -->
-        <!-- <div class="ms-3">
-          <h6 class="mb-0" style="font-size: 13px !important;">Admin User</h6>
-          <span style="font-size: 13px !important;">Admin</span>
-        </div> -->
       </div>
       <div class="navbar-nav w-100" style="gap: 20px;">
         <a class="nav-item nav-link" [ngClass]="{'active':ind==item.id}" *ngFor="let item of menu"
           (click)="routes(item.path)">
           <img src="{{ ind==item.id ? item.fill_img : item.img}}" alt="">
           {{item.name}}</a>
-
-        <!-- <a href="index.html" class="nav-item nav-link" [ngClass]="{'active1':ind==2}">
-          <img src="../assets/img/Inventory.svg" alt="">
-          Add to Inventory</a>
-
-        <a href="index.html" class="nav-item nav-link" [ngClass]="{'active2':ind==3}">
-          <img src="../assets/img/Settings.svg" alt="">
-          Settings</a>
-
-        <a href="index.html" class="nav-item nav-link" [ngClass]="{'active3':ind==4}">
-          <img src="../assets/img/Reports.svg" alt="" *ngIf="ind!==4">
-          Reports</a> -->
-
-        <!-- <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-              class="fa fa-laptop me-2"></i>Elements</a>
-          <div class="dropdown-menu bg-transparent border-0">
-            <a href="button.html" class="dropdown-item">Buttons</a>
-            <a href="typography.html" class="dropdown-item">Typography</a>
-            <a href="element.html" class="dropdown-item">Other Elements</a>
-          </div>
-        </div>
-        <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-        <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-        <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-        <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-        <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-              class="far fa-file-alt me-2"></i>Pages</a>
-          <div class="dropdown-menu bg-transparent border-0">
-            <a href="signin.html" class="dropdown-item">Sign In</a>
-            <a href="signup.html" class="dropdown-item">Sign Up</a>
-            <a href="404.html" class="dropdown-item">404 Error</a>
-            <a href="blank.html" class="dropdown-item">Blank Page</a>
-          </div>
-        </div> -->
-
       </div>
     </nav>
   </div>
@@ -140,26 +93,26 @@
             align-items: center;
             justify-content: center;">10 +</span>
           </div>
-          <span class="d-none d-lg-inline-flex">Notificatin</span>
+          <span class="d-none d-lg-inline-flex">Notifications</span>
         </a>
         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
           style="border-radius:4px !important;box-shadow: 0px 0px 7px grey;">
-          <a href="#" class="dropdown-item">
+          <a class="dropdown-item">
             <h6 class="fw-normal mb-0">Profile updated</h6>
             <small>15 minutes ago</small>
           </a>
           <hr class="dropdown-divider">
-          <a href="#" class="dropdown-item">
+          <a class="dropdown-item">
             <h6 class="fw-normal mb-0">New user added</h6>
             <small>15 minutes ago</small>
           </a>
           <hr class="dropdown-divider">
-          <a href="#" class="dropdown-item">
+          <a class="dropdown-item">
             <h6 class="fw-normal mb-0">Password changed</h6>
             <small>15 minutes ago</small>
           </a>
           <hr class="dropdown-divider">
-          <a href="#" class="dropdown-item text-center">See all notifications</a>
+          <a class="dropdown-item text-center">See all notifications</a>
         </div>
       </div>
       <div class="nav-item dropdown">
@@ -172,7 +125,7 @@
           style="border-radius:4px !important;box-shadow: 0px 0px 7px grey;">
           <a class="dropdown-item" (click)="routes('MyProfile')">My Profile</a>
           <a class="dropdown-item" (click)="routes('Settings')">Settings</a>
-          <a class="dropdown-item" (click)="routes('logOut')">Log Out</a>
+          <!-- <a class="dropdown-item" (click)="routes('logOut')">Log Out</a> -->
         </div>
       </div>
     </div>
@@ -184,7 +137,25 @@
   <ion-router-outlet style="margin-top: 53px;"></ion-router-outlet>
 
   <section class="loaderSection" *ngIf="loader">
-    <div class="loader"></div>
+    <!-- <div class="loader"></div> -->
+
+    <div class="absCenter ">
+      <div class="loaderPill">
+        <div class="loaderPill-anim">
+          <div class="loaderPill-anim-bounce">
+            <div class="loaderPill-anim-flop">
+              <div class="loaderPill-pill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="loaderPill-floor">
+          <div class="loaderPill-floor-shadow"></div>
+        </div>
+        <div class="loaderPill-text">Loading ...</div>
+      </div>
+    </div>
+
+
   </section>
 
 </ion-app>

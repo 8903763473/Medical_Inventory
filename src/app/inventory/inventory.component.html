@@ -6,160 +6,165 @@
     <div class="addTo">
       <div class="addTo-In">
         <ion-label class="title">Add to Inventory</ion-label>
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Category</ion-label>
-          </div>
-          <div class="value">
-            <label style="position: absolute;
+
+        <div style="width: 100%;display: flex;
+        flex-wrap: wrap;gap: 20px;">
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Category</ion-label>
+            </div>
+            <div class="value">
+              <label style="position: absolute;
             z-index: 10;
             color: silver;
             font-size: 13px;
             margin: 4px;" *ngIf="Category==undefined">Select</label>
-            <select (change)="SelectCategory($event)" [(ngModel)]="Category" style="position: relative;">
-              <option *ngFor="let item of categories" [value]="item?.category">
-                {{item?.category}}
-              </option>
-            </select>
+              <select (change)="SelectCategory($event)" [(ngModel)]="Category" style="position: relative;">
+                <option *ngFor="let item of categories" [value]="item?.category">
+                  {{item?.category}}
+                </option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Product Name</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Product Name</ion-label>
+            </div>
+            <div class="value">
+              <select (change)="SelectProduct($event)" *ngIf="ProductByCategory?.length!=0" [(ngModel)]="ProductName">
+                <option *ngFor="let item of ProductByCategory" [value]="item?.productName">
+                  {{item?.productName}}</option>
+              </select>
+              <ion-input readonly *ngIf="ProductByCategory?.length==0" placeholder="Select"></ion-input>
+            </div>
           </div>
-          <div class="value">
-            <select (change)="SelectProduct($event)" *ngIf="ProductByCategory?.length!=0" [(ngModel)]="ProductName">
-              <option *ngFor="let item of ProductByCategory" [value]="item?.productName">
-                {{item?.productName}}</option>
-            </select>
-            <ion-input readonly *ngIf="ProductByCategory?.length==0" placeholder="Select"></ion-input>
-          </div>
-        </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Manufacturer</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Manufacturer</ion-label>
+            </div>
+            <div class="value">
+              <select *ngIf="allManufacturers?.length != 0" [(ngModel)]="selectedManufacturer">
+                <option *ngFor="let item of allManufacturers;let i = index" [value]="item.manufacturers">
+                  {{ item.manufacturers }}
+                </option>
+              </select>
+              <ion-input readonly *ngIf="allManufacturers?.length==0" placeholder="Select"></ion-input>
+            </div>
           </div>
-          <div class="value">
-            <select *ngIf="allManufacturers?.length != 0" [(ngModel)]="selectedManufacturer">
-              <option *ngFor="let item of allManufacturers;let i = index" [value]="item.manufacturers">
-                {{ item.manufacturers }}
-              </option>
-            </select>
-            <ion-input readonly *ngIf="allManufacturers?.length==0" placeholder="Select"></ion-input>
-          </div>
-        </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Unit</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Unit</ion-label>
+            </div>
+            <div class="value">
+              <select *ngIf="allSizes?.length != 0" [(ngModel)]="selectedSize">
+                <option *ngFor="let item of allSizes;let i = index" [value]="item.size">
+                  {{ item.size }}
+                </option>
+              </select>
+              <ion-input readonly *ngIf="allSizes?.length==0" placeholder="Select"></ion-input>
+            </div>
           </div>
-          <div class="value">
-            <select *ngIf="allSizes?.length != 0" [(ngModel)]="selectedSize">
-              <option *ngFor="let item of allSizes;let i = index" [value]="item.size">
-                {{ item.size }}
-              </option>
-            </select>
-            <ion-input readonly *ngIf="allSizes?.length==0" placeholder="Select"></ion-input>
-          </div>
-        </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Batch Number</ion-label>
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Batch Number</ion-label>
+            </div>
+            <div class="value">
+              <ion-input [(ngModel)]="BatchNumber" placeholder="Batch Number"></ion-input>
+            </div>
           </div>
-          <div class="value">
-            <ion-input [(ngModel)]="BatchNumber" placeholder="Batch Number"></ion-input>
-          </div>
-        </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Expiry Date</ion-label>
-          </div>
-          <div class="value">
-            <ion-input value="{{ExpiryDate}}" readonly placeholder="Expiry Date">
-              <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Expiry Date</ion-label>
+            </div>
+            <div class="value">
+              <ion-input value="{{ExpiryDate}}" readonly placeholder="Expiry Date">
+                <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
                 margin-top: 4px;" (click)="ExpiryDatePopup=true"></ion-icon>
-            </ion-input>
-            <div *ngIf="ExpiryDatePopup" class="ExpiryPicker">
-              <ion-datetime (ionChange)="ExpiryPicker($event)" [(ngModel)]="ExpiryDate" [format]="'YYYY-MM-D'"
-                presentation="date" [min]="minDate">
-              </ion-datetime>
-              <div class="ExpiryPickerButton">
-                <ion-button color="danger" (click)="PickerCancelButton('Expiry')">Cancel</ion-button>
-                <ion-button color="primary" (click)="ExpiryDatePopup = false">OK</ion-button>
+              </ion-input>
+              <div *ngIf="ExpiryDatePopup" class="ExpiryPicker">
+                <ion-datetime (ionChange)="ExpiryPicker($event)" [(ngModel)]="ExpiryDate" [format]="'YYYY-MM-D'"
+                  presentation="date" [min]="minDate">
+                </ion-datetime>
+                <div class="ExpiryPickerButton">
+                  <ion-button color="danger" (click)="PickerCancelButton('Expiry')">Cancel</ion-button>
+                  <ion-button color="primary" (click)="ExpiryDatePopup = false">OK</ion-button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Manufacture Date</ion-label>
-          </div>
-          <div class="value">
-            <ion-input value="{{ManufactureDate}}" readonly placeholder="Manufacture Date">
-              <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Manufacture Date</ion-label>
+            </div>
+            <div class="value">
+              <ion-input value="{{ManufactureDate}}" readonly placeholder="Manufacture Date">
+                <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
                 margin-top: 4px;" (click)="ManufactureDatePopup=true"></ion-icon>
-            </ion-input>
-            <div *ngIf="ManufactureDatePopup" class="ExpiryPicker">
-              <ion-datetime (ionChange)="ManufacturePicker($event)" [(ngModel)]="ManufactureDate" [format]="'YYYY-MM-D'"
-                presentation="date" [max]="maxDate">
-              </ion-datetime>
-              <div class="ExpiryPickerButton">
-                <ion-button color="danger" (click)="PickerCancelButton('Manufacture')">Cancel</ion-button>
-                <ion-button color="primary" (click)="ManufactureDatePopup = false">OK</ion-button>
+              </ion-input>
+              <div *ngIf="ManufactureDatePopup" class="ExpiryPicker">
+                <ion-datetime (ionChange)="ManufacturePicker($event)" [(ngModel)]="ManufactureDate"
+                  [format]="'YYYY-MM-D'" presentation="date" [max]="maxDate">
+                </ion-datetime>
+                <div class="ExpiryPickerButton">
+                  <ion-button color="danger" (click)="PickerCancelButton('Manufacture')">Cancel</ion-button>
+                  <ion-button color="primary" (click)="ManufactureDatePopup = false">OK</ion-button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Purchase Date</ion-label>
-          </div>
-          <div class="value">
-            <ion-input value="{{purchaseDate}}" readonly placeholder="Purchase Date">
-              <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Purchase Date</ion-label>
+            </div>
+            <div class="value">
+              <ion-input value="{{purchaseDate}}" readonly placeholder="Purchase Date">
+                <ion-icon name="calendar-outline" style="display: flex !important;float: right;align-items: center;justify-content: flex-end;font-size: 19px;
                 margin-top: 4px;" (click)="purchaseDatePopup=true"></ion-icon>
-            </ion-input>
-            <div *ngIf="purchaseDatePopup" class="ExpiryPicker">
-              <ion-datetime (ionChange)="purchasePicker($event)" [(ngModel)]="purchaseDate" [format]="'YYYY-MM-D'"
-                presentation="date" [max]="maxDate">
-              </ion-datetime>
-              <div class="ExpiryPickerButton">
-                <ion-button color="danger" (click)="PickerCancelButton('Purchase')">Cancel</ion-button>
-                <ion-button color="primary" (click)="purchaseDatePopup = false">OK</ion-button>
+              </ion-input>
+              <div *ngIf="purchaseDatePopup" class="ExpiryPicker">
+                <ion-datetime (ionChange)="purchasePicker($event)" [(ngModel)]="purchaseDate" [format]="'YYYY-MM-D'"
+                  presentation="date" [max]="maxDate">
+                </ion-datetime>
+                <div class="ExpiryPickerButton">
+                  <ion-button color="danger" (click)="PickerCancelButton('Purchase')">Cancel</ion-button>
+                  <ion-button color="primary" (click)="purchaseDatePopup = false">OK</ion-button>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Quantity</ion-label>
+            </div>
+            <div class="value">
+              <ion-input [(ngModel)]="Quantity" placeholder="Quantity"></ion-input>
+            </div>
+          </div>
+
+          <div class="inputs">
+            <div class="variable">
+              <ion-label>Unit Price</ion-label>
+            </div>
+            <div class="value">
+              <!-- <ion-input [(ngModel)]="UnitPrice" placeholder="UnitPrice"></ion-input> -->
+              <select style="position: relative;">
+                <option selected disabled>Select</option>
+                <option>100</option>
+                <option>200</option>
+                <option>300</option>
+              </select>
             </div>
           </div>
         </div>
 
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Quantity</ion-label>
-          </div>
-          <div class="value">
-            <ion-input [(ngModel)]="Quantity" placeholder="Quantity"></ion-input>
-          </div>
-        </div>
-
-        <div class="inputs">
-          <div class="variable">
-            <ion-label>Unit Price</ion-label>
-          </div>
-          <div class="value">
-            <!-- <ion-input [(ngModel)]="UnitPrice" placeholder="UnitPrice"></ion-input> -->
-            <select style="position: relative;">
-              <option selected disabled>Select</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-            </select>
-          </div>
-        </div>
 
         <!-- <div class="inputs">
           <div class="variable">
