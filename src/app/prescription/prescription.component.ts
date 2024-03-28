@@ -46,7 +46,7 @@ export class PrescriptionComponent implements OnInit {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
     this.Categories()
   }
 

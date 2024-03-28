@@ -1,428 +1,314 @@
-<section [ngClass]="{'leftSideMenuHome':app.Open!==false}">
-    <div class="container-fluid position-relative bg-white d-flex p-0">
-        <div id="spinner"
-            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
+<!-- Dashboard -->
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
 
-        <div class="content" [ngClass]="{'leftSideMenuHome':app.Open!==false}">
-            <div>
-                <div class="container-fluid pt-4 px-4">
-                    <div class="row g-4">
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4"
-                                style="padding: 12px !important;height: 100%;">
-                                <img src="../../assets/img/total_1.svg" alt="">
-                                <div class="ms-3">
-                                    <p class="mb-2" style="font-weight: bold;
-                                    font-size: 13px;
-                                    color: #0f82ff;text-wrap: wrap;">Expiring This month</p>
-                                    <h6 class="mb-0">36</h6>
+    <!-- Main content -->
+    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+
+        <main class="py-6 bg-surface-secondary" style="width: calc(100% - 195px);
+        margin-left: 195px;">
+            <div class="container-fluid">
+                <!-- Card stats -->
+
+
+                <div class="row g-6 mb-6">
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Expiring this
+                                            month</span>
+                                        <span class="h3 font-bold mb-0">36</span>
+                                    </div>
+                                    <div class="col-auto" style="padding: 0 !important;">
+                                        <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"
+                                            style="padding: 10px;">
+                                            <!-- <i class="bi bi-credit-card"></i> -->
+                                            <img src="../../assets/img/total_1.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                        <i class="bi bi-arrow-down me-1"></i>-13%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">This month</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4"
-                                style="padding: 12px !important;height: 100%;">
-                                <img src="../../assets/img/total_2.svg" alt="">
-                                <div class="ms-3">
-                                    <p class="mb-2" style="font-weight: bold;
-                                    font-size: 13px;
-                                    color: #0f82ff;text-wrap: wrap;">Expiring next 3 months</p>
-                                    <h6 class="mb-0">260</h6>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Expiring next 3
+                                            months</span>
+                                        <span class="h3 font-bold mb-0">260</span>
+                                    </div>
+                                    <div class="col-auto" style="padding: 0 !important;">
+                                        <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"
+                                            style="padding: 10px;">
+                                            <!-- <i class="bi bi-people"></i> -->
+                                            <img src="../../assets/img/total_2.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                        <i class="bi bi-arrow-down me-1"></i>-38%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">Next 3 month</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4"
-                                style="padding: 12px !important;height: 100%;">
-                                <img src="../../assets/img/total_3.svg" alt="">
-                                <div class="ms-3">
-                                    <p class="mb-2" style="font-weight: bold;
-                                    font-size: 13px;
-                                    color: #0f82ff;text-wrap: wrap;">Expiring above 6 months</p>
-                                    <h6 class="mb-0">680</h6>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Expiring above 6
+                                            months</span>
+                                        <span class="h3 font-bold mb-0">680</span>
+                                    </div>
+                                    <div class="col-auto" style="padding: 0 !important;">
+                                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle"
+                                            style="padding: 10px;">
+                                            <!-- <i class="bi bi-clock-history"></i> -->
+                                            <img src="../../assets/img/total_3.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                        <i class="bi bi-arrow-down me-1"></i>-65%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">Above 6 month</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4"
-                                style="padding: 12px !important;height: 100%;">
-                                <img src="../../assets/img/total_4.svg" alt="">
-                                <div class="ms-3">
-                                    <p class="mb-2" style="font-weight: bold;
-                                    font-size: 13px;
-                                    color: #0f82ff;text-wrap: wrap;">Current Forcasted Loss</p>
-                                    <h6 class="mb-0">$2580</h6>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="card shadow border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Current Forcasted
+                                            loss</span>
+                                        <span class="h3 font-bold mb-0">$2895</span>
+                                    </div>
+                                    <div class="col-auto" style="padding: 0 !important;">
+                                        <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"
+                                            style="padding: 10px;">
+                                            <!-- <i class="bi bi-minecart-loaded"></i> -->
+                                            <img src="../../assets/img/total_4.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-0 text-sm">
+                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                        <i class="bi bi-arrow-down me-1"></i>80%
+                                    </span>
+                                    <span class="text-nowrap text-xs text-muted">Current</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-                <!-- Recent Sales Start 01  ----------------------------- -->
-
-                <div class="container-fluid pt-4 px-4" style="display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
-                gap: 20px;">
-
-                    <!-- -------------------------------------01----------------------------- -->
-
-                    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
-                    border: 1px solid #E8E8E8;
-                    background-color: #F9F9F9 !important;">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h6 class="mb-0">Medicine Expiring this month</h6>
-                            <a href="">Show All</a>
+                <div
+                    style="width: 100%;display: grid;align-items: center;justify-content: space-between;grid-template-columns: 49% 49%;gap: 10px;">
+                    <div class="card shadow border-0 mb-7">
+                        <div class="card-header">
+                            <h5 class="mb-0">Medicine Expiring this month</h5>
                         </div>
                         <div class="table-responsive">
-                            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                                <thead style="background-color: #C2C2C2;">
-                                    <tr class="text-dark">
-                                        <!-- <th scope="col">Img</th> -->
-                                        <th scope="col" style="border-radius: 10px 0px 0px 10px">Medicine Name</th>
-                                        <th scope="col">Manufacture</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Purchase Date</th>
-                                        <th scope="col" style="border-radius: 0px 10px 10px 0px">Expire Date</th>
-                                        <!-- <th scope="col">Status</th>
-                                        <th scope="col">Action</th> -->
+                            <table class="table table-hover table-nowrap">
+                                <thead class="thead-light">
+                                    <tr style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Name</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Manufacturer</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Quantity</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Purchase Date</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Exp Date</th>
+                                        <!-- <th></th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med10.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Insuline</td>
-                                        <td>VitaPharmaceuticals</td>
-                                        <td>23</td>
-                                        <td>01 Dec 2044</td>
-                                        <td>01 Jan 2045</td>
-                                        <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med9.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Actorise</td>
-                                        <td>BioMed Solutions</td>
-                                        <td>15</td>
-                                        <td>01 Dec 2043</td>
-                                        <td>01 Jan 2044</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med7.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Azel</td>
-                                        <td>HealTech Innovations</td>
-                                        <td>10</td>
-                                        <td>01 Dec 2042</td>
-                                        <td>01 Jan 2043</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med8.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Avastin</td>
-                                        <td>MediCare Labs</td>
-                                        <td>20</td>
-                                        <td>27 Dec 2041</td>
-                                        <td>27 Jan 2042</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med6.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Ascroil</td>
-                                        <td>LifeScience Pharmaceuticals</td>
-                                        <td>12</td>
-                                        <td>01 Dec 2040</td>
-                                        <td>01 Jan 2041</td>
+                                    <tr *ngFor="let item of Table1" style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                        <td class="rowTable" style="padding: 10px;">
+                                            <!-- <img alt="..."
+                                                src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                                class="avatar avatar-sm rounded-circle me-2"> -->
+                                            <a class="text-heading font-semibold">
+                                                {{item.name}}
+                                            </a>
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            {{item.manufacture}}
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
+                                                class="avatar avatar-xs rounded-circle me-2"> -->
+                                            <a class="text-heading font-semibold" style="padding: 10px;">
+                                                {{item.Quantity}}
+                                            </a>
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            {{item.purchasedate}}
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            <span class="badge badge-lg badge-dot">
+                                                <i class="bg-success" style="background-color: #ffac00 !important;"></i>
+                                                {{item.expairdat}}
+                                            </span>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <!-- <div class="card-footer border-0 py-5">
+                            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+                        </div> -->
                     </div>
 
-                    <!-- -------------------------------------02----------------------------- -->
-
-                    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
-                    border: 1px solid #E8E8E8;
-                    background-color: #F9F9F9 !important;">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h6 class="mb-0">Medicine Expiring within 90 days</h6>
-                            <a href="">Show All</a>
+                    <div class="card shadow border-0 mb-7">
+                        <div class="card-header">
+                            <h5 class="mb-0">Medicine Expiring within 90 days</h5>
                         </div>
                         <div class="table-responsive">
-                            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                                <thead style="background-color: #C2C2C2;">
-                                    <tr class="text-dark">
-                                        <!-- <th scope="col">Img</th> -->
-                                        <th scope="col" style="border-radius: 10px 0px 0px 10px">Medicine Name</th>
-                                        <th scope="col">Manufacture</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Purchase Date</th>
-                                        <th scope="col" style="border-radius: 0px 10px 10px 0px">Expire Date</th>
-                                        <!-- <th scope="col">Status</th>
-                                        <th scope="col">Action</th> -->
+                            <table class="table table-hover table-nowrap">
+                                <thead class="thead-light">
+                                    <tr style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Name</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Manufacturer</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Quantity</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Purchase Date</th>
+                                        <th scope="col" class="rowTable" style="padding: 10px;">Exp Date</th>
+                                        <!-- <th></th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med1.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Abilify</td>
-                                        <td>PureLife Pharmaceuticals</td>
-                                        <td>233</td>
-                                        <td>01 Dec 2044</td>
-                                        <td>01 Mar 2045</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med2.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Adderall</td>
-                                        <td>VitaCare Solutions</td>
-                                        <td>123</td>
-                                        <td>01 Dec 2044</td>
-                                        <td>01 Mar 2045</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med3.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Azel</td>
-                                        <td>BioMed Innovations</td>
-                                        <td>236</td>
-                                        <td>01 Dec 2044</td>
-                                        <td>01 Mar 2045</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med4.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Actos</td>
-                                        <td>HealthTech Laboratories</td>
-                                        <td>69</td>
-                                        <td>01 Feb 2044</td>
-                                        <td>01 May 2045</td>
-                                    </tr>
-                                    <tr>
-                                        <!-- <td>
-                                            <img src="../../assets/img/med5.jpg" alt="" style="border-radius: 50%;"
-                                                class="Product_IMG">
-                                        </td> -->
-                                        <td>Actemra</td>
-                                        <td>MediCo Pharmaceuticals</td>
-                                        <td>21</td>
-                                        <td>01 Dec 2044</td>
-                                        <td>01 Mar 2045</td>
+                                    <tr *ngFor="let item of Table2" style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                        <td class="rowTable" style="padding: 10px;">
+                                            <!-- <img alt="..."
+                                                src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                                class="avatar avatar-sm rounded-circle me-2"> -->
+                                            <a class="text-heading font-semibold">
+                                                {{item.name}}
+                                            </a>
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            {{item.manufacture}}
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
+                                                class="avatar avatar-xs rounded-circle me-2"> -->
+                                            <a class="text-heading font-semibold" style="padding: 10px;">
+                                                {{item.Quantity}}
+                                            </a>
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            {{item.purchasedate}}
+                                        </td>
+                                        <td class="rowTable" style="padding: 10px;">
+                                            <span class="badge badge-lg badge-dot">
+                                                <i class="bg-success" style="background-color: #ffac00 !important;"></i>
+                                                {{item.expairdat}}
+                                            </span>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <!-- <div class="card-footer border-0 py-5">
+                            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+                        </div> -->
                     </div>
-
-                    <!-- -------------------------------------03----------------------------- -->
-
-                    <!-- <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
-                    border: 1px solid #E8E8E8;
-                    background-color: #F9F9F9 !important;">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h6 class="mb-0">Medicine Expiring above 90 days</h6>
-                            <a routerLink="/Reports">Show All</a>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                                <thead style="background-color: #C2C2C2;">
-                                    <tr class="text-dark">
-                                        <th scope="col" style="border-radius: 10px 0px 0px 10px;">S.no</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col" style="border-radius: 0px 10px 10px 0px;">Download</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>31 Jan 2045</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>09 Mar 2047</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>11 Dec 2035</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>12 Nov 2055</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>19 Apr 2041</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>03 May 2043</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>29 June 2025</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>02 Jan 2015</td>
-                                        <td><a class="btn btn-sm btn-primary" href=""
-                                                style="padding: 0 !important;"><img src="../../assets/img/download.svg"
-                                                    alt=""></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div> -->
 
                 </div>
 
-                <div class="bg-light text-center rounded p-4"
-                    style="border-radius: 6px;background-color: #ffffff !important;margin-top: 20px;">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Medicine Expiring above 90 days</h6>
-                        <a href="">Show All</a>
+
+
+                <div class="card shadow border-0 mb-7">
+                    <div class="card-header">
+                        <h5 class="mb-0">Medicine Expiring above 90 days</h5>
                     </div>
                     <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead style="background-color: #C2C2C2;">
-                                <tr class="text-dark">
-                                    <th scope="col" style="border-radius: 10px 0px 0px 10px">Img</th>
-                                    <th scope="col">Medicine Name</th>
-                                    <th scope="col">Manufacture</th>
+                        <table class="table table-hover table-nowrap">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Manufacturer</th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Purchase Date</th>
-                                    <th scope="col" style="border-radius: 0px 10px 10px 0px">Expire Date</th>
-                                    <!-- <th scope="col">Status</th>
-                                    <th scope="col">Action</th> -->
+                                    <th scope="col">Expiry Date</th>
+                                    <!-- <th></th> -->
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let item of Table3">
                                     <td>
-                                        <img src="../../assets/img/med11.png" alt="" style="border-radius: 50%;"
-                                            class="Product_IMG">
+                                        <!-- <img alt="..."
+                                            src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
+                                        <a class="text-heading font-semibold">
+                                            {{item.name}}
+                                        </a>
                                     </td>
-                                    <td>HealWell Tablets</td>
-                                    <td>PureCare Pharmaceuticals</td>
-                                    <td>32</td>
-                                    <td>01 Dec 2044</td>
-                                    <td>01 June 2045</td>
-                                </tr>
-                                <tr>
                                     <td>
-                                        <img src="../../assets/img/med12.jpg" alt="" style="border-radius: 50%;"
-                                            class="Product_IMG">
+                                        {{item.manufacture}}
                                     </td>
-                                    <td>BioGuard Capsules</td>
-                                    <td>BioGen Medical</td>
-                                    <td>20</td>
-                                    <td>01 Dec 2044</td>
-                                    <td>01 July 2045</td>
-                                </tr>
-                                <tr>
                                     <td>
-                                        <img src="../../assets/img/med13.png" alt="" style="border-radius: 50%;"
-                                            class="Product_IMG">
+                                        <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
+                                            class="avatar avatar-xs rounded-circle me-2"> -->
+                                        <a class="text-heading font-semibold">
+                                            {{item.Quantity}}
+                                        </a>
                                     </td>
-                                    <td>PureRelief Injection</td>
-                                    <td>WellnessTech Pharmaceuticals</td>
-                                    <td>76</td>
-                                    <td>01 Dec 2044</td>
-                                    <td>01 Apr 2045</td>
-                                </tr>
-                                <tr>
                                     <td>
-                                        <img src="../../assets/img/med14.png" alt="" style="border-radius: 50%;"
-                                            class="Product_IMG">
+                                        {{item.purchasedate}}
                                     </td>
-                                    <td>VitaCure Syrup</td>
-                                    <td>VitalHealth Labs</td>
-                                    <td>16</td>
-                                    <td>01 Feb 2044</td>
-                                    <td>01 Aug 2045</td>
-                                </tr>
-                                <tr>
                                     <td>
-                                        <img src="../../assets/img/med15.jpg" alt="" style="border-radius: 50%;"
-                                            class="Product_IMG">
+                                        <span class="badge badge-lg badge-dot">
+                                            <i class="bg-success" style="background-color: #ffac00 !important;"></i>
+                                            {{item.expairdat}}
+                                        </span>
                                     </td>
-                                    <td>BioFlex Plus</td>
-                                    <td>MediPharm Solutions</td>
-                                    <td>45</td>
-                                    <td>01 Dec 2044</td>
-                                    <td>01 Sep 2045</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <!-- <div class="card-footer border-0 py-5">
+                        <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+                    </div> -->
                 </div>
 
-
-                <!-- Recent Sales Start 01  ----------------------------- -->
-
+                <!-- **********************************CHART***************************** -->
 
 
-                <div class="container-fluid pt-4 px-4">
+                <div class="container-fluid pt-4 px-4" style="padding: 0 !important;">
                     <div class="row g-4">
                         <div class="col-sm-12 col-xl-6" style="width: 45% !important;">
-                            <div class="bg-light text-center rounded p-4" style="height: 388px !important;">
+                            <div class="bg-light text-center rounded p-4" style="height: 320px !important;">
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <h6 class="mb-0">Top 5 medicines based on Quantity</h6>
-                                    <a href="">Show All</a>
+                                    <!-- <a href="">Show All</a> -->
                                 </div>
                                 <canvas #BarchartCanvas [attr.id]="BarcanvasId" width="400" height="200"
-                                    style="height: 100% !important;"></canvas>
+                                    style="height: 80% !important;"></canvas>
                             </div>
                         </div>
                         <div class="col-sm-12 col-xl-6" style="width:55% !important;">
-                            <div class="bg-light text-center rounded p-4" style="height: 388px !important;">
+                            <div class="bg-light text-center rounded p-4" style="height: 320px !important;">
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <h6 class="mb-0">Loss Trend</h6>
-                                    <a href="">Show All</a>
+                                    <!-- <a href="">Show All</a> -->
                                 </div>
                                 <canvas #LinechartCanvas [attr.id]="LinecanvasId" width="400" height="200"
                                     style="width: 100%;"></canvas>
@@ -432,28 +318,7 @@
                 </div>
 
 
-
-
-                <!-- Footer Start -->
-
-                <!-- <div class="container-fluid pt-4 px-4">
-                    <div class="bg-light rounded-top p-4">
-                        <div class="row">
-                            <div class="col-12 col-sm-6 text-center text-sm-start">
-                                &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                            </div>
-                            <div class="col-12 col-sm-6 text-center text-sm-end">
-                                Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Footer End -->
             </div>
-
-        </div>
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        </main>
     </div>
-
-</section>
+</div>

@@ -62,9 +62,9 @@ section {
     .content-area {
         background-color: #f6f6fc;
         position: fixed;
-        width: calc(100% - 230px);
+        width: calc(100% - 195px);
         height: 100%;
-        margin-left: 230px;
+        margin-left: 195px;
         border-radius: 0px 12px 12px 0px;
         overflow: scroll;
         padding: 10px !important;
@@ -82,7 +82,7 @@ section {
         grid-template-columns: 0fr 2fr 1fr 1fr 1fr 0fr;
 
         div {
-            // width: 66%;
+            width: auto;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -383,8 +383,8 @@ section {
         }
 
         .modal-dialog {
-            width: calc(100% - 230px) !important;
-            left: 230px !important;
+            width: calc(100% - 195px) !important;
+            left: 195px !important;
         }
 
         .modal-confirm .modal-content {
@@ -495,8 +495,8 @@ section {
         flex-direction: column;
         align-content: center;
         justify-content: center;
-        width: calc(100% - 230px);
-        left: 230px;
+        width: calc(100% - 195px);
+        left: 195px;
 
         .form-group {
             margin-top: 16px;

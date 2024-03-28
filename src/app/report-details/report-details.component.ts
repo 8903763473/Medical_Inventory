@@ -38,9 +38,9 @@ export class ReportDetailsComponent {
     this.ReportDetailPage = this.router.url?.split('/')[4]
 
     if (this.ReportDetailPage == 2) {
-      this.Title = 'Inventory List'
+      this.Title = 'Inventory Report'
     } else {
-      this.Title = 'Expiry List'
+      this.Title = 'Expiry Report'
     }
 
     if (this.Exp_Type == 1) {
@@ -54,7 +54,7 @@ export class ReportDetailsComponent {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
     this.app.ind = 0
     this.LocalCalculation()
   }

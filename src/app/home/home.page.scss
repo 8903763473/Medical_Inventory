@@ -1,36 +1,35 @@
-th {
-    color: #FFF;
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 15px !important;
+    color: #525f7f;
+}
+
+.bg-primary,
+.bg-tertiary,
+.bg-info,
+.bg-warning {
+    --x-bg-opacity: 1;
+    background-color: rgb(237 237 237) !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.rowTable {
+    // padding: 10px 3px !important;
+    font-size: 10px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
-    font-family: Poppins;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-table {
-    border: 1px solid #ebebeb !important;
-    background: #EBEBEB;
-    text-align: center !important;
-    border-radius: 10px !important;
-
-    tbody {
-        color: #4F4F4F;
-        font-family: Poppins;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-    .Product_IMG {
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        object-fit: fill;
-    }
-}
-
-canvas {
-    height: 82% !important;
 }

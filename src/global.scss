@@ -31,8 +31,6 @@
 
 
 
-
-
 /********** Style CSS **********/
 
 .ion-page::-webkit-scrollbar {
@@ -53,7 +51,7 @@
     --EASE_IN_QUAD: cubic-bezier(0.55, 0.085, 0.68, 0.53);
     --EASE_OUT_QUAD: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    --COLOR_UI_PHARMACY: #237db5;
+    --COLOR_UI_PHARMACY: #009CFF;
     --loaderPill_DURATION: 1800ms;
 }
 
@@ -118,6 +116,21 @@
     border-radius: 50px;
 }
 
+.sidebar::-webkit-scrollbar {
+    width: 0;
+}
+
+.text-sm {
+    font-size: 11px !important;
+}
+
+.bg-light {
+    background-color: #e7eaf0 !important;
+}
+
+.SearchForm {
+    height: 40px !important;
+}
 
 /*** Layout ***/
 .sidebar {
@@ -125,10 +138,10 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 230px;
+    width: 195px;
     height: 100vh;
     overflow-y: auto;
-    background: var(--light);
+    background: #e7eaf0;
     transition: 0.5s;
     z-index: 999;
 }
@@ -150,7 +163,7 @@
     }
 
     .content {
-        width: calc(100% - 230px);
+        width: calc(100% - 195px);
     }
 
     .content.open {
@@ -174,16 +187,19 @@
     }
 }
 
+.navbar {
+    height: 60px !important;
+}
 
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
-    padding: 7px 20px;
+    padding: 7px 10px;
     color: var(--dark);
     font-weight: 500;
-    border-left: 3px solid var(--light);
+    border-left: 3px solid #e7eaf0;
     border-radius: 0 30px 30px 0;
     outline: none;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
@@ -334,7 +350,7 @@
 /********** Nav CSS **********/
 
 #ion-input-9 {
-    opacity: 0;
+    // opacity: 0;
 }
 
 
@@ -344,7 +360,7 @@
     --EASE_IN_QUAD: cubic-bezier(0.55, 0.085, 0.68, 0.53);
     --EASE_OUT_QUAD: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    --COLOR_UI_PHARMACY: #237db5;
+    --COLOR_UI_PHARMACY: #009CFF;
     --loaderPill_DURATION: 1800ms;
 }
 

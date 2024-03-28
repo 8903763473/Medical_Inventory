@@ -170,8 +170,8 @@
 
 
 .fullpage1 {
-    width: calc(100% - 230px);
-    margin-left: 230px;
+    width: calc(100% - 195px);
+    margin-left: 195px;
     height: 100%;
 
     .grey-bg {
@@ -183,6 +183,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        box-shadow: 0px 0px 7px grey;
     }
 
     .media {
@@ -209,7 +210,7 @@
 
 
     .Social {
-        width: calc(100% - 230px);
+        width: calc(100% - 195px);
         margin-left: 0px;
         height: 100%;
         display: flex;
@@ -298,8 +299,8 @@
         flex-direction: column;
         align-content: center;
         justify-content: center;
-        width: calc(100% - 230px);
-        left: 230px;
+        width: calc(100% - 195px);
+        left: 195px;
 
         .form-group {
             margin-top: 16px;
@@ -690,8 +691,8 @@
         flex-direction: column;
         align-content: center;
         justify-content: center;
-        width: calc(100% - 230px);
-        left: 230px;
+        width: calc(100% - 195px);
+        left: 195px;
 
         .form-group {
             margin-top: 16px;

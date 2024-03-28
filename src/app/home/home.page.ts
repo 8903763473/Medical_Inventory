@@ -10,6 +10,120 @@ import { Chart } from 'chart.js/auto';
 })
 export class HomePage {
 
+  Table1: any = [
+    {
+      "name": "Abilify",
+      "manufacture": "PureLife Pharmaceuticals",
+      "Quantity": 233,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    },
+    {
+      "name": "Adderall",
+      "manufacture": "VitaCare Solutions",
+      "Quantity": 123,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    },
+    {
+      "name": "Azel",
+      "manufacture": "BioMed Innovations",
+      "Quantity": 236,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    },
+    {
+      "name": "Actos",
+      "manufacture": "HealthTech Laboratories",
+      "Quantity": 69,
+      "purchasedate": "01 Feb 2044",
+      "expairdat": "01 May 2045"
+    },
+    {
+      "name": "Actemra",
+      "manufacture": "MediCo Pharmaceuticals",
+      "Quantity": 21,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    }
+  ]
+
+  Table2: any = [
+    {
+      name: "Paracetamol",
+      manufacture: "ABC Pharmaceuticals",
+      Quantity: "100 tablets",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Ibuprofen",
+      manufacture: "XYZ Pharma",
+      Quantity: "50 capsules",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Amoxicillin",
+      manufacture: "PQR Pharmaceuticals",
+      Quantity: "20 tablets",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Loratadine",
+      manufacture: "LMN Pharma",
+      Quantity: "30 tablets",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Omeprazole",
+      manufacture: "EFG Pharmaceuticals",
+      Quantity: "40 capsules",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    }
+  ]
+
+  Table3: any = [
+    {
+      "name": "HealWell Tablets",
+      "manufacture": "PureCare Pharmaceuticals",
+      "Quantity": 32,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 June 2045"
+    },
+    {
+      "name": "BioGuard Capsules",
+      "manufacture": "BioGen Medical",
+      "Quantity": 20,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 July 2045"
+    },
+    {
+      "name": "PureRelief Injection",
+      "manufacture": "WellnessTech Pharmaceuticals",
+      "Quantity": 76,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Apr 2045"
+    },
+    {
+      "name": "VitaCure Syrup",
+      "manufacture": "VitalHealth Labs",
+      "Quantity": 16,
+      "purchasedate": "01 Feb 2044",
+      "expairdat": "01 Aug 2045"
+    },
+    {
+      "name": "BioFlex Plus",
+      "manufacture": "MediPharm Solutions",
+      "Quantity": 45,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Sep 2045"
+    }
+  ]
+
   @Input() BarcanvasId: any;
   @Input() LinecanvasId: any;
   @Input() data: number[] = [95, 120, 155, 230, 100];
@@ -39,7 +153,7 @@ export class HomePage {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
 
 
     // this.app.loader = true

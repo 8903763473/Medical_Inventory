@@ -46,7 +46,7 @@ export class EditCategoryComponent implements OnInit {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
 
 
     this.LocalCalculation();
