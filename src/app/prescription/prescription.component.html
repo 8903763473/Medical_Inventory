@@ -1,142 +1,348 @@
 <section class="fullpage">
-    <div class="Form">
-        <div class="UserDetail">
-            <img src="../../assets/img/User.png" alt="">
-            <div class="userInputs">
-                <ion-label style="display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;">Patient ID : <input type="text" style="width: 60px;"> <ion-icon name="search-outline"
-                        style="font-size: 15px;
-                        margin-left: 5px;"></ion-icon></ion-label>
-                <ion-label>Name : <span>Vijay</span></ion-label>
-                <ion-label>Mobile : <span>89037 63477</span></ion-label>
-                <ion-label>Age : <span>23</span></ion-label>
-                <ion-label>Gender : <span>Male</span></ion-label>
-                <ion-label>Address : <span>7G , North Street , Thirunelveli - 628205</span></ion-label>
+
+    <div class='wrapper'>
+        <div class='unodos' style="height: 100%;">
+            <div class='wrapper-main'>
+
+                <div class='contenedor-totales'>
+                    <div class='main-table-containter'>
+                        <div class='title-table-container'>
+                            <div class='subtitle'>Medical Prescription</div>
+                            <div style="display: flex;align-items: center;justify-content: center;gap: 10px;">
+                                <button class='select-button' style="font-size: 10px;padding: 5px;"
+                                    (click)="EditPrescription=true"> Add
+                                    Medicine</button>
+                                <button class='select-button' style="font-size: 10px;padding: 5px;"> Previous
+                                    Prescription</button>
+                                <button class='select-button' style="font-size: 10px;padding: 5px;"
+                                    (click)="Pharmacist()"> Move to
+                                    Pharmacy</button>
+                            </div>
+                        </div>
+                        <div>
+                            <table style="padding: 20px 0px;">
+                                <tbody style="width: 100%;">
+
+                                    <tr style="background: #eeeeee;
+                      color: black;width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            Batch
+                                        </td>
+                                        <td>Type</td>
+                                        <td>Name</td>
+                                        <td>Dose</td>
+                                        <td>
+                                            <div>Frequency</div>
+                                        </td>
+                                        <td>Exp Date</td>
+                                        <td>
+                                            Quantity
+                                        </td>
+                                        <td>
+                                            Duration
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" (change)="AllCheck($event)">
+                                        </td>
+                                    </tr>
+
+
+                                    <tr style="width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            <div class='icono-texto'>
+                                                <div class="data">1</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="data">Tablet</div>
+                                        </td>
+                                        <td class="data">Brufen</td>
+                                        <td class="data">500mg</td>
+                                        <td class="data">1 - 1 - 0</td>
+                                        <td class="data">25 Apr 2024</td>
+                                        <td>
+                                            <input type="text" value="6" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;">
+                                        </td>
+                                        <td>
+                                            <input type="text" value="3" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;" class="data">&nbsp;Days
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" [checked]="allChecked">
+                                        </td>
+                                    </tr>
+                                    <tr style="width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            <div class='icono-texto'>
+                                                <div class="data">1</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="data">Tablet</div>
+                                        </td>
+                                        <td class="data">Aspirin</td>
+                                        <td class="data">300mg</td>
+                                        <td class="data">1 - 0 - 2</td>
+                                        <td class="data">19 Apr 2024</td>
+                                        <td><input type="text" value="15" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;"></td>
+                                        <td><input type="text" value="5" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;" class="data">&nbsp;Days</td>
+                                        <td>
+                                            <input type="checkbox" [checked]="allChecked">
+                                        </td>
+                                    </tr>
+                                    <tr style="width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            <div class='icono-texto'>
+                                                <div class="data">4</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="data">Tablet</div>
+                                        </td>
+                                        <td class="data">Crosin</td>
+                                        <td class="data">200px</td>
+                                        <td class="data">0 - 0 - 2</td>
+                                        <td class="data">30 Apr 2024</td>
+                                        <td><input type="text" value="6" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;"></td>
+                                        <td><input type="text" value="3" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;" class="data">&nbsp;Days
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" [checked]="allChecked">
+                                        </td>
+                                    </tr>
+                                    <tr style="width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            <div class='icono-texto'>
+                                                <div class="data">2</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="data">Tablet</div>
+                                        </td>
+                                        <td class="data">Healix</td>
+                                        <td class="data">400mg</td>
+                                        <td class="data">1 - 1 - 0</td>
+                                        <td class="data">12 Apr 2024</td>
+                                        <td><input type="text" value="10" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;"></td>
+                                        <td><input type="text" value="5" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;" class="data">&nbsp;Days</td>
+                                        <td>
+                                            <input type="checkbox" [checked]="allChecked">
+                                        </td>
+                                    </tr>
+
+
+                                    <tr style="width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            <div class='icono-texto'>
+                                                <div class="data">1</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="data">Tablet</div>
+                                        </td>
+                                        <td class="data">Brufen</td>
+                                        <td class="data">600mg</td>
+                                        <td class="data">1 - 1 - 0</td>
+                                        <td class="data">25 Apr 2024</td>
+                                        <td>
+                                            <input type="text" value="6" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;">
+                                        </td>
+                                        <td>
+                                            <input type="text" value="3" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;" class="data">&nbsp;Days
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" [checked]="allChecked">
+                                        </td>
+                                    </tr>
+                                    <tr style="width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            <div class='icono-texto'>
+                                                <div class="data">1</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="data">Tablet</div>
+                                        </td>
+                                        <td class="data">Aspirin</td>
+                                        <td class="data">100mg</td>
+                                        <td class="data">1 - 0 - 2</td>
+                                        <td class="data">29 Apr 2024</td>
+                                        <td><input type="text" value="15" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;"></td>
+                                        <td><input type="text" value="5" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;" class="data">&nbsp;Days</td>
+                                        <td>
+                                            <input type="checkbox" [checked]="allChecked">
+                                        </td>
+                                    </tr>
+                                    <tr style="width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;color: #5c5c5c !important;
+    font-weight: 200;">
+                                        <td>
+                                            <div class='icono-texto'>
+                                                <div class="data">4</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="data">Tablet</div>
+                                        </td>
+                                        <td class="data">Crosin</td>
+                                        <td class="data">100mg</td>
+                                        <td class="data">1 - 0 - 1</td>
+                                        <td class="data">13 Apr 2024</td>
+                                        <td><input type="text" value="4" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;"></td>
+                                        <td><input type="text" value="2" style="width: 30px;
+                          border: 1px solid grey;
+                          text-align: center;
+                          border-radius: 3px;" class="data">&nbsp;Days
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" [checked]="allChecked">
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <ion-button class="Add" style="float: right;font-size: 10px;margin-right: 26px;">Previous
-                Prescription</ion-button>
+
+            <div class='right wrapper-main'
+                style="border-left: 1px solid grey;height: 100%;border-radius: 0 !important;">
+                <div class='contactos' style="height: 100%;
+                width: 100%;">
+                    <div class='body-contactos' style="margin-top: 12px;
+                    width: 100%;
+                    height: 100%;">
+                        <div class="col-10" style="padding: 6px;
+                width: 100%;">
+                            <div class="doc-details" style="margin-left: 0 !important;">
+                                <p class="doc-name" style="margin-left: 0 !important;font-size: 13px;
+                                font-weight: bold;
+                                color: black;
+                                border-bottom: 1px solid grey;">Doctor
+                                    Information</p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Dr.John ,
+                                    F.I.A.G.E.S ,
+                                    F.UROGYN(USA), MBBS</p>
+                            </div>
+                            <div class="clinic-details" style="margin-left: 0 !important;">
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                                    98546 63473</p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Near A2G
+                                    Appartment</p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                                    Trichendur Main
+                                    Road ,
+                                </p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                                    Palayamkottai,Thoothukudi
+                                    Dist-628205
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-10" style="padding: 6px;
+                width: 100%;">
+                            <div class="doc-details" style="margin-left: 0 !important;">
+                                <p class="doc-name" style="margin-left: 0 !important;font-size: 13px;
+                                font-weight: bold;
+                                color: black;
+                                border-bottom: 1px solid grey;">Patient
+                                    Information</p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Mr .Selvan</p>
+                            </div>
+                            <div class="clinic-details" style="margin-left: 0 !important;">
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">45 Years old</p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                                    89037 63473</p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                                    123,South Street
+                                </p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                                    Palayamkottai , Perumalpuram
+                                </p>
+                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                                    Thoothukudi Dist - 628205
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="content-area">
-            <ion-label class="head" style="font-size: 18px;
-            color: #009CFF !important;">Medicines</ion-label>
-            <ion-button class="Add" (click)="Pharmacist()" style="float: right;margin-right: 12px;font-size: 10px;">Move
-                to
-                Pharmacy</ion-button>
-            <ion-button class="Add" (click)="EditPrescription=true" style="float: right;font-size: 10px;">Add Medicine
-                +</ion-button>
-            <br><br>
-
-            <div class="content-bar" style="background: #009cff;">
-                <div class="itemtitle" style="color: white;">Medicine</div>
-                <div class="itemprice" style="color: white;">Frequency</div>
-                <div class="itemstock" style="color: white;">Duration</div>
-                <div class="itemstock" style="color: white;">Quantity</div>
-            </div>
-
-            <div class="content-bar">
-                <div class="itemtitle" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">Maxithral 500 Tablets</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <span>1 - 0 - 1</span>
-                    <span>After Food</span>
-                </div>
-                <div class="itemstock" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">10 Days</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">20 Tablets</div>
-                <div class="btncontainer">
-
-                </div>
-            </div>
-
-            <div class="content-bar">
-                <div class="itemtitle" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">Tablissimo</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <span>1 - 1 - 1</span>
-                    <span>Before Food</span>
-                </div>
-                <div class="itemstock" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">10 Days</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">30 Tablets</div>
-                <div class="btncontainer">
-
-                </div>
-            </div>
-
-            <div class="content-bar">
-                <div class="itemtitle" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">Galaxium</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <span>1 - 3 - 1</span>
-                    <span>After Food</span>
-                </div>
-                <div class="itemstock" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">10 Days</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">50 Tablets</div>
-                <div class="btncontainer">
-
-                </div>
-            </div>
-
-            <div class="content-bar">
-                <div class="itemtitle" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">TabloPrime</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <span>2 - 3 - 1</span>
-                    <span>Before Food</span>
-                </div>
-                <div class="itemstock" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">5 Days</div>
-                <div class="itemprice" style="display: flex;
-                align-items: center;
-                justify-content: center;
-                text-wrap: wrap;">30 Tablets</div>
-                <div class="btncontainer">
-
-                </div>
-            </div>
-        </div>
-
 
 
         <div class="AddPrescriptionForm" *ngIf="EditPrescription">
@@ -155,7 +361,7 @@
                     cursor: pointer;" (click)="EditPrescription=false"></ion-icon>
 
                 </ion-label>
-                <div class="form-group" style="margin-top: 80px;">
+                <div class="form-group" style="margin-top: 120px;">
                     <label for="">Category</label>
                     <input class="form-control" type="text" placeholder="Category" style="font-size: 10px;"
                         (click)="categoryListPopup=true" value="{{pickedCategory}}" />
@@ -375,6 +581,8 @@
                 </ul>
             </div>
         </div>
+
+
 
     </div>
 </section>

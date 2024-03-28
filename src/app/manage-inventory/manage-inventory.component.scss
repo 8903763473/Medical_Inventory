@@ -1,6 +1,6 @@
 .Fullpage {
-    width: calc(100% - 250px);
-    margin-left: 250px;
+    width: calc(100% - 195px);
+    margin-left: 195px;
     padding: 32px;
     background: #FFFFFF;
     font-family: 'Roboto', sans-serif;
@@ -149,11 +149,11 @@
     }
 
     .Cat-Pop {
-        width: calc(100% - 230px);
+        width: calc(100% - 195px);
         height: 100%;
         position: fixed;
         top: 0;
-        left: 230px;
+        left: 195px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -282,8 +282,8 @@
         flex-direction: column;
         align-content: center;
         justify-content: center;
-        width: calc(100% - 230px);
-        left: 230px;
+        width: calc(100% - 195px);
+        left: 195px;
 
         .form-group {
             margin-top: 16px;

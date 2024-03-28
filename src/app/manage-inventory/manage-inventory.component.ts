@@ -944,7 +944,7 @@ export class ManageInventoryComponent {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
     
     const localInventory: any = localStorage.getItem('InventoryData');
     console.log(localInventory);

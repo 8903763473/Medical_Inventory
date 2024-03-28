@@ -40,7 +40,7 @@
 
   <div class="form-popup-bg" *ngIf=ActionPopup>
     <div (click)="ActionPopup=false"
-      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
+      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -112,8 +112,8 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
     <div class="modal-dialog modal-confirm"
-      style="width: calc(100% - 230px) !important;
-    left: 230px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+      style="width: calc(100% - 195px) !important;
+    left: 195px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
       <div class="modal-content" style="width: 300px !important;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">
@@ -138,7 +138,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
   <div class="form-popup-bg" *ngIf=EditActionPopup>
     <div (click)="EditActionPopup=false"
-      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
+      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="EditActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -179,110 +179,220 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
 
   <div *ngIf="PrescriptionDetails" class="PrescriptionDet">
-    <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;left: 230px;"
+    <div style="width: calc(100% - 195px);height: 100%;position: fixed;top: 0;left: 195px;z-index: -1;"
       (click)="PrescriptionDetails=false"></div>
-    <div class="container" style="position: relative;">
-      <header class="row">
-        <div class="col-10" style="padding: 10px;">
-          <div class="doc-details">
-            <p class="doc-name">Medical Prescription</p>
-            <p class="doc-meta">Dr.John , F.I.A.G.E.S , F.UROGYN(USA), MBBS</p>
-            <!-- <p class="doc-meta">Rgn: 2341</p> -->
+
+    <div class='wrapper'>
+      <div class='unodos'>
+        <div class='wrapper-main'>
+
+          <div class='contenedor-totales'>
+            <div class='main-table-containter'>
+              <div class='title-table-container'>
+                <div class='subtitle'>Medical Prescription</div>
+                <!-- <button class='select-button'> Reciente </button> -->
+              </div>
+              <div>
+                <table>
+                  <tbody>
+
+                    <tr style="background: #eeeeee;
+                    color: black;">
+                      <td>
+                        Batch
+                      </td>
+                      <td>Type</td>
+                      <td>Name</td>
+                      <td>Dose</td>
+                      <td>
+                        <div>Frequency</div>
+                      </td>
+                      <td>Exp Date</td>
+                      <td>
+                        Quantity
+                      </td>
+                      <td>
+                        Duration
+                      </td>
+                      <td>
+                        <input type="checkbox" (change)="AllCheck($event)">
+                      </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>1</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Brufen</td>
+                      <td>400mg</td>
+                      <td>1 - 1 - 0</td>
+                      <td>25 Apr 2024</td>
+                      <td>
+                        <input type="text" value="6" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">
+                      </td>
+                      <td>
+                        <input type="text" value="3" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days
+                      </td>
+                      <td>
+                        <input type="checkbox" [checked]="AllCheckBox">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>1</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Aspirin</td>
+                      <td>400mg</td>
+                      <td>1 - 0 - 2</td>
+                      <td>9 Apr 2024</td>
+                      <td><input type="text" value="15" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;"></td>
+                      <td><input type="text" value="5" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days</td>
+                      <td>
+                        <input type="checkbox" [checked]="AllCheckBox">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>4</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Crosin</td>
+                      <td>400mg</td>
+                      <td>1 - 0 - 2</td>
+                      <td>30 Apr 2024</td>
+                      <td><input type="text" value="6" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;"></td>
+                      <td><input type="text" value="2" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days
+                      </td>
+                      <td>
+                        <input type="checkbox" [checked]="AllCheckBox">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>2</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Action 500</td>
+                      <td>400mg</td>
+                      <td>1 - 1 - 0</td>
+                      <td>12 Apr 2024</td>
+                      <td><input type="text" value="10" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;"></td>
+                      <td><input type="text" value="5" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days</td>
+                      <td>
+                        <input type="checkbox" [checked]="AllCheckBox">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="width: 100%;display: flex;align-items: center;justify-content: flex-end;">
+                  <div style="padding: 3px 6px;margin: 20px 0 0 0;
+                background: #3880ff;
+                border-radius: 3px;
+                display: flex;
+                align-items: center;
+                justify-content: center;" (click)="PrescriptionDetails=false">
+                    <ion-label style="font-size: 12px;font-weight: 300;color: white;">Delivered</ion-label>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="clinic-details">
-            <p class="doc-meta">Near A2G Appartment</p>
-            <p class="doc-meta">Trichendur Main Road , Palayamkottai,Thoothukudi Dist-628205</p>
-          </div>
-        </div><br>
-        <div class="col-2 datetime" style="padding: 10px;">
-          <p>Date : 26-03-2024</p>
-          <p>Time : 07:00 PM</p>
-          <p>Contact : 98654 47653</p>
+
         </div>
-      </header><br>
-      <div class="prescription">
-        <p style="margin-left:15px;font-size:10px;font-weight:bold;">Name of patient, Vijay</p><br>
-        <table class="PrescriptionSheet">
-          <tr>
-            <th>Batch</th>
-            <th>Type</th>
-            <th>Name of the drug</th>
-            <th>Dosage</th>
-            <th>Frequency</th>
-            <th>Exp Date</th>
-            <th>Quantity</th>
-            <th>Period</th>
-            <th style="border: none !important;"><input type="checkbox" (change)="AllCheck($event)"
-                style="text-align: center !important;width: 100%;"></th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Tablet</td>
-            <td>Brufen Brufen Brufen</td>
-            <td>400 mg</td>
-            <td>1 - 0 - 1</td>
-            <td>Mar 05 2024</td>
-            <td><input type="text" value="75"></td>
-            <td><input type="text" value="40"> days</td>
-            <td style="border: none !important;text-align: center;">
-              <input type="checkbox" [checked]="AllCheckBox">
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Lotion</td>
-            <td>Brufen</td>
-            <td>400 mg</td>
-            <td>1 - 0 - 1</td>
-            <td>Apr 05 2024</td>
-            <td><input type="text" value="45"></td>
-            <td><input type="text" value="30"> days</td>
-            <td style="border: none !important;text-align: center;">
-              <input type="checkbox" [checked]="AllCheckBox">
-            </td>
-          </tr>
 
-          <tr>
-            <td>3</td>
-            <td>Syrub</td>
-            <td>Brufen</td>
-            <td>400 mg</td>
-            <td>1 - 0 - 1</td>
-            <td>June 05 2024</td>
-            <td><input type="text" value="25"></td>
-            <td><input type="text" value="20"> days</td>
-            <td style="border: none !important;text-align: center;">
-              <input type="checkbox" [checked]="AllCheckBox">
-            </td>
-          </tr>
+        <div class='right wrapper-main'>
+          <div class='contactos'>
+            <div class='body-contactos'>
+              <div class="col-10" style="padding: 6px;
+              width: 100%;">
+                <div class="doc-details" style="margin-left: 0 !important;">
+                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;">Doctor Information</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Dr.John , F.I.A.G.E.S ,
+                    F.UROGYN(USA), MBBS</p>
+                </div>
+                <div class="clinic-details" style="margin-left: 0 !important;">
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">98546 63473</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Near A2G Appartment</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">Trichendur Main
+                    Road ,
+                  </p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    Palayamkottai,Thoothukudi
+                    Dist-628205
+                  </p>
 
-          <tr>
-            <td>1</td>
-            <td>Oil</td>
-            <td>Brufen</td>
-            <td>400 mg</td>
-            <td>1 - 0 - 1</td>
-            <td>Aug 05 2024</td>
-            <td><input type="text" value="55"></td>
-            <td><input type="text" value="10"> days</td>
-            <td style="border: none !important;text-align: center;">
-              <input type="checkbox" [checked]="AllCheckBox">
-            </td>
-          </tr>
-        </table>
+                </div>
+              </div>
+
+              <div class="col-10" style="padding: 6px;
+              width: 100%;">
+                <div class="doc-details" style="margin-left: 0 !important;">
+                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;">Patient Information</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Mr .Selvan</p>
+                </div>
+                <div class="clinic-details" style="margin-left: 0 !important;">
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">45 Years old</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">89037 63473</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    123,South Street
+                  </p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    Palayamkottai , Perumalpuram
+                  </p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    Thoothukudi Dist - 628205
+                  </p>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
       </div>
-
-      <p style="font-size: 10px;
-      text-align: right;
-      padding-bottom: 15px;
-      padding-right: 25px;
-      margin-top: 85px;">Dr.John signature</p>
-
-      <ion-button style="font-size: 10px;
-      position: absolute;
-      bottom: 27px;
-      left: 20px;" (click)="PrescriptionDetails=false">Deliver</ion-button>
-      <!-- <p style="font-size:6px;text-align:center;padding-bottom:20px;">This is a digitally generated Prescription</p> -->
     </div>
   </div>
 

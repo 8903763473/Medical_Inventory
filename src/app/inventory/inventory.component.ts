@@ -45,7 +45,7 @@ export class InventoryComponent {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
     this.LocalCalculation();
   }
 

@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, SimpleChanges, ViewChild } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { Chart } from 'chart.js/auto';
-
+// import { Chart } from 'chart.js/auto';
+import { Chart, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-home',
@@ -10,22 +10,140 @@ import { Chart } from 'chart.js/auto';
 })
 export class HomePage {
 
+  Table1: any = [
+    {
+      "name": "Abilify",
+      "manufacture": "PureLife Pharmaceuticals",
+      "Quantity": 233,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    },
+    {
+      "name": "Adderall",
+      "manufacture": "VitaCare Solutions",
+      "Quantity": 123,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    },
+    {
+      "name": "Azel",
+      "manufacture": "BioMed Innovations",
+      "Quantity": 236,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    },
+    {
+      "name": "Actos",
+      "manufacture": "HealthTech Laboratories",
+      "Quantity": 69,
+      "purchasedate": "01 Feb 2044",
+      "expairdat": "01 May 2045"
+    },
+    {
+      "name": "Actemra",
+      "manufacture": "MediCo Pharmaceuticals",
+      "Quantity": 21,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Mar 2045"
+    }
+  ]
+
+  Table2: any = [
+    {
+      name: "Paracetamol",
+      manufacture: "ABC Pharmaceuticals",
+      Quantity: "100 tablets",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Ibuprofen",
+      manufacture: "XYZ Pharma",
+      Quantity: "50 capsules",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Amoxicillin",
+      manufacture: "PQR Pharmaceuticals",
+      Quantity: "20 tablets",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Loratadine",
+      manufacture: "LMN Pharma",
+      Quantity: "30 tablets",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    },
+    {
+      name: "Omeprazole",
+      manufacture: "EFG Pharmaceuticals",
+      Quantity: "40 capsules",
+      purchasedate: "2024-03-28",
+      expairdat: "2025-03-28"
+    }
+  ]
+
+  Table3: any = [
+    {
+      "name": "HealWell Tablets",
+      "manufacture": "PureCare Pharmaceuticals",
+      "Quantity": 32,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 June 2045"
+    },
+    {
+      "name": "BioGuard Capsules",
+      "manufacture": "BioGen Medical",
+      "Quantity": 20,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 July 2045"
+    },
+    {
+      "name": "PureRelief Injection",
+      "manufacture": "WellnessTech Pharmaceuticals",
+      "Quantity": 76,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Apr 2045"
+    },
+    {
+      "name": "VitaCure Syrup",
+      "manufacture": "VitalHealth Labs",
+      "Quantity": 16,
+      "purchasedate": "01 Feb 2044",
+      "expairdat": "01 Aug 2045"
+    },
+    {
+      "name": "BioFlex Plus",
+      "manufacture": "MediPharm Solutions",
+      "Quantity": 45,
+      "purchasedate": "01 Dec 2044",
+      "expairdat": "01 Sep 2045"
+    }
+  ]
+
   @Input() BarcanvasId: any;
   @Input() LinecanvasId: any;
   @Input() data: number[] = [95, 120, 155, 230, 100];
-  @Input() data1: number[] = [210, 110, 185, 280, 190, 120, 90, 89, 145, 200, 210, 100];
   @Input() labels: string[] = ['Vita', 'Heal', 'Cure', 'BioX', 'Pure'];
+  @Input() data1: number[] = [250, 110, 185, 280, 190, 120, 90, 89, 145, 200, 210, 100];
+  @Input() data2: any[] = [100, 70, 80, 100, 90, 60, 40, 30, 50, 70, 80, 60];
   @Input() labels1: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  @Input() labels2: string[] = ['2021', '2022', '2023', '2024'];
 
-  @ViewChild('BarchartCanvas') BarchartCanvas: ElementRef | undefined;
-  @ViewChild('LinechartCanvas') LinechartCanvas: ElementRef | undefined;
+  @ViewChild('BarchartCanvas') BarchartCanvas: ElementRef | any;
+  @ViewChild('LinechartCanvas') LinechartCanvas: ElementRef | any;
 
 
   private barChartInstance: Chart | null = null;
   private lineChartInstance: Chart | null = null;
 
 
-  constructor(public app: AppComponent) { }
+  constructor(public app: AppComponent) {
+    Chart.register(...registerables);
+  }
 
   ngAfterViewInit(): void {
     this.BarChart();
@@ -39,7 +157,7 @@ export class HomePage {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
 
 
     // this.app.loader = true
@@ -140,42 +258,26 @@ export class HomePage {
     }
   }
 
-
-
   private LineChart(): void {
-    const ctx = this.LinechartCanvas?.nativeElement?.getContext('2d');
+    const ctx = this.LinechartCanvas.nativeElement.getContext('2d');
 
     if (ctx) {
-
-      if (this.lineChartInstance) {
-        this.lineChartInstance.destroy();
-      }
-
       const datasetProperties = {
-        borderWidth: 2, // Set the width of the line
+        borderWidth: 2,
         fill: false,
       };
-
-      const salesGradient = ctx.createLinearGradient(0, 0, 0, 400);
-      salesGradient.addColorStop(0, '#C9E3FF');
-      salesGradient.addColorStop(1, 'rgba(99, 170, 248, 0.00)');
-
-      const revenueGradient = ctx.createLinearGradient(0, 0, 0, 400);
-      revenueGradient.addColorStop(0, 'transparent');
-      revenueGradient.addColorStop(1, 'transparent');
-
-      const salesWaveData = this.createWaveData(this.data1.length, 150); // Adjust the amplitude (50 in this case)
-      const revenueWaveData = this.createWaveData(this.data1.length, 100); // Adjust the amplitude for the second line
 
       const chartOptions = {
         scales: {
           y: {
-            beginAtZero: true,
+            beginAtZero: false,
             stacked: false,
             ticks: {
               callback: (value: any, index: any, values: any) => {
-                if (index === 0 || index === values.length - 1 || index === Math.floor(values.length / 2)) {
-                  return value.toLocaleString();
+                console.log(values);
+                console.log(value);
+                if (values.includes(value)) {
+                  return value;
                 } else {
                   return '';
                 }
@@ -185,6 +287,10 @@ export class HomePage {
           x: {
             beginAtZero: true,
             stacked: true,
+            title: {
+              display: true,
+              text: ''
+            }
           }
         },
         plugins: {
@@ -215,7 +321,6 @@ export class HomePage {
                   chartCtx.font = 'bold 12px sans-serif';
                   chartCtx.textAlign = 'center';
                   chartCtx.textBaseline = 'middle';
-                  // chartCtx.fillText(chartData.toLocaleString(), xPos, yPos);     // Values Displayed here
                 }
               });
             });
@@ -231,17 +336,15 @@ export class HomePage {
             {
               ...Object.assign({}, datasetProperties),
               label: 'Yearly Loss',
-              data: salesWaveData,
+              data: this.data1,
               borderColor: '#007AFF',
-              backgroundColor: salesGradient,
             },
             {
               ...Object.assign({}, datasetProperties),
               label: 'Monthly Loss',
-              data: revenueWaveData,
+              data: this.data2,
               borderColor: '#FF5733',
-              backgroundColor: revenueGradient,
-            },
+            }
           ],
         },
         options: Object.assign({}, chartOptions),
@@ -251,7 +354,7 @@ export class HomePage {
 
   private createWaveData(length: number, amplitude: number): number[] {
     const waveData = [];
-    const pointsPerCycle = 100; // Increase the number of points for smoother curve
+    const pointsPerCycle = 100;
 
     for (let i = 0; i < length; i++) {
       const theta = (i / (length - 1)) * Math.PI * 2 * pointsPerCycle;

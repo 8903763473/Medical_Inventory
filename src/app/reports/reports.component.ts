@@ -26,7 +26,7 @@ export class ReportsComponent {
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
-    }, 1000)
+    }, 500)
   }
 
   filterbyDate(data: any) {

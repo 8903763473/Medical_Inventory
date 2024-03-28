@@ -19,7 +19,7 @@
   </div>
 
 
-  <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0" style="margin-left: 230px;"
+  <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0" style="margin-left: 195px;"
     [ngClass]="{'leftSideMenuHome':Open!==false}" *ngIf="!loader">
     <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
       <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
@@ -81,21 +81,23 @@
             <i class="fa fa-bell me-lg-2"></i>
             <span style="position: absolute;
             left: 5px;
-            top: -15px;
+            top: 0px;
             background: #009cff;
             border-radius: 53%;
             font-size: 11px !important;
             padding: 0px;
-            height: 27px;
-            width: 27px;
+            height: 8px;
+            width: 8px;
             color: white;
             display: flex;
             align-items: center;
-            justify-content: center;">10 +</span>
+            justify-content: center;"></span>
           </div>
-          <span class="d-none d-lg-inline-flex">Notifications</span>
+          <span class="d-none d-lg-inline-flex" style="color: grey;
+          font-weight: 400;
+          font-size: 13px !important;">Notifications</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+        <!-- <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
           style="border-radius:4px !important;box-shadow: 0px 0px 7px grey;">
           <a class="dropdown-item">
             <h6 class="fw-normal mb-0">Profile updated</h6>
@@ -113,13 +115,15 @@
           </a>
           <hr class="dropdown-divider">
           <a class="dropdown-item text-center">See all notifications</a>
-        </div>
+        </div> -->
       </div>
       <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
           <img class="rounded-circle me-lg-2" src="../../assets/img/admin.jpg" alt=""
             style="width: 40px; height: 40px;object-fit: cover;">
-          <span class="d-none d-lg-inline-flex">Admin User</span>
+          <span class="d-none d-lg-inline-flex" style="color: grey;
+          font-weight: 400;
+          font-size: 13px !important;">Admin User</span>
         </a>
         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
           style="border-radius:4px !important;box-shadow: 0px 0px 7px grey;">
