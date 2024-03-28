@@ -37,6 +37,7 @@ export class PrescriptionComponent implements OnInit {
   EveningQty: any
   ActionPopup: boolean = false
   EditPrescription: boolean = false
+  allChecked: boolean = false
 
   ngOnInit() {
     this.app.ind = 4
@@ -160,10 +161,18 @@ export class PrescriptionComponent implements OnInit {
   }
 
   submit() {
-    this.EditPrescription=false
+    this.EditPrescription = false
   }
 
   Pharmacist() {
     this.router.navigate(['/Orders'])
+  }
+
+  AllCheck(data: any) {
+    if (data.target.checked == true) {
+      this.allChecked = true
+    } else {
+      this.allChecked = false
+    }
   }
 }

@@ -710,6 +710,11 @@
 }
 
 select,
-ion-datetime {
+ion-datetime,
+input {
     background-color: white !important;
+}
+
+input {
+    // border: 1px solid #d4d4d4 !important;
 }
