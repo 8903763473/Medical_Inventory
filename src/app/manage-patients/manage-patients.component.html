@@ -1,0 +1,158 @@
+<section>
+  <div class="content-area">
+    <!-- <div class="page-title">Inventory</div> -->
+    <ion-label class="head">Manage Patients</ion-label>
+    <ion-label style="position: absolute;
+    top: 14px;
+    right: 320px;
+    z-index: 10;
+    font-weight: bold;">Filter</ion-label> <select style="width: 200px;
+    background-color: rgb(239, 239, 239);
+    border-radius: 5px;
+    position: absolute;
+    top: 14px;
+    right: 108px;color: black;" [(ngModel)]="FilterCategory" (change)="FilterbyCategory($event)">
+      <option value="{{item.disease}}" *ngFor="let item of DummyLocalInventory" style="color: black;">
+        {{item.disease}}</option>
+    </select>
+    <ion-button class="Add" (click)="newPatient=true">New +</ion-button>
+    <br><br>
+    <!-- <div class="page-desc">View and manage your stock</div> -->
+
+    <div class="content-bar" style="background: #009cff;">
+      <!-- <div class="itemnum" style="color: white;padding: 15px !important;">ID</div> -->
+      <div class="itemtitle" style="color: white;">Patient ID</div>
+      <div class="itemprice" style="color: white;">Name</div>
+      <div class="itemstock" style="color: white;">Age</div>
+      <div class="itemstock" style="color: white;">Contact</div>
+      <div class="itemstock" style="color: white;">Disease</div>
+      <div class="itemstock" style="color: white;">Alargies</div>
+    </div>
+
+    <div class="content-bar" *ngFor="let item of patients;let i = index">
+      <div class="itemtitle" *ngIf="i!=5">MI-00{{ item.patientId }}</div>
+      <div class="itemprice" *ngIf="i!=5">{{ item.Name }}</div>
+      <div class="itemprice" *ngIf="i!=5">{{ item.Age }}</div>
+      <div class="itemstock" *ngIf="i!=5">{{ item.contact }}</div>
+      <div class="itemprice" *ngIf="i!=5">{{ item.disease }}</div>
+      <div class="itemprice" *ngIf="i!=5">{{ item.alargies }}</div>
+      <div class="btncontainer">
+
+        <button class="cbbtn" *ngIf="i!=5" (click)="EditInvent(item)"><ion-icon
+            name="create-outline"></ion-icon></button>
+        <button class="cbbtn" (click)="deleteAlert=true" *ngIf="i!=5"><ion-icon
+            name="trash-outline"></ion-icon></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
+    <div class="modal-dialog modal-confirm"
+      style="width: calc(100% - 230px) !important;
+    left: 230px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+      <div class="modal-content" style="width: 300px !important;">
+        <div class="modal-header" style="position: relative;">
+          <div class="icon-box" style="position: absolute;right: 10px;">
+            <ion-icon name="trash-outline" style="font-size: 30px;"></ion-icon>
+          </div>
+          <h4 class="modal-title" style="margin-top: 0px;">Are you sure?</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to delete this Inventory ? This process cannot be undone.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal" (click)="Buttons()"
+            style="line-height: 17px;background: #b1b1b1;">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="Buttons()" style="line-height: 17px;">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-popup-bg" *ngIf=EditActionPopup>
+    <div (click)="EditActionPopup=false"
+      style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;"></div>
+    <div class="form-container" style="position: relative;">
+      <ion-label style="position: absolute;left: 10px;top: 10px;color: black;font-weight: bold;font-size: 11px;">Patient Id : MI-00{{
+        EditInventoryData.patientId }}</ion-label>
+      <button id="btnCloseForm" class="close-button" (click)="EditActionPopup=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">Update Inventory</h1>
+      <form action="">
+        <div class="form-group">
+          <label for="">Inventory-Name</label>
+          <input type="text" class="form-control" placeholder="Inventory-Name" style="font-size: 10px;"
+            value="{{EditInventoryData.productName}}" />
+        </div>
+        <div class="form-group">
+          <label for="">Category</label>
+          <input class="form-control" type="text" placeholder="Category" style="font-size: 10px;"
+            value="{{EditInventoryData.category}}" />
+        </div>
+        <div class="form-group">
+          <label for="">Manufacturer</label>
+          <input class="form-control" type="text" placeholder="Manufacturer" style="font-size: 10px;"
+            value="{{EditInventoryData.ManufactursList}}" />
+        </div>
+        <div class="form-group">
+          <label for="">Batch</label>
+          <input class="form-control" type="text" placeholder="Batch" style="font-size: 10px;" value="2" />
+        </div>
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="form-popup-bg" *ngIf=newPatient>
+    <div (click)="newPatient=false" style="width: calc(100% -  230px);height: 100%;position: fixed;top: 0;left: 230px;">
+    </div>
+    <div class="form-container">
+      <button id="btnCloseForm" class="close-button" (click)="newPatient=false" style="color: #0fa2ff;">X</button>
+      <h1 style="margin: 10px;text-align: center;
+      color: #0fa2ff;">New Patient</h1>
+      <form action="">
+        <div class="form-group">
+          <label for="">Name</label>
+          <input type="text" class="form-control" placeholder="Name" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Age</label>
+          <input class="form-control" type="text" placeholder="Age" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Contact No</label>
+          <input class="form-control" type="text" placeholder="Contact No" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Pre-Existing Disease</label>
+          <input class="form-control" type="text" placeholder="Disease" style="font-size: 10px;" />
+        </div>
+        <div class="form-group">
+          <label for="">Alargies</label>
+          <input class="form-control" type="text" placeholder="Alargies" style="font-size: 10px;" />
+        </div>
+
+        <button style="padding: 10px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        float: inline-end;margin-top: 15px;">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</section>

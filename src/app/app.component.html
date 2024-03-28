@@ -1,0 +1,161 @@
+<ion-app style="background-color: white;">
+
+  <!-- Sidebar Start -->
+  <div class="sidebar pe-4 pb-3" *ngIf="!loader" [ngClass]="{'open': Open==true}"
+    style="border-right: 1px solid #d9d9d9;">
+    <nav class="navbar bg-light navbar-light">
+      <a href="index.html" class="navbar-brand mx-4 mb-3">
+        <h3 class="text-primary" style="font-size: 18px;"> COMPANY</h3>
+      </a>
+      <div class="d-flex align-items-center ms-4 mb-4">
+      </div>
+      <div class="navbar-nav w-100" style="gap: 20px;">
+        <a class="nav-item nav-link" [ngClass]="{'active':ind==item.id}" *ngFor="let item of menu"
+          (click)="routes(item.path)">
+          <img src="{{ ind==item.id ? item.fill_img : item.img}}" alt="">
+          {{item.name}}</a>
+      </div>
+    </nav>
+  </div>
+
+
+  <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0" style="margin-left: 230px;"
+    [ngClass]="{'leftSideMenuHome':Open!==false}" *ngIf="!loader">
+    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+      <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+    </a>
+    <a class="sidebar-toggler flex-shrink-0" (click)="OpenMenu()">
+      <i class="fa fa-bars" *ngIf="Open==true"></i>
+      <i class="bi bi-arrow-left-square" *ngIf="Open==false" style="font-size: 25px;"></i>
+    </a>
+    <form class="d-none d-md-flex ms-4" class="SearchForm">
+      <input class="form-control border-0" placeholder="Search" [(ngModel)]="Search" (change)="change($event)">
+      <img src="../assets/img/search.svg" alt="">
+    </form>
+    <div class="navbar-nav align-items-center ms-auto">
+
+      <!-- <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fa fa-envelope me-lg-2"></i>
+          <span class="d-none d-lg-inline-flex">Message</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+          <a href="#" class="dropdown-item">
+            <div class="d-flex align-items-center">
+              <img class="rounded-circle" src="../../assets/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+              <div class="ms-2">
+                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                <small>15 minutes ago</small>
+              </div>
+            </div>
+          </a>
+          <hr class="dropdown-divider">
+          <a href="#" class="dropdown-item">
+            <div class="d-flex align-items-center">
+              <img class="rounded-circle" src="../../assets/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+              <div class="ms-2">
+                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                <small>15 minutes ago</small>
+              </div>
+            </div>
+          </a>
+          <hr class="dropdown-divider">
+          <a href="#" class="dropdown-item">
+            <div class="d-flex align-items-center">
+              <img class="rounded-circle" src="../../assets/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+              <div class="ms-2">
+                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                <small>15 minutes ago</small>
+              </div>
+            </div>
+          </a>
+          <hr class="dropdown-divider">
+          <a href="#" class="dropdown-item text-center">See all message</a>
+        </div>
+      </div> -->
+
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+          style="display: flex;align-items: center;justify-content: center;gap: 20px;">
+          <div style="position: relative;">
+            <i class="fa fa-bell me-lg-2"></i>
+            <span style="position: absolute;
+            left: 5px;
+            top: -15px;
+            background: #009cff;
+            border-radius: 53%;
+            font-size: 11px !important;
+            padding: 0px;
+            height: 27px;
+            width: 27px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;">10 +</span>
+          </div>
+          <span class="d-none d-lg-inline-flex">Notifications</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+          style="border-radius:4px !important;box-shadow: 0px 0px 7px grey;">
+          <a class="dropdown-item">
+            <h6 class="fw-normal mb-0">Profile updated</h6>
+            <small>15 minutes ago</small>
+          </a>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item">
+            <h6 class="fw-normal mb-0">New user added</h6>
+            <small>15 minutes ago</small>
+          </a>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item">
+            <h6 class="fw-normal mb-0">Password changed</h6>
+            <small>15 minutes ago</small>
+          </a>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item text-center">See all notifications</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <img class="rounded-circle me-lg-2" src="../../assets/img/admin.jpg" alt=""
+            style="width: 40px; height: 40px;object-fit: cover;">
+          <span class="d-none d-lg-inline-flex">Admin User</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+          style="border-radius:4px !important;box-shadow: 0px 0px 7px grey;">
+          <a class="dropdown-item" (click)="routes('MyProfile')">My Profile</a>
+          <a class="dropdown-item" (click)="routes('Settings')">Settings</a>
+          <!-- <a class="dropdown-item" (click)="routes('logOut')">Log Out</a> -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Sidebar End -->
+
+  <ion-router-outlet style="margin-top: 53px;"></ion-router-outlet>
+
+  <section class="loaderSection" *ngIf="loader">
+    <!-- <div class="loader"></div> -->
+
+    <div class="absCenter ">
+      <div class="loaderPill">
+        <div class="loaderPill-anim">
+          <div class="loaderPill-anim-bounce">
+            <div class="loaderPill-anim-flop">
+              <div class="loaderPill-pill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="loaderPill-floor">
+          <div class="loaderPill-floor-shadow"></div>
+        </div>
+        <div class="loaderPill-text">Loading ...</div>
+      </div>
+    </div>
+
+
+  </section>
+
+</ion-app>

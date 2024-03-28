@@ -1,0 +1,678 @@
+<!-- ******************************INVENTORY   LIST************************* -->
+
+<section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="PageUrl==1">
+  <div class="top" style="width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;">
+    <h3 class="title">Inventory Reports</h3>
+    <img src="../../assets/img/dwnldAll.svg" alt="">
+  </div><br>
+  <div class="Alltables">
+
+    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+
+      <!-- <div class="table-top">
+        <ion-label>Expiring List</ion-label>
+        <img src="../../assets/img/dwnldAll.svg" alt="">
+      </div><br> -->
+
+      <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <!-- <th scope="col">Img</th> -->
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">Medicine Name</th>
+              <th scope="col">Manufacturer</th>
+              <th scope="col">In Stock</th>
+              <th scope="col">Expire Date</th>
+              <th>Total Quantity</th>
+              <th>Exp: 1 to 30</th>
+              <th>Exp: 31 to 60</th>
+              <th>Exp: 60 +</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Batch No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med1.jpg" alt="" class="user">
+              </td> -->
+              <td>Apixaban</td>
+              <td>HealMakers</td>
+              <td>12</td>
+              <td>01 Jan 2045</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">30</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">70</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">40</td>
+              <td class="dwnld">2</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med2.jpg" alt="" class="user">
+              </td> -->
+              <td>Anovera</td>
+              <td>MediCrafts</td>
+              <td>85</td>
+              <td>01 Jan 2021</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">60</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">60</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">50</td>
+              <td class="dwnld">1</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med3.jpg" alt="" class="user">
+              </td> -->
+              <td>Apokyn</td>
+              <td>CareForge</td>
+              <td>58</td>
+              <td>01 Jan 2035</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">90</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">40</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">40</td>
+              <td class="dwnld">2</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med4.jpg" alt="" class="user">
+              </td> -->
+              <td>Apriso</td>
+              <td>PharmaWorks</td>
+              <td>10</td>
+              <td>01 Jan 2043</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">50</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">70</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">50</td>
+              <td class="dwnld">3</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med5.jpg" alt="" class="user">
+              </td> -->
+              <td>Aptiom</td>
+              <td>CureCraft</td>
+              <td>21</td>
+              <td>01 Jan 2025</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">90</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">10</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">70</td>
+              <td class="dwnld">2</td>
+            </tr>
+
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med6.jpg" alt="" class="user">
+              </td> -->
+              <td>Actorise</td>
+              <td>VitaForge</td>
+              <td>120</td>
+              <td>01 Jan 2005</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">80</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">80</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">10</td>
+              <td class="dwnld">1</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med7.jpg" alt="" class="user">
+              </td> -->
+              <td>Azel</td>
+              <td>RemedyTech</td>
+              <td>185</td>
+              <td>01 Jan 2055</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">65</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">55</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">50</td>
+              <td class="dwnld">1</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med8.jpg" alt="" class="user">
+              </td> -->
+              <td>Avastin</td>
+              <td>MedBlend</td>
+              <td>585</td>
+              <td>01 Jan 2015</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">66</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">10</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">84</td>
+              <td class="dwnld">2</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med9.jpg" alt="" class="user">
+              </td> -->
+              <td>Ascroil</td>
+              <td>LifeWorks</td>
+              <td>110</td>
+              <td>01 Jan 2035</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">110</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">20</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">40</td>
+              <td class="dwnld">3</td>
+            </tr>
+            <tr>
+              <!-- <td>
+                <img src="../../assets/img/med10.jpg" alt="" class="user">
+              </td> -->
+              <td>Allegra</td>
+              <td>HealthCraft</td>
+              <td>211</td>
+              <td>01 Jan 2025</td>
+              <td>170</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,1)">45</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,2)">100</td>
+              <td style="color: blue;text-decoration: underline;" (click)="ReportDetails1(5,3)">15</td>
+              <td class="dwnld">2</td>
+            </tr>         
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+      <div class="table-top">
+        <ion-label>Few Products</ion-label>
+        <img src="../../assets/img/dwnldAll.svg" alt="">
+      </div><br>
+
+      <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">Img</th>
+              <th scope="col">Pro.ID</th>
+              <th scope="col">Medicine Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Expire Date</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Downloads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="../../assets/img/med6.jpg" alt="" class="user">
+              </td>
+              <td>MD-523</td>
+              <td>Actorise</td>
+              <td>120</td>
+              <td>01 Jan 2005</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med7.jpg" alt="" class="user">
+              </td>
+              <td>MD-524</td>
+              <td>Azel</td>
+              <td>185</td>
+              <td>01 Jan 2055</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med8.jpg" alt="" class="user">
+              </td>
+              <td>MD-525</td>
+              <td>Avastin</td>
+              <td>585</td>
+              <td>01 Jan 2015</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med9.jpg" alt="" class="user">
+              </td>
+              <td>MD-526</td>
+              <td>Ascroil</td>
+              <td>110</td>
+              <td>01 Jan 2035</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med10.jpg" alt="" class="user">
+              </td>
+              <td>MD-527</td>
+              <td>Allegra</td>
+              <td>211</td>
+              <td>01 Jan 2025</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div> -->
+
+
+    <!-- <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+
+
+      <div class="table-top">
+        <ion-label>Top Sales</ion-label>
+        <select>
+          <option>Date</option>
+          <option>Month</option>
+          <option>Year</option>
+        </select>
+      </div><br>
+
+      <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">S.no</th>
+              <th scope="col">Date</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Downloads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sno">1</td>
+              <td>25 May 2030</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">2</td>
+              <td>07 Aug 2015</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">3</td>
+              <td>21 July 2025</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">4</td>
+              <td>12 June 2026</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">5</td>
+              <td>06 Apr 2034</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+
+
+      <div class="table-top">
+        <ion-label>Top Revenue</ion-label>
+        <select>
+          <option>Date</option>
+          <option>Month</option>
+          <option>Year</option>
+        </select>
+      </div><br>
+
+      <div class="table-responsive">
+
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">S.no</th>
+              <th scope="col">Date</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Downloads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sno">1</td>
+              <td>14 Mar 2005</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">2</td>
+              <td>24 Jan 2011</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">3</td>
+              <td>29 Nov 2025</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">4</td>
+              <td>11 Feb 2043</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">5</td>
+              <td>31 Dec 2026</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> -->
+
+  </div>
+
+</section>
+
+
+<!-- ******************************EXPIRY LIST************************* -->
+
+<section [ngClass]="{'leftSideMenu':app.Open==false}" *ngIf="PageUrl==2">
+  <div class="top" style="width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;">
+    <h3 class="title">Expiry Reports</h3>
+    <img src="../../assets/img/dwnldAll.svg" alt="">
+  </div><br>
+  <div class="Alltables">
+
+    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+
+      <!-- <div class="table-top">
+        <ion-label>Expiring List</ion-label>
+        <img src="../../assets/img/dwnldAll.svg" alt="">
+      </div><br> -->
+
+      <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">Medicine Name</th>
+              <th scope="col">Manufacturer</th>
+              <th scope="col">Total Quantity</th>
+              <th scope="col">Exp: 1 to 30</th>
+              <th scope="col">Exp: 31 to 60</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Exp: 60 +</th>
+            </tr>
+          </thead>
+          <tbody class="ExpBody">
+            <tr>
+              <td>Apixaban</td>
+              <td>MediPharm</td>
+              <td>130</td>
+              <td><a (click)="ReportDetails(65,1)">65</a></td>
+              <td><a (click)="ReportDetails(35,2)">35</a></td>
+              <td class="dwnld"><a (click)="ReportDetails(30,3)">30</a></td>
+            </tr>
+            <tr>
+              <td>Anovera</td>
+              <td>HealWell</td>
+              <td>100</td>
+              <td><a (click)="ReportDetails(85,1)">85</a></td>
+              <td><a (click)="ReportDetails(5,2)">5</a></td>
+              <td class="dwnld"><a (click)="ReportDetails(10,3)">10</a></td>
+            </tr>
+            <tr>
+              <td>Apokyn</td>
+              <td>CureCo Ltd</td>
+              <td>89</td>
+              <td><a (click)="ReportDetails(40,1)">40</a></td>
+              <td><a (click)="ReportDetails(45,2)">49</a></td>
+              <td class="dwnld"><a (click)="ReportDetails(4,3)">0</a></td>
+            </tr>
+            <tr>
+              <td>Apriso</td>
+              <td>VitaCare Inc</td>
+              <td>150</td>
+              <td><a (click)="ReportDetails(75,1)">75</a></td>
+              <td><a (click)="ReportDetails(70,2)">70</a></td>
+              <td class="dwnld"><a (click)="ReportDetails(5,3)">5</a></td>
+            </tr>
+            <tr>
+              <td>Aptiom</td>
+              <td>PureHealth</td>
+              <td>190</td>
+              <td><a (click)="ReportDetails(100,1)">100</a></td>
+              <td><a (click)="ReportDetails(50,2)">50</a></td>
+              <td class="dwnld"><a (click)="ReportDetails(40,3)">40</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+      <div class="table-top">
+        <ion-label>Few Products</ion-label>
+        <img src="../../assets/img/dwnldAll.svg" alt="">
+      </div><br>
+
+      <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">Img</th>
+              <th scope="col">Pro.ID</th>
+              <th scope="col">Medicine Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Expire Date</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Downloads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="../../assets/img/med6.jpg" alt="" class="user">
+              </td>
+              <td>MD-523</td>
+              <td>Actorise</td>
+              <td>120</td>
+              <td>01 Jan 2005</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med7.jpg" alt="" class="user">
+              </td>
+              <td>MD-524</td>
+              <td>Azel</td>
+              <td>185</td>
+              <td>01 Jan 2055</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med8.jpg" alt="" class="user">
+              </td>
+              <td>MD-525</td>
+              <td>Avastin</td>
+              <td>585</td>
+              <td>01 Jan 2015</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med9.jpg" alt="" class="user">
+              </td>
+              <td>MD-526</td>
+              <td>Ascroil</td>
+              <td>110</td>
+              <td>01 Jan 2035</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../assets/img/med10.jpg" alt="" class="user">
+              </td>
+              <td>MD-527</td>
+              <td>Allegra</td>
+              <td>211</td>
+              <td>01 Jan 2025</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+
+    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+
+
+      <div class="table-top">
+        <ion-label>Top Sales</ion-label>
+        <select>
+          <option>Date</option>
+          <option>Month</option>
+          <option>Year</option>
+        </select>
+      </div><br>
+
+      <div class="table-responsive">
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">S.no</th>
+              <th scope="col">Date</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Downloads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sno">1</td>
+              <td>25 May 2030</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">2</td>
+              <td>07 Aug 2015</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">3</td>
+              <td>21 July 2025</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">4</td>
+              <td>12 June 2026</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">5</td>
+              <td>06 Apr 2034</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  background-color: #ffffff !important;">
+
+
+      <div class="table-top">
+        <ion-label>Top Revenue</ion-label>
+        <select>
+          <option>Date</option>
+          <option>Month</option>
+          <option>Year</option>
+        </select>
+      </div><br>
+
+      <div class="table-responsive">
+
+        <table class="table text-start align-middle table-bordered table-hover mb-0">
+          <thead style="background-color: #C2C2C2;">
+            <tr class="text-dark">
+              <th scope="col" style="border-radius: 10px 0px 0px 10px;">S.no</th>
+              <th scope="col">Date</th>
+              <th scope="col" style="border-radius: 0px 10px 10px 0px;">Downloads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sno">1</td>
+              <td>14 Mar 2005</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">2</td>
+              <td>24 Jan 2011</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">3</td>
+              <td>29 Nov 2025</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">4</td>
+              <td>11 Feb 2043</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+            <tr>
+              <td class="sno">5</td>
+              <td>31 Dec 2026</td>
+              <td class="dwnld"><a class="btn btn-sm btn-primary" href="" style="padding: 0 !important;"><img
+                    src="../../assets/img/download.svg" alt=""></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> -->
+
+  </div>
+
+</section>
