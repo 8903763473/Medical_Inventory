@@ -9,6 +9,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
   menu: any = [
     {
       id: 1,
@@ -68,6 +69,8 @@ export class AppComponent {
     }
   ]
 
+
+  screenHeight: any
   Search: any
   ind: any
   loader: boolean = false
@@ -1005,9 +1008,16 @@ export class AppComponent {
   ionViewWillEnter() {
     this.ind = 1
     this.Open = false
-
     localStorage.setItem('InventoryData', JSON.stringify(this.localData));
+    this.FetchScreenHeight()
+  }
 
+  FetchScreenHeight() {
+    this.screenHeight = window.innerHeight
+
+    setTimeout(() => {
+      this.FetchScreenHeight()
+    }, 500)
   }
 
   OpenMenu() {

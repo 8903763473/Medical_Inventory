@@ -17,6 +17,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { EditUnitSizeComponent } from './edit-unit-size/edit-unit-size.component';
 import { EditTypesComponent } from './edit-types/edit-types.component';
 import { ManagePatientsComponent } from './manage-patients/manage-patients.component';
+import { TestGraphComponent } from './test-graph/test-graph.component';
 
 const routes: Routes = [
   {
@@ -99,6 +100,10 @@ const routes: Routes = [
   {
     path: 'Manage_Patients',
     component: ManagePatientsComponent
+  },
+  {
+    path: 'Graph',
+    component: TestGraphComponent
   },
 ];
 

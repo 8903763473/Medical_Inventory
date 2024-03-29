@@ -188,16 +188,22 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
           <div class='contenedor-totales'>
             <div class='main-table-containter'>
-              <div class='title-table-container'>
-                <div class='subtitle'>Medical Prescription</div>
-                <!-- <button class='select-button'> Reciente </button> -->
+              <div class='title-table-container' style="padding: 10px 0 !important;">
+                <div class='subtitle'
+                  style="margin: 0;display: flex;align-items: center;justify-content: center;gap: 10px;">
+                  <ion-icon name="arrow-back-outline" (click)="PrescriptionDetails=false"
+                    style="cursor: pointer;"></ion-icon>
+                  Medical Prescription
+                </div>
+                <button class='select-button' style="font-size: 10px;
+                margin: 0;"> Order ID : MI-007 </button>
               </div>
-              <div>
-                <table>
-                  <tbody>
+              <div style="width: 100%;height: 100%;">
+                <table style="height: 100%;">
+                  <tbody style="border: 1px solid #3398ff;">
 
-                    <tr style="background: #eeeeee;
-                    color: black;">
+                    <tr style="background: #3398ff;
+                    color: white;">
                       <td>
                         Batch
                       </td>
@@ -249,7 +255,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
                         <input type="checkbox" [checked]="AllCheckBox">
                       </td>
                     </tr>
-                    <tr>
+                    <tr style="background: #009cff24 !important;">
                       <td>
                         <div class='icono-texto'>
                           <div>1</div>
@@ -300,7 +306,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
                         <input type="checkbox" [checked]="AllCheckBox">
                       </td>
                     </tr>
-                    <tr>
+                    <tr style="background: #009cff24 !important;">
                       <td>
                         <div class='icono-texto'>
                           <div>2</div>
@@ -325,6 +331,38 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
                         <input type="checkbox" [checked]="AllCheckBox">
                       </td>
                     </tr>
+
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>3</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Heal</td>
+                      <td>400mg</td>
+                      <td>1 - 1 - 0</td>
+                      <td>15 June 2024</td>
+                      <td>
+                        <input type="text" value="6" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">
+                      </td>
+                      <td>
+                        <input type="text" value="3" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days
+                      </td>
+                      <td>
+                        <input type="checkbox" [checked]="AllCheckBox">
+                      </td>
+                    </tr>
+
+
                   </tbody>
                 </table>
                 <div style="width: 100%;display: flex;align-items: center;justify-content: flex-end;">
@@ -343,13 +381,19 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
         </div>
 
-        <div class='right wrapper-main'>
-          <div class='contactos'>
-            <div class='body-contactos'>
-              <div class="col-10" style="padding: 6px;
-              width: 100%;">
+        <div class='right wrapper-main' style="height: 100%;
+        border-left: 1px solid grey;">
+          <div class='contactos' style="margin-top: 40px">
+            <div class='body-contactos' style="display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;flex-direction: column;
+            width: 100%;">
+              <div class="col-10" style="padding: 6px;margin: 0px !important;">
                 <div class="doc-details" style="margin-left: 0 !important;">
-                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;">Doctor Information</p>
+                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;font-size: 13px;
+                  color: black;
+                  font-weight: 700;
+                  font-family: 'circular';">Doctor Information</p>
                   <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Dr.John , F.I.A.G.E.S ,
                     F.UROGYN(USA), MBBS</p>
                 </div>
@@ -367,10 +411,12 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
                 </div>
               </div>
 
-              <div class="col-10" style="padding: 6px;
-              width: 100%;">
+              <div class="col-10" style="padding: 6px;margin-left: 0px !important;">
                 <div class="doc-details" style="margin-left: 0 !important;">
-                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;">Patient Information</p>
+                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;font-size: 13px;
+                  color: black;
+                  font-weight: 700;
+                  font-family: 'circular';">Patient Information</p>
                   <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Mr .Selvan</p>
                 </div>
                 <div class="clinic-details" style="margin-left: 0 !important;">
@@ -380,11 +426,11 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
                     123,South Street
                   </p>
                   <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                    Palayamkottai , Perumalpuram
+                    Palayamkottai , Perumalpuram- 628205
                   </p>
-                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                    Thoothukudi Dist - 628205
-                  </p>
+                  <!-- <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    Thoothukudi Dist 
+                  </p> -->
                 </div>
               </div>
 

@@ -1,24 +1,223 @@
-<section class="fullpage">
+<section class="fullpage" [style.min-height.px]="app.screenHeight">
+    <div class="container" style="width: 100%;
+max-width: 100% !important;height: 100%;
+    background: #e7eaf0;padding-top: 30px;">
+        <div class="row gutters" style="height: inherit !important;padding: 20px;overflow: overlay;
+        display: flex;
+        align-items: center;
+        justify-content: center;">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" style="height: 100% !important;">
+                <div class="card h-100">
+                    <div class="card-body" style="overflow: scroll;">
+                        <div class='body-contactos' style="margin-top: 12px;
+width: 100%;
+height: 100%;">
+                            <div class="col-10" style="padding: 6px;
+width: 100%;">
+                                <div class="doc-details" style="margin-left: 0 !important;">
+                                    <p class="doc-name" style="margin-left: 0 !important;font-size: 13px;
+            font-weight: bold;
+            color: black;
+            border-bottom: 1px solid grey;margin-bottom: 1rem;">Doctor
+                                        Information</p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-bottom: 6px !important;">
+                                        Dr.John ,
+                                        F.I.A.G.E.S ,
+                                        F.UROGYN(USA), MBBS</p>
+                                </div>
+                                <div class="clinic-details" style="margin-left: 0 !important;">
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;margin-bottom: 6px !important;">
+                                        98546 63473</p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-bottom: 6px !important;">
+                                        Near A2G
+                                        Appartment</p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;margin-bottom: 6px !important;">
+                                        Trichendur Main
+                                        Road ,
+                                    </p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;margin-bottom: 6px !important;">
+                                        Palayamkottai,Thoothukudi
+                                        Dist-628205
+                                    </p>
 
-    <div class='wrapper'>
-        <div class='unodos' style="height: 100%;">
-            <div class='wrapper-main'>
+                                </div>
+                            </div>
 
-                <div class='contenedor-totales'>
-                    <div class='main-table-containter'>
-                        <div class='title-table-container'>
-                            <div class='subtitle'>Medical Prescription</div>
-                            <div style="display: flex;align-items: center;justify-content: center;gap: 10px;">
-                                <button class='select-button' style="font-size: 10px;padding: 5px;"
-                                    (click)="EditPrescription=true"> Add
-                                    Medicine</button>
-                                <button class='select-button' style="font-size: 10px;padding: 5px;"> Previous
-                                    Prescription</button>
-                                <button class='select-button' style="font-size: 10px;padding: 5px;"
-                                    (click)="Pharmacist()"> Move to
-                                    Pharmacy</button>
+                            <div class="col-10" style="padding: 6px;
+width: 100%;">
+                                <div class="doc-details" style="margin-left: 0 !important;">
+                                    <p class="doc-name" style="margin-left: 0 !important;font-size: 13px;
+            font-weight: bold;
+            color: black;
+            border-bottom: 1px solid grey;">Patient
+                                        Information</p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-bottom: 6px !important;">
+                                        Mr .Selvan
+                                    </p>
+                                </div>
+                                <div class="clinic-details" style="margin-left: 0 !important;">
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-bottom: 6px !important;">
+                                        45 Years old
+                                    </p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;margin-bottom: 6px !important;">
+                                        89037 63473</p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;margin-bottom: 6px !important;">
+                                        123,South Street
+                                    </p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;margin-bottom: 6px !important;">
+                                        Palayamkottai , Perumalpuram
+                                    </p>
+                                    <p class="doc-meta"
+                                        style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;margin-bottom: 6px !important;">
+                                        Thoothukudi Dist - 628205
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" style="height: 100% !important;">
+                <div class="card h-100">
+                    <div class="card-body" style="position: relative;">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;
+                            align-items: center;
+                            justify-content: space-between;">
+                                <h6 class="mb-2 text-primary">Prescription Form</h6>
+
+                                <div class="row gutters">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="text-right" style="display: flex;
+                                        align-items: center;
+                                        justify-content: center;gap: 10px;">
+                                            <button type="button" id="submit" name="submit" class="btn btn-primary"
+                                                style="font-size: 10px;">Add Medicine</button><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                <div class="form-group">
+                                    <label for="fullName" style="font-size: 10px;
+                                    font-weight: bold;
+                                    color: black;">Category</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder=""
+                                        style="font-size: 12px;" (click)="categoryListPopup=true"
+                                        value="{{pickedCategory}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                <div class="form-group">
+                                    <label for="fullName" style="font-size: 10px;
+                                    font-weight: bold;
+                                    color: black;">Product name</label>
+                                    <input type="email" class="form-control" id="eMail" placeholder=""
+                                        style="font-size: 12px;"
+                                        (click)="pickedCategory !=undefined ? ProductListPopup=true : ProductListPopup=false"
+                                        value="{{pickedProduct}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                <div class="form-group">
+                                    <label for="fullName" style="font-size: 10px;
+                                    font-weight: bold;
+                                    color: black;">Manufacturer</label>
+                                    <input type="text" class="form-control" id="phone" placeholder=""
+                                        style="font-size: 12px;"
+                                        (click)="pickedProduct !=undefined ? manufacturerListPopup=true :  manufacturerListPopup=false"
+                                        value="{{pickedmanufacturer}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                <div class="form-group">
+                                    <label for="fullName" style="font-size: 10px;
+                                    font-weight: bold;
+                                    color: black;">Unit</label>
+                                    <input type="url" class="form-control" id="website" placeholder=""
+                                        style="font-size: 12px;"
+                                        (click)="pickedmanufacturer !=undefined ? UnitListPopup = true : UnitListPopup = false"
+                                        value="{{pickedUnit}}" readonly>
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div
+                            style="width: 94%;display: flex;align-items: center;justify-content: flex-end;gap: 10px;position: absolute;bottom: 10px;">
+                            <button type="button" id="submit" name="submit" class="btn btn-primary"
+                                style="font-size: 10px;">Previous Prescription</button><br>
+                            <!-- <button type="button" id="submit" name="submit" class="btn btn-primary"
+                                style="font-size: 10px;" (click)="Pharmacist()">Move to Pharmacy</button> -->
+                        </div>
+
+
+                        <div class="period">
+                            <div class="period-in">
+                                Morning <input type="checkbox" (change)="MorningCheck($event)" />
+                                <div class="quantity"
+                                    *ngIf="pickedCategory!=undefined ? pickedCategory=='Tablets' : true">
+                                    <ion-icon name="remove-outline"
+                                        (click)="MorningIcon(MorningQty,'minus')"></ion-icon>
+                                    <input type="text" style="width: 45px;" value="{{MorningQty}}" readonly>
+                                    <ion-icon name="add-outline" (click)="MorningIcon(MorningQty,'add')"></ion-icon>
+                                </div>
+                                <div class="food" *ngIf="pickedCategory!='Injections'">
+                                    <select name="" id="" [disabled]="!Morning" style="padding: 3px;
+                                    border-radius: 2px;">
+                                        <option value="Before Food">Before Food</option>
+                                        <option value="After Food">After Food</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="period-in">
+                                Afnoon &nbsp;<input type="checkbox" (change)="AfternoonCheck($event)" />
+                                <div class="quantity"
+                                    *ngIf="pickedCategory!=undefined ? pickedCategory=='Tablets' : true">
+                                    <ion-icon name="remove-outline"
+                                        (click)="AfternoonIcon(AfternoonQty,'minus')"></ion-icon>
+                                    <input type="text" style="width: 45px;" value="{{AfternoonQty}}" readonly>
+                                    <ion-icon name="add-outline" (click)="AfternoonIcon(AfternoonQty,'add')"></ion-icon>
+                                </div>
+                                <div class="food" *ngIf="pickedCategory!='Injections'">
+                                    <select name="" id="" [disabled]="!Afternoon" style="padding: 3px;
+                                    border-radius: 2px;">
+                                        <option value="Before Food">Before Food</option>
+                                        <option value="After Food">After Food</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="period-in">
+                                Evening &nbsp;<input type="checkbox" (change)="EveningCheck($event)" />
+                                <div class="quantity"
+                                    *ngIf="pickedCategory!=undefined ? pickedCategory=='Tablets' : true ">
+                                    <ion-icon name="remove-outline"
+                                        (click)="EveningIcon(EveningQty,'minus')"></ion-icon><input type="text"
+                                        style="width: 45px;" value="{{EveningQty}}" readonly><ion-icon
+                                        name="add-outline" (click)="EveningIcon(EveningQty,'add')"></ion-icon>
+                                </div>
+                                <div class="food" *ngIf="pickedCategory!='Injections'">
+                                    <select name="" id="" [disabled]="!Evening" style="padding: 3px;
+                                    border-radius: 2px;">
+                                        <option value="Before Food">Before Food</option>
+                                        <option value="After Food">After Food</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 
                         <div>
                             <table style="padding: 20px 0px;">
                                 <tbody style="width: 100%;">
@@ -270,319 +469,328 @@
 
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class='right wrapper-main'
-                style="border-left: 1px solid grey;height: 100%;border-radius: 0 !important;">
-                <div class='contactos' style="height: 100%;
-                width: 100%;">
-                    <div class='body-contactos' style="margin-top: 12px;
-                    width: 100%;
-                    height: 100%;">
-                        <div class="col-10" style="padding: 6px;
-                width: 100%;">
-                            <div class="doc-details" style="margin-left: 0 !important;">
-                                <p class="doc-name" style="margin-left: 0 !important;font-size: 13px;
-                                font-weight: bold;
-                                color: black;
-                                border-bottom: 1px solid grey;">Doctor
-                                    Information</p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Dr.John ,
-                                    F.I.A.G.E.S ,
-                                    F.UROGYN(USA), MBBS</p>
-                            </div>
-                            <div class="clinic-details" style="margin-left: 0 !important;">
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                                    98546 63473</p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Near A2G
-                                    Appartment</p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                                    Trichendur Main
-                                    Road ,
-                                </p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                                    Palayamkottai,Thoothukudi
-                                    Dist-628205
-                                </p>
-
-                            </div>
-                        </div>
-
-                        <div class="col-10" style="padding: 6px;
-                width: 100%;">
-                            <div class="doc-details" style="margin-left: 0 !important;">
-                                <p class="doc-name" style="margin-left: 0 !important;font-size: 13px;
-                                font-weight: bold;
-                                color: black;
-                                border-bottom: 1px solid grey;">Patient
-                                    Information</p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Mr .Selvan</p>
-                            </div>
-                            <div class="clinic-details" style="margin-left: 0 !important;">
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">45 Years old</p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                                    89037 63473</p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                                    123,South Street
-                                </p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                                    Palayamkottai , Perumalpuram
-                                </p>
-                                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                                    Thoothukudi Dist - 628205
-                                </p>
-                            </div>
-                        </div>
-
+                        </div> -->
 
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="AddPrescriptionForm" *ngIf="EditPrescription">
-            <form action="" style="margin-top: 0 !important;height: 90%;">
-                <ion-label style="font-size: 18px;
-                color: #009CFF;
-                position: absolute;
-                top: 5%;
-                width: 400px;
-                height: 40px;
-                background: white;
-                display: flex;
-                align-items: center;
-                justify-content: center;">Add Medicine
-                    <ion-icon name="close-circle-outline" style="position: absolute;right: 31px;font-size: 24px;
-                    cursor: pointer;" (click)="EditPrescription=false"></ion-icon>
 
-                </ion-label>
-                <div class="form-group" style="margin-top: 120px;">
-                    <label for="">Category</label>
-                    <input class="form-control" type="text" placeholder="Category" style="font-size: 10px;"
-                        (click)="categoryListPopup=true" value="{{pickedCategory}}" />
+            <div class='main-table-containter' style="width: 98%;margin-top: 23px;
+            border-radius: 5px;">
+                <div class='title-table-container'>
+                    <div class='subtitle'>Medicines</div>
+                    <button class='select-button' (click)="Pharmacist()" style="font-size: 10px;"> Move to Pharmacy
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="">Product Name</label>
-                    <input type="text" class="form-control" placeholder="Inventory-Name" style="font-size: 10px;"
-                        (click)="ProductListPopup=true" value="{{pickedProduct}}" />
-                </div>
-                <div class="form-group">
-                    <label for="">Manufacturer</label>
-                    <input class="form-control" type="text" placeholder="Manufacturer" style="font-size: 10px;"
-                        (click)="manufacturerListPopup=true" value="{{pickedmanufacturer}}" />
-                </div>
-                <div class="form-group" *ngIf="pickedCategory!='Tablets'">
-                    <label for="">Unit</label>
-                    <input class="form-control" type="text" placeholder="Unit" style="font-size: 10px;" value="2"
-                        (click)="UnitListPopup=true" value="{{pickedUnit}}" />
+                <div>
+                    <table>
+                        <thead style="width: 100%;">
+                            <tr style="width: 100%;
+                            display: grid;
+                            align-items: center;
+                            justify-content: center;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;">
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Batch No</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Type</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Name</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Dose</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Frequency</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Exp Date</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Quantity</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;">Duration</th>
+                                <th style="padding: 0.5rem;
+                                text-align: center;"><input type="checkbox" (change)="AllCheck($event)">
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody style="width: 100%;">
+                            <tr *ngFor="let medication of medications"
+                                style="width: 100%;
+                            display: grid;
+                            align-items: center;
+                            justify-content: space-between;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;">
+                                <td style="text-align: center;font-size: 10px;
+                                font-weight: 600;">{{ medication.batch }}</td>
+                                <td style="font-size: 10px;
+                                font-weight: 600;">{{ medication.type }}</td>
+                                <td style="font-size: 10px;
+                                font-weight: 600;">{{ medication.name }}</td>
+                                <td style="font-size: 10px;
+                                font-weight: 600;">{{ medication.dose }}</td>
+                                <td style="font-size: 10px;
+                                font-weight: 600;">{{ medication.frequency }}</td>
+                                <td style="font-size: 10px;
+                                font-weight: 600;">{{ medication.expDate }}</td>
+                                <td><input type="text" [value]="medication.quantity" style="width: 30px; border: 1px solid grey; text-align: center; border-radius: 3px;font-size: 10px;
+                                        font-weight: 600;">
+                                </td>
+                                <td style="font-size: 10px;
+                                font-weight: 600;"><input type="text" [value]="medication.duration" style="width: 30px; border: 1px solid grey; text-align: center; border-radius: 3px;font-size: 10px;
+                                        font-weight: 600;">
+                                    Days</td>
+                                <td><input type="checkbox" [checked]="allChecked"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="period">
-                    <div class="period-in">
-                        Morning <input type="checkbox" (change)="MorningCheck($event)" />
-                        <div class="quantity" *ngIf="pickedCategory=='Tablets'">
-                            <ion-icon name="remove-outline" (click)="MorningIcon(MorningQty,'minus')"></ion-icon>
-                            <input type="text" style="width: 45px;" value="{{MorningQty}}" readonly>
-                            <ion-icon name="add-outline" (click)="MorningIcon(MorningQty,'add')"></ion-icon>
-                        </div>
-                        <div class="food" *ngIf="pickedCategory!='Injections'">
-                            <select name="" id="" [disabled]="!Morning">
-                                <option value="Before Food">Before Food</option>
-                                <option value="After Food">After Food</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="period-in">
-                        Afnoon &nbsp;<input type="checkbox" (change)="AfternoonCheck($event)" />
-                        <div class="quantity" *ngIf="pickedCategory=='Tablets'">
-                            <ion-icon name="remove-outline" (click)="AfternoonIcon(AfternoonQty,'minus')"></ion-icon>
-                            <input type="text" style="width: 45px;" value="{{AfternoonQty}}" readonly>
-                            <ion-icon name="add-outline" (click)="AfternoonIcon(AfternoonQty,'add')"></ion-icon>
-                        </div>
-                        <div class="food" *ngIf="pickedCategory!='Injections'">
-                            <select name="" id="" [disabled]="!Afternoon">
-                                <option value="Before Food">Before Food</option>
-                                <option value="After Food">After Food</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="period-in">
-                        Evening &nbsp;<input type="checkbox" (change)="EveningCheck($event)" />
-                        <div class="quantity" *ngIf="pickedCategory=='Tablets'">
-                            <ion-icon name="remove-outline" (click)="EveningIcon(EveningQty,'minus')"></ion-icon><input
-                                type="text" style="width: 45px;" value="{{EveningQty}}" readonly><ion-icon
-                                name="add-outline" (click)="EveningIcon(EveningQty,'add')"></ion-icon>
-                        </div>
-                        <div class="food" *ngIf="pickedCategory!='Injections'">
-                            <select name="" id="" [disabled]="!Evening">
-                                <option value="Before Food">Before Food</option>
-                                <option value="After Food">After Food</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <button style="padding: 10px;
-                font-size: 13px;
-                border-radius: 4px;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                float: inline-end;margin-top: 15px;" (click)="submit()">Submit</button>
-            </form>
+            </div>
 
 
 
         </div>
+    </div>
 
-        <div class="Cat-Pop" *ngIf="categoryListPopup">
-            <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
-                (click)="categoryListPopup=false"></div>
-            <div class="side-nav-categories CategoryPop">
-                <ul id="category-tabs" *ngFor="let item of categories">
-                    <li (click)="PickCategory(item)"><a class="main-category"> {{item.category}}
+
+
+
+
+
+
+    <div class="AddPrescriptionForm" *ngIf="EditPrescription">
+        <form action="" style="margin-top: 0 !important;height: 90%;">
+            <ion-label style="font-size: 18px;
+color: #009CFF;
+position: absolute;
+top: 5%;
+width: 400px;
+height: 40px;
+background: white;
+display: flex;
+align-items: center;
+justify-content: center;">Add Medicine
+                <ion-icon name="close-circle-outline" style="position: absolute;right: 31px;font-size: 24px;
+    cursor: pointer;" (click)="EditPrescription=false"></ion-icon>
+
+            </ion-label>
+            <div class="form-group" style="margin-top: 120px;">
+                <label for="">Category</label>
+                <input class="form-control" type="text" placeholder="Category" style="font-size: 10px;"
+                    (click)="categoryListPopup=true" value="{{pickedCategory}}" />
+            </div>
+            <div class="form-group">
+                <label for="">Product Name</label>
+                <input type="text" class="form-control" placeholder="Inventory-Name" style="font-size: 10px;"
+                    (click)="ProductListPopup=true" value="{{pickedProduct}}" />
+            </div>
+            <div class="form-group">
+                <label for="">Manufacturer</label>
+                <input class="form-control" type="text" placeholder="Manufacturer" style="font-size: 10px;"
+                    (click)="manufacturerListPopup=true" value="{{pickedmanufacturer}}" />
+            </div>
+            <div class="form-group" *ngIf="pickedCategory!='Tablets'">
+                <label for="">Unit</label>
+                <input class="form-control" type="text" placeholder="Unit" style="font-size: 10px;" value="2"
+                    (click)="UnitListPopup=true" value="{{pickedUnit}}" />
+            </div>
+
+            <div class="period">
+                <div class="period-in">
+                    Morning <input type="checkbox" (change)="MorningCheck($event)" />
+                    <div class="quantity" *ngIf="pickedCategory=='Tablets'">
+                        <ion-icon name="remove-outline" (click)="MorningIcon(MorningQty,'minus')"></ion-icon>
+                        <input type="text" style="width: 45px;" value="{{MorningQty}}" readonly>
+                        <ion-icon name="add-outline" (click)="MorningIcon(MorningQty,'add')"></ion-icon>
+                    </div>
+                    <div class="food" *ngIf="pickedCategory!='Injections'">
+                        <select name="" id="" [disabled]="!Morning">
+                            <option value="Before Food">Before Food</option>
+                            <option value="After Food">After Food</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="period-in">
+                    Afnoon &nbsp;<input type="checkbox" (change)="AfternoonCheck($event)" />
+                    <div class="quantity" *ngIf="pickedCategory=='Tablets'">
+                        <ion-icon name="remove-outline" (click)="AfternoonIcon(AfternoonQty,'minus')"></ion-icon>
+                        <input type="text" style="width: 45px;" value="{{AfternoonQty}}" readonly>
+                        <ion-icon name="add-outline" (click)="AfternoonIcon(AfternoonQty,'add')"></ion-icon>
+                    </div>
+                    <div class="food" *ngIf="pickedCategory!='Injections'">
+                        <select name="" id="" [disabled]="!Afternoon">
+                            <option value="Before Food">Before Food</option>
+                            <option value="After Food">After Food</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="period-in">
+                    Evening &nbsp;<input type="checkbox" (change)="EveningCheck($event)" />
+                    <div class="quantity" *ngIf="pickedCategory=='Tablets'">
+                        <ion-icon name="remove-outline" (click)="EveningIcon(EveningQty,'minus')"></ion-icon><input
+                            type="text" style="width: 45px;" value="{{EveningQty}}" readonly><ion-icon
+                            name="add-outline" (click)="EveningIcon(EveningQty,'add')"></ion-icon>
+                    </div>
+                    <div class="food" *ngIf="pickedCategory!='Injections'">
+                        <select name="" id="" [disabled]="!Evening">
+                            <option value="Before Food">Before Food</option>
+                            <option value="After Food">After Food</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button style="padding: 10px;
+font-size: 13px;
+border-radius: 4px;
+text-align: center;
+display: flex;
+justify-content: center;
+float: inline-end;margin-top: 15px;" (click)="submit()">Submit</button>
+        </form>
+
+
+
+    </div>
+
+    <div class="Cat-Pop" *ngIf="categoryListPopup">
+        <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
+            (click)="categoryListPopup=false"></div>
+        <div class="side-nav-categories CategoryPop">
+            <ul id="category-tabs" *ngFor="let item of categories">
+                <li (click)="PickCategory(item)"><a class="main-category"> {{item.category}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="Cat-Pop" *ngIf="ProductListPopup">
+        <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
+            (click)="ProductListPopup=false"></div>
+        <div class="side-nav-categories CategoryPop">
+            <ul id="category-tabs" *ngFor="let item of ProductList">
+                <li (click)="PickProduct(item,pickedCategory)"><a class="main-category"> {{item.productName}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="Cat-Pop" *ngIf="manufacturerListPopup">
+        <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
+            (click)="manufacturerListPopup=false"></div>
+        <div class="side-nav-categories CategoryPop" style="width: auto !important;display: flex;">
+            <div style="width: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+                <ion-label style="font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #009cff;padding: 6px;">Manufacturers</ion-label>
+                <ul id="category-tabs" *ngFor="let item of manufacturerList">
+                    <li (click)="Pickmanufacture(item)"><a class="main-category"> {{item.manufacturers}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div style="width: 126px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+                <ion-label style="font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #009cff;padding: 6px;">In Stock</ion-label>
+                <ul id="category-tabs" *ngFor="let item of manufacturerList">
+                    <li (click)="Pickmanufacture(item)"><a class="main-category"> 2035
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div style="width: 126px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+                <ion-label style="font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #009cff;padding: 6px;">Exp 0 - 30 Days</ion-label>
+                <ul id="category-tabs" *ngFor="let item of manufacturerList">
+                    <li (click)="Pickmanufacture(item)"><a class="main-category"> 95
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div style="width: 126px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+                <ion-label style="font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #009cff;padding: 6px;">Exp 30 - 60 Days</ion-label>
+                <ul id="category-tabs" *ngFor="let item of manufacturerList">
+                    <li (click)="Pickmanufacture(item)"><a class="main-category"> 265
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div style="width: 126px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;">
+                <ion-label style="font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #009cff;padding: 6px;">Exp 90 + Days</ion-label>
+                <ul id="category-tabs" *ngFor="let item of manufacturerList">
+                    <li (click)="Pickmanufacture(item)"><a class="main-category"> 480
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
+    </div>
 
-        <div class="Cat-Pop" *ngIf="ProductListPopup">
-            <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
-                (click)="ProductListPopup=false"></div>
-            <div class="side-nav-categories CategoryPop">
-                <ul id="category-tabs" *ngFor="let item of ProductList">
-                    <li (click)="PickProduct(item,pickedCategory)"><a class="main-category"> {{item.productName}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <div class="Cat-Pop" *ngIf="UnitListPopup">
+        <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
+            (click)="UnitListPopup=false"></div>
+        <div class="side-nav-categories CategoryPop">
+            <ul id="category-tabs" *ngFor="let item of unitList">
+                <li (click)="pickedunit(item)"><a class="main-category"> {{item.sizes}}
+                    </a>
+                </li>
+            </ul>
         </div>
-
-
-        <div class="Cat-Pop" *ngIf="manufacturerListPopup">
-            <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
-                (click)="manufacturerListPopup=false"></div>
-            <div class="side-nav-categories CategoryPop" style="width: auto !important;display: flex;">
-                <div style="width: 200px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <ion-label style="font-size: 14px;
-                    font-weight: bold;
-                    color: #ffffff;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: #009cff;padding: 6px;">Manufacturers</ion-label>
-                    <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                        <li (click)="Pickmanufacture(item)"><a class="main-category"> {{item.manufacturers}}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div style="width: 126px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <ion-label style="font-size: 14px;
-                    font-weight: bold;
-                    color: #ffffff;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: #009cff;padding: 6px;">In Stock</ion-label>
-                    <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                        <li (click)="Pickmanufacture(item)"><a class="main-category"> 2035
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div style="width: 126px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <ion-label style="font-size: 14px;
-                    font-weight: bold;
-                    color: #ffffff;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: #009cff;padding: 6px;">Exp 0 - 30 Days</ion-label>
-                    <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                        <li (click)="Pickmanufacture(item)"><a class="main-category"> 95
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div style="width: 126px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <ion-label style="font-size: 14px;
-                    font-weight: bold;
-                    color: #ffffff;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: #009cff;padding: 6px;">Exp 30 - 60 Days</ion-label>
-                    <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                        <li (click)="Pickmanufacture(item)"><a class="main-category"> 265
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div style="width: 126px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;">
-                    <ion-label style="font-size: 14px;
-                    font-weight: bold;
-                    color: #ffffff;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: #009cff;padding: 6px;">Exp 90 + Days</ion-label>
-                    <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                        <li (click)="Pickmanufacture(item)"><a class="main-category"> 480
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="Cat-Pop" *ngIf="UnitListPopup">
-            <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
-                (click)="UnitListPopup=false"></div>
-            <div class="side-nav-categories CategoryPop">
-                <ul id="category-tabs" *ngFor="let item of unitList">
-                    <li (click)="pickedunit(item)"><a class="main-category"> {{item.sizes}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-
-
     </div>
 </section>

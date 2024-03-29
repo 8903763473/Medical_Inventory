@@ -15,36 +15,36 @@ export class HomePage {
       "name": "Abilify",
       "manufacture": "PureLife Pharmaceuticals",
       "Quantity": 233,
-      "purchasedate": "01 Dec 2020",
-      "expairdat": "01 Mar 2045"
+      "purchasedate": "2020 Mar 16",
+      "expairdat": "2024 June 05"
     },
     {
       "name": "Adderall",
       "manufacture": "VitaCare Solutions",
       "Quantity": 123,
-      "purchasedate": "01 Dec 2023",
-      "expairdat": "01 Mar 2012"
+      "purchasedate": "2023 Dec 22",
+      "expairdat": "2012 Mar 16"
     },
     {
       "name": "Azel",
       "manufacture": "BioMed Innovations",
       "Quantity": 236,
-      "purchasedate": "01 Dec 2021",
-      "expairdat": "01 Mar 2045"
+      "purchasedate": "2021 Dec 28",
+      "expairdat": "2024 Mar 11"
     },
     {
       "name": "Actos",
       "manufacture": "HealthTech Laboratories",
       "Quantity": 69,
-      "purchasedate": "01 Feb 2020",
-      "expairdat": "01 May 2045"
+      "purchasedate": "2020 Feb 13",
+      "expairdat": "2024 May 30"
     },
     {
       "name": "Actemra",
       "manufacture": "MediCo Pharmaceuticals",
       "Quantity": 21,
-      "purchasedate": "01 Dec 2023",
-      "expairdat": "01 Mar 2045"
+      "purchasedate": "2023 Dec 19",
+      "expairdat": "2024 Mar 09"
     }
   ]
 
@@ -53,36 +53,36 @@ export class HomePage {
       name: "Paracetamol",
       manufacture: "ABC Pharmaceuticals",
       Quantity: "100 tablets",
-      purchasedate: "2022 Dec 28",
-      expairdat: "2025-03-28"
+      purchasedate: "2022 Dec 11",
+      expairdat: "2024 Mar 02"
     },
     {
       name: "Ibuprofen",
       manufacture: "XYZ Pharma",
       Quantity: "50 capsules",
-      purchasedate: "2022 Mar 28",
-      expairdat: "2025-03-28"
+      purchasedate: "2022 Mar 29",
+      expairdat: "2024 Apr 28"
     },
     {
       name: "Amoxicillin",
       manufacture: "PQR Pharmaceuticals",
       Quantity: "20 tablets",
-      purchasedate: "2021 Apr 28",
-      expairdat: "2025-03-28"
+      purchasedate: "2021 Apr 10",
+      expairdat: "2024 May 02"
     },
     {
       name: "Loratadine",
       manufacture: "LMN Pharma",
       Quantity: "30 tablets",
-      purchasedate: "2020 Oct 28",
-      expairdat: "2025-03-28"
+      purchasedate: "2020 Oct 10",
+      expairdat: "2024 June 10"
     },
     {
       name: "Omeprazole",
       manufacture: "EFG Pharmaceuticals",
       Quantity: "40 capsules",
       purchasedate: "2022 May 28",
-      expairdat: "2025-03-28"
+      expairdat: "2024 Oct 08"
     }
   ]
 
@@ -91,36 +91,36 @@ export class HomePage {
       "name": "HealWell Tablets",
       "manufacture": "PureCare Pharmaceuticals",
       "Quantity": 32,
-      "purchasedate": "01 Dec 2023",
-      "expairdat": "01 June 2045"
+      "purchasedate": "2023 Dec 31",
+      "expairdat": "2024 June 29"
     },
     {
       "name": "BioGuard Capsules",
       "manufacture": "BioGen Medical",
       "Quantity": 20,
-      "purchasedate": "01 Dec 2020",
-      "expairdat": "01 July 2045"
+      "purchasedate": "2020 Oct 29 ",
+      "expairdat": "2024 July 18"
     },
     {
       "name": "PureRelief Injection",
       "manufacture": "WellnessTech Pharmaceuticals",
       "Quantity": 76,
-      "purchasedate": "01 Dec 2022",
-      "expairdat": "01 Apr 2045"
+      "purchasedate": "2022 Nov 23",
+      "expairdat": "2024 Apr 09"
     },
     {
       "name": "VitaCure Syrup",
       "manufacture": "VitalHealth Labs",
       "Quantity": 16,
-      "purchasedate": "01 Feb 2023",
-      "expairdat": "01 Aug 2045"
+      "purchasedate": "2023 Feb 11",
+      "expairdat": "2024 Aug 20"
     },
     {
       "name": "BioFlex Plus",
       "manufacture": "MediPharm Solutions",
       "Quantity": 45,
-      "purchasedate": "01 Jan 2024",
-      "expairdat": "01 Sep 2045"
+      "purchasedate": "2024 Jan 01",
+      "expairdat": "2024 Sep 23"
     }
   ]
 
@@ -128,8 +128,22 @@ export class HomePage {
   @Input() LinecanvasId: any;
   @Input() data: number[] = [95, 120, 155, 230, 100];
   @Input() labels: string[] = ['Vita', 'Heal', 'Cure', 'BioX', 'Pure'];
-  @Input() data1: number[] = [250, 110, 185, 280, 190, 120, 90, 89, 145, 200, 210, 100];
-  @Input() data2: any[] = [100, 70, 80, 100, 90, 60, 40, 30, 50, 70, 80, 60];
+
+  @Input() data1: number[] = [-110, 10, 185, 280, 190, 180, -130, 59, 145, -20, 210, 150];
+  @Input() data2: any[] = [-110, 170, 20, -100, 90, 60, -40, 100, 20, -220, 110, 60];
+
+
+
+
+  @Input() data3: any[] = [-0, -170, 20, 200, 50, 160, 10, 90, 150, 20, 180, 160];
+  @Input() data4: any[] = [-0, 100, 120, 95, 130, 70, 140, 90, 150, 30, 180, 10];
+
+  // @Input() data5: number[] = [180, 90, 160, 220, 150, 110, 80, 75, 120, 180, 190, 80];
+  // @Input() data6: number[] = [120, 60, 70, 110, 100, 50, 30, 25, 40, 60, 70, 50];
+  // @Input() data7: number[] = [100, 150, 40, 180, 30, 120, 20, 80, 130, 40, 160, 140];
+  // @Input() data8: number[] = [160, 60, 110, 85, 120, 60, 130, 80, 140, 20, 160, 5];
+
+
   @Input() labels1: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   @Input() labels2: string[] = ['2021', '2022', '2023', '2024'];
 
@@ -270,26 +284,20 @@ export class HomePage {
       const chartOptions = {
         scales: {
           y: {
-            beginAtZero: false,
+            beginAtZero: false, // Set to false to allow displaying years
             stacked: false,
             ticks: {
+              stepSize: 1, // Each step represents one year
               callback: (value: any, index: any, values: any) => {
-                console.log(values);
-                console.log(value);
-                if (values.includes(value)) {
-                  return value;
-                } else {
-                  return '';
-                }
+                return value; // Set the label to 'Year' + the year value
               }
             }
           },
           x: {
             beginAtZero: true,
-            stacked: true,
             title: {
               display: true,
-              text: ''
+              text: 'Month'
             }
           }
         },
@@ -331,18 +339,33 @@ export class HomePage {
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: this.labels1,
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
           datasets: [
             {
               ...Object.assign({}, datasetProperties),
-              label: 'Yearly Loss',
-              data: this.data1,
-              borderColor: '#007AFF',
+              label: '2021',
+              data: [1200, 1300, 1100, 1400, 1250, 1350, 1150, 1450, 1225, 1325, 1125, 1425], // Example data for yearly loss for 2021
+              borderColor: 'grey',
             },
+
             {
               ...Object.assign({}, datasetProperties),
-              label: 'Monthly Loss',
-              data: this.data2,
+              label: '2022',
+              data: [1300, 1400, 1200, 1500, 1350, 1450, 1250, 1550, 1325, 1425, 1225, 1525], // Example data for yearly loss for 2022
+              borderColor: '#FFC300',
+            },
+
+            {
+              ...Object.assign({}, datasetProperties),
+              label: '2023',
+              data: [1150, 1250, 1050, 1350, 1200, 1300, 1100, 1400, 1175, 1275, 1075, 1375], // Example data for yearly loss for 2023
+              borderColor: '#009dff',
+            },
+
+            {
+              ...Object.assign({}, datasetProperties),
+              label: '2024',
+              data: [1100, 1200, 1000, 1300, 1150, 1250, 1050, 1350, 1125, 1225, 1025, 1325], // Example data for yearly loss for 2024
               borderColor: '#FF5733',
             }
           ],
@@ -351,6 +374,8 @@ export class HomePage {
       });
     }
   }
+
+
 
   private createWaveData(length: number, amplitude: number): number[] {
     const waveData = [];
