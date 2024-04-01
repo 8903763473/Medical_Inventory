@@ -72,6 +72,8 @@ export class EditTypesComponent {
   }
 
   EditInvent(data: any) {
+    console.log(data);
+    
     this.EditInventoryData = data
     this.EditActionPopup = true
   }

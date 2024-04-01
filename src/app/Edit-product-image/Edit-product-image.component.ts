@@ -78,9 +78,9 @@ export class EditProductImageComponent implements OnInit {
   constructor(public app: AppComponent) { }
 
   ngOnInit() {
+    this.app.ind = 0
     this.FilterCategory = 'All'
     this.DummyLocalInventory = this.InventoryImages
-    this.app.ind = 0
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false

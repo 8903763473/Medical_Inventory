@@ -79,7 +79,7 @@ section {
         border-radius: 12px;
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 0fr 2fr 1fr;
 
         div {
             white-space: nowrap;
@@ -383,6 +383,12 @@ section {
         .modal-dialog {
             width: calc(100% - 195px) !important;
             left: 195px !important;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            background: #00000047;
         }
 
         .modal-confirm .modal-content {
@@ -561,5 +567,22 @@ section {
             border-radius: 8px;
         }
     }
+}
 
+
+
+@media screen and (max-width:480px) {
+    .modal-dialog {
+        width: 100% !important;
+        left: 0px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0000005c;
+    }
+
+    .form-popup-bg{
+        width: 100% !important;
+        left: 0 !important;
+    }
 }

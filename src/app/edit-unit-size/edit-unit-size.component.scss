@@ -20,17 +20,17 @@ section {
         align-items: center;
         justify-content: flex-start;
         width: 100%;
-        position: relative;
+        // position: relative;
     }
 
     .Add {
-        position: absolute;
-        right: 20px;
+        // position: absolute;
+        // right: 20px;
         float: right;
         font-size: 13px;
         font-family: inherit;
         min-height: 22px;
-        top: 8px;
+        // top: 8px;
     }
 
 
@@ -80,10 +80,10 @@ section {
         display: grid;
         grid-template-rows: 1fr;
         // grid-template-columns: 0fr 1fr 1fr 3fr 0fr;
-        grid-template-columns: 2fr 1fr 1fr 1fr 1fr 0fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0fr;
 
         div {
-             width: auto;
+            width: auto;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -562,5 +562,64 @@ section {
             border-radius: 8px;
         }
     }
+}
 
+.modal-dialog {
+    width: calc(100% - 195px) !important;
+    left: 195px !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    background: #00000047;
+}
+
+
+
+@media screen and (max-width:480px) {
+    .Table {
+        margin-top: 30px !important;
+        width: fit-content !important;
+        overflow-x: scroll !important;
+
+        .content-bar {
+            width: 100% !important;
+            margin-left: 0 !important;
+
+            div {
+                width: 145px !important;
+            }
+        }
+    }
+
+    .top {
+        width: 98%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden !important;
+        position: inherit !important;
+        top: 0px !important;
+        height: 70px !important;
+        left: 0 !important;
+
+        .head {
+            width: auto !important;
+        }
+
+        .Add {
+            // position: inherit !important;
+        }
+    }
+
+    .modal-dialog {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .form-popup-bg {
+        width: 100% !important;
+        left: 0 !important;
+    }
 }

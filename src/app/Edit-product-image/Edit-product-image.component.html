@@ -1,19 +1,24 @@
-<section>
-  <ion-label class="head">Product Names</ion-label><br>
-  <ion-label style="position: absolute;
+<section class="Fullpage">
+  <div class="headerDiv">
+    <ion-label class="head">Product Names</ion-label><br>
+    <div class="Top">
+      <ion-label style="position: absolute;
     top: 14px;
     right: 330px;
     z-index: 10;
     font-weight: bold;">Filter</ion-label>
-  <select style="width: 200px;
+      <select style="width: 200px;
     background-color: rgb(239, 239, 239);
     border-radius: 5px;
     position: absolute;
     top: 14px;
     right: 115px;color: black;" [(ngModel)]="FilterCategory" (change)="FilterbyCategory($event)">
-    <option value="{{item.category}}" *ngFor="let item of categories" style="color: black;">{{item.category}}</option>
-  </select>
-  <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
+        <option value="{{item.category}}" *ngFor="let item of categories" style="color: black;">{{item.category}}
+        </option>
+      </select>
+      <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
+    </div>
+  </div>
 
 
   <div class="content-area">
@@ -40,9 +45,7 @@
   </div>
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
-    <div class="modal-dialog modal-confirm"
-      style="width: calc(100% - 195px) !important;
-    left: 195px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+    <div class="modal-dialog modal-confirm">
       <div class="modal-content" style="width: 300px !important;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">

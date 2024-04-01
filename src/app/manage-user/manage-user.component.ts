@@ -10,20 +10,31 @@ export class ManageUserComponent {
 
   imageUrl: any
   Gender: any
+  ScreenWidth: any
   cameraimageUrl: any = '../../assets/img/Camera.svg'
   @ViewChild('imageInput') imageInput: ElementRef<HTMLInputElement> | any;
 
-  constructor(public app: AppComponent) { }
+  constructor(public app: AppComponent) {
+    // this.ScreenSize()
+  }
 
-  
+
   ionViewWillEnter() {
     this.app.ind = 0
-    this.Gender = 'Male'
+    this.Gender = ''
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
     }, 500)
   }
+
+  ScreenSize() {
+    // setTimeout(() => {
+    //   this.ScreenWidth = window.innerWidth
+    // }, 2000)
+    // this.ScreenSize()
+  }
+
 
   PickGender(data: any) {
     this.Gender = data

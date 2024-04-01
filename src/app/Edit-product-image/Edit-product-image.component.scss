@@ -1,9 +1,19 @@
 section {
-    width: calc(100% - 195px);
-    margin-left: 195px;
+    // width: calc(100% - 195px);
+    // margin-left: 195px;
     height: max-content;
-    padding: 15px;
-    background-color: #f6f6fc;
+    // padding: 15px;
+    background-color: #FFF !important;
+
+    .headerDiv {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 10;
+    }
 
     .head {
         color: #007AFF !important;
@@ -669,4 +679,76 @@ section {
         }
     }
 
+}
+
+.modal-dialog {
+    width: calc(100% - 195px) !important;
+    left: 195px !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    background: #00000047;
+}
+
+// ***********************Media Code************************
+
+@media screen and (max-width:480px) {
+    .Top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        ion-label,
+        select,
+        ion-button {
+            position: static !important;
+        }
+    }
+
+    .modal-dialog {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .content-area {
+        height: 100%;
+        width: fit-content !important;
+        border-radius: 0px;
+        margin-left: 0px;
+        overflow-x: scroll;
+        margin-top: 120px !important;
+        background-color: #f6f6fc !important;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content-bar {
+
+        div {
+            width: 170px !important;
+        }
+    }
+
+    .content-bar {
+        margin: 0 !important;
+    }
+
+    .form-popup-bg {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .headerDiv {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 120px !important;
+        background: #f6f6fc !important;
+    }
 }

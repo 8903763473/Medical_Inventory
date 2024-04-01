@@ -1,4 +1,4 @@
-<section [ngClass]="{'open': app.Open==true}">
+<section class="Fullpage">
   <ion-label class="head">Medicine Category</ion-label><br>
   <!-- <ion-label style="position: absolute;
     top: 14px;
@@ -34,7 +34,7 @@
       <div class="itemtitle">{{item.medicine_category}}</div>
       <!-- <div class="itemtitle">{{item.manufacturer}}</div> -->
       <div class="btncontainer">
-        <button class="cbbtn" (click)="EditInvent(item)"><ion-icon name="create-outline"></ion-icon></button>
+        <!-- <button class="cbbtn" (click)="EditInvent(item)"><ion-icon name="create-outline"></ion-icon></button> -->
         <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
       </div>
     </div>
@@ -42,9 +42,7 @@
   </div>
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
-    <div class="modal-dialog modal-confirm"
-      style="width: calc(100% - 195px) !important;
-    left: 195px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+    <div class="modal-dialog modal-confirm">
       <div class="modal-content" style="width: 300px !important;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">
@@ -53,7 +51,7 @@
           <h4 class="modal-title" style="margin-top: 0px;">Are you sure?</h4>
         </div>
         <div class="modal-body">
-          <p>Do you really want to delete this Product Image ? This process cannot be undone.</p>
+          <p>Do you really want to delete this Medicine Category ? This process cannot be undone.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-info" data-dismiss="modal" (click)="Buttons()"
@@ -66,7 +64,7 @@
 
   <div class="form-popup-bg" *ngIf="ActionPopup">
     <div (click)="ActionPopup=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
+      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;" class="overlay"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -114,15 +112,15 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="ActionPopup=false">Submit</button>
       </form>
     </div>
   </div>
 
 
-  <div class="form-popup-bg" *ngIf="EditActionPopup">
+  <!-- <div class="form-popup-bg" *ngIf="EditActionPopup">
     <div (click)="EditActionPopup=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
+      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;" class="overlay"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="EditActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -144,8 +142,9 @@
           <label for="">Category</label>
           <select style="width: 100%;
             border: 1px solid #cacaca;color: #0fa2ff;
-            border-radius: 4px;" [(ngModel)]="EditInventoryData.category" (change)="SelectCategory($event)">
-            <option value="{{EditInventoryData.category}}" *ngFor="let item of categories" style="color: #0fa2ff;">
+            border-radius: 4px;" [(ngModel)]="EditInventoryData.category" (change)="SelectCategory($event)"
+            value="{{EditInventoryData.category}}">
+            <option *ngFor="let item of categories" style="color: #0fa2ff;">
               {{item.category}}
             </option>
           </select>
@@ -167,10 +166,10 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="EditActionPopup=false">Submit</button>
       </form>
     </div>
-  </div>
+  </div> -->
 
 
 </section>

@@ -61,6 +61,10 @@
 
 
 @media screen and (max-width:480px) {
+    .container-fluid {
+        padding: 10px !important;
+    }
+
     .firstGraph {
         width: 100%;
         display: flex;
@@ -82,7 +86,7 @@
         flex-direction: column !important;
 
         .secondCanvas {
-            height: 340px !important;
+            height: auto !important;
         }
 
         .GraphsIn {
@@ -90,11 +94,12 @@
 
             .Round {
                 width: 100%;
-                height: 340px;
+                height: auto;
+                padding: 12px 0px 0px 4px !important;
 
                 .CanvasDiv {
                     width: 100%;
-                    height: 340px;
+                    height: 370px;
 
                     canvas {
                         width: 100%;

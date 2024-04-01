@@ -1,7 +1,8 @@
 <section>
   <div class="content-area">
     <ion-label class="head">Inventory Types</ion-label>
-    <ion-button class="Add" (click)="deleteAlert=true" style="right: 110px;">Delete 🗑</ion-button>
+    <!-- <ion-icon name="trash-outline" class="DeleteIcon"></ion-icon> -->
+    <!-- <ion-button class="Add DeleteBtn" (click)="deleteAlert=true" style="right: 110px;">Delete 🗑</ion-button> -->
     <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
     <br><br>
 
@@ -80,9 +81,7 @@
 
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
-    <div class="modal-dialog modal-confirm"
-      style="width: calc(100% - 195px) !important;
-    left: 195px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+    <div class="modal-dialog modal-confirm">
       <div class="modal-content" style="width: 300px !important;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">
@@ -116,7 +115,7 @@
         <div class="form-group">
           <label for="">Type</label>
           <input type="text" class="form-control" placeholder="type" style="font-size: 10px;"
-            value="{{EditInventoryData.productName}}" />
+            value="{{EditInventoryData.category}}" />
         </div>
         <!-- <div class="form-group">
           <label for="">Category</label>

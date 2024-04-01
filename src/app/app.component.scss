@@ -26,6 +26,10 @@
     }
 }
 
+.MenuIcon {
+    display: none !important;
+}
+
 @media screen and (max-width: 480px) {
     .SearchForm {
         margin-left: 0 !important;
@@ -34,5 +38,9 @@
 
     .topHeaderOption {
         display: none !important;
+    }
+
+    .MenuIcon {
+        display: flex !important;
     }
 }

@@ -298,3 +298,18 @@ section {
         }
     }
 }
+
+@media screen and (max-width:480px) {
+    .addTo-In {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .txt {
+        flex-direction: column !important;
+    }
+
+    .TableImg {
+        display: none !important;
+    }
+}

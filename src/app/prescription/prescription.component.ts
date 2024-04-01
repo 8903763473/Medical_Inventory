@@ -52,14 +52,14 @@ export class PrescriptionComponent implements OnInit {
 
 
   ngOnInit() {
-    this.app.ind = 4
-    this.MorningQty = 1
-    this.AfternoonQty = 1
-    this.EveningQty = 1
     this.app.loader = true
     setTimeout(() => {
       this.app.loader = false
     }, 500)
+    this.app.ind = 4
+    this.MorningQty = 1
+    this.AfternoonQty = 1
+    this.EveningQty = 1
     this.Categories()
   }
 

@@ -1,8 +1,9 @@
 <section>
   <div class="content-area">
-    <!-- <div class="page-title">Inventory</div> -->
-    <ion-label class="head">Inventories</ion-label>
-    <ion-label style="position: absolute;
+    <div class="Top">
+      <ion-label class="head">Inventories</ion-label>
+      <div class="filter">
+        <ion-label style="position: absolute;
     top: 14px;
     right: 320px;
     z-index: 10;
@@ -12,44 +13,47 @@
     position: absolute;
     top: 14px;
     right: 108px;color: black;" [(ngModel)]="FilterCategory" (change)="FilterbyCategory($event)">
-      <option value="{{item.category}}" *ngFor="let item of categories" style="color: black;">{{item.category}}</option>
-    </select>
-    <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
+          <option value="{{item.category}}" *ngFor="let item of categories" style="color: black;">{{item.category}}
+          </option>
+        </select>
+        <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
+      </div>
+    </div>
     <br><br>
     <!-- <div class="page-desc">View and manage your stock</div> -->
 
-    <div class="content-bar" style="background: #009cff;">
-      <!-- <div class="itemnum" style="color: white;padding: 15px !important;">ID</div> -->
-      <div class="itemtitle" style="color: white;">Category</div>
-      <div class="itemprice" style="color: white;">Name</div>
-      <div class="itemstock" style="color: white;">Manufacturer</div>
-      <div class="itemstock" style="color: white;">In Stock</div>
-      <div class="itemstock" style="color: white;">Unit</div>
-      <div class="itemstock" style="color: white;">Batch No</div>
-      <div class="itemstock" style="color: white;">Exp Date</div>
-    </div>
+    <div class="Table">
+      <div class="content-bar" style="background: #009cff;">
+        <div class="itemtitle" style="color: white;">Category</div>
+        <div class="itemprice" style="color: white;">Name</div>
+        <div class="itemstock" style="color: white;">Manufacturer</div>
+        <div class="itemstock" style="color: white;">In Stock</div>
+        <div class="itemstock" style="color: white;">Unit</div>
+        <div class="itemstock" style="color: white;">Batch No</div>
+        <div class="itemstock" style="color: white;">Exp Date</div>
+      </div>
 
-    <div class="content-bar" *ngFor="let item of LocalInventory">
-      <!-- <div class="itemnum">{{item.id}}</div> -->
-      <div class="itemtitle">{{item.category}}</div>
-      <div class="itemprice">{{item.productName}}</div>
-      <div class="itemprice">{{item.ManufactursList}}</div>
-      <div class="itemstock">18</div>
-      <div class="itemprice">100</div>
-      <div class="itemprice">2</div>
-      <div class="itemprice">Apr 20 2024</div>
-      <div class="btncontainer">
+      <div class="content-bar" *ngFor="let item of LocalInventory">
+        <div class="itemtitle">{{item.category}}</div>
+        <div class="itemprice">{{item.productName}}</div>
+        <div class="itemprice">{{item.ManufactursList}}</div>
+        <div class="itemstock">18</div>
+        <div class="itemprice">100</div>
+        <div class="itemprice">2</div>
+        <div class="itemprice">Apr 20 2024</div>
+        <div class="btncontainer">
 
-        <button class="cbbtn"><ion-icon name="create-outline" (click)="EditInvent(item)"></ion-icon></button>
-        <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+          <button class="cbbtn"><ion-icon name="create-outline" (click)="EditInvent(item)"></ion-icon></button>
+          <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+        </div>
       </div>
     </div>
   </div>
 
 
-  <div class="form-popup-bg" *ngIf=ActionPopup>
-    <div (click)="ActionPopup=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
+  <div class="form-popup-bg" *ngIf="ActionPopup">
+    <div (click)="ActionPopup=false" style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"
+      class="overlay"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -107,7 +111,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;" *ngIf="Addpage==2">Submit</button>
+        float: inline-end;margin-top: 15px;" *ngIf="Addpage==2" (click)="ActionPopup=false">Submit</button>
 
         <button style="padding: 10px;
 font-size: 13px;
@@ -122,9 +126,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
-    <div class="modal-dialog modal-confirm"
-      style="width: calc(100% - 195px) !important;
-    left: 195px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+    <div class="modal-dialog modal-confirm" style="">
       <div class="modal-content" style="width: 300px !important;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">
@@ -147,9 +149,9 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
 
 
-  <div class="form-popup-bg" *ngIf=EditActionPopup>
+  <div class="form-popup-bg" *ngIf="EditActionPopup">
     <div (click)="EditActionPopup=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
+      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;" class="overlay"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="EditActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -181,7 +183,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="EditActionPopup=false">Submit</button>
       </form>
     </div>
   </div>

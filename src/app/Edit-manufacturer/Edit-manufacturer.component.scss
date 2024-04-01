@@ -80,10 +80,10 @@ section {
         display: grid;
         grid-template-rows: 1fr;
         // grid-template-columns: 0fr 1fr 1fr 3fr 0fr;
-        grid-template-columns: 2fr 1fr 1fr 1fr 1fr 0fr;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0fr;
 
         div {
-            width:  auto;
+            width: auto;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -563,4 +563,58 @@ section {
         }
     }
 
+}
+
+.modal-dialog {
+    width: calc(100% - 195px) !important;
+    left: 195px !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    background: #00000047;
+}
+
+
+// **************************Media Code***********************
+
+@media screen and (max-width:480px) {
+    .modal-dialog {
+        width: 100% !important;
+        left: 0px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0000005c;
+    }
+
+    .form-popup-bg {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .Table {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column !important;
+        overflow-x: scroll !important;
+
+        .content-bar {
+            width: max-content !important;
+
+            div {
+                width: 170px !important;
+            }
+
+            .btncontainer {
+                text-align: start;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+        }
+    }
 }

@@ -4,27 +4,26 @@
     <ion-label class="head">Manufacturers</ion-label>
     <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
     <br><br>
-    <!-- <div class="page-desc">View and manage your stock</div> -->
 
-    <div class="content-bar" style="background: #009cff;">
-      <!-- <div class="itemnum" style="color: white;padding: 15px !important;">ID</div> -->
-      <div class="itemtitle" style="color: white;">Manufacturer</div>
-      <div class="itemprice" style="color: white;">Contact Person</div>
-      <div class="itemstock" style="color: white;">Contact Number</div>
-      <div class="itemstock" style="color: white;">Address</div>
-    </div>
+    <div class="Table">
+      <div class="content-bar" style="background: #009cff;">
+        <div class="itemtitle" style="color: white;">Manufacturer</div>
+        <div class="itemprice" style="color: white;">Contact Person</div>
+        <div class="itemstock" style="color: white;">Contact Number</div>
+        <div class="itemstock" style="color: white;">Address</div>
+      </div>
 
-    <div class="content-bar" *ngFor="let item of ModifiedManufacturer">
-      <!-- <div class="itemnum">{{item.id}}</div> -->
-      <div class="itemtitle">{{item.ManufactursList}}</div>
-      <div class="itemprice">Vicky</div>
-      <div class="itemstock">8903763473</div>
-      <div class="itemprice">{{item.address}}</div>
-      <div class="btncontainer">
+      <div class="content-bar" *ngFor="let item of ModifiedManufacturer">
+        <div class="itemtitle">{{item.ManufactursList}}</div>
+        <div class="itemprice">Vicky</div>
+        <div class="itemstock">8903763473</div>
+        <div class="itemprice">{{item.address}}</div>
+        <div class="btncontainer">
 
-        <button class="cbbtn" (click)="EditManufacture(item,'Vicky', '8903763473')"><ion-icon
-            name="create-outline"></ion-icon></button>
-        <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+          <button class="cbbtn" (click)="EditManufacture(item,'Vicky', '8903763473')"><ion-icon
+              name="create-outline"></ion-icon></button>
+          <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+        </div>
       </div>
     </div>
   </div>
@@ -32,7 +31,7 @@
 
   <div class="form-popup-bg" *ngIf=EditActionPopup>
     <div (click)="EditActionPopup=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
+      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;" class="overlay"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="EditActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -93,7 +92,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;" *ngIf="Addpage==1">Submit</button>
+        float: inline-end;margin-top: 15px;" *ngIf="Addpage==1" (click)="EditActionPopup=false">Submit</button>
 
         <!-- <button style="padding: 10px;
 font-size: 13px;
@@ -108,9 +107,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
 
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
-    <div class="modal-dialog modal-confirm"
-      style="width: calc(100% - 195px) !important;
-    left: 195px !important;margin: 0;display: flex;align-items: center;justify-content: center;max-width:100%;background: #00000047;">
+    <div class="modal-dialog modal-confirm">
       <div class="modal-content" style="width: 300px !important;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">
@@ -132,7 +129,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
   </div>
 
 
-  <div class="form-popup-bg" *ngIf=ActionPopup>
+  <div class="form-popup-bg" *ngIf="ActionPopup">
     <div (click)="ActionPopup=false"
       style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
     <div class="form-container">
@@ -193,7 +190,7 @@ float: inline-end;margin-top: 15px;margin-right: 12px;" *ngIf="Addpage==2" (clic
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="ActionPopup=false">Submit</button>
 
         <!-- <button style="padding: 10px;
 font-size: 13px;
