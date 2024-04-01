@@ -71,6 +71,8 @@ export class AppComponent {
 
 
   screenHeight: any
+  screenWidth: any
+
   Search: any
   ind: any
   loader: boolean = false
@@ -1014,6 +1016,7 @@ export class AppComponent {
 
   FetchScreenHeight() {
     this.screenHeight = window.innerHeight
+    this.screenWidth = window.innerWidth
 
     setTimeout(() => {
       this.FetchScreenHeight()

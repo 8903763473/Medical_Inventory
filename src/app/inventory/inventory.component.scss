@@ -185,7 +185,7 @@ section {
             }
 
             .addToBtn {
-                width: 100%;
+                width: 96%;
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
@@ -395,4 +395,31 @@ section {
         }
     }
 
+}
+
+
+// ****************************Media Codes*************************
+
+@media screen and (max-width:480px) {
+    .AddInv {
+        flex-direction: column !important;
+
+        .inputs {
+            width: 100% !important;
+        }
+    }
+
+    .AlertPopup {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .ExpiryPicker {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .addToBtn {
+        justify-content: center !important;
+    }
 }

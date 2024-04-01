@@ -934,11 +934,109 @@ canvas {
 }
 
 @media (max-width: 750px) {
-	td:nth-child(2) {
-		display: none;
+	// td:nth-child(2) {
+	// 	display: none;
+	// }
+
+	// td:nth-child(3) {
+	// 	display: none;
+	// }
+}
+
+
+
+
+// *****************************Media Code*****************************
+
+@media screen and (max-width:480px) {
+	.PresBox {
+		padding-top: 0 !important;
+
+		.PresBox-In {
+			padding: 0 !important;
+
+			.InfoBox {
+				height: auto !important;
+			}
+		}
 	}
 
-	td:nth-child(3) {
-		display: none;
+	.Cat-Pop {
+		width: 100% !important;
+		left: 0 !important;
 	}
+
+
+	.ExixtingMed {
+		overflow-x: auto !important;
+
+		thead tr th,
+		tbody tr td {
+			font-size: 15px !important;
+		}
+	}
+
+	tbody tr td {
+		font-weight: 300 !important;
+	}
+
+	.ExixtingMed thead tr,
+	.ExixtingMed tbody tr {
+		justify-content: flex-start !important;
+	}
+
+	.ExixtingMed tbody tr td {
+		width: 90px !important;
+	}
+
+	.ExixtingMed thead tr th {
+		width: 90px !important;
+	}
+
+	.overlay {
+		width: 100% !important;
+		left: 0 !important;
+	}
+
+	.ManufacturersCategoryPop {
+		width: 95% !important;
+		display: flex;
+		overflow-x: scroll;
+	}
+
+	.Exp {
+		display: none !important;
+	}
+
+	.CategoryPop {
+		gap: 1px !important;
+	}
+
+	.CategoryPopIn {
+		width: 200px !important;
+		ul{
+			width: 100% !important;
+		}
+	}
+
+	.allManList {
+		text-align: center !important;
+		border-right: 1px solid grey !important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.ManufacturersCat-Pop {
+		overflow-x: auto;
+		/* Set overflow-x to auto for horizontal scrolling */
+
+		.CategoryPop {
+			display: flex;
+			flex-direction: row;
+			/* Arrange items horizontally */
+			white-space: nowrap;
+			/* Prevent items from wrapping */
+		}
+	}
+
 }

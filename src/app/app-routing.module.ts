@@ -17,7 +17,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { EditUnitSizeComponent } from './edit-unit-size/edit-unit-size.component';
 import { EditTypesComponent } from './edit-types/edit-types.component';
 import { ManagePatientsComponent } from './manage-patients/manage-patients.component';
-import { TestGraphComponent } from './test-graph/test-graph.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 const routes: Routes = [
   {
@@ -66,6 +66,10 @@ const routes: Routes = [
     component: PrescriptionComponent
   },
   {
+    path: 'Order_details',
+    component: OrderDetailsComponent
+  },
+  {
     path: 'Edit_productName',
     component: EditProductNameComponent
   },
@@ -100,10 +104,6 @@ const routes: Routes = [
   {
     path: 'Manage_Patients',
     component: ManagePatientsComponent
-  },
-  {
-    path: 'Graph',
-    component: TestGraphComponent
   },
 ];
 

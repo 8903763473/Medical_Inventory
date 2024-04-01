@@ -378,8 +378,6 @@
     }
 }
 
-
-
 // ******************Manage User*************
 
 .ManageFull {
@@ -771,5 +769,13 @@
 
     .whats {
         background-color: #25d366 !important;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+    .fullpage1 {
+        width: 100% !important;
+        margin-left: 0 !important;
     }
 }

@@ -54,6 +54,7 @@ export class InventoryComponent {
     this.LocalInventory = JSON.parse(LocalData)
     this.categories = new Set(this.LocalInventory.map((res: any) => res.category));
     this.categories = Array.from(this.categories).map(category => ({ category }));
+    console.log(this.categories);    
     this.ProductByCategory = []
     this.MindateCalculation()
   }

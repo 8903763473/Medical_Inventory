@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
@@ -100,7 +101,7 @@ export class OrdersComponent {
 
   AllCheckBox: boolean = false
 
-  constructor(public app: AppComponent) { }
+  constructor(public app: AppComponent, public router: Router) { }
 
   ionViewWillEnter() {
     this.app.ind = 5
@@ -148,7 +149,7 @@ export class OrdersComponent {
   }
 
   Buttons() {
-    this.deleteAlert=false
+    this.deleteAlert = false
   }
 
   EditInvent(data: any) {
@@ -163,4 +164,10 @@ export class OrdersComponent {
       this.AllCheckBox = false
     }
   }
+
+  OrderDetails(data: any) {
+    localStorage.setItem('OrderDetails', data)
+    this.router.navigate(['/Order_details'])
+  }
+
 }

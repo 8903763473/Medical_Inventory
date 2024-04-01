@@ -25,3 +25,14 @@
         font-size: 14px !important;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .SearchForm {
+        margin-left: 0 !important;
+        width: 85% !important;
+    }
+
+    .topHeaderOption {
+        display: none !important;
+    }
+}

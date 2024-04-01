@@ -132,9 +132,6 @@ export class HomePage {
   @Input() data1: number[] = [-110, 10, 185, 280, 190, 180, -130, 59, 145, -20, 210, 150];
   @Input() data2: any[] = [-110, 170, 20, -100, 90, 60, -40, 100, 20, -220, 110, 60];
 
-
-
-
   @Input() data3: any[] = [-0, -170, 20, 200, 50, 160, 10, 90, 150, 20, 180, 160];
   @Input() data4: any[] = [-0, 100, 120, 95, 130, 70, 140, 90, 150, 30, 180, 10];
 
@@ -154,6 +151,9 @@ export class HomePage {
   private barChartInstance: Chart | null = null;
   private lineChartInstance: Chart | null = null;
 
+
+  screenHeight: any
+  screenWidth: any
 
   constructor(public app: AppComponent) {
     Chart.register(...registerables);
@@ -177,6 +177,17 @@ export class HomePage {
     // this.app.loader = true
     this.BarChart();
     this.LineChart();
+    this.FetchScreenHeight()
+  }
+
+
+  FetchScreenHeight() {
+    this.screenHeight = window.innerHeight
+    this.screenWidth = window.innerWidth
+
+    setTimeout(() => {
+      this.FetchScreenHeight()
+    }, 500)
   }
 
 

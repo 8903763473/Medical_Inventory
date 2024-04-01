@@ -351,3 +351,13 @@
         }
     }
 }
+
+@media screen and (max-width:480px) {
+    .fullpage {
+        padding: 32px 10px !important;
+    }
+
+    .all {
+        padding: 0 !important;
+    }
+}

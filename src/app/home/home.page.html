@@ -1,348 +1,338 @@
-<!-- Dashboard -->
-<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+<section class="Fullpage full">
 
-    <!-- Main content -->
-    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+    <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary" [class.MobileScreen]="screenWidth < 480"
+        [class.window]="screenWidth > 480">
+        <div class="h-screen flex-grow-1 overflow-y-lg-auto">
 
-        <main class="py-6 bg-surface-secondary" style="width: calc(100% - 195px);
-        margin-left: 195px;">
-            <div class="container-fluid">
-                <!-- Card stats -->
+            <main class="py-6 bg-surface-secondary">
+                <div class="container-fluid">
 
-
-                <div class="row g-6 mb-6">
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2"
-                                            style="font-size: 10px !important;">Expiring this
-                                            month</span>
-                                        <span class="h3 font-bold mb-0">36</span>
-                                    </div>
-                                    <div class="col-auto" style="padding: 0 !important;">
-                                        <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"
-                                            style="padding: 10px;">
-                                            <!-- <i class="bi bi-credit-card"></i> -->
-                                            <img src="../../assets/img/total_1.svg" alt="">
+                    <div class="row g-6 mb-6">
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="card shadow border-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2"
+                                                style="font-size: 10px !important;">Expiring this
+                                                month</span>
+                                            <span class="h3 font-bold mb-0">36</span>
+                                        </div>
+                                        <div class="col-auto" style="padding: 0 !important;">
+                                            <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"
+                                                style="padding: 10px;">
+                                                <!-- <i class="bi bi-credit-card"></i> -->
+                                                <img src="../../assets/img/total_1.svg" alt="">
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="mt-2 mb-0 text-sm">
+                                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                            <i class="bi bi-arrow-down me-1"></i>-13%
+                                        </span>
+                                        <span class="text-nowrap text-xs text-muted">This month</span>
+                                    </div>
                                 </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                        <i class="bi bi-arrow-down me-1"></i>-13%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">This month</span>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="card shadow border-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2"
+                                                style="font-size: 10px !important;">Expiring next 3
+                                                months</span>
+                                            <span class="h3 font-bold mb-0">260</span>
+                                        </div>
+                                        <div class="col-auto" style="padding: 0 !important;">
+                                            <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"
+                                                style="padding: 10px;">
+                                                <!-- <i class="bi bi-people"></i> -->
+                                                <img src="../../assets/img/total_2.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 mb-0 text-sm">
+                                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                            <i class="bi bi-arrow-down me-1"></i>-38%
+                                        </span>
+                                        <span class="text-nowrap text-xs text-muted">Next 3 month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="card shadow border-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2"
+                                                style="font-size: 10px !important;">Expiring above 6
+                                                months</span>
+                                            <span class="h3 font-bold mb-0">680</span>
+                                        </div>
+                                        <div class="col-auto" style="padding: 0 !important;">
+                                            <div class="icon icon-shape bg-info text-white text-lg rounded-circle"
+                                                style="padding: 10px;">
+                                                <!-- <i class="bi bi-clock-history"></i> -->
+                                                <img src="../../assets/img/total_3.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 mb-0 text-sm">
+                                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                            <i class="bi bi-arrow-down me-1"></i>-65%
+                                        </span>
+                                        <span class="text-nowrap text-xs text-muted">Above 6 month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="card shadow border-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="h6 font-semibold text-muted text-sm d-block mb-2"
+                                                style="font-size: 10px !important;">Current Forcasted
+                                                loss</span>
+                                            <span class="h3 font-bold mb-0">$2895</span>
+                                        </div>
+                                        <div class="col-auto" style="padding: 0 !important;">
+                                            <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"
+                                                style="padding: 10px;">
+                                                <!-- <i class="bi bi-minecart-loaded"></i> -->
+                                                <img src="../../assets/img/total_4.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 mb-0 text-sm">
+                                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                                            <i class="bi bi-arrow-down me-1"></i>80%
+                                        </span>
+                                        <span class="text-nowrap text-xs text-muted">Current</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2"
-                                            style="font-size: 10px !important;">Expiring next 3
-                                            months</span>
-                                        <span class="h3 font-bold mb-0">260</span>
-                                    </div>
-                                    <div class="col-auto" style="padding: 0 !important;">
-                                        <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"
-                                            style="padding: 10px;">
-                                            <!-- <i class="bi bi-people"></i> -->
-                                            <img src="../../assets/img/total_2.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                        <i class="bi bi-arrow-down me-1"></i>-38%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">Next 3 month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2"
-                                            style="font-size: 10px !important;">Expiring above 6
-                                            months</span>
-                                        <span class="h3 font-bold mb-0">680</span>
-                                    </div>
-                                    <div class="col-auto" style="padding: 0 !important;">
-                                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle"
-                                            style="padding: 10px;">
-                                            <!-- <i class="bi bi-clock-history"></i> -->
-                                            <img src="../../assets/img/total_3.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                        <i class="bi bi-arrow-down me-1"></i>-65%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">Above 6 month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2"
-                                            style="font-size: 10px !important;">Current Forcasted
-                                            loss</span>
-                                        <span class="h3 font-bold mb-0">$2895</span>
-                                    </div>
-                                    <div class="col-auto" style="padding: 0 !important;">
-                                        <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"
-                                            style="padding: 10px;">
-                                            <!-- <i class="bi bi-minecart-loaded"></i> -->
-                                            <img src="../../assets/img/total_4.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                        <i class="bi bi-arrow-down me-1"></i>80%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">Current</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div
-                    style="width: 100%;display: grid;align-items: center;justify-content: space-between;grid-template-columns: 49% 49%;gap: 10px;">
-                    <div class="card shadow border-0 mb-7">
+                    <div style="" class="firstGraph">
+                        <div class="card shadow border-0 mb-7 FullTable">
+                            <div class="card-header">
+                                <h5 class="mb-0">Medicine Expiring this month</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-nowrap TABLE">
+                                    <thead class="thead-light Thead">
+                                        <tr style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Name</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Manufacturer</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Quantity</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Purchase Date</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Exp Date</th>
+                                            <!-- <th></th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody class="Tbody">
+                                        <tr *ngFor="let item of Table1" style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                            <td class="rowTable" style="padding: 10px;text-wrap: pretty;">
+                                                <!-- <img alt="..."
+                                                src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                                class="avatar avatar-sm rounded-circle me-2"> -->
+                                                <a class="text-heading font-semibold">
+                                                    {{item.name}}
+                                                </a>
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;text-wrap: pretty;">
+                                                {{item.manufacture}}
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;">
+                                                <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
+                                                class="avatar avatar-xs rounded-circle me-2"> -->
+                                                <a class="text-heading font-semibold" style="padding: 10px;">
+                                                    {{item.Quantity}}
+                                                </a>
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;">
+                                                {{item.purchasedate}}
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;">
+                                                <span class="badge badge-lg badge-dot">
+                                                    <i class="bg-success"
+                                                        style="background-color: #ffac00 !important;"></i>
+                                                    {{item.expairdat}}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <div class="card-footer border-0 py-5">
+                            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+                        </div> -->
+                        </div>
+
+                        <div class="card shadow border-0 mb-7 FullTable">
+                            <div class="card-header">
+                                <h5 class="mb-0">Medicine Expiring within 90 days</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-nowrap TABLE">
+                                    <thead class="thead-light Thead">
+                                        <tr style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Name</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Manufacturer</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Quantity</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Purchase Date</th>
+                                            <th scope="col" class="rowTable" style="padding: 10px;">Exp Date</th>
+                                            <!-- <th></th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody class="Tbody">
+                                        <tr *ngFor="let item of Table2" style="display: grid;
+                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
+                                            <td class="rowTable" style="padding: 10px;text-wrap: pretty;">
+                                                <!-- <img alt="..."
+                                                src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                                class="avatar avatar-sm rounded-circle me-2"> -->
+                                                <a class="text-heading font-semibold">
+                                                    {{item.name}}
+                                                </a>
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;text-wrap: pretty;">
+                                                {{item.manufacture}}
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;">
+                                                <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
+                                                class="avatar avatar-xs rounded-circle me-2"> -->
+                                                <a class="text-heading font-semibold" style="padding: 10px;">
+                                                    {{item.Quantity}}
+                                                </a>
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;">
+                                                {{item.purchasedate}}
+                                            </td>
+                                            <td class="rowTable" style="padding: 10px;">
+                                                <span class="badge badge-lg badge-dot">
+                                                    <i class="bg-success"
+                                                        style="background-color: #ffac00 !important;"></i>
+                                                    {{item.expairdat}}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <div class="card-footer border-0 py-5">
+                            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+                        </div> -->
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="card shadow border-0 mb-7 FullTable">
                         <div class="card-header">
-                            <h5 class="mb-0">Medicine Expiring this month</h5>
+                            <h5 class="mb-0">Medicine Expiring above 90 days</h5>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-hover table-nowrap">
-                                <thead class="thead-light">
-                                    <tr style="display: grid;
-                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Name</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Manufacturer</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Quantity</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Purchase Date</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Exp Date</th>
+                            <table class="table table-hover table-nowrap TABLE">
+                                <thead class="thead-light Thead">
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Manufacturer</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Purchase Date</th>
+                                        <th scope="col">Expiry Date</th>
                                         <!-- <th></th> -->
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of Table1" style="display: grid;
-                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
-                                        <td class="rowTable" style="padding: 10px;">
+                                <tbody class="Tbody">
+                                    <tr *ngFor="let item of Table3">
+                                        <td>
                                             <!-- <img alt="..."
-                                                src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                                class="avatar avatar-sm rounded-circle me-2"> -->
-                                            <a class="text-heading font-semibold">
-                                                {{item.name}}
-                                            </a>
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            {{item.manufacture}}
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
-                                                class="avatar avatar-xs rounded-circle me-2"> -->
-                                            <a class="text-heading font-semibold" style="padding: 10px;">
-                                                {{item.Quantity}}
-                                            </a>
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            {{item.purchasedate}}
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            <span class="badge badge-lg badge-dot">
-                                                <i class="bg-success" style="background-color: #ffac00 !important;"></i>
-                                                {{item.expairdat}}
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- <div class="card-footer border-0 py-5">
-                            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
-                        </div> -->
-                    </div>
-
-                    <div class="card shadow border-0 mb-7">
-                        <div class="card-header">
-                            <h5 class="mb-0">Medicine Expiring within 90 days</h5>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover table-nowrap">
-                                <thead class="thead-light">
-                                    <tr style="display: grid;
-                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Name</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Manufacturer</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Quantity</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Purchase Date</th>
-                                        <th scope="col" class="rowTable" style="padding: 10px;">Exp Date</th>
-                                        <!-- <th></th> -->
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of Table2" style="display: grid;
-                                    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 1fr">
-                                        <td class="rowTable" style="padding: 10px;">
-                                            <!-- <img alt="..."
-                                                src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                                class="avatar avatar-sm rounded-circle me-2"> -->
-                                            <a class="text-heading font-semibold">
-                                                {{item.name}}
-                                            </a>
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            {{item.manufacture}}
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
-                                                class="avatar avatar-xs rounded-circle me-2"> -->
-                                            <a class="text-heading font-semibold" style="padding: 10px;">
-                                                {{item.Quantity}}
-                                            </a>
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            {{item.purchasedate}}
-                                        </td>
-                                        <td class="rowTable" style="padding: 10px;">
-                                            <span class="badge badge-lg badge-dot">
-                                                <i class="bg-success" style="background-color: #ffac00 !important;"></i>
-                                                {{item.expairdat}}
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- <div class="card-footer border-0 py-5">
-                            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
-                        </div> -->
-                    </div>
-
-                </div>
-
-
-
-                <div class="card shadow border-0 mb-7">
-                    <div class="card-header">
-                        <h5 class="mb-0">Medicine Expiring above 90 days</h5>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-hover table-nowrap">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Manufacturer</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Purchase Date</th>
-                                    <th scope="col">Expiry Date</th>
-                                    <!-- <th></th> -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let item of Table3">
-                                    <td>
-                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
                                             class="avatar avatar-sm rounded-circle me-2"> -->
-                                        <a class="text-heading font-semibold">
-                                            {{item.name}}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        {{item.manufacture}}
-                                    </td>
-                                    <td>
-                                        <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
+                                            <a class="text-heading font-semibold" style="text-wrap: pretty !important;">
+                                                {{item.name}}
+                                            </a>
+                                        </td>
+                                        <td style="text-wrap: pretty !important;">
+                                            {{item.manufacture}}
+                                        </td>
+                                        <td>
+                                            <!-- <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
                                             class="avatar avatar-xs rounded-circle me-2"> -->
-                                        <a class="text-heading font-semibold">
-                                            {{item.Quantity}}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        {{item.purchasedate}}
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-success" style="background-color: #ffac00 !important;"></i>
-                                            {{item.expairdat}}
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- <div class="card-footer border-0 py-5">
+                                            <a class="text-heading font-semibold">
+                                                {{item.Quantity}}
+                                            </a>
+                                        </td>
+                                        <td style="text-wrap: pretty !important;">
+                                            {{item.purchasedate}}
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-lg badge-dot">
+                                                <i class="bg-success" style="background-color: #ffac00 !important;"></i>
+                                                {{item.expairdat}}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <div class="card-footer border-0 py-5">
                         <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
                     </div> -->
-                </div>
+                    </div>
 
-                <!-- **********************************CHART***************************** -->
+                    <!-- **********************************CHART***************************** -->
 
 
-                <div class="container-fluid pt-4 px-4" style="padding: 0 !important;">
-                    <div class="row g-4" style="display: flex;align-items: center;justify-content: space-between;">
-                        <div class="col-sm-12 col-xl-6" style="width: 49% !important;">
-                            <div class="bg-light text-center rounded p-4" style="height: 320px !important;">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h6 class="mb-0">Top 5 medicines based on Quantity</h6>
-                                    <!-- <a href="">Show All</a> -->
+                    <div class="container-fluid pt-4 px-4" style="padding: 0 !important;">
+                        <div class="row g-4 Graphs"
+                            style="display: flex;align-items: center;justify-content: space-between;">
+                            <div class="col-sm-12 col-xl-6 GraphsIn" style="width: 49%;">
+                                <div class="bg-light text-center rounded p-4">
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <h6 class="mb-0">Top 5 medicines based on Quantity</h6>
+                                    </div>
+                                    <canvas #BarchartCanvas [attr.id]="BarcanvasId" width="400" height="200"
+                                        style="height: 80% !important;"></canvas>
                                 </div>
-                                <canvas #BarchartCanvas [attr.id]="BarcanvasId" width="400" height="200"
-                                    style="height: 80% !important;"></canvas>
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-xl-6" style="width:49% !important;">
-                            <div class="bg-light text-center rounded p-4" style="height: 320px !important;">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h6 class="mb-0">Loss Trend</h6>
-                                    <!-- <a href="">Show All</a> -->
-                                </div>
-                                <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
-                                    <!-- <div
-                                        style="width: 50px; height: 144px; display: flex; align-items: center; justify-content: space-between; flex-direction: column;">
-                                        <ion-label style="font-size: 12px;">2024</ion-label>
-                                        <ion-label style="font-size: 12px;">2023</ion-label>
-                                        <ion-label style="font-size: 12px;">2022</ion-label>
-                                        <ion-label style="font-size: 12px;">2021</ion-label>
-                                        <ion-label style="font-size: 12px;"></ion-label>
-                                    </div> -->
-                                    <canvas #LinechartCanvas [attr.id]="LinecanvasId" width="380px" height="200"
-                                        style="width: 100%; height: 245px !important;"></canvas>
-                                </div>
+                            <div class="col-sm-12 col-xl-6 GraphsIn secondCanvas" style="width:49%;">
+                                <div class="bg-light text-center rounded p-4 Round">
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <h6 class="mb-0">Loss Trend</h6>
+                                    </div>
+                                    <div style="" class="CanvasDiv">
+                                        <canvas #LinechartCanvas [attr.id]="LinecanvasId" width="380px" height="200"
+                                            style="width: 100%; height: 245px;"></canvas>
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
 
-            </div>
 
-
-
-            <!-- <div class="box" style="width: 600px; height: 800px;">
+                <!-- <div class="box" style="width: 600px; height: 800px;">
                 <canvas #lineChart></canvas>
             </div> -->
 
 
 
-        </main>
+            </main>
+        </div>
     </div>
-</div>
+</section>

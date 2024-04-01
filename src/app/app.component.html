@@ -3,6 +3,7 @@
   <!-- Sidebar Start -->
   <div class="sidebar pe-4 pb-3" *ngIf="!loader" [ngClass]="{'open': Open==true}"
     style="border-right: 1px solid #d9d9d9;">
+    <div style="width: 100%;height: 100%;position: fixed;top: 0;z-index: -1;" (click)="Open=false" *ngIf="Open"></div>
     <nav class="navbar bg-light navbar-light">
       <a href="index.html" class="navbar-brand mx-4 mb-3">
         <h3 class="text-primary" style="font-size: 18px;"> COMPANY</h3>
@@ -11,7 +12,7 @@
       </div>
       <div class="navbar-nav w-100" style="gap: 20px;">
         <a class="nav-item nav-link" [ngClass]="{'active':ind==item.id}" *ngFor="let item of menu"
-          (click)="routes(item.path)">
+          (click)="routes(item.path)" (click)="Open=false">
           <img src="{{ ind==item.id ? item.fill_img : item.img}}" alt="">
           {{item.name}}</a>
       </div>
@@ -19,12 +20,12 @@
   </div>
 
 
-  <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0" style="margin-left: 195px;"
+  <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0" [class.window]="screenWidth>480"
     [ngClass]="{'leftSideMenuHome':Open!==false}" *ngIf="!loader">
-    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4" *ngIf="screenWidth>480">
       <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
     </a>
-    <a class="sidebar-toggler flex-shrink-0" (click)="OpenMenu()">
+    <a class="sidebar-toggler flex-shrink-0" (click)="OpenMenu()" *ngIf="screenWidth>480">
       <i class="fa fa-bars" *ngIf="Open==true"></i>
       <i class="bi bi-arrow-left-square" *ngIf="Open==false" style="font-size: 25px;"></i>
     </a>
@@ -32,7 +33,9 @@
       <input class="form-control border-0" placeholder="Search" [(ngModel)]="Search" (change)="change($event)">
       <img src="../assets/img/search.svg" alt="">
     </form>
-    <div class="navbar-nav align-items-center ms-auto">
+    <ion-icon name="menu-outline" style="font-size: 28px;
+    margin-left: 12px;" (click)="Open==true ? Open =false : Open = true"></ion-icon>
+    <div class="navbar-nav align-items-center ms-auto topHeaderOption">
 
       <!-- <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -76,7 +79,7 @@
 
       <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-          style="display: flex;align-items: center;justify-content: center;gap: 20px;">
+          style="display: flex;align-items: center;justify-content: center;gap: 20px;padding: 0 !important;">
           <div style="position: relative;">
             <i class="fa fa-bell me-lg-2"></i>
             <span style="position: absolute;
