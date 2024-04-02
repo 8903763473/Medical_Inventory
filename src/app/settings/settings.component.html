@@ -5,7 +5,7 @@
   color: #007aff;cursor: pointer;"></ion-icon>Back
   </div>
 
-  <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
+  <!-- <div class="bg-light text-center rounded p-4" style="border-radius: 6px;
   background-color: #ffffff !important;">
     <div class="addTo-In">
       <ion-label class="title">Organization</ion-label>
@@ -108,7 +108,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
 </section>
 
 <section class="fullpage1" *ngIf="!OrgAlert && !manageUser">
@@ -150,14 +151,15 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span>Notification Type</span>
+                    <span style="font-size: 14px;">Notification Type</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12" (click)="Schedule=true">
+        <div class="col-xl-3 col-sm-6 col-12"
+          (click)="Schedule=true;DaysNames=[];selectedDays=[];DailySchedule=undefined">
           <div class="card" style="height: 100%;">
             <div class="card-content" style="height: 100%;">
               <div class="card-body" style="height: 100%;">
@@ -168,7 +170,7 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span>Notification Schedule</span>
+                    <span style="font-size: 14px;">Notification Schedule</span>
                   </div>
                 </div>
               </div>
@@ -187,7 +189,7 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span>Manage User</span>
+                    <span style="font-size: 14px;">Manage User</span>
                   </div>
                 </div>
               </div>
@@ -206,7 +208,7 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span>Manage Patient</span>
+                    <span style="font-size: 14px;">Manage Patient</span>
                   </div>
                 </div>
               </div>
@@ -285,7 +287,7 @@
       <form action="">
         <div class="form-group">
           <label for="">Select Schedule</label>
-          <select name="" id="" style="width: 100%;
+          <select name="" id="" style="width: 100%;font-size: 13px;
           border: 1px solid #cfcfcf;
           border-radius: 4px; color: black;" [(ngModel)]="DailySchedule" (change)="ChooseSchedule($event)">
             <option value="{{item.name}}" *ngFor="let item of ScheduleList" style="color: black;">{{item.name}}
@@ -293,13 +295,13 @@
           </select>
 
           <input type="text" (click)="week(DailySchedule)" *ngIf="DailySchedule=='Weekly'" style="width: 100%;
-          margin-top: 10px;
-          border: 1px solid #cecdcd;
-          border-radius: 4px;">
+          margin-top: 10px;font-size: 13px;
+          border: 1px solid #cecdcd;color: black;
+          border-radius: 4px;" placeholder="select Days" [value]="DaysNames.join(', ')">
           <input type="text" (click)="week(DailySchedule)" *ngIf="DailySchedule=='Monthly'" style="width: 100%;
-          margin-top: 10px;
-          border: 1px solid #cecdcd;
-          border-radius: 4px;">
+          margin-top: 10px;font-size: 13px;
+          border: 1px solid #cecdcd;color: black;
+          border-radius: 4px;" placeholder="select Months" [value]="DaysNames.join(', ')">
 
         </div>
 
@@ -309,7 +311,8 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;" (click)="Schedule=false">Submit</button>
+        float: inline-end;margin-top: 15px;background: #e1e1e1;
+    color: black;" (click)="Schedule=false">Submit</button>
       </form>
     </div>
   </div>
@@ -324,24 +327,33 @@
       <button id="btnCloseForm" class="close-button" (click)="SchedulePop=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
       color: #0fa2ff;">{{SchedulePopTitle}}</h1>
-      <form action="" style="display: grid;
-      grid-template-columns: 50% 50%; ">
-        <div *ngFor="let item of SchedulePopData" style="display: flex;
+      <form action="" style="display: flex;align-items: center;justify-content: center;gap: 10px;">
+        <div *ngFor="let item of SchedulePopData;let i = index" style="display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 10px;margin-top: 11px;">
-          <input type="checkbox" style="font-size: 10px;width: auto;" (change)="ScheduleCheck($event,item.name)" />
-          <p style="color: #0fa2ff;margin: 0;">{{item.name}}</p>
+          <div style="width: 30px;height: 30px;border: 1px solid grey;background-color: rgb(242 242 242);
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #0fa2ff;font-size: 12px;
+          border-radius: 4px;" (click)="SelectData(item,DailySchedule)"
+            [style.background-color]="isSelected(item) ? '#0fa2ff' : 'rgb(242, 242, 242)'"
+            [style.color]="isSelected(item) ? 'white' : '#0fa2ff'">
+            {{DailySchedule=='Weekly' ? item.name.charAt(0) : item.name}}</div>
+          <!-- <input type="checkbox" style="font-size: 10px;width: auto;" (change)="ScheduleCheck($event,item.name)" />
+          <p style="color: #0fa2ff;margin: 0;">{{item.name}}</p> -->
         </div><br>
-
-        <button style="padding: 10px;
-        font-size: 13px;
-        border-radius: 4px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        float: inline-end;margin-top: 15px;" (click)="SchedulePop=false">Submit</button>
       </form>
+
+      <button style="padding: 10px;
+      font-size: 13px;
+      border-radius: 4px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      float: inline-end;margin-top: 15px;" (click)="ScheduleClose()">Submit</button>
     </div>
   </div>
 </section>

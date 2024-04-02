@@ -12,7 +12,7 @@
       </div>
       <div class="navbar-nav w-100" style="gap: 20px;">
         <a class="nav-item nav-link" [ngClass]="{'active':ind==item.id}" *ngFor="let item of menu"
-          (click)="routes(item.path)" (click)="Open=false">
+          (click)="routes(item)" (click)="Open=false">
           <img src="{{ ind==item.id ? item.fill_img : item.img}}" alt="">
           {{item.name}}</a>
       </div>

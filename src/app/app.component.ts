@@ -1037,9 +1037,10 @@ export class AppComponent {
 
   }
 
-  routes(path: any) {
-    if (path != 'logOut') {
-      this.router.navigate(['/' + path]);
+  routes(data: any) {
+    if (data.path != 'logOut') {
+      this.ind = data.id
+      this.router.navigate(['/' + data.path]);
     } else {
       this.LogoutAlert()
     }

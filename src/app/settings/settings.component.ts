@@ -62,7 +62,9 @@ export class SettingsComponent {
   Data: any = []
   notifyTab: any
   ChooseoneId: any
-
+  selectedDays: any = []
+  selectedMonths: any = []
+  DaysNames: any = []
 
   ScheduleList: any = [
     {
@@ -78,63 +80,82 @@ export class SettingsComponent {
 
   Weeksubname: any = [
     {
+      id: 1,
+      name: 'Sunday'
+    },
+    {
+      id: 2,
       name: 'Monday'
     },
     {
+      id: 3,
       name: 'Tuesday'
     },
     {
+      id: 4,
       name: 'Wednesday'
     },
     {
+      id: 5,
       name: 'Thursday'
     },
     {
+      id: 6,
       name: 'Friday'
     },
     {
+      id: 7,
       name: 'Saturday'
-    },
-    {
-      name: 'Sunday'
     }
   ]
 
   Monthlysubname: any = [
     {
-      name: 'January'
+      id: 1,
+      name: 'Jan'
     },
     {
-      name: 'February'
+      id: 2,
+      name: 'Feb'
     },
     {
-      name: 'March'
+      id: 3,
+      name: 'Mar'
     },
     {
-      name: 'April'
+      id: 4,
+      name: 'Apr'
     },
     {
+      id: 5,
       name: 'May'
     },
     {
+      id: 6,
       name: 'June'
     },
     {
+      id: 7,
       name: 'July'
     },
     {
+      id: 8,
       name: 'Aug'
     },
     {
+      id: 9,
       name: 'Sept'
     },
     {
+      id: 10,
       name: 'Oct'
     },
     {
+      id: 11,
       name: 'Nov'
     },
     {
+      id: 12,
       name: 'Dec'
     }
   ]
@@ -150,6 +171,7 @@ export class SettingsComponent {
     setTimeout(() => {
       this.app.loader = false
     }, 500)
+    console.log(this.selectedDays);
   }
 
   selectBox(id: any) {
@@ -185,6 +207,9 @@ export class SettingsComponent {
 
   ChooseSchedule(data: any) {
     this.DailySchedule = data.target.value
+    this.DaysNames = [];
+    this.setSchedule = [];
+    this.selectedDays = []
   }
 
   handleRadioChange(data: any) {
@@ -246,4 +271,31 @@ export class SettingsComponent {
     this.ChooseoneId = id
   }
 
+  SelectData(data: any, status: any) {
+    if (status == 'Weekly') {
+      const index = this.selectedDays.indexOf(data);
+      if (index !== -1) {
+        this.selectedDays.splice(index, 1);
+      } else {
+        this.selectedDays.push(data);
+      }
+    } else if (status == 'Monthly') {
+      const index = this.selectedDays.indexOf(data);
+      if (index !== -1) {
+        this.selectedDays.splice(index, 1);
+      } else {
+        this.selectedDays.push(data);
+      }
+    }
+  }
+
+  isSelected(item: any): boolean {
+    return this.selectedDays.includes(item);
+  }
+
+  ScheduleClose() {
+    this.SchedulePop = false
+    this.DaysNames = this.selectedDays.map((day: any) => day.name);
+    console.log(this.DaysNames);
+  }
 }

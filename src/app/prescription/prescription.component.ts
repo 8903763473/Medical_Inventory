@@ -60,7 +60,7 @@ export class PrescriptionComponent implements OnInit {
     this.MorningQty = 1
     this.AfternoonQty = 1
     this.EveningQty = 1
-    this.Categories()
+    // this.Categories()
   }
 
   Categories() {

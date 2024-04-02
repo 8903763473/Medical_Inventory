@@ -6,6 +6,10 @@ section {
     //     margin: 0;
     // }
 
+    input {
+        background-color: white !important;
+    }
+
     .head {
         color: #007AFF !important;
         font-family: Poppins;
@@ -614,7 +618,8 @@ section {
             width: 150px !important;
         }
     }
-    .Header{
+
+    .Header {
         margin-top: 60px !important;
     }
 

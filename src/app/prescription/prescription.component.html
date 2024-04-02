@@ -101,7 +101,7 @@ width: 100%;">
                                         <div class="text-right" style="display: flex;
                                         align-items: center;
                                         justify-content: center;gap: 10px;">
-                                            <button type="button" id="submit" name="submit" class="btn btn-primary"
+                                            <button type="button" id="submit" class="btn btn-primary"
                                                 style="font-size: 10px;">Add Medicine</button><br>
                                         </div>
                                     </div>
@@ -156,9 +156,9 @@ width: 100%;">
 
                         <div
                             style="width: 94%;display: flex;align-items: center;justify-content: flex-end;gap: 10px;position: absolute;bottom: 10px;">
-                            <button type="button" id="submit" name="submit" class="btn btn-primary"
-                                style="font-size: 10px;">Previous Prescription</button><br>
-                            <!-- <button type="button" id="submit" name="submit" class="btn btn-primary"
+                            <button type="button" id="submit" class="btn btn-primary" style="font-size: 10px;">Previous
+                                Prescription</button><br>
+                            <!-- <button type="button" id="submit" class="btn btn-primary"
                                 style="font-size: 10px;" (click)="Pharmacist()">Move to Pharmacy</button> -->
                         </div>
 
@@ -174,7 +174,7 @@ width: 100%;">
                                     <ion-icon name="add-outline" (click)="MorningIcon(MorningQty,'add')"></ion-icon>
                                 </div>
                                 <div class="food" *ngIf="pickedCategory!='Injections'">
-                                    <select name="" id="" [disabled]="!Morning" style="padding: 3px;
+                                    <select [disabled]="!Morning" style="padding: 3px;
                                     border-radius: 2px;">
                                         <option value="Before Food">Before Food</option>
                                         <option value="After Food">After Food</option>
@@ -191,7 +191,7 @@ width: 100%;">
                                     <ion-icon name="add-outline" (click)="AfternoonIcon(AfternoonQty,'add')"></ion-icon>
                                 </div>
                                 <div class="food" *ngIf="pickedCategory!='Injections'">
-                                    <select name="" id="" [disabled]="!Afternoon" style="padding: 3px;
+                                    <select [disabled]="!Afternoon" style="padding: 3px;
                                     border-radius: 2px;">
                                         <option value="Before Food">Before Food</option>
                                         <option value="After Food">After Food</option>
@@ -208,7 +208,7 @@ width: 100%;">
                                         name="add-outline" (click)="EveningIcon(EveningQty,'add')"></ion-icon>
                                 </div>
                                 <div class="food" *ngIf="pickedCategory!='Injections'">
-                                    <select name="" id="" [disabled]="!Evening" style="padding: 3px;
+                                    <select [disabled]="!Evening" style="padding: 3px;
                                     border-radius: 2px;">
                                         <option value="Before Food">Before Food</option>
                                         <option value="After Food">After Food</option>
@@ -481,7 +481,8 @@ width: 100%;">
             border-radius: 5px;">
                 <div class='title-table-container'>
                     <div class='subtitle'>Medicines</div>
-                    <button class='select-button' (click)="Pharmacist()" style="font-size: 10px;"> Move to Pharmacy
+                    <button class='select-button' (click)="Pharmacist()"
+                        style="font-size: 10px;color: black !important;"> Move to Pharmacy
                     </button>
                 </div>
                 <div>
@@ -575,7 +576,7 @@ width: 100%;">
     </div>
 
 
-    <div class="Cat-Pop ManufacturersCat-Pop" *ngIf="manufacturerListPopup" >
+    <div class="Cat-Pop ManufacturersCat-Pop" *ngIf="manufacturerListPopup">
         <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
             (click)="manufacturerListPopup=false" class="overlay"></div>
         <div class="side-nav-categories CategoryPop ManufacturersCategoryPop" style="width: auto;display: flex;">
@@ -593,7 +594,8 @@ flex-direction: column;" class="CategoryPopIn">
     justify-content: center;
     background: #009cff;padding: 6px;">Manufacturers</ion-label>
                 <ul id="category-tabs" *ngFor="let item of manufacturerList" style="width: 100% !important;">
-                    <li (click)="Pickmanufacture(item)" class="allManList"><a class="main-category"> {{item.manufacturers}}
+                    <li (click)="Pickmanufacture(item)" class="allManList"><a class="main-category">
+                            {{item.manufacturers}}
                         </a>
                     </li>
                 </ul>
@@ -612,7 +614,7 @@ flex-direction: column;" class="CategoryPopIn">
     justify-content: center;
     background: #009cff;padding: 6px;">In Stock</ion-label>
                 <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                    <li (click)="Pickmanufacture(item)"class="allManList"><a class="main-category"> 2035
+                    <li (click)="Pickmanufacture(item)" class="allManList"><a class="main-category"> 2035
                         </a>
                     </li>
                 </ul>
@@ -631,7 +633,7 @@ flex-direction: column;" class="CategoryPopIn">
     justify-content: center;
     background: #009cff;padding: 6px;"><span class="Exp">Exp</span> 0 - 30 Days</ion-label>
                 <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                    <li (click)="Pickmanufacture(item)"class="allManList"><a class="main-category"> 95
+                    <li (click)="Pickmanufacture(item)" class="allManList"><a class="main-category"> 95
                         </a>
                     </li>
                 </ul>
@@ -652,7 +654,7 @@ flex-direction: column;" class="CategoryPopIn">
     justify-content: center;
     background: #009cff;padding: 6px;"><span class="Exp">Exp</span> 30 - 60 Days</ion-label>
                 <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                    <li (click)="Pickmanufacture(item)"class="allManList"><a class="main-category"> 265
+                    <li (click)="Pickmanufacture(item)" class="allManList"><a class="main-category"> 265
                         </a>
                     </li>
                 </ul>
@@ -673,7 +675,7 @@ flex-direction: column;" class="CategoryPopIn">
     justify-content: center;
     background: #009cff;padding: 6px;"><span class="Exp">Exp</span> 90 + Days</ion-label>
                 <ul id="category-tabs" *ngFor="let item of manufacturerList">
-                    <li (click)="Pickmanufacture(item)"class="allManList"><a class="main-category"> 480
+                    <li (click)="Pickmanufacture(item)" class="allManList"><a class="main-category"> 480
                         </a>
                     </li>
                 </ul>
