@@ -783,8 +783,22 @@
         width: 100% !important;
     }
 
+    .form-container {
+        max-width: 100% !important;
+        width: 94% !important;
+        margin: 0 !important;
+    }
+
     .form-popup-bg {
         width: 100% !important;
         left: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .DaysForm {
+        display: grid !important;
+        grid-template-columns: 13% 13% 13% 13% 13% 13% !important;
     }
 }

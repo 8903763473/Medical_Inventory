@@ -28,6 +28,8 @@ export class EditProductNameComponent {
     setTimeout(() => {
       this.app.loader = false
     }, 500)
+    console.log(this.selectedcategory);
+    
     this.LocalCalculation()
   }
 

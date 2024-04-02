@@ -53,7 +53,7 @@
 
   </div>
 
-  <div class="form-popup-bg" *ngIf=ActionPopup>
+  <div class="form-popup-bg" *ngIf="ActionPopup">
     <div (click)="ActionPopup=false"
       style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
     <div class="form-container">
@@ -65,7 +65,8 @@
         <div class="form-group">
           <label for="">Category</label>
           <select *ngIf="categories?.length != 0" [(ngModel)]="selectedcategory">
-            <option *ngFor="let item of categories;let i = index" [value]="item.category">
+            <option *ngFor="let item of categories;let i = index" [value]="item.category"
+              [style.display]="item.category!='All' ?  'flex' : 'none'">
               {{ item.category }}
             </option>
           </select>
@@ -74,22 +75,13 @@
           <label for="">Product Name</label>
           <input class="form-control" type="text" placeholder="product name" style="font-size: 10px;" />
         </div>
-        <!-- <div class="form-group">
-          <label for="">Manufacturer</label>
-          <input class="form-control" type="text" placeholder="Manufacturer" style="font-size: 10px;" />
-        </div>
-        <div class="form-group">
-          <label for="">Batch</label>
-          <input class="form-control" type="text" placeholder="Batch" style="font-size: 10px;" />
-        </div> -->
-
         <button style="padding: 10px;
         font-size: 13px;
         border-radius: 4px;
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="ActionPopup=false">Submit</button>
       </form>
     </div>
   </div>
@@ -106,7 +98,7 @@
           <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
         </div>
         <div class="modal-body">
-          <p>Do you really want to delete this Inventory ? This process cannot be undone.</p>
+          <p>Do you really want to delete this Product Name ? This process cannot be undone.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-info" data-dismiss="modal" (click)="Buttons()"
@@ -119,7 +111,7 @@
 
 
 
-  <div class="form-popup-bg" *ngIf=EditActionPopup>
+  <div class="form-popup-bg" *ngIf="EditActionPopup">
     <div (click)="EditActionPopup=false"
       style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
     <div class="form-container">
@@ -153,7 +145,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="EditActionPopup=false">Submit</button>
       </form>
     </div>
   </div>

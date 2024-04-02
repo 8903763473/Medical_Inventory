@@ -480,6 +480,10 @@ section {
         padding-bottom: 15px;
         color: black;
         min-width: 80px;
+
+        select {
+            border: none !important;
+        }
     }
 
     .itemprice {

@@ -165,7 +165,9 @@ width: 100%;">
 
                         <div class="period">
                             <div class="period-in">
-                                Morning <input type="checkbox" (change)="MorningCheck($event)" />
+                                Morning
+                                <ion-checkbox (ionChange)="MorningCheck($event)"></ion-checkbox>
+
                                 <div class="quantity"
                                     *ngIf="pickedCategory!=undefined ? pickedCategory=='Tablets' : true">
                                     <ion-icon name="remove-outline"
@@ -182,7 +184,8 @@ width: 100%;">
                                 </div>
                             </div>
                             <div class="period-in">
-                                Afnoon &nbsp;<input type="checkbox" (change)="AfternoonCheck($event)" />
+                                Afnoon &nbsp;
+                                <ion-checkbox (ionChange)="AfternoonCheck($event)"></ion-checkbox>
                                 <div class="quantity"
                                     *ngIf="pickedCategory!=undefined ? pickedCategory=='Tablets' : true">
                                     <ion-icon name="remove-outline"
@@ -199,7 +202,8 @@ width: 100%;">
                                 </div>
                             </div>
                             <div class="period-in">
-                                Evening &nbsp;<input type="checkbox" (change)="EveningCheck($event)" />
+                                Evening &nbsp;
+                                <ion-checkbox (ionChange)="EveningCheck($event)"></ion-checkbox>
                                 <div class="quantity"
                                     *ngIf="pickedCategory!=undefined ? pickedCategory=='Tablets' : true ">
                                     <ion-icon name="remove-outline"
@@ -509,7 +513,8 @@ width: 100%;">
                                 <th style="padding: 0.5rem;
                                 text-align: center;">Duration</th>
                                 <th style="padding: 0.5rem;
-                                text-align: center;"><input type="checkbox" (change)="AllCheck($event)">
+                                text-align: center;">
+                                    <ion-checkbox (ionChange)="AllCheck($event)"></ion-checkbox>
                                 </th>
                             </tr>
                         </thead>
@@ -539,7 +544,9 @@ width: 100%;">
                                 font-weight: 600;"><input type="text" [value]="medication.duration" style="width: 30px; border: 1px solid grey; text-align: center; border-radius: 3px;font-size: 10px;
                                         font-weight: 600;">
                                     Days</td>
-                                <td><input type="checkbox" [checked]="allChecked"></td>
+                                <td>
+                                    <ion-checkbox [checked]="allChecked"></ion-checkbox>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

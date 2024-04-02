@@ -1212,6 +1212,9 @@ export class HomePage {
       const datasetProperties = {
         borderWidth: 2,
         fill: false,
+        lineTension: 0.4,
+        pointRadius: 1,
+        pointHoverRadius: 6
       };
 
       const chartOptions = {
@@ -1277,28 +1280,28 @@ export class HomePage {
             {
               ...Object.assign({}, datasetProperties),
               label: '2021',
-              data: [1200, 1300, 1100, 1400, 1250, 1350, 1150, 1450, 1225, 1325, 1125, 1425], // Example data for yearly loss for 2021
+              data: [1200, 1550, 1600, 1356, 1750, 1250, 1550, 1450, 1225, 1525, 1625, 1445], // Example data for yearly loss for 2021
               borderColor: 'grey',
             },
 
             {
               ...Object.assign({}, datasetProperties),
               label: '2022',
-              data: [1300, 1400, 1200, 1500, 1350, 1450, 1250, 1550, 1325, 1425, 1225, 1525], // Example data for yearly loss for 2022
+              data: [1300, 1800, 1178, 1600, 1550, 1400, 1450, 1550, 1650, 1625, 1725, 1800], // Example data for yearly loss for 2022
               borderColor: '#FFC300',
             },
 
             {
               ...Object.assign({}, datasetProperties),
               label: '2023',
-              data: [1150, 1250, 1050, 1350, 1200, 1300, 1100, 1400, 1175, 1275, 1075, 1375], // Example data for yearly loss for 2023
+              data: [1150, 1350, 1450, 1089, 1400, 1700, 1250, 1800, 1375, 1575, 1267, 1550], // Example data for yearly loss for 2023
               borderColor: '#009dff',
             },
 
             {
               ...Object.assign({}, datasetProperties),
               label: '2024',
-              data: [1100, 1200, 1000, 1300, 1150, 1250, 1050, 1350, 1125, 1225, 1025, 1325], // Example data for yearly loss for 2024
+              data: [1100, 1200, 1000, 1300, 1150, 1150, 1050, 1350, 1125, 1225, 1025, 1089], // Example data for yearly loss for 2024
               borderColor: '#FF5733',
             }
           ],

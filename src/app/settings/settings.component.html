@@ -242,6 +242,7 @@
       <div class="types" *ngIf="notifyTab==1">
         <div class="typesIn">
           <ion-label>Whatsapp</ion-label>
+          <!-- <ion-checkbox></ion-checkbox> -->
           <input type="checkbox" [checked]="ChooseoneId==1" (click)="chooseOnecheck(1)">
         </div>
         <div class="typesIn">
@@ -278,7 +279,8 @@
 
 
   <div class="form-popup-bg" *ngIf="Schedule">
-    <div (click)="Schedule=false" style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;">
+    <div (click)="Schedule=false" style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"
+      class="overlay">
     </div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="Schedule=false" style="color: #0fa2ff;">X</button>
@@ -320,14 +322,14 @@
 
 
   <div class="form-popup-bg" *ngIf="SchedulePop">
-    <div (click)="SchedulePop=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;">
+    <div (click)="SchedulePop=false" style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"
+      class="overlay">
     </div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="SchedulePop=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
       color: #0fa2ff;">{{SchedulePopTitle}}</h1>
-      <form action="" style="display: flex;align-items: center;justify-content: center;gap: 10px;">
+      <form action="" style="display: flex;align-items: center;justify-content: center;gap: 10px;" class="DaysForm">
         <div *ngFor="let item of SchedulePopData;let i = index" style="display: flex;
         align-items: center;
         justify-content: flex-start;

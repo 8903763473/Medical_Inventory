@@ -23,7 +23,7 @@
   </div>
 
 
-  <div class="form-popup-bg" *ngIf=ActionPopup>
+  <div class="form-popup-bg" *ngIf="ActionPopup">
     <div (click)="ActionPopup=false"
       style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
     <div class="form-container">
@@ -74,7 +74,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="ActionPopup=false">Submit</button>
       </form>
     </div>
   </div>
@@ -104,7 +104,7 @@
 
 
 
-  <div class="form-popup-bg" *ngIf=EditActionPopup>
+  <div class="form-popup-bg" *ngIf="EditActionPopup">
     <div (click)="EditActionPopup=false"
       style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
     <div class="form-container">
@@ -138,7 +138,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        float: inline-end;margin-top: 15px;">Submit</button>
+        float: inline-end;margin-top: 15px;" (click)="EditActionPopup=false">Submit</button>
       </form>
     </div>
   </div>

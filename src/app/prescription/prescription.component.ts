@@ -183,6 +183,7 @@ export class PrescriptionComponent implements OnInit {
   }
 
   AllCheck(data: any) {
+    console.log(data);
     if (data.target.checked == true) {
       this.allChecked = true
     } else {
