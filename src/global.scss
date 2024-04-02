@@ -57,8 +57,11 @@ ion-checkbox {
     --checkbox-background: #FFF !important;
     --checkbox-background-checked: #009CFF !important;
     --border-radius: 0 !important;
-    --border-width: 3px !important;
-    --size: min(20px, 20px) !important;
+    --border-width: 1px !important;
+    --size: min(13px, 13px) !important;
+    --border-color: black !important;
+    position: initial !important;
+    z-index: 0 !important;
 }
 
 :root {
@@ -71668,4 +71671,38 @@ ion-button {
 
 #btnCloseForm {
     background: none !important;
+}
+
+@media screen and (max-width:480px) {
+    .modal-dialog {
+        max-width: 100% !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        left: 0 !important;
+        background: #00000040 !important;
+    }
+}
+
+@media screen and (min-width:481px) {
+    .modal-dialog {
+        max-width: 100% !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: calc(100% - 195px) !important;
+        left: 195px !important;
+        background: #00000040 !important;
+    }
+}
+
+.select-button {
+    color: black !important;
+}
+
+.ion-valid.sc-ion-input-md-h {
+    --highlight-color: #009CFF !important;
 }
