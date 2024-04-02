@@ -18,7 +18,7 @@
             z-index: 10;
             color: silver;
             font-size: 13px;
-            margin: 4px;" *ngIf="Category==undefined">Selecttag</label>
+            margin: 4px;" *ngIf="Category==undefined">Select</label>
               <select (change)="SelectCategory($event)" [(ngModel)]="Category" style="position: relative;">
                 <option *ngFor="let item of categories" [value]="item?.category">
                   {{item?.category}}

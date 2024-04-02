@@ -34,13 +34,13 @@
       <div class="itemtitle">{{ item.productName }}</div>
       <div class="itemtitle">
         <select name="" id="" style="width: 100%;
-        border: none;">
+        border: none;font-size: 14px !important;">
           <option value="" *ngFor="let item1 of item.manufacture">{{ item1.manufacturers }}</option>
         </select>
       </div>
       <div class="itemtitle">
         <select name="" id="" style="width: 100%;
-        border: none;">
+        border: none;font-size: 14px !important;">
           <option value="" *ngFor="let item1 of item.unitSize">{{ item1.sizes }}</option>
         </select>
       </div>
@@ -64,12 +64,21 @@
         <!-- **************01************** -->
         <div class="form-group">
           <label for="">Category</label>
-          <select *ngIf="categories?.length != 0" [(ngModel)]="selectedcategory">
-            <option *ngFor="let item of categories;let i = index" [value]="item.category"
-              [style.display]="item.category!='All' ?  'flex' : 'none'">
-              {{ item.category }}
-            </option>
-          </select>
+          <div>
+            <ion-label style="color: grey;
+            font-size: 12px;
+            position: absolute;
+            top: 137px;
+            z-index: 10;
+            left: 50px;" *ngIf="selectedcategory==undefined">Select</ion-label>
+            <select *ngIf="categories?.length != 0" [(ngModel)]="selectedcategory" (change)="CategorySelect($event)"
+              [value]="selectedcategory">
+              <option *ngFor="let item of categories;let i = index" [value]="item.category"
+                [style.display]="item.category!='All' ?  'flex' : 'none'">
+                {{ item.category }}
+              </option>
+            </select>
+          </div>
         </div>
         <div class="form-group">
           <label for="">Product Name</label>

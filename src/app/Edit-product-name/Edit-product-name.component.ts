@@ -29,7 +29,7 @@ export class EditProductNameComponent {
       this.app.loader = false
     }, 500)
     console.log(this.selectedcategory);
-    
+
     this.LocalCalculation()
   }
 
@@ -73,5 +73,7 @@ export class EditProductNameComponent {
     this.deleteAlert = false
   }
 
-
+  CategorySelect(data: any) {
+    this.selectedcategory = data.target.value
+  }
 }

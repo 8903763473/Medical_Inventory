@@ -474,7 +474,9 @@
 }
 
 
-
+.select-button {
+    color: black !important;
+}
 
 
 @media screen and (max-width:480px) {
@@ -576,6 +578,7 @@ tr:nth-child(even) {
 }
 
 .select-button {
+    color: black !important;
     font-size: 10px;
 }
 
