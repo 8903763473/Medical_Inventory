@@ -54,7 +54,7 @@ export class InventoryComponent {
     this.LocalInventory = JSON.parse(LocalData)
     this.categories = new Set(this.LocalInventory.map((res: any) => res.category));
     this.categories = Array.from(this.categories).map(category => ({ category }));
-    console.log(this.categories);    
+    console.log(this.categories);
     this.ProductByCategory = []
     this.MindateCalculation()
   }
@@ -117,10 +117,17 @@ export class InventoryComponent {
     if (PickerType == 'Expiry') {
       this.ExpiryDate = undefined
       this.ExpiryDatePopup = false
+      this.purchaseDatePopup = false
+      this.ManufactureDatePopup = false
     }
     else if (PickerType == 'Manufacture') {
       this.ManufactureDate = undefined
       this.ManufactureDatePopup = false
+      this.purchaseDatePopup = false
+    }
+    else if (PickerType == 'Purchase') {
+      this.purchaseDate = undefined
+      this.purchaseDatePopup=false
     }
   }
 
