@@ -30,7 +30,8 @@
       <i class="bi bi-arrow-left-square" *ngIf="Open==false" style="font-size: 25px;"></i>
     </a>
     <form class="d-none d-md-flex ms-4" class="SearchForm">
-      <input class="form-control border-0" placeholder="Search" [(ngModel)]="Search" (change)="change($event)">
+      <input class="form-control border-0" placeholder="Search" [(ngModel)]="Search" (change)="change($event)"
+        style="border: none !important;">
       <img src="../assets/img/search.svg" alt="">
     </form>
     <ion-icon name="menu-outline" style="font-size: 28px;

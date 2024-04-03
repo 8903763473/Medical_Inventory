@@ -35,6 +35,19 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
+    font-size: 70% !important;
+}
+
+.Tbody-3 {
+    tr td {
+        font-size: 70% !important;
+    }
+}
+
+Thead {
+    tr td {
+        font-size: 70% !important;
+    }
 }
 
 .firstGraph {

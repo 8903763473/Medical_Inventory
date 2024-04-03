@@ -63,8 +63,8 @@
   </div>
 
   <div class="form-popup-bg" *ngIf="ActionPopup">
-    <div (click)="ActionPopup=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;" class="overlay"></div>
+    <div (click)="ActionPopup=false" style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"
+      class="overlay"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
@@ -90,7 +90,8 @@
           <select (change)="SelectCategory($event)" style="width: 100%;
             border: 1px solid #cacaca;color: #0fa2ff;
             border-radius: 4px;" [(ngModel)]="NewCategory">
-            <option value="{{item.category}}" *ngFor="let item of categories" style="color: #0fa2ff;">{{item.category}}
+            <option value="{{item.category}}" *ngFor="let item of categories" style="color: #0fa2ff;"
+              [ngStyle]="{ 'display': item.category === 'All' ? 'none' : 'flex' }">{{item.category}}
             </option>
           </select>
         </div>

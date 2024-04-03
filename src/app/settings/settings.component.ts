@@ -66,6 +66,15 @@ export class SettingsComponent {
   selectedMonths: any = []
   DaysNames: any = []
 
+  WhatsappIcon: boolean = false
+  MailIcon: boolean = false
+  SmsIcon: boolean = false
+
+
+
+
+
+
   ScheduleList: any = [
     {
       name: 'Daily'
@@ -172,6 +181,9 @@ export class SettingsComponent {
       this.app.loader = false
     }, 500)
     console.log(this.selectedDays);
+    this.WhatsappIcon = false
+    this.MailIcon = false
+    this.SmsIcon = false
   }
 
   selectBox(id: any) {

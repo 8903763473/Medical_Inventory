@@ -93,7 +93,8 @@
           <select (change)="SelectCategory($event)" style="width: 100%;
             border: 1px solid #cacaca;color: #0fa2ff;
             border-radius: 4px;" [(ngModel)]="NewCategory">
-            <option value="{{item.category}}" *ngFor="let item of categories" style="color: #0fa2ff;">{{item.category}}
+            <option value="{{item.category}}" *ngFor="let item of categories" style="color: #0fa2ff;"
+              [ngStyle]="{ 'display': item.category === 'All' ? 'none' : 'flex' }">{{item.category}}
             </option>
           </select>
         </div>
@@ -146,7 +147,8 @@
           <select style="width: 100%;
             border: 1px solid #cacaca;color: #0fa2ff;
             border-radius: 4px;" [(ngModel)]="EditInventoryData.category" (change)="SelectCategory($event)">
-            <option value="{{EditInventoryData.category}}" *ngFor="let item of categories" style="color: #0fa2ff;">
+            <option value="{{EditInventoryData.category}}" *ngFor="let item of categories" style="color: #0fa2ff;"
+              [ngStyle]="{ 'display': item.category === 'All' ? 'none' : 'flex' }">
               {{item.category}}
             </option>
           </select>

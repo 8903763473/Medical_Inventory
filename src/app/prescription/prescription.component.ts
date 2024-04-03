@@ -39,27 +39,15 @@ export class PrescriptionComponent implements OnInit {
   EditPrescription: boolean = false
   allChecked: boolean = false
 
-
-  medications: any = [
-    { batch: 1, type: 'Tablet', name: 'Brufen', dose: '500mg', frequency: '1 - 1 - 0', expDate: '25 Apr 2024', quantity: 6, duration: 3 },
-    { batch: 1, type: 'Tablet', name: 'Aspirin', dose: '300mg', frequency: '1 - 0 - 2', expDate: '19 Apr 2024', quantity: 15, duration: 5 },
-    { batch: 4, type: 'Tablet', name: 'Crosin', dose: '200mg', frequency: '0 - 0 - 2', expDate: '30 Apr 2024', quantity: 6, duration: 3 }
-  ];
-
-
-
-
-
-
   ngOnInit() {
-    this.app.loader = true
-    setTimeout(() => {
-      this.app.loader = false
-    }, 500)
     this.app.ind = 4
     this.MorningQty = 1
     this.AfternoonQty = 1
     this.EveningQty = 1
+    this.app.loader = true
+    setTimeout(() => {
+      this.app.loader = false
+    }, 500)
     this.Categories()
   }
 
@@ -76,8 +64,6 @@ export class PrescriptionComponent implements OnInit {
     this.pickedCategory = data.category
     this.categoryListPopup = false
     this.ProductList = []
-    this.unitList = []
-    this.manufacturerList = []
     this.ProductList = this.DummyLocalInventory.filter((res: any) => {
       return res.category == data.category
     })
@@ -183,15 +169,10 @@ export class PrescriptionComponent implements OnInit {
   }
 
   AllCheck(data: any) {
-    console.log(data);
     if (data.target.checked == true) {
       this.allChecked = true
     } else {
       this.allChecked = false
     }
-  }
-
-  Unit() {
-    this.UnitListPopup = true
   }
 }

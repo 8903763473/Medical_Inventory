@@ -223,58 +223,51 @@
 
   <div *ngIf="notifyType" class="Social">
     <div style="width: 100%;height: 100%;position: fixed;top: 0;z-index: -1;" (click)="notifyType=false"></div>
-    <div class="notifyBox">
-      <ion-label style="font-size: 13px;
-      color: black;
-      font-weight: bold;
-      padding: 10px;">Notification Type</ion-label>
-      <div class="notifyTab">
-        <div class="notifyTab-In" [ngClass]="{'notifitabActive':notifyTab==1}" (click)="tab(1)">
-          <ion-label>Choose one</ion-label>
-        </div>
-        <div class="notifyTab-In" [ngClass]="{'notifitabActive':notifyTab==2}" (click)="tab(2)">
-          <ion-label>Choose Multiple</ion-label>
-        </div>
-      </div>
+    <section class="option-2">
+      <article>
+        <h2 style="font-size: 16px;
+        border-bottom: 1px solid grey;
+        line-height: 52px;
+        margin: 0;
+        text-align: center;"><span>Notification Type</span></h2>
 
-      <!-- ******ONE****** -->
+        <div class="group delay-[300ms]">
+          <div class="notify-title">
+            <ion-icon name="logo-whatsapp" style="color: #66f366 !important;"></ion-icon>
+            <span>Whatsapp</span>
+          </div>
+          <div class="group-hover:bg-lime-400 group-hover:text-slate-700 rightSide">
+            <ion-icon name="add-circle-outline" *ngIf="WhatsappIcon==false" (click)="WhatsappIcon=true"></ion-icon>
+            <ion-icon name="remove-circle-outline" *ngIf="WhatsappIcon==true" (click)="WhatsappIcon=false"></ion-icon>
+          </div>
+        </div>
 
-      <div class="types" *ngIf="notifyTab==1">
-        <div class="typesIn">
-          <ion-label>Whatsapp</ion-label>
-          <!-- <ion-checkbox></ion-checkbox> -->
-          <input type="checkbox" [checked]="ChooseoneId==1" (click)="chooseOnecheck(1)">
+        <div class="group delay-[400ms]">
+          <div class="notify-title">
+            <ion-icon name="mail-unread-outline" style="color: #da3948;"></ion-icon>
+            <span>Mail</span>
+          </div>
+          <div class="group-hover:bg-lime-400 group-hover:text-slate-700 rightSide">
+            <ion-icon name="add-circle-outline" *ngIf="MailIcon==false" (click)="MailIcon=true"></ion-icon>
+            <ion-icon name="remove-circle-outline" *ngIf="MailIcon==true" (click)="MailIcon=false"></ion-icon>
+          </div>
         </div>
-        <div class="typesIn">
-          <ion-label>SMS</ion-label>
-          <input type="checkbox" [checked]="ChooseoneId==2" (click)="chooseOnecheck(2)">
-        </div>
-        <div class="typesIn">
-          <ion-label>Mail</ion-label>
-          <input type="checkbox" [checked]="ChooseoneId==3" (click)="chooseOnecheck(3)">
-        </div>
-      </div>
 
-      <!-- ******MULTIPLE****** -->
-
-      <div class="types" *ngIf="notifyTab==2">
-        <div class="typesIn">
-          <ion-label>Whatsapp</ion-label>
-          <input type="checkbox">
+        <div class="group delay-[500ms]">
+          <div class="notify-title">
+            <ion-icon name="chatbox-ellipses-outline" style="color: #009cff;"></ion-icon>
+            <span>SMS</span>
+          </div>
+          <div class="group-hover:bg-lime-400 group-hover:text-slate-700 rightSide">
+            <ion-icon name="add-circle-outline" *ngIf="SmsIcon==false" (click)="SmsIcon=true"></ion-icon>
+            <ion-icon name="remove-circle-outline" *ngIf="SmsIcon==true" (click)="SmsIcon=false"></ion-icon>
+          </div>
+        </div><br>
+        <div class="DoneBtn" (click)="notifyType=false">
+          <ion-label>Done</ion-label>
         </div>
-        <div class="typesIn">
-          <ion-label>SMS</ion-label>
-          <input type="checkbox">
-        </div>
-        <div class="typesIn">
-          <ion-label>Mail</ion-label>
-          <input type="checkbox">
-        </div>
-      </div>
-
-
-      <ion-button style="font-size: 10px;" (click)="notifyType=false">Done</ion-button>
-    </div>
+      </article>
+    </section>
   </div>
 
 
@@ -289,19 +282,23 @@
       <form action="">
         <div class="form-group">
           <label for="">Select Schedule</label>
-          <select name="" id="" style="width: 100%;font-size: 13px;
-          border: 1px solid #cfcfcf;
-          border-radius: 4px; color: black;" [(ngModel)]="DailySchedule" (change)="ChooseSchedule($event)">
-            <option value="{{item.name}}" *ngFor="let item of ScheduleList" style="color: black;">{{item.name}}
-            </option>
-          </select>
+          <div>
+            <ion-label class="placeholder" *ngIf="DailySchedule==undefined">Select</ion-label>
+            <select name="" id="" style="width: 100%;font-size: 13px;
+          border: 1px solid #cfcfcf;position: relative;
+          border-radius: 4px; color: black;" [(ngModel)]="DailySchedule" (change)="ChooseSchedule($event)"
+              class="Inputholder">
+              <option value="{{item.name}}" *ngFor="let item of ScheduleList" style="color: black;">{{item.name}}
+              </option>
+            </select>
+          </div>
 
           <input type="text" (click)="week(DailySchedule)" *ngIf="DailySchedule=='Weekly'" style="width: 100%;
-          margin-top: 10px;font-size: 13px;
+          margin-top: 10px;font-size: 13px;padding: 5px;
           border: 1px solid #cecdcd;color: black;
           border-radius: 4px;" placeholder="select Days" [value]="DaysNames.join(', ')">
           <input type="text" (click)="week(DailySchedule)" *ngIf="DailySchedule=='Monthly'" style="width: 100%;
-          margin-top: 10px;font-size: 13px;
+          margin-top: 10px;font-size: 13px;padding: 5px;
           border: 1px solid #cecdcd;color: black;
           border-radius: 4px;" placeholder="select Months" [value]="DaysNames.join(', ')">
 

@@ -13,35 +13,35 @@ export class HomePage {
   Table1: any = [
     {
       "name": "Abilify",
-      "manufacture": "PureLife Pharmaceuticals",
+      "manufacture": "PureLife",
       "Quantity": 233,
       "purchasedate": "2020 Mar 16",
       "expairdat": "2024 June 05"
     },
     {
       "name": "Adderall",
-      "manufacture": "VitaCare Solutions",
+      "manufacture": "VitaCare",
       "Quantity": 123,
       "purchasedate": "2023 Dec 22",
       "expairdat": "2012 Mar 16"
     },
     {
       "name": "Azel",
-      "manufacture": "BioMed Innovations",
+      "manufacture": "BioMed",
       "Quantity": 236,
       "purchasedate": "2021 Dec 28",
       "expairdat": "2024 Mar 11"
     },
     {
       "name": "Actos",
-      "manufacture": "HealthTech Laboratories",
+      "manufacture": "HealthTech",
       "Quantity": 69,
       "purchasedate": "2020 Feb 13",
       "expairdat": "2024 May 30"
     },
     {
       "name": "Actemra",
-      "manufacture": "MediCo Pharmaceuticals",
+      "manufacture": "MediCo",
       "Quantity": 21,
       "purchasedate": "2023 Dec 19",
       "expairdat": "2024 Mar 09"
@@ -51,36 +51,36 @@ export class HomePage {
   Table2: any = [
     {
       name: "Paracetamol",
-      manufacture: "ABC Pharmaceuticals",
-      Quantity: "100 tablets",
+      manufacture: "Pharmaceuticals",
+      Quantity: "100",
       purchasedate: "2022 Dec 11",
       expairdat: "2024 Mar 02"
     },
     {
       name: "Ibuprofen",
       manufacture: "XYZ Pharma",
-      Quantity: "50 capsules",
+      Quantity: "50",
       purchasedate: "2022 Mar 29",
       expairdat: "2024 Apr 28"
     },
     {
       name: "Amoxicillin",
-      manufacture: "PQR Pharmaceuticals",
-      Quantity: "20 tablets",
+      manufacture: "Pharmaceuticals",
+      Quantity: "20",
       purchasedate: "2021 Apr 10",
       expairdat: "2024 May 02"
     },
     {
       name: "Loratadine",
       manufacture: "LMN Pharma",
-      Quantity: "30 tablets",
+      Quantity: "30",
       purchasedate: "2020 Oct 10",
       expairdat: "2024 June 10"
     },
     {
       name: "Omeprazole",
-      manufacture: "EFG Pharmaceuticals",
-      Quantity: "40 capsules",
+      manufacture: "Pharmaceuticals",
+      Quantity: "40",
       purchasedate: "2022 May 28",
       expairdat: "2024 Oct 08"
     }
@@ -89,7 +89,7 @@ export class HomePage {
   Table3: any = [
     {
       "name": "HealWell Tablets",
-      "manufacture": "PureCare Pharmaceuticals",
+      "manufacture": "PureCare",
       "Quantity": 32,
       "purchasedate": "2023 Dec 31",
       "expairdat": "2024 June 29"
@@ -103,7 +103,7 @@ export class HomePage {
     },
     {
       "name": "PureRelief Injection",
-      "manufacture": "WellnessTech Pharmaceuticals",
+      "manufacture": "WellnessTech",
       "Quantity": 76,
       "purchasedate": "2022 Nov 23",
       "expairdat": "2024 Apr 09"
@@ -249,7 +249,7 @@ export class HomePage {
       productName: 'VitaTab Ultra',
       manufacturer: [
         {
-          manufacturers: 'LifeScience Pharmaceuticals',
+          manufacturers: 'LifeScience',
         },
         {
           manufacturers: 'Wellness Labs',
@@ -276,7 +276,7 @@ export class HomePage {
       productName: 'CureCapsule Max',
       manufacturer: [
         {
-          manufacturers: 'LifeScience Pharmaceuticals',
+          manufacturers: 'LifeScience',
         },
         {
           manufacturers: 'Wellness Labs',
@@ -303,7 +303,7 @@ export class HomePage {
       productName: 'LifePill Essential',
       manufacturer: [
         {
-          manufacturers: 'LifeScience Pharmaceuticals',
+          manufacturers: 'LifeScience',
         },
         {
           manufacturers: 'Wellness Labs',
@@ -546,7 +546,7 @@ export class HomePage {
       productName: 'CoughEase',
       manufacturer: [
         {
-          manufacturers: 'BioCure Pharmaceuticals',
+          manufacturers: 'BioCure',
         },
         {
           manufacturers: 'QuickRelief Pharma',
@@ -573,7 +573,7 @@ export class HomePage {
       productName: 'ThroatSoothe',
       manufacturer: [
         {
-          manufacturers: 'BioCure Pharmaceuticals',
+          manufacturers: 'BioCure',
         },
         {
           manufacturers: 'MediCalm Corp.',
@@ -600,10 +600,10 @@ export class HomePage {
       productName: 'HealthBoost Injectable',
       manufacturer: [
         {
-          manufacturers: 'BioCure Pharmaceuticals',
+          manufacturers: 'BioCure',
         },
         {
-          manufacturers: 'MediLife Pharmaceuticals',
+          manufacturers: 'MediLife',
         },
         {
           manufacturers: 'ColdCare Labs'
@@ -627,7 +627,7 @@ export class HomePage {
           manufacturers: 'NutraVaccines Inc.',
         },
         {
-          manufacturers: 'MediLife Pharmaceuticals',
+          manufacturers: 'MediLife',
         },
         {
           manufacturers: 'ColdCare Labs'
@@ -651,7 +651,7 @@ export class HomePage {
           manufacturers: 'BioTech Therapeutics Ltd.',
         },
         {
-          manufacturers: 'MediLife Pharmaceuticals',
+          manufacturers: 'MediLife',
         },
         {
           manufacturers: 'ColdCare Labs'
@@ -864,7 +864,7 @@ export class HomePage {
       productName: 'VitaCaps Pro',
       manufacturer: [
         {
-          manufacturers: 'NutriLife Pharmaceuticals',
+          manufacturers: 'NutriLife',
         },
         {
           manufacturers: 'HealthWell Labs Inc.',
@@ -888,7 +888,7 @@ export class HomePage {
       productName: 'BioCaps Advanced',
       manufacturer: [
         {
-          manufacturers: 'NutriLife Pharmaceuticals',
+          manufacturers: 'NutriLife',
         },
         {
           manufacturers: 'HealthWell Labs Inc.',
@@ -912,7 +912,7 @@ export class HomePage {
       productName: 'WellnessCaps Max',
       manufacturer: [
         {
-          manufacturers: 'NutriLife Pharmaceuticals',
+          manufacturers: 'NutriLife',
         },
         {
           manufacturers: 'HealthWell Labs Inc.',
@@ -936,7 +936,7 @@ export class HomePage {
       productName: 'NutraPill Elite',
       manufacturer: [
         {
-          manufacturers: 'NutriLife Pharmaceuticals',
+          manufacturers: 'NutriLife',
         },
         {
           manufacturers: 'NutriVita Corp.',
