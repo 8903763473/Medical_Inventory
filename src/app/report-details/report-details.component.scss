@@ -10,6 +10,15 @@ section {
         background-color: white !important;
     }
 
+    .Table {
+        width: 100% !important;
+        overflow-x: scroll !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        flex-direction: column;
+    }
+
     .head {
         color: #007AFF !important;
         font-family: Poppins;
@@ -68,14 +77,14 @@ section {
         position: fixed;
         width: calc(100% - 195px);
         height: 100%;
-        margin-left: 195px;
+        margin-left: 0;
         border-radius: 0px 12px 12px 0px;
         overflow: scroll;
         padding: 10px !important;
     }
 
     .content-bar {
-        width: calc(100% - 40px);
+        width: max-content !important;
         margin-left: 20px;
         margin-top: 10px;
         background: #fff;
@@ -83,7 +92,7 @@ section {
         border-radius: 12px;
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 0fr 2fr 1fr 1fr 1fr 0fr;
+        grid-template-columns: 0fr 1fr 1fr 1fr 1fr 0fr;
 
         div {
             width: auto;
@@ -327,7 +336,7 @@ section {
 
         .content-area {
             height: 100%;
-            width: calc(100% - 250px);
+            width: calc(100% - 195px);
             border-radius: 0px;
         }
     }
@@ -345,12 +354,12 @@ section {
             left: -251px;
         }
 
-        .content-area {
-            height: 100%;
-            width: calc(100%);
-            border-radius: 0px;
-            margin-left: 0px;
-        }
+        // .content-area {
+        //     height: 100%;
+        //     width: calc(100%);
+        //     border-radius: 0px;
+        //     margin-left: 0px;
+        // }
 
         .mobilebar {
             background: #fff;
@@ -553,7 +562,8 @@ section {
         position: relative;
         padding: 40px;
         color: #fff;
-        height: auto;
+        max-height: 95% !important;
+        overflow: scroll !important;
 
         .close-button {
             background: none;
@@ -578,7 +588,7 @@ section {
     font-weight: bold;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
 
     .Top {
         width: 100%;
@@ -626,5 +636,77 @@ section {
     .head {
         font-size: 19px !important;
         justify-content: center !important;
+    }
+
+    .content-area {
+        width: 100% !important;
+    }
+
+    .Top {
+        padding: 10px !important;
+    }
+}
+
+
+
+
+@media screen and (max-width:915px) {
+
+    .filter {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end !important;
+        gap: 10px;
+        margin-top: 15px;
+
+        ion-label {
+            // position: inherit !important;
+        }
+
+        select {
+            width: 130px !important;
+            // position: inherit !important;
+        }
+
+        .title {
+            right: 175px !important;
+        }
+    }
+
+    .head {
+        font-size: 18px !important;
+    }
+}
+
+
+
+
+@media screen and (max-width:830px) {
+
+    .filter {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end !important;
+        gap: 10px;
+        margin-top: 15px;
+
+        ion-label {
+            position: inherit !important;
+        }
+
+        select {
+            width: 130px !important;
+            position: inherit !important;
+        }
+
+        .title {
+            right: 175px !important;
+        }
+    }
+
+    .head {
+        font-size: 18px !important;
     }
 }

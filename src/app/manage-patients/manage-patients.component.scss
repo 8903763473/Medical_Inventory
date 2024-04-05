@@ -1,10 +1,6 @@
 section {
-    // body {
-    //     background: linear-gradient(#7ad1ff, #3a99de) fixed;
-    //     padding: 40px;
-    //     font-family: 'Rubik', sans-serif;
-    //     margin: 0;
-    // }
+    height: 100% !important;
+    overflow: scroll !important;
 
     .head {
         color: #007AFF !important;
@@ -64,7 +60,7 @@ section {
         position: fixed;
         width: calc(100% - 195px);
         height: 100%;
-        margin-left: 195px;
+        margin-left: 0;
         border-radius: 0px 12px 12px 0px;
         overflow: scroll;
         padding: 10px !important;
@@ -79,7 +75,7 @@ section {
         border-radius: 12px;
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr 0fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
         div {
             white-space: nowrap;
@@ -321,7 +317,7 @@ section {
 
         .content-area {
             height: 100%;
-            width: calc(100% - 250px);
+            width: calc(100% - 195px);
             border-radius: 0px;
         }
     }
@@ -339,12 +335,12 @@ section {
             left: -251px;
         }
 
-        .content-area {
-            height: 100%;
-            width: calc(100%);
-            border-radius: 0px;
-            margin-left: 0px;
-        }
+        // .content-area {
+        //     height: 100%;
+        //     width: calc(100%);
+        //     border-radius: 0px;
+        //     margin-left: 0px;
+        // }
 
         .mobilebar {
             background: #fff;
@@ -547,7 +543,8 @@ section {
         position: relative;
         padding: 40px;
         color: #fff;
-        height: auto;
+        max-height: 95% !important;
+        overflow: scroll !important;
 
         .close-button {
             background: none;
@@ -584,7 +581,24 @@ section {
     background: #00000047;
 }
 
-@media screen and (max-width:480px) {
+.form-container {
+    max-height: 95% !important;
+    overflow: scroll !important;
+}
+
+
+@media screen and (max-width:440px) {
+    .form-container {
+        max-width: 80% !important;
+        padding: 20px !important;
+
+        h1 {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
     .section {
         overflow: hidden !important;
     }
@@ -594,7 +608,8 @@ section {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin-top: 20px;
+        margin-top: 0px;
+        height: 86px !important;
 
         ion-label,
         select,
@@ -619,8 +634,141 @@ section {
     .Table {
         overflow-x: scroll !important;
     }
+
     .modal-dialog {
         width: 100% !important;
         left: 0 !important;
+    }
+
+    .content-area {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .Top {
+
+        ion-label {
+            top: 51px !important;
+        }
+
+        ion-button {
+            top: 42px !important;
+        }
+
+        select {
+            top: 46px !important;
+        }
+    }
+
+    .form-container {
+
+        h1 {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media screen and (max-width:330px) {
+    .modal-dialog {
+        width: 100% !important;
+        left: 0 !important;
+
+        .modal-content {
+            width: 85% !important;
+        }
+    }
+
+    .form-container {
+
+        h1 {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media screen and (max-width:630px) {
+    .form-container {
+        max-width: 360px !important;
+    }
+}
+
+@media screen and (max-width:910px) {
+    .Table {
+        width: max-content !important;
+    }
+
+    .head {
+        position: inherit !important;
+        z-index: 10;
+    }
+
+    .Top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: inherit;
+        height: 60px;
+        background: #f6f6fc;
+        top: 0;
+        left: 0;
+
+        ion-label,
+        select {
+            position: inherit !important;
+        }
+    }
+}
+
+
+
+@media screen and (max-width:790px) {
+    .head {
+        font-size: 16px !important;
+    }
+
+    .Top {
+        ion-label {
+            font-size: 12px !important;
+            top: 18px;
+            right: 210px;
+        }
+
+        select {
+            top: 12px;
+            right: 83px !important;
+            width: 120px !important;
+        }
+
+        ion-button {
+            font-size: 10px !important;
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    // .Top {
+    //     ion-label {
+    //         display: none !important;
+    //     }
+    // }
+
+    .Top {
+        ion-label {
+            font-size: 12px !important;
+            top: 18px;
+            right: 165px !important;
+        }
+
+        select {
+            top: 12px;
+            right: 65px !important;
+            width: 95px !important;
+        }
+
+        ion-button {
+            font-size: 10px !important;
+            right: 3px !important;
+        }
     }
 }

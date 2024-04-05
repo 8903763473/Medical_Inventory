@@ -1,4 +1,4 @@
-<section>
+<section class="Fullpage">
   <div class="content-area">
     <ion-label class="head">Inventory Types</ion-label>
     <!-- <ion-icon name="trash-outline" class="DeleteIcon"></ion-icon> -->
@@ -6,26 +6,28 @@
     <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
     <br><br>
 
-    <div class="content-bar" style="background: #009cff;">
-      <div class="itemtitle" style="color: white;">S.no</div>
-      <div class="itemprice" style="color: white;">Medicine Type</div>
-    </div>
+    <div class="Table">
+      <div class="content-bar" style="background: #009cff;">
+        <div class="itemtitle" style="color: white;">S.no</div>
+        <div class="itemprice" style="color: white;">Medicine Type</div>
+      </div>
 
-    <div class="content-bar" *ngFor="let item of categories;let i = index">
-      <div class="itemtitle">{{i + 1}}</div>
-      <div class="itemtitle">{{item.category}}</div>
-      <div class="btncontainer">
+      <div class="content-bar" *ngFor="let item of categories;let i = index">
+        <div class="itemtitle">{{i + 1}}</div>
+        <div class="itemtitle">{{item.category}}</div>
+        <div class="btncontainer">
 
-        <button class="cbbtn"><ion-icon name="create-outline" (click)="EditInvent(item)"></ion-icon></button>
-        <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+          <button class="cbbtn"><ion-icon name="create-outline" (click)="EditInvent(item)"></ion-icon></button>
+          <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+        </div>
       </div>
     </div>
   </div>
 
 
   <div class="form-popup-bg" *ngIf="ActionPopup">
-    <div (click)="ActionPopup=false"
-      style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"></div>
+    <div (click)="ActionPopup=false" style="width: calc(100% -  195px);height: 100%;position: fixed;top: 0;left: 195px;"
+      class="overlay"></div>
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;

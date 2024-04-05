@@ -30,7 +30,15 @@
     display: none !important;
 }
 
-@media screen and (max-width: 480px) {
+
+@media screen and (min-width: 576px) {
+    .navbar {
+        padding-left: 0px !important;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
     .SearchForm {
         margin-left: 0 !important;
         width: 85% !important;
@@ -42,5 +50,9 @@
 
     .MenuIcon {
         display: flex !important;
+    }
+
+    .navbar {
+        padding-left: 10px !important;
     }
 }

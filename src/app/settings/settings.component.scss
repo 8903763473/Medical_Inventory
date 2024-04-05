@@ -417,11 +417,9 @@
         position: relative;
         padding: 20px;
         color: #fff;
-        // height: auto;
-
         max-width: fit-content;
-        height: auto;
-        overflow: scroll;
+        max-height: 95% !important;
+        overflow: scroll !important;
 
         .close-button {
             background: none;
@@ -835,7 +833,12 @@
 
 // **************************Mobile Screen************************
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
+    .cardContainer {
+        height: -webkit-fill-available !important;
+        overflow: scroll !important;
+    }
+
     .fullpage1 {
         width: 100% !important;
         margin-left: 0 !important;
@@ -889,6 +892,116 @@
 
             ion-label {
                 font-size: 16px !important;
+            }
+        }
+    }
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    .cardContainer {
+        height: -webkit-fill-available !important;
+        overflow: scroll !important;
+    }
+
+    #minimal-statistics {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+
+        .AllTiles {
+            width: 100% !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+
+            .col-sm-6 {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:990px) {
+    .cardContainer {
+        height: inherit !important;
+        overflow: scroll !important;
+    }
+
+    #minimal-statistics {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+
+        .AllTiles {
+            width: 100% !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+
+            .col-sm-6 {
+                width: 50% !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:990px) {
+    .AllTiles {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 25% 25% 25% 25% !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        .col-sm-6 {
+            width: 100% !important;
+        }
+    }
+
+    .Tile-title {
+        font-size: 11px !important;
+    }
+}
+
+@media screen and (max-width:329px) {
+    .placeholder {
+        top: 148px !important;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .form-container {
+        h1 {
+            font-size: 26px !important;
+        }
+    }
+}
+
+
+@media screen and (max-width:750px) {
+    .DaysForm {
+        display: grid !important;
+        grid-template-columns: 13% 13% 13% 13% 13% 13% !important;
+    }
+}
+
+@media screen and (max-width:440px) {
+    .option-2 {
+        width: 250px !important;
+
+        .notify-title {
+            ion-icon {
+                font-size: 25px !important;
+            }
+
+            span {
+                font-size: 15px !important;
+            }
+        }
+
+        .rightSide {
+            ion-icon {
+                font-size: 15px !important;
             }
         }
     }

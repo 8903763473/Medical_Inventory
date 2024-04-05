@@ -9,12 +9,15 @@ section {
 
         th {
             color: #FFF;
-            text-align: center;
+            text-align: start;
             font-family: Poppins;
-            font-size: 12px;
+            font-size: 14px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            width: 195px;
+            text-wrap: nowrap;
+            padding: 5px 25px 5px 10px;
         }
 
         .dollar {
@@ -22,12 +25,16 @@ section {
         }
 
         tbody {
-            color: #4F4F4F;
+            color: #000000;
+            text-align: start;
             font-family: Poppins;
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            width: 195px;
+            text-wrap: nowrap;
+            padding: 5px 25px;
         }
     }
 
@@ -398,9 +405,14 @@ section {
 }
 
 
+.variable {
+    width: 117px !important;
+}
+
+
 // ****************************Media Codes*************************
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
     .AddInv {
         flex-direction: column !important;
 
@@ -421,5 +433,61 @@ section {
 
     .addToBtn {
         justify-content: center !important;
+    }
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    .AddInv {
+        flex-direction: column !important;
+
+        .inputs {
+            width: 100% !important;
+        }
+    }
+
+    .addToBtn {
+        width: 100% !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:835px) {
+    .AddInv {
+        flex-direction: column !important;
+
+        .inputs {
+            width: 100% !important;
+        }
+    }
+
+    .addToBtn {
+        width: 96% !important;
+    }
+}
+
+@media (min-width:836px) and (max-width:900px) {
+    .AddInv {
+        // flex-direction: column !important;
+
+        .inputs {
+            width: 48% !important;
+        }
+    }
+
+    .addToBtn {
+        width: 96% !important;
+    }
+}
+
+@media (min-width:901px) {
+    .AddInv {
+        // flex-direction: column !important;
+
+        .inputs {
+            width: 48% !important;
+        }
+    }
+
+    .addToBtn {
+        width: 96% !important;
     }
 }

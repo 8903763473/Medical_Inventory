@@ -1,269 +1,271 @@
-<div class="PrescriptionDet">
-  <!-- <div style="width: calc(100% - 195px);height: 100%;position: fixed;top: 0;left: 195px;z-index: -1;"
-    (click)="PrescriptionDetails=false"></div> -->
+<section class="Fullpage">
+  <div class="PrescriptionDet">
+    <!-- <div style="width: calc(100% - 195px);height: 100%;position: fixed;top: 0;left: 195px;z-index: -1;"
+      (click)="PrescriptionDetails=false"></div> -->
 
-  <div class='wrapper'>
-    <div class='unodos'>
-      <div class='wrapper-main'>
+    <div class='wrapper'>
+      <div class='unodos'>
+        <div class='wrapper-main'>
 
-        <div class='contenedor-totales'>
-          <div class='main-table-containter'>
-            <div class='title-table-container' style="padding: 10px 0 !important;">
-              <div class='websubtitle'
-                style="margin: 0;display: flex;align-items: center;justify-content: center;gap: 10px;">
-                <ion-icon name="arrow-back-outline" class="PrescriptionTitle" (click)="Delivered()"></ion-icon>
-                Prescription Details
+          <div class='contenedor-totales'>
+            <div class='main-table-containter'>
+              <div class='title-table-container' style="padding: 10px 0 !important;">
+                <div class='websubtitle'
+                  style="margin: 0;display: flex;align-items: center;justify-content: center;gap: 10px;">
+                  <ion-icon name="arrow-back-outline" class="PrescriptionTitle" (click)="Delivered()"></ion-icon>
+                  Prescription Details
+                </div>
+                <button class='select-button' style="font-size: 10px;
+                margin: 0;"> Order ID : MI-007 </button>
               </div>
-              <button class='select-button' style="font-size: 10px;
-              margin: 0;"> Order ID : MI-007 </button>
-            </div>
-            <div style="width: 100%;height: 100%;">
-              <table style="height: 100%;">
-                <tbody style="border: 1px solid #3398ff;">
+              <div style="width: 100%;height: 100%;" class="FullTable">
+                <table style="height: 100%;">
+                  <tbody style="border: 1px solid #3398ff;">
 
-                  <tr style="background: #3398ff;
-                  color: white;">
-                    <td>
-                      Batch
-                    </td>
-                    <td>Type</td>
-                    <td>Name</td>
-                    <td>Dose</td>
-                    <td>
-                      <div>Frequency</div>
-                    </td>
-                    <td>Exp Date</td>
-                    <td>
-                      Quantity
-                    </td>
-                    <td>
-                      Duration
-                    </td>
-                    <td>
-                      <ion-checkbox (ionChange)="AllCheck($event)"></ion-checkbox>
-                    </td>
-                  </tr>
+                    <tr style="background: #3398ff;
+                    color: white;">
+                      <td>
+                        Batch
+                      </td>
+                      <td>Type</td>
+                      <td>Name</td>
+                      <td>Dose</td>
+                      <td>
+                        <div>Frequency</div>
+                      </td>
+                      <td>Exp Date</td>
+                      <td>
+                        Quantity
+                      </td>
+                      <td>
+                        Duration
+                      </td>
+                      <td>
+                        <ion-checkbox (ionChange)="AllCheck($event)"></ion-checkbox>
+                      </td>
+                    </tr>
 
 
-                  <tr>
-                    <td>
-                      <div class='icono-texto'>
-                        <div>1</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Tablet</div>
-                    </td>
-                    <td>Brufen</td>
-                    <td>400mg</td>
-                    <td>1 - 1 - 0</td>
-                    <td>25 Apr 2024</td>
-                    <td>
-                      <input type="text" value="6" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;">
-                    </td>
-                    <td>
-                      <input type="text" value="3" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;">&nbsp;Days
-                    </td>
-                    <td>
-                      <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
-                    </td>
-                  </tr>
-                  <tr style="background: #009cff24 !important;">
-                    <td>
-                      <div class='icono-texto'>
-                        <div>1</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Tablet</div>
-                    </td>
-                    <td>Aspirin</td>
-                    <td>400mg</td>
-                    <td>1 - 0 - 2</td>
-                    <td>9 Apr 2024</td>
-                    <td><input type="text" value="15" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;"></td>
-                    <td><input type="text" value="5" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;">&nbsp;Days</td>
-                    <td>
-                      <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class='icono-texto'>
-                        <div>4</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Tablet</div>
-                    </td>
-                    <td>Crosin</td>
-                    <td>400mg</td>
-                    <td>1 - 0 - 2</td>
-                    <td>30 Apr 2024</td>
-                    <td><input type="text" value="6" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;"></td>
-                    <td><input type="text" value="2" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;">&nbsp;Days
-                    </td>
-                    <td>
-                      <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
-                    </td>
-                  </tr>
-                  <tr style="background: #009cff24 !important;">
-                    <td>
-                      <div class='icono-texto'>
-                        <div>2</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Tablet</div>
-                    </td>
-                    <td>Action 500</td>
-                    <td>400mg</td>
-                    <td>1 - 1 - 0</td>
-                    <td>12 Apr 2024</td>
-                    <td><input type="text" value="10" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;"></td>
-                    <td><input type="text" value="5" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;">&nbsp;Days</td>
-                    <td>
-                      <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>1</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Brufen</td>
+                      <td>400mg</td>
+                      <td>1 - 1 - 0</td>
+                      <td>25 Apr 2024</td>
+                      <td>
+                        <input type="text" value="6" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">
+                      </td>
+                      <td>
+                        <input type="text" value="3" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days
+                      </td>
+                      <td>
+                        <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
+                      </td>
+                    </tr>
+                    <tr style="background: #009cff24 !important;">
+                      <td>
+                        <div class='icono-texto'>
+                          <div>1</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Aspirin</td>
+                      <td>400mg</td>
+                      <td>1 - 0 - 2</td>
+                      <td>9 Apr 2024</td>
+                      <td><input type="text" value="15" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;"></td>
+                      <td><input type="text" value="5" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days</td>
+                      <td>
+                        <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>4</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Crosin</td>
+                      <td>400mg</td>
+                      <td>1 - 0 - 2</td>
+                      <td>30 Apr 2024</td>
+                      <td><input type="text" value="6" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;"></td>
+                      <td><input type="text" value="2" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days
+                      </td>
+                      <td>
+                        <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
+                      </td>
+                    </tr>
+                    <tr style="background: #009cff24 !important;">
+                      <td>
+                        <div class='icono-texto'>
+                          <div>2</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Action 500</td>
+                      <td>400mg</td>
+                      <td>1 - 1 - 0</td>
+                      <td>12 Apr 2024</td>
+                      <td><input type="text" value="10" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;"></td>
+                      <td><input type="text" value="5" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days</td>
+                      <td>
+                        <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <div class='icono-texto'>
-                        <div>3</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Tablet</div>
-                    </td>
-                    <td>Heal</td>
-                    <td>400mg</td>
-                    <td>1 - 1 - 0</td>
-                    <td>15 June 2024</td>
-                    <td>
-                      <input type="text" value="6" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;">
-                    </td>
-                    <td>
-                      <input type="text" value="3" style="width: 30px;
-                      border: 1px solid grey;
-                      text-align: center;
-                      border-radius: 3px;">&nbsp;Days
-                    </td>
-                    <td>
-                      <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <div class='icono-texto'>
+                          <div>3</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>Tablet</div>
+                      </td>
+                      <td>Heal</td>
+                      <td>400mg</td>
+                      <td>1 - 1 - 0</td>
+                      <td>15 June 2024</td>
+                      <td>
+                        <input type="text" value="6" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">
+                      </td>
+                      <td>
+                        <input type="text" value="3" style="width: 30px;
+                        border: 1px solid grey;
+                        text-align: center;
+                        border-radius: 3px;">&nbsp;Days
+                      </td>
+                      <td>
+                        <ion-checkbox [checked]="AllCheckBox"></ion-checkbox>
+                      </td>
+                    </tr>
 
 
-                </tbody>
-              </table>
-              <div style="width: 100%;display: flex;align-items: center;justify-content: flex-end;">
-                <div style="padding: 3px 6px;margin: 20px 0 0 0;
-              background: #3880ff;
-              border-radius: 3px;
-              display: flex;
-              align-items: center;
-              justify-content: center;" (click)="Delivered()">
-                  <ion-label style="font-size: 12px;font-weight: 300;color: white;">Delivered</ion-label>
-                </div><br>
+                  </tbody>
+                </table>
+                <div style="width: 100%;display: flex;align-items: center;justify-content: flex-end;">
+                  <div style="padding: 3px 6px;margin: 20px 0 0 0;
+                background: #3880ff;
+                border-radius: 3px;
+                display: flex;
+                align-items: center;
+                justify-content: center;" (click)="Delivered()">
+                    <ion-label style="font-size: 12px;font-weight: 300;color: white;">Delivered</ion-label>
+                  </div><br>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
-      </div>
+        <div class='right wrapper-main' style="height: 100%;
+        border-left: 1px solid grey;">
+          <div class='contactos' style="margin-top: 40px">
 
-      <div class='right wrapper-main' style="height: 100%;
-      border-left: 1px solid grey;">
-        <div class='contactos' style="margin-top: 40px">
-
-          <div class='Mobilesubtitle'>
-            <ion-icon name="arrow-back-outline" class="PrescriptionTitle" (click)="Delivered()"></ion-icon>
-            Prescription Details
-          </div>
-
-
-          <div class='body-contactos' style="display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;flex-direction: column;
-          width: 100%;">
-            <div class="col-10" style="padding: 6px;margin: 0px !important;">
-              <div class="doc-details" style="margin-left: 0 !important;">
-                <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;font-size: 13px;
-                color: black;
-                font-weight: 700;
-                font-family: 'circular';">Doctor Information</p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Dr.John , F.I.A.G.E.S ,
-                  F.UROGYN(USA), MBBS</p>
-              </div>
-              <div class="clinic-details" style="margin-left: 0 !important;">
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">98546 63473</p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Near A2G Appartment</p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">Trichendur Main
-                  Road ,
-                </p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                  Palayamkottai,Thoothukudi
-                  Dist-628205
-                </p>
-
-              </div>
-            </div>
-
-            <div class="col-10" style="padding: 6px;margin-left: 0px !important;">
-              <div class="doc-details" style="margin-left: 0 !important;">
-                <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;font-size: 13px;
-                color: black;
-                font-weight: 700;
-                font-family: 'circular';">Patient Information</p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Mr .Selvan</p>
-              </div>
-              <div class="clinic-details" style="margin-left: 0 !important;">
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">45 Years old</p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">89037 63473</p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                  123,South Street
-                </p>
-                <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                  Palayamkottai , Perumalpuram- 628205
-                </p>
-                <!-- <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
-                  Thoothukudi Dist 
-                </p> -->
-              </div>
+            <div class='Mobilesubtitle'>
+              <ion-icon name="arrow-back-outline" class="PrescriptionTitle" (click)="Delivered()"></ion-icon>
+              Prescription Details
             </div>
 
 
+            <div class='body-contactos' style="display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;flex-direction: column;
+            width: 100%;">
+              <div class="col-10" style="padding: 6px;margin: 0px !important;">
+                <div class="doc-details" style="margin-left: 0 !important;">
+                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;font-size: 13px;
+                  color: black;
+                  font-weight: 700;
+                  font-family: 'circular';">Doctor Information</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Dr.John , F.I.A.G.E.S ,
+                    F.UROGYN(USA), MBBS</p>
+                </div>
+                <div class="clinic-details" style="margin-left: 0 !important;">
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">98546 63473</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Near A2G Appartment</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">Trichendur Main
+                    Road ,
+                  </p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    Palayamkottai,Thoothukudi
+                    Dist-628205
+                  </p>
+
+                </div>
+              </div>
+
+              <div class="col-10" style="padding: 6px;margin-left: 0px !important;">
+                <div class="doc-details" style="margin-left: 0 !important;">
+                  <p class="doc-name" style="margin-left: 0 !important;font-size: 10px;font-size: 13px;
+                  color: black;
+                  font-weight: 700;
+                  font-family: 'circular';">Patient Information</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">Mr .Selvan</p>
+                </div>
+                <div class="clinic-details" style="margin-left: 0 !important;">
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;">45 Years old</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">89037 63473</p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    123,South Street
+                  </p>
+                  <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    Palayamkottai , Perumalpuram- 628205
+                  </p>
+                  <!-- <p class="doc-meta" style="margin-left: 0 !important;font-size: 10px;margin-top: 4px;">
+                    Thoothukudi Dist 
+                  </p> -->
+                </div>
+              </div>
+
+
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

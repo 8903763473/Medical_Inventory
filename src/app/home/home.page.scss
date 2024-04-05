@@ -67,7 +67,18 @@ Thead {
 }
 
 
-@media screen and (max-width:480px) {
+
+.card-body .row .col {
+    padding: 0 0 0 10px !important;
+}
+
+.bottom {
+    font-size: 10px !important;
+}
+
+// *****************************Media Code***************************
+
+@media screen and (max-width:576px) {
     .container-fluid {
         padding: 10px !important;
     }
@@ -163,13 +174,170 @@ Thead {
     .FullTable {
         width: 100% !important;
     }
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    .Stat {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column !important;
+
+        .Stat-In {
+            width: 98% !important;
+        }
+    }
+
+    .firstGraph {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .FullTable {
+        width: 100% !important;
+
+        .TABLE {
+            width: -webkit-fill-available !important;
+            overflow-x: scroll;
+
+            thead {
+                width: 100%;
+
+                tr {
+                    th {
+                        min-width: 130px !important;
+                    }
+                }
+            }
+
+            tbody {
+                width: 100%;
+
+                tr {
+                    td {
+                        min-width: 130px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .Graphs {
+        flex-direction: column !important;
+
+        .GraphsIn {
+            width: 100% !important;
+        }
+    }
+}
 
 
+@media (min-width:769px) and (max-width:992px) {
+
+    .firstGraph {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .FullTable {
+        width: 100% !important;
+
+        .TABLE {
+            width: -webkit-fill-available !important;
+            overflow-x: scroll;
+
+            thead {
+                width: 100%;
+
+                tr {
+                    th {
+                        min-width: 130px !important;
+                    }
+                }
+            }
+
+            tbody {
+                width: 100%;
+
+                tr {
+                    td {
+                        min-width: 130px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .Graphs {
+        flex-direction: column !important;
+
+        .GraphsIn {
+            width: 100% !important;
+        }
+    }
+}
 
 
+@media (min-width:992px) {
+    .firstGraph {
+        display: flex !important;
+        flex-direction: row !important;
+    }
 
+    .Stat-In {
+        width: 25% !important;
+    }
 
+    .FullTable {
+        width: 100% !important;
 
+        .TABLE {
+            width: -webkit-fill-available !important;
+            overflow-x: scroll;
 
+            thead {
+                width: 100%;
 
+                tr {
+                    th {
+                        min-width: 130px !important;
+                    }
+                }
+            }
+
+            tbody {
+                width: 100%;
+
+                tr {
+                    td {
+                        min-width: 130px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .secondCanvas {
+        min-height: 240px !important;
+
+        .Round {
+            min-height: 240px !important;
+
+            .CanvasDiv {
+                min-height: 240px !important;
+
+                canvas {
+                    min-height: 240px !important;
+                }
+            }
+        }
+    }
+
+    .Graphs {
+        flex-direction: row !important;
+
+        .GraphsIn {
+            width: 49% !important;
+        }
+    }
 }

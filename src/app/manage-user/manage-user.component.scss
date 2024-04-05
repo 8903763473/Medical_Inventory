@@ -1,6 +1,10 @@
 section {
     width: 100%;
 
+    ::-webkit-scrollbar {
+        width: 0 !important;
+    }
+
     .txt {
         width: 100%;
         display: flex;
@@ -84,7 +88,7 @@ section {
         background: #F9F9F9;
         // display: flex;
         display: grid;
-        grid-template-columns: 25% 37.5% 37.5%;
+        grid-template-columns: 18% 37.5% 37.5%;
         align-items: flex-start;
         justify-content: center;
         gap: 30px;
@@ -130,7 +134,7 @@ section {
         }
 
         .two {
-            width: 93% !important;
+            width: 95% !important;
         }
 
         .AlertInput {
@@ -153,7 +157,7 @@ section {
 
             .variable {
                 display: flex;
-                width: 155px;
+                width: 95px;
                 height: 30px;
                 flex-direction: column;
                 justify-content: center;
@@ -310,6 +314,36 @@ section {
     }
 
     .TableImg {
-        display: none !important;
+        // display: none !important;
+    }
+}
+
+th,
+td {
+    text-wrap: nowrap !important;
+    width: 170px !important;
+}
+
+table {
+    width: max-content !important;
+}
+
+@media screen and (max-width:995px) {
+    .addTo-In {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .Email,
+    .Contact {
+        .value {
+            width: 100% !important;
+        }
+    }
+}
+
+@media screen and (max-width:690px) {
+    .txt {
+        flex-direction: column !important;
     }
 }

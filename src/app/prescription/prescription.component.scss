@@ -621,7 +621,7 @@
 .main-table-containter {
 	border-radius: 3vmin;
 	background-color: white;
-	max-width: 1100px;
+	// max-width: 1100px;
 	width: 100%;
 
 	padding: 1rem 1rem;
@@ -864,7 +864,7 @@ canvas {
 
 // *****************************Media Code*****************************
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
 	.PresBox {
 		padding-top: 0 !important;
 
@@ -1003,5 +1003,182 @@ canvas {
 			white-space: nowrap;
 		}
 	}
+}
 
+.CategoryPop {
+
+	div {
+		justify-content: space-between !important;
+
+		ion-label {
+			font-size: 12px !important;
+			text-wrap: nowrap !important;
+		}
+	}
+}
+
+.manPop {
+	width: 94% !important;
+	display: flex !important;
+	gap: 1px !important;
+}
+
+
+#category-tabs {
+	width: 100%;
+	text-wrap: pretty;
+
+	li {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-align: start;
+	}
+}
+
+
+// **************Custom Media***********
+
+@media screen and (max-width:610px) {
+	.AddPrescriptionForm {
+		form {
+			width: 85% !important;
+
+			ion-label,
+			.form {
+				width: 85% !important;
+			}
+		}
+	}
+}
+
+
+
+@media (min-width:576px) and (max-width:768px) {
+	.unodos {
+		height: max-content !important;
+		display: flex !important;
+		flex-direction: column-reverse !important;
+
+		.wrapper-main {
+			border: none !important;
+		}
+	}
+
+	.PrescriptionTable {
+		width: max-content !important;
+		padding: 0 10px 0 0 !important;
+
+		table {
+			width: max-content !important;
+
+			tr th {
+				width: 100px !important;
+			}
+
+			tr td {
+				width: 100px !important;
+			}
+		}
+	}
+
+	.title-table-container {
+		width: max-content !important;
+		gap: 25px !important;
+	}
+
+	.wrapper-main {
+		overflow-x: scroll !important;
+	}
+}
+
+
+@media (min-width:768px) and (max-width:900px) {
+	.unodos {
+		height: max-content !important;
+		display: flex !important;
+		flex-direction: column-reverse !important;
+
+		.wrapper-main {
+			border: none !important;
+		}
+	}
+
+	.PrescriptionTable {
+		width: max-content !important;
+		padding: 0 10px 0 0 !important;
+
+		table {
+			width: max-content !important;
+
+			tr th {
+				width: 100px !important;
+			}
+
+			tr td {
+				width: 100px !important;
+			}
+		}
+	}
+
+	.title-table-container {
+		width: max-content !important;
+		gap: 25px !important;
+	}
+
+	.wrapper-main {
+		overflow-x: scroll !important;
+	}
+}
+
+
+
+@media (min-width:900px) {
+	.unodos {
+		gap: 0 !important;
+	}
+
+	.PrescriptionTable {
+		width: max-content !important;
+		padding: 0 10px 0 0 !important;
+
+		table {
+			width: max-content !important;
+
+			tbody {
+				overflow-x: scroll !important;
+				text-wrap: nowrap !important;
+			}
+
+			tr th {
+				width: 75px !important;
+			}
+
+			tr td {
+				width: 75px !important;
+			}
+		}
+	}
+
+	.title-table-container {
+		width: max-content !important;
+		gap: 25px !important;
+	}
+
+	.wrapper-main {
+		overflow-x: scroll !important;
+	}
+}
+
+@media screen and (max-width:623px) {
+	.AddPrescriptionForm {
+		form {
+			width: 365px;
+
+			ion-label,
+			.form {
+				width: 365px;
+			}
+		}
+	}
 }

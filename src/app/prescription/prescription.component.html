@@ -369,7 +369,7 @@
                     cursor: pointer;" (click)="EditPrescription=false"></ion-icon>
 
                 </ion-label>
-                <div class="form-group" style="margin-top: 120px;">
+                <div class="form-group" style="margin-top: 140px;">
                     <label for="">Category</label>
                     <input class="form-control" type="text" placeholder="Category" style="font-size: 10px;"
                         (click)="categoryListPopup=true" value="{{pickedCategory}}" />
@@ -486,7 +486,7 @@
         <div class="Cat-Pop" *ngIf="manufacturerListPopup">
             <div style="width: calc(100% - 230px);height: 100%;position: fixed;top: 0;z-index: -1;left: 230px;"
                 (click)="manufacturerListPopup=false"></div>
-            <div class="side-nav-categories CategoryPop manPop" style="width: auto !important;display: flex;">
+            <div class="side-nav-categories CategoryPop manPop" style="width: auto;display: flex;">
                 <div style="width: 200px;
                 display: flex;
                 align-items: center;

@@ -1,5 +1,9 @@
 <section class="Fullpage">
-  <ion-label class="head">Product Names</ion-label><br>
+  <div class="Title">
+    <ion-label class="head">Product Names</ion-label>
+    <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
+  </div>
+  <br>
 
   <div class="top">
     <ion-label style="position: absolute;
@@ -17,7 +21,6 @@
     </select>
     <ion-icon name="trash-outline" class="DeleteIcon" (click)="deleteAlert=true"></ion-icon>
     <ion-button class="Add DeleteBtn" (click)="deleteAlert=true" style="right: 100px;">Delete 🗑</ion-button>
-    <ion-button class="Add" (click)="ActionPopup=true">New +</ion-button>
 
   </div>
 
@@ -49,7 +52,7 @@
       <div class="itemtitle" *ngIf="(i+1) % 2 != 0">Non-Critical</div>
       <div class="btncontainer">
       </div>
-    </div>
+    </div><br>
 
   </div>
 
@@ -98,7 +101,7 @@
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
     <div class="modal-dialog modal-confirm">
-      <div class="modal-content" style="width: 300px !important;">
+      <div class="modal-content" style="width: 300px;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">
             <ion-icon name="trash-outline" style="font-size: 30px;"></ion-icon>

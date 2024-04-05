@@ -113,14 +113,14 @@
 </section>
 
 <section class="fullpage1" *ngIf="!OrgAlert && !manageUser">
-  <div class="grey-bg container-fluid" style="width: 100%;height: 100%;">
+  <div class="grey-bg container-fluid cardContainer" style="width: 100%;height: 100%;">
     <section id="minimal-statistics">
-      <div class="row">
+      <div class="row" style="width: 100%;">
         <div class="col-12 mt-3 mb-1">
           <h4 class="head">Settings</h4>
         </div>
       </div>
-      <div class="row" style="row-gap: 20px;">
+      <div class="row AllTiles" style="row-gap: 20px;">
         <!-- <div class="col-xl-3 col-sm-6 col-12">
           <div class="card" style="height: 100%;">
             <div class="card-content" style="height: 100%;">
@@ -140,7 +140,7 @@
           </div>
         </div> -->
 
-        <div class="col-xl-3 col-sm-6 col-12" (click)="notifyType=true">
+        <div class="col-xl-3 col-sm-6 col-12 Tile" (click)="notifyType=true">
           <div class="card" style="height: 100%;">
             <div class="card-content" style="height: 100%;">
               <div class="card-body" style="height: 100%;">
@@ -151,14 +151,14 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span style="font-size: 14px;">Notification Type</span>
+                    <span style="font-size: 14px;" class="Tile-title">Notification Type</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12"
+        <div class="col-xl-3 col-sm-6 col-12 Tile"
           (click)="Schedule=true;DaysNames=[];selectedDays=[];DailySchedule=undefined">
           <div class="card" style="height: 100%;">
             <div class="card-content" style="height: 100%;">
@@ -170,7 +170,7 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span style="font-size: 14px;">Notification Schedule</span>
+                    <span style="font-size: 14px;" class="Tile-title">Notification Schedule</span>
                   </div>
                 </div>
               </div>
@@ -178,7 +178,7 @@
           </div>
         </div>
 
-        <div class="col-xl-3 col-sm-6 col-12" (click)="See('ManageUser')">
+        <div class="col-xl-3 col-sm-6 col-12 Tile" (click)="See('ManageUser')">
           <div class="card" style="height: 100%;">
             <div class="card-content" style="height: 100%;">
               <div class="card-body" style="height: 100%;">
@@ -189,7 +189,7 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span style="font-size: 14px;">Manage User</span>
+                    <span style="font-size: 14px;" class="Tile-title">Manage User</span>
                   </div>
                 </div>
               </div>
@@ -197,7 +197,7 @@
           </div>
         </div>
 
-        <div class="col-xl-3 col-sm-6 col-12" (click)="See('Manage_Patients')">
+        <div class="col-xl-3 col-sm-6 col-12 Tile" (click)="See('Manage_Patients')">
           <div class="card" style="height: 100%;">
             <div class="card-content" style="height: 100%;">
               <div class="card-body" style="height: 100%;">
@@ -208,7 +208,7 @@
                   <div class="media-body text-right" style="text-align: start;
                   width: 100%;
                   margin-left: 10px;">
-                    <span style="font-size: 14px;">Manage Patient</span>
+                    <span style="font-size: 14px;" class="Tile-title">Manage Patient</span>
                   </div>
                 </div>
               </div>

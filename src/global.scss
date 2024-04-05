@@ -193,9 +193,9 @@ ion-checkbox {
     }
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 576px) {
     .sidebar {
-        margin-left: -250px;
+        margin-left: 0px;
     }
 
     .sidebar.open {
@@ -303,7 +303,7 @@ ion-checkbox {
     transform: rotate(-180deg);
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
     .content .navbar .navbar-nav .nav-link {
         margin-left: 15px;
     }
@@ -783,7 +783,7 @@ ion-button {
 
 // ******************************MOBILE FULLPAGE***********************
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
     .Fullpage {
         width: 100% !important;
         margin-left: 0 !important;
@@ -71673,7 +71673,7 @@ ion-button {
     background: none !important;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
     .modal-dialog {
         max-width: 100% !important;
         margin: 0 !important;

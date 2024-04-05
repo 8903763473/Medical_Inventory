@@ -1,7 +1,7 @@
 .Fullpage {
     width: calc(100% - 195px);
     margin-left: 195px;
-    padding: 32px;
+    padding: 32px 15px;
     background: #FFFFFF;
     font-family: 'Roboto', sans-serif;
 
@@ -336,7 +336,8 @@
         position: relative;
         padding: 40px;
         color: #fff;
-        height: auto;
+        max-height: 95% !important;
+        overflow: scroll !important;
 
         .close-button {
             background: none;
@@ -352,12 +353,54 @@
     }
 }
 
-@media screen and (max-width:480px) {
-    .fullpage {
+@media screen and (max-width:576px) {
+    .Fullpage {
         padding: 32px 10px !important;
-    }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
-    .all {
-        padding: 0 !important;
+        .all {
+            width: 100% !important;
+            padding: 0 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            #portfolio {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+
+@media (min-width:576px) and (max-width:768px) {
+    #portfolio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .Tile {
+            width: 100% !important;
+        }
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    #portfolio {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start !important;
+    }
+}
+
+@media (min-width:992px) {
+    #portfolio {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start !important;
     }
 }

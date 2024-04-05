@@ -64,10 +64,25 @@ section {
         position: fixed;
         width: calc(100% - 195px);
         height: 100%;
-        margin-left: 195px;
+        margin-left: 0;
         border-radius: 0px 12px 12px 0px;
         overflow: scroll;
-        padding: 10px !important;
+        padding: 0px !important;
+
+        ion-label {
+            position: inherit !important;
+            background: #f5f5fb !important;
+            top: 0;
+            height: 53px;
+            margin: 0px !important;
+            padding-left: 10px !important;
+            z-index: 1;
+        }
+
+        ion-button {
+            position: inherit !important;
+            z-index: 10;
+        }
     }
 
     .content-bar {
@@ -322,7 +337,7 @@ section {
 
         .content-area {
             height: 100%;
-            width: calc(100% - 250px);
+            width: calc(100% - 195px);
             border-radius: 0px;
         }
     }
@@ -338,13 +353,6 @@ section {
             height: 100%;
             border-radius: 0px;
             left: -251px;
-        }
-
-        .content-area {
-            height: 100%;
-            width: calc(100%);
-            border-radius: 0px;
-            margin-left: 0px;
         }
 
         .mobilebar {
@@ -372,6 +380,31 @@ section {
     }
 
 
+
+
+    @media only screen and (max-width: 920px) {
+        .content-area {
+            height: 100%;
+            width: calc(100% - 195px);
+            border-radius: 0px;
+            margin-left: 0px;
+        }
+
+        .Table {
+            width: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow-x: scroll;
+
+            .content-bar {
+                div {
+                    width: 170px !important;
+                }
+            }
+        }
+    }
 
     // ***********************DELETE ALERT*******************
 
@@ -548,7 +581,8 @@ section {
         position: relative;
         padding: 40px;
         color: #fff;
-        height: auto;
+        max-height: 95% !important;
+        overflow: scroll;
 
         .close-button {
             background: none;
@@ -616,5 +650,44 @@ section {
                 justify-content: flex-end;
             }
         }
+    }
+}
+
+
+
+@media screen and (max-width:650px) {
+    .form-container {
+        max-width: 350px !important;
+
+        h1 {
+            font-size: 17px !important;
+        }
+    }
+}
+
+@media screen and (max-width:390px) {
+    .form-container {
+        max-width: 80% !important;
+
+        h1 {
+            font-size: 17px !important;
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .form-popup-bg {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .content-area {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .modal-dialog {
+        width: 100% !important;
+        left: 0 !important;
     }
 }

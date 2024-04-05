@@ -1,4 +1,4 @@
-<section>
+<section class="Fullpage">
   <div class="content-area">
     <div class="top">
       <ion-label class="head">Unit Sizes</ion-label>
@@ -6,23 +6,28 @@
     </div>
     <br><br>
 
-    <div class="Table">
-      <div class="content-bar" style="background: #009cff;">
-        <div class="itemtitle" style="color: white;">Category</div>
-        <div class="itemprice" style="color: white;">Unit Measure</div>
-        <div class="itemstock" style="color: white;">Unit</div>
-        <div class="itemstock" style="color: white;">Size</div>
-      </div>
+    <div class="table-responsive">
+      <div class="Table table">
+        <div class="content-bar" style="background: #009cff;">
+          <div class="itemtitle text-white">Category</div>
+          <div class="itemprice text-white">Unit Measure</div>
+          <div class="itemstock text-white">Unit</div>
+          <div class="itemstock text-white">Size</div>
+        </div>
 
-      <div class="content-bar" *ngFor="let item of UnitSizes">
-        <div class="itemtitle">{{item.category}}</div>
-        <div class="itemprice">{{item.measure}}</div>
-        <div class="itemstock">{{item.unit}}</div>
-        <div class="itemprice">{{item.size}}</div>
-        <div class="btncontainer">
-
-          <button class="cbbtn" (click)="EditManufacture(item)"><ion-icon name="create-outline"></ion-icon></button>
-          <button class="cbbtn" (click)="deleteAlert=true"><ion-icon name="trash-outline"></ion-icon></button>
+        <div class="content-bar" *ngFor="let item of UnitSizes">
+          <div class="itemtitle">{{item.category}}</div>
+          <div class="itemprice">{{item.measure}}</div>
+          <div class="itemstock">{{item.unit}}</div>
+          <div class="itemprice">{{item.size}}</div>
+          <div class="btncontainer">
+            <button class="cbbtn btn" (click)="EditManufacture(item)">
+              <ion-icon name="create-outline"></ion-icon>
+            </button>
+            <button class="cbbtn btn" (click)="deleteAlert=true">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -72,7 +77,7 @@
 
   <div id="myModal" class="modal" *ngIf="deleteAlert" style="display: flex;">
     <div class="modal-dialog modal-confirm">
-      <div class="modal-content" style="width: 300px !important;">
+      <div class="modal-content" style="width: 300px;">
         <div class="modal-header" style="position: relative;">
           <div class="icon-box" style="position: absolute;right: 10px;">
             <ion-icon name="trash-outline" style="font-size: 30px;"></ion-icon>
@@ -80,7 +85,7 @@
           <h4 class="modal-title" style="margin-top: 0px;">Are you sure?</h4>
         </div>
         <div class="modal-body">
-          <p>Do you really want to delete this Manufacturer ? This process cannot be undone.</p>
+          <p>Do you really want to delete this Unit size ? This process cannot be undone.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-info" data-dismiss="modal" (click)="Buttons()"
@@ -98,7 +103,7 @@
     <div class="form-container">
       <button id="btnCloseForm" class="close-button" (click)="ActionPopup=false" style="color: #0fa2ff;">X</button>
       <h1 style="margin: 10px;text-align: center;
-      color: #0fa2ff;">New Unit Price</h1>
+      color: #0fa2ff;">New Unit Size</h1>
       <form action="">
         <div class="form-group">
           <label for="">Category</label>

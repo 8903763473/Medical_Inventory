@@ -6,7 +6,7 @@ section {
     .title {
         color: #007AFF !important;
         font-family: Poppins;
-        font-size: 32px;
+        font-size: 22px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
@@ -131,7 +131,19 @@ section {
     display: none !important;
 }
 
-@media screen and (max-width:480px) {
+.text-dark {
+    th {
+        text-wrap: nowrap !important;
+        padding: 5px 25px !important;
+    }
+}
+
+td {
+    text-wrap: nowrap !important;
+    padding: 5px 25px !important;
+}
+
+@media screen and (max-width:576px) {
 
     .DwnldMobile {
         background: #187bf0;
@@ -146,5 +158,44 @@ section {
 
     .Alltables .rounded {
         padding: 0 !important;
+    }
+
+    .title {
+        font-size: 12px !important;
+    }
+
+    .DwnldMobile {
+        width: 20px !important;
+    }
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    .title {
+        font-size: 16px !important;
+    }
+
+    .DwnldMobile {
+        width: 20px !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:992px) {
+    .title {
+        font-size: 18px !important;
+    }
+
+    .DwnldMobile {
+        width: 20px !important;
+    }
+}
+
+
+@media screen and (max-width:992px) {
+    .title {
+        font-size: 22px !important;
+    }
+
+    .DwnldMobile {
+        width: 24px !important;
     }
 }

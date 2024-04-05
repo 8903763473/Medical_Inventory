@@ -5,6 +5,10 @@ section {
     // padding: 15px;
     background-color: #FFF !important;
 
+    ::-webkit-scrollbar {
+        width: 0 !important;
+    }
+
     .headerDiv {
         width: 100%;
         height: auto;
@@ -30,6 +34,7 @@ section {
         justify-content: flex-start;
         width: 100%;
         position: relative;
+        padding: 10px !important;
     }
 
     .Add {
@@ -277,7 +282,7 @@ section {
     // }
 
     .content-area {
-        height: 100%;
+        height: auto !important;
         border-radius: 0px 12px 12px 0px;
         padding: 10px !important;
         width: 100%;
@@ -538,8 +543,8 @@ section {
         }
 
         .content-area {
-            height: 100%;
-            width: calc(100% - 250px);
+            height: auto !important;
+            width: 100%;
             border-radius: 0px;
         }
     }
@@ -558,7 +563,7 @@ section {
         }
 
         .content-area {
-            height: 100%;
+            height: auto !important;
             width: calc(100%);
             border-radius: 0px;
             margin-left: 0px;
@@ -585,6 +590,31 @@ section {
         .cbbtn {
             margin-top: 5px;
             margin-right: 5px;
+        }
+
+        .Top {
+            width: 94%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end !important;
+            gap: 10px;
+
+            ion-label,
+            select {
+                position: inherit !important;
+            }
+        }
+
+        .content-area {
+            overflow-x: scroll !important;
+        }
+
+        .content-bar {
+            width: max-content !important;
+
+            div {
+                width: 170px !important;
+            }
         }
     }
 
@@ -664,7 +694,8 @@ section {
         position: relative;
         padding: 40px;
         color: #fff;
-        height: auto;
+        max-height: 95%;
+        overflow: scroll;
 
         .close-button {
             background: none;
@@ -694,7 +725,7 @@ section {
 
 // ***********************Media Code************************
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
     .Top {
         width: 100%;
         display: flex;
@@ -714,7 +745,7 @@ section {
     }
 
     .content-area {
-        height: 100%;
+        height: auto !important;
         width: fit-content !important;
         border-radius: 0px;
         margin-left: 0px;
@@ -750,5 +781,42 @@ section {
         left: 0 !important;
         height: 120px !important;
         background: #f6f6fc !important;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .form-container {
+        max-width: 350px !important;
+        padding: 10px !important;
+
+        h1 {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media screen and (max-width:380px) {
+    .form-container {
+        max-width: 300px !important;
+        padding: 10px !important;
+
+        h1 {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media screen and (max-width:330px) {
+    .form-container {
+        max-width: 260px !important;
+        padding: 10px !important;
+
+        h1 {
+            font-size: 18px !important;
+        }
+    }
+
+    .modal-content {
+        width: 260px !important;
     }
 }

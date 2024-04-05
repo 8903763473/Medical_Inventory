@@ -1,4 +1,4 @@
-<section>
+<section class="Fullpage">
   <div class="content-area">
     <div class="Top">
       <ion-label class="head">{{Exp_Title}}</ion-label>
@@ -16,23 +16,25 @@
     </div>
     <br><br>
 
-    <div class="content-bar Header" style="background: #009cff;">
-      <div class="itemprice" style="color: white;">Name</div>
-      <div class="itemstock" style="color: white;">Manufacturer</div>
-      <div class="itemtitle" style="color: white;">Category</div>
-      <div class="itemstock" style="color: white;">Quantity</div>
-      <div class="itemstock" style="color: white;">Exp Date</div>
-      <div class="itemstock" style="color: white;">Batch</div>
-    </div>
+    <div class="Table">
+      <div class="content-bar Header" style="background: #009cff;">
+        <div class="itemprice" style="color: white;">Name</div>
+        <div class="itemstock" style="color: white;">Manufacturer</div>
+        <div class="itemtitle" style="color: white;">Category</div>
+        <div class="itemstock" style="color: white;">Quantity</div>
+        <div class="itemstock" style="color: white;">Exp Date</div>
+        <div class="itemstock" style="color: white;">Batch</div>
+      </div>
 
-    <div class="content-bar" *ngFor="let item of LocalInventory;">
-      <div class="itemprice">{{item.productName}}</div>
-      <div class="itemprice" style="width: 100%;">{{item.ManufactursList}}</div>
-      <div class="itemtitle">{{item.category}}</div>
-      <div class="itemstock">{{item.id+1}}</div>
-      <div class="itemprice">Apr 15 2024</div>
-      <div class="itemprice">2</div>
-      <div class="btncontainer">
+      <div class="content-bar" *ngFor="let item of LocalInventory;">
+        <div class="itemprice">{{item.productName}}</div>
+        <div class="itemprice">{{item.ManufactursList}}</div>
+        <div class="itemtitle">{{item.category}}</div>
+        <div class="itemstock">{{item.id+1}}</div>
+        <div class="itemprice">Apr 15 2024</div>
+        <div class="itemprice">2</div>
+        <div class="btncontainer">
+        </div>
       </div>
     </div>
   </div>
